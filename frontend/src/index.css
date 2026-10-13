@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #063280;
+  --color-brand-secondary: #1558A9;
+  --color-brand-accent: #9B193A;
+  --color-brand-accent-hover: #7E142F;
+  --color-brand-light: #9ABAD9;
+  --color-brand-light-tint: #EBF3FA;
+  --color-brand-soft: #F7FAFC;
+  --color-brand-dark: #0F172A;
+  --color-brand-muted: #475569;
+  --color-brand-border: #D9E2EC;
+}
+
+@layer base {
+  :root {
+    --brand-primary: #063280;
+    --brand-secondary: #1558A9;
+    --brand-accent: #9B193A;
+    --brand-accent-hover: #7E142F;
+    --brand-light: #9ABAD9;
+    --brand-light-tint: #EBF3FA;
+    --brand-soft: #F7FAFC;
+    --brand-dark: #0F172A;
+    --brand-muted: #475569;
+    --brand-border: #D9E2EC;
+
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-heading: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #F7FAFC;
+    color: #0F172A;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+    color: #063280;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F7FAFC;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9ABAD9;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1558A9;
+}
+
+/* Glassmorphism & Specialized Utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid #D9E2EC;
+}
+
+.glass-dark {
+  background: rgba(6, 50, 128, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(154, 186, 217, 0.25);
+}
+
+.gradient-brand-blue {
+  background: linear-gradient(135deg, #063280 0%, #1558A9 100%);
+}
+
+.gradient-brand-accent {
+  background: linear-gradient(135deg, #9B193A 0%, #7E142F 100%);
+}
+
+.gradient-text-blue {
+  background: linear-gradient(135deg, #063280 0%, #1558A9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-red {
+  background: linear-gradient(135deg, #9B193A 0%, #C9184A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-pattern-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(6, 50, 128, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(6, 50, 128, 0.04) 1px, transparent 1px);
+}
+
+.card-hover-effect {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-hover-effect:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(6, 50, 128, 0.08), 0 10px 10px -5px rgba(6, 50, 128, 0.04);
+}
