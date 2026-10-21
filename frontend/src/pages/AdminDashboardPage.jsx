@@ -31,6 +31,7 @@ import {
   Trash2
 } from "lucide-react";
 import SEOHead from "../components/common/SEOHead";
+import BannerBackground from "../components/common/BannerBackground";
 import { getStoredLeads, updateLeadStatus, saveLead, clearAllLeads } from "../data/mockLeads";
 import {
   getGoogleSheetWebhookUrl,
@@ -348,8 +349,9 @@ export function AdminDashboardPage() {
       />
 
       {/* Top Banner */}
-      <section className="bg-linear-to-r from-[#063280] to-[#1558A9] text-white py-8 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <section className="relative overflow-hidden bg-linear-to-r from-[#063280] to-[#1558A9] text-white py-8 px-4 sm:px-6 lg:px-8 border-b border-[#0B2D64]">
+        <BannerBackground image="/collageimages/banner-5.png" opacity="opacity-[0.14] sm:opacity-[0.18]" />
+        <div className="relative max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <div className="flex items-center gap-2">
               <span className="text-[#9ABAD9] text-xs font-bold uppercase tracking-wider">

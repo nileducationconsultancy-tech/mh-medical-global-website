@@ -28,6 +28,7 @@ import {
   HeartHandshake
 } from "lucide-react";
 import SEOHead from "../components/common/SEOHead";
+import BannerBackground, { getBannerImageBySeed } from "../components/common/BannerBackground";
 import { getUniversityBySlug, USD_TO_INR_RATE } from "../data/universitiesData";
 import { DisclaimerBanner } from "../components/common/SourceBadge";
 import { siteConfig } from "../config/site";
@@ -185,8 +186,9 @@ export function UniversityDetailPage({ onOpenLeadModal }) {
       {/* ========================================================================= */}
       {/* 1. HERO SECTION */}
       {/* ========================================================================= */}
-      <section className="bg-linear-to-b from-[#063280] via-[#0E438D] to-[#1558A9] text-white pt-8 pb-14 px-4 sm:px-6 lg:px-8 border-b border-[#0B2D64]">
-        <div className="max-w-7xl mx-auto space-y-6">
+      <section className="relative overflow-hidden bg-linear-to-b from-[#063280] via-[#0E438D] to-[#1558A9] text-white pt-8 pb-14 px-4 sm:px-6 lg:px-8 border-b border-[#0B2D64]">
+        <BannerBackground image={getBannerImageBySeed(uni?.slug || "tma")} opacity="opacity-[0.14] sm:opacity-[0.18]" />
+        <div className="relative max-w-7xl mx-auto space-y-6">
           {/* Draft Notice if applicable */}
           {uni.isDraft && (
             <div className="bg-amber-500/20 border border-amber-300/40 p-4 rounded-2xl text-amber-200 text-xs flex items-center gap-2.5">

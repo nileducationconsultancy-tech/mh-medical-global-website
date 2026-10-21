@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import SEOHead from "../components/common/SEOHead";
+import BannerBackground from "../components/common/BannerBackground";
 import { blogData, getBlogPostBySlug } from "../data/blogData";
 import {
   BookOpen,
@@ -35,7 +36,8 @@ export function BlogPage() {
         canonicalUrl={`${siteConfig.siteUrl}/blog`}
       />
 
-      <section className="bg-linear-to-b from-[#063280] to-[#1558A9] text-white py-12 px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-linear-to-b from-[#063280] to-[#1558A9] text-white py-12 px-4 sm:px-6 lg:px-8 border-b border-[#0B2D64]">
+        <BannerBackground image="/collageimages/banner-7.png" opacity="opacity-[0.14] sm:opacity-[0.18]" />
         <div className="max-w-4xl mx-auto text-center space-y-3">
           <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/15 text-white text-xs font-bold uppercase tracking-wider">
             <BookOpen className="w-3.5 h-3.5 text-[#9ABAD9]" />
