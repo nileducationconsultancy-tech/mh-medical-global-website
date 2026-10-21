@@ -1,7 +1,8 @@
 import React from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, useLocation, Link } from "react-router-dom";
 import SEOHead from "../components/common/SEOHead";
 import { cityGuidesData, getCityGuideBySlug } from "../data/cityGuidesData";
+import { siteConfig } from "../config/site";
 import {
   MapPin,
   Plane,
@@ -18,28 +19,50 @@ import {
 
 export function CityGuidePage({ onOpenLeadModal }) {
   const { citySlug } = useParams();
+  const location = useLocation();
 
   // Support direct route /study-mbbs-in-tashkent or param /cities/:citySlug
-  const slug = citySlug || window.location.pathname.replace("/", "");
+  const currentPath = location?.pathname ? location.pathname.replace(/^\//, "") : "";
+  const slug = citySlug || currentPath || "study-mbbs-in-tashkent";
   const city = getCityGuideBySlug(slug) || cityGuidesData[0];
 
-  const citySchema = {
-    "@context": "https://schema.org",
-    "@type": "City",
-    "name": city.cityName,
-    "containedInPlace": {
-      "@type": "Country",
-      "name": "Uzbekistan"
+  const citySchema = [
+    {
+      "@type": "City",
+      "@id": `${siteConfig.siteUrl}/${city.slug}#city`,
+      "name": city.cityName,
+      "containedInPlace": {
+        "@type": "Country",
+        "name": "Uzbekistan"
+      },
+      "description": city.overview
     },
-    "description": city.overview
-  };
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${siteConfig.siteUrl}/${city.slug}#breadcrumb`,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": siteConfig.siteUrl
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": city.cityName,
+          "item": `${siteConfig.siteUrl}/${city.slug}`
+        }
+      ]
+    }
+  ];
 
   return (
     <div className="space-y-12 pb-16 font-sans">
       <SEOHead
         title={city.title}
         description={city.metaDescription}
-        canonicalUrl={`https://mhmedicalglobal.com/${city.slug}`}
+        canonicalUrl={`${siteConfig.siteUrl}/${city.slug}`}
         schema={citySchema}
       />
 

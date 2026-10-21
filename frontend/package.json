@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "vite",
     "prebuild": "node scripts/generate-sitemap.mjs",
-    "build": "vite build",
+    "build:client": "vite build --outDir dist",
+    "build:server": "vite build --ssr src/entry-server.jsx --outDir dist-ssr",
+    "build:prerender": "node scripts/prerender.mjs",
+    "build": "npm run build:client && npm run build:server && npm run build:prerender",
     "lint": "oxlint",
     "preview": "vite preview"
   },

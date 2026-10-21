@@ -1,5 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
   "redirects": [
     {
       "source": "/:path*",
@@ -15,7 +16,11 @@
   ],
   "rewrites": [
     {
-      "source": "/((?!.*\\.(?:txt|xml|json|webp|png|jpg|jpeg|svg|ico|css|js|map|woff|woff2|ttf)).*)",
+      "source": "/admin/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/admin",
       "destination": "/index.html"
     }
   ],

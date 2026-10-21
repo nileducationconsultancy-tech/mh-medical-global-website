@@ -10,6 +10,9 @@ import { saveLead } from "../data/mockLeads";
 const DEFAULT_WEBHOOK_STORAGE_KEY = "mh_medical_google_sheet_webhook_url";
 
 export const getGoogleSheetWebhookUrl = () => {
+  if (typeof window === "undefined" || typeof localStorage === "undefined") {
+    return DEFAULT_WEBHOOK_URL;
+  }
   return (
     localStorage.getItem(DEFAULT_WEBHOOK_STORAGE_KEY) ||
     import.meta.env.VITE_GOOGLE_SHEET_WEBHOOK_URL ||
@@ -18,6 +21,7 @@ export const getGoogleSheetWebhookUrl = () => {
 };
 
 export const setGoogleSheetWebhookUrl = (url) => {
+  if (typeof window === "undefined" || typeof localStorage === "undefined") return;
   if (url && url.trim()) {
     localStorage.setItem(DEFAULT_WEBHOOK_STORAGE_KEY, url.trim());
   } else {
@@ -44,7 +48,7 @@ export const submitToGoogleSheet = async (leadData) => {
     PCB_Percentage: leadData.pcbPercentage || "",
     Preferred_University: leadData.preferredUniversity || "Tashkent Medical Academy",
     Budget_Range: leadData.budget || leadData.budgetRange || "₹20L - ₹25L",
-    Source_Page: leadData.sourcePage || window.location.pathname,
+    Source_Page: leadData.sourcePage || (typeof window !== "undefined" ? window.location.pathname : ""),
     Source_CTA: leadData.source || leadData.sourceCta || "Website Form",
     Message_Notes: leadData.message || leadData.initialNote || leadData.notes || ""
   };

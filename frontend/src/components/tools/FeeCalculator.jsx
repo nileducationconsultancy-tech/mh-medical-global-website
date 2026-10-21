@@ -13,6 +13,7 @@ import {
   Sparkles
 } from "lucide-react";
 import { SourceBadge } from "../common/SourceBadge";
+import { track } from "../../utils/analytics";
 
 export function FeeCalculator({ onOpenLeadModal }) {
   const [selectedUniId, setSelectedUniId] = useState(universitiesData[0].id);
@@ -290,7 +291,15 @@ export function FeeCalculator({ onOpenLeadModal }) {
           {/* Action Button */}
           <div className="pt-6 space-y-3">
             <button
-              onClick={() => onOpenLeadModal(`Fee Quote for ${selectedUni.name}`)}
+              onClick={() => {
+                track("fee_calculator_used", {
+                  university: selectedUni.name,
+                  totalBudgetUSD: total6YearUSD,
+                  totalBudgetINR: Math.round(total6YearUSD * USD_TO_INR_RATE),
+                  currency
+                });
+                onOpenLeadModal(`Fee Quote for ${selectedUni.name}`);
+              }}
               className="w-full py-3.5 px-4 bg-[#9B193A] hover:bg-[#7E142F] text-white font-extrabold rounded-2xl text-xs sm:text-sm transition-all duration-200 shadow-lg flex items-center justify-center gap-2 cursor-pointer"
             >
               <Sparkles className="w-4 h-4 text-white" />

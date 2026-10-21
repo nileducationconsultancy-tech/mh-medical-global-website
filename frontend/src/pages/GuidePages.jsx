@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { DocumentChecklistTracker } from "../components/tools/DocumentChecklistTracker";
 import { DisclaimerBanner } from "../components/common/SourceBadge";
+import { siteConfig } from "../config/site";
 
 export function AdmissionProcessPage({ onOpenLeadModal }) {
   const steps = [
@@ -72,7 +73,7 @@ export function AdmissionProcessPage({ onOpenLeadModal }) {
       <SEOHead
         title="MBBS Admission in Uzbekistan 2026: 9-Step Process, Documents & Timeline | MH GLOBAL EDUCATION CONSULTANT"
         description="Step-by-step admission roadmap for Indian students studying MBBS in Uzbekistan. From counselling and offer letter to MFA visa teletex and hostel check-in."
-        canonicalUrl="https://mhglobaledu.com/mbbs-admission-uzbekistan"
+        canonicalUrl={`${siteConfig.siteUrl}/mbbs-admission-uzbekistan`}
       />
 
       <section className="bg-linear-to-b from-[#063280] via-[#0E438D] to-[#1558A9] text-white py-12 px-4 sm:px-6 lg:px-8 border-b border-[#0B2D64]">
@@ -130,7 +131,7 @@ export function DocumentChecklistPage({ onOpenLeadModal }) {
       <SEOHead
         title="MBBS in Uzbekistan Document Checklist 2026: Marksheets, Apostille & Visa Docs | MH GLOBAL EDUCATION CONSULTANT"
         description="Interactive document checklist for Indian medical students applying to Uzbekistan. Track passport validity, MEA Apostille, NEET scorecards, and medical test reports."
-        canonicalUrl="https://mhglobaledu.com/document-checklist"
+        canonicalUrl={`${siteConfig.siteUrl}/document-checklist`}
       />
 
       <section className="bg-linear-to-b from-[#063280] via-[#0E438D] to-[#1558A9] text-white py-12 px-4 sm:px-6 lg:px-8 border-b border-[#0B2D64]">
@@ -160,7 +161,7 @@ export function VisaGuidePage({ onOpenLeadModal }) {
       <SEOHead
         title="Uzbekistan Student Visa (A-2) Guide for Indian Students 2026 | MH GLOBAL EDUCATION CONSULTANT"
         description="Complete guide to obtaining Uzbekistan Student Visa (A-2). Learn about Ministry teletex invitations, consular submissions, embassy fees, and OVIR residency registration."
-        canonicalUrl="https://mhglobaledu.com/uzbekistan-student-visa"
+        canonicalUrl={`${siteConfig.siteUrl}/uzbekistan-student-visa`}
       />
 
       <section className="bg-linear-to-b from-[#063280] via-[#0E438D] to-[#1558A9] text-white py-12 px-4 sm:px-6 lg:px-8 border-b border-[#0B2D64]">
@@ -213,9 +214,9 @@ export function NmcGuidelinesPage({ onOpenLeadModal }) {
   return (
     <div className="space-y-12 pb-16">
       <SEOHead
-        title="NMC FMGL Regulations 2021 for MBBS Abroad: 54-Month Rule, NExT & Registration Guide | MH GLOBAL EDUCATION CONSULTANT"
+        title="NMC Guidelines for MBBS Abroad 2026: FMGL Rules & NExT Exam"
         description="Comprehensive analysis of the National Medical Commission (NMC) Foreign Medical Graduate Licentiate regulations. Learn about 54 months coursework, 12 months internship, and NExT exam."
-        canonicalUrl="https://mhglobaledu.com/nmc-guidelines-for-mbbs-abroad"
+        canonicalUrl={`${siteConfig.siteUrl}/nmc-guidelines-for-mbbs-abroad`}
       />
 
       <section className="bg-linear-to-b from-[#063280] via-[#0E438D] to-[#1558A9] text-white py-12 px-4 sm:px-6 lg:px-8 border-b border-[#0B2D64]">
@@ -225,7 +226,7 @@ export function NmcGuidelinesPage({ onOpenLeadModal }) {
             Statutory Regulatory Breakdown
           </span>
           <h1 className="text-3xl sm:text-5xl font-black text-white">
-            NMC Guidelines for MBBS Abroad (FMGL 2021)
+            NMC FMGL 2021 Guidelines for MBBS Abroad: Compliance Guide for Indian Students
           </h1>
           <p className="text-sm text-slate-200 max-w-2xl mx-auto">
             Essential facts every Indian student and parent must understand before enrolling in any overseas medical college.
@@ -280,7 +281,7 @@ export function GovtVsPrivatePage({ onOpenLeadModal }) {
       <SEOHead
         title="Government vs Private Medical Universities in Uzbekistan 2026: Unbiased Comparison | MH GLOBAL EDUCATION CONSULTANT"
         description="Detailed comparison between Uzbekistan state government medical universities (TMA, SSMU, BSMI) and modern private colleges (CAU, EMU) on fees, infrastructure, and hospital beds."
-        canonicalUrl="https://mhglobaledu.com/government-vs-private-medical-universities-uzbekistan"
+        canonicalUrl={`${siteConfig.siteUrl}/government-vs-private-medical-universities-uzbekistan`}
       />
 
       <section className="bg-linear-to-b from-[#063280] via-[#0E438D] to-[#1558A9] text-white py-12 px-4 sm:px-6 lg:px-8 border-b border-[#0B2D64]">

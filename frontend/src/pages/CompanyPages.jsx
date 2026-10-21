@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import SEOHead from "../components/common/SEOHead";
+import { siteConfig } from "../config/site";
+import { track } from "../utils/analytics";
 import {
   GraduationCap,
   ShieldCheck,
@@ -18,8 +20,8 @@ import { submitToGoogleSheet } from "../services/googleSheetService";
 
 export function AboutUsPage({ onOpenLeadModal }) {
   const aboutSchema = {
-    "@context": "https://schema.org",
     "@type": "AboutPage",
+    "@id": `${siteConfig.siteUrl}/about-us#about`,
     "name": "About MH GLOBAL EDUCATION CONSULTANT",
     "description": "Information about MH GLOBAL EDUCATION CONSULTANT, our leadership, student-centric philosophy, and verified admissions network in Uzbekistan."
   };
@@ -27,9 +29,9 @@ export function AboutUsPage({ onOpenLeadModal }) {
   return (
     <div className="space-y-16 pb-16 font-sans">
       <SEOHead
-        title="About MH GLOBAL EDUCATION CONSULTANT | Leadership & International Admissions Network"
+        title="About MH GLOBAL EDUCATION CONSULTANT | Leadership & Admissions Network"
         description="Learn about MH GLOBAL EDUCATION CONSULTANT's mission, leadership team, ethical counseling standards, and on-ground student support network in Uzbekistan."
-        canonicalUrl="https://mhglobaledu.com/about-us"
+        canonicalUrl={`${siteConfig.siteUrl}/about-us`}
         schema={aboutSchema}
       />
 
@@ -116,6 +118,8 @@ export function ContactPage({ onOpenLeadModal }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    track("lead_form_submitted", { source: "Contact Us Page Form", city: contactForm.city });
+    track("generate_lead", { source: "Contact Us Page Form" });
     await submitToGoogleSheet({
       name: contactForm.name,
       phone: contactForm.phone,
@@ -131,9 +135,9 @@ export function ContactPage({ onOpenLeadModal }) {
   return (
     <div className="space-y-12 pb-16 font-sans">
       <SEOHead
-        title="Contact MH GLOBAL EDUCATION CONSULTANT | New Delhi & Tashkent Offices"
+        title="Contact MH GLOBAL EDUCATION CONSULTANT | Admissions Desks"
         description="Get in touch with MH GLOBAL EDUCATION CONSULTANT. Contact our admissions desk in New Delhi or our student support coordinators in Tashkent, Uzbekistan."
-        canonicalUrl="https://mhglobaledu.com/contact"
+        canonicalUrl={`${siteConfig.siteUrl}/contact`}
       />
 
       <section className="bg-linear-to-b from-[#063280] via-[#0E438D] to-[#1558A9] text-white py-12 px-4 sm:px-6 lg:px-8 border-b border-[#0B2D64]">
@@ -161,21 +165,21 @@ export function ContactPage({ onOpenLeadModal }) {
           <div className="space-y-4">
             <div className="p-4 rounded-2xl bg-[#F7FAFC] border border-[#D9E2EC] space-y-1">
               <span className="font-extrabold text-[#063280] text-sm">India Admissions HQ (New Delhi):</span>
-              <p className="text-[#475569]">Level 4, Medical Education Wing, Connaught Place, New Delhi 110001, India</p>
-              <p className="text-[#063280] font-bold pt-1">Helpline: +91 98765 43210</p>
+              <p className="text-[#475569]">{siteConfig.indiaOffice.streetAddress}, {siteConfig.indiaOffice.addressLocality} {siteConfig.indiaOffice.postalCode}, India</p>
+              <p className="text-[#063280] font-bold pt-1">Helpline: {siteConfig.phoneDisplay}</p>
             </div>
 
             <div className="p-4 rounded-2xl bg-[#F7FAFC] border border-[#D9E2EC] space-y-1">
               <span className="font-extrabold text-[#063280] text-sm">Uzbekistan Coordinator Office:</span>
               <p className="text-[#475569]">Farabi Street, Olmazor District, Tashkent 100109, Uzbekistan</p>
-              <p className="text-[#063280] font-bold pt-1">Tel: +998 78 150-78-25</p>
+              <p className="text-[#063280] font-bold pt-1">Tel: {siteConfig.uzbekistanOffice.phone}</p>
             </div>
           </div>
 
           <div className="pt-2 space-y-2 border-t border-[#D9E2EC]">
             <p className="font-bold text-[#063280]">Email Inquiries:</p>
-            <p className="text-[#1558A9] font-semibold">admissions@mhglobaledu.com</p>
-            <p className="text-[#475569]">Operating Hours: Monday – Saturday (9:30 AM – 7:00 PM IST)</p>
+            <p className="text-[#1558A9] font-semibold">{siteConfig.email}</p>
+            <p className="text-[#475569]">Operating Hours: {siteConfig.indiaOffice.operatingHours}</p>
           </div>
         </div>
 
@@ -284,7 +288,7 @@ export function PrivacyPolicyPage() {
       <SEOHead
         title="Privacy Policy | MH GLOBAL EDUCATION CONSULTANT"
         description="Privacy policy and student data confidentiality practices of MH GLOBAL EDUCATION CONSULTANT."
-        canonicalUrl="https://mhglobaledu.com/privacy-policy"
+        canonicalUrl={`${siteConfig.siteUrl}/privacy-policy`}
       />
 
       <section className="bg-linear-to-b from-[#063280] via-[#0E438D] to-[#1558A9] text-white py-12 px-4 sm:px-6 lg:px-8 border-b border-[#0B2D64]">

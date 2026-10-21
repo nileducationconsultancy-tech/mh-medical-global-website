@@ -30,6 +30,8 @@ import {
 import SEOHead from "../components/common/SEOHead";
 import { getUniversityBySlug, USD_TO_INR_RATE } from "../data/universitiesData";
 import { DisclaimerBanner } from "../components/common/SourceBadge";
+import { siteConfig } from "../config/site";
+import { track } from "../utils/analytics";
 
 export function UniversityDetailPage({ onOpenLeadModal }) {
   const { slug } = useParams();
@@ -125,42 +127,58 @@ export function UniversityDetailPage({ onOpenLeadModal }) {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://mhglobaledu.com"
+            "item": siteConfig.siteUrl
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Universities",
-            "item": "https://mhglobaledu.com/universities/uzbekistan"
+            "item": `${siteConfig.siteUrl}/universities/uzbekistan`
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Uzbekistan",
-            "item": "https://mhglobaledu.com/universities/uzbekistan"
+            "item": `${siteConfig.siteUrl}/universities/uzbekistan`
           },
           {
             "@type": "ListItem",
             "position": 4,
             "name": uni.name,
-            "item": `https://mhglobaledu.com/universities/uzbekistan/${uni.slug}`
+            "item": `${siteConfig.siteUrl}/universities/uzbekistan/${uni.slug}`
           }
         ]
       }
     ]
   };
 
+  let pageTitle = `MBBS at ${uni.name}, Uzbekistan | Fees & Admission 2026`;
+  let pageH1 = `${uni.name}: MBBS Fees, Admission & Hostels for Indian Students`;
+
+  if (uni.slug === "tashkent-medical-academy") {
+    pageTitle = "Tashkent Medical Academy Fees 2026: MBBS Admission in TMA";
+    pageH1 = "Tashkent Medical Academy (TMA): MBBS Fees, Admission & Hostels for Indian Students";
+  } else if (uni.slug === "samarkand-state-medical-university") {
+    pageTitle = "Samarkand State Medical University MBBS Fees & Admission";
+    pageH1 = "Samarkand State Medical University: 2026 Fees, Eligibility & Admission Guide";
+  }
+
+  const comparisonUnis = (uni.comparisonSlugs || [])
+    .map((cSlug) => getUniversityBySlug(cSlug))
+    .filter(Boolean);
+
   const defaultMessage = encodeURIComponent(
     `Hello MH GLOBAL EDUCATION CONSULTANT, I want admission counselling for ${uni.name}, Uzbekistan.`
   );
-  const whatsappUrl = `https://wa.me/919876543210?text=${defaultMessage}`;
+  const whatsappUrl = `https://wa.me/${siteConfig.whatsappNumber}?text=${defaultMessage}`;
 
   return (
     <div className="space-y-16 pb-24 font-sans selection:bg-[#063280] selection:text-white">
       <SEOHead
-        title={`MBBS at ${uni.name}, Uzbekistan | Fees, Eligibility & Admission 2026`}
+        title={pageTitle}
         description={`Explore ${uni.name} in Uzbekistan. Check MBBS fees, eligibility, syllabus, hostel, admission process and guidance for Indian students.`}
-        canonicalUrl={`https://mhglobaledu.com/universities/uzbekistan/${uni.slug}`}
+        canonicalUrl={`${siteConfig.siteUrl}/universities/uzbekistan/${uni.slug}`}
+        robots={uni.noindex ? "noindex, nofollow" : "index, follow"}
         schema={universityFullSchema}
       />
 
@@ -169,6 +187,16 @@ export function UniversityDetailPage({ onOpenLeadModal }) {
       {/* ========================================================================= */}
       <section className="bg-linear-to-b from-[#063280] via-[#0E438D] to-[#1558A9] text-white pt-8 pb-14 px-4 sm:px-6 lg:px-8 border-b border-[#0B2D64]">
         <div className="max-w-7xl mx-auto space-y-6">
+          {/* Draft Notice if applicable */}
+          {uni.isDraft && (
+            <div className="bg-amber-500/20 border border-amber-300/40 p-4 rounded-2xl text-amber-200 text-xs flex items-center gap-2.5">
+              <AlertCircle className="w-5 h-5 text-amber-300 shrink-0" />
+              <span>
+                <strong>Draft Profile (Pending Verification):</strong> {uni.verificationNote || "Data on this institution is currently in draft format and excluded from search engines pending official 2026 notices."}
+              </span>
+            </div>
+          )}
+
           {/* Breadcrumb */}
           <nav aria-label="Breadcrumb" className="text-xs text-slate-200 flex flex-wrap items-center gap-2">
             <Link to="/" className="hover:text-[#9ABAD9] transition-colors">Home</Link>
@@ -198,7 +226,7 @@ export function UniversityDetailPage({ onOpenLeadModal }) {
               </div>
 
               <h1 className="text-3xl sm:text-5xl font-black text-white leading-tight">
-                {uni.name}
+                {pageH1}
               </h1>
 
               <p className="text-[#9ABAD9] font-semibold text-base sm:text-lg">
@@ -243,6 +271,8 @@ export function UniversityDetailPage({ onOpenLeadModal }) {
                 <img
                   src={uni.coverImage}
                   alt={`${uni.name} Campus in ${uni.city}, Uzbekistan`}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-72 sm:h-80 object-cover"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent"></div>
@@ -732,6 +762,12 @@ export function UniversityDetailPage({ onOpenLeadModal }) {
           <p className="text-xs sm:text-sm text-[#0F172A] leading-relaxed">
             {uni.whyUzbekistan} Over 10,000 Indian students are currently enrolled in recognized Uzbek medical academies due to direct flight connectivity from New Delhi (3.5 hours), 100% English-medium faculties, high clinical hospital bed capacity, and very safe, welcoming student environments.
           </p>
+          <div className="p-3.5 rounded-2xl bg-[#EBF3FA] border border-[#D9E2EC] text-[#063280] text-xs flex items-start gap-2">
+            <ShieldCheck className="w-4 h-4 text-[#063280] shrink-0 mt-0.5" />
+            <p>
+              <strong>100% English Medium Curriculum:</strong> All theoretical lectures, clinical lab modules, and examinations are conducted in English. Basic colloquial Uzbek/Russian language is taught in early semesters specifically for interacting with local patients during hospital rotations.
+            </p>
+          </div>
           <div className="pt-2">
             <Link to="/mbbs-in-uzbekistan" className="text-[#063280] hover:text-[#1558A9] hover:underline font-bold text-xs flex items-center gap-1">
               Read Complete Guide to MBBS in Uzbekistan <ArrowRight className="w-3.5 h-3.5" />
@@ -802,6 +838,61 @@ export function UniversityDetailPage({ onOpenLeadModal }) {
             </a>
           </div>
         </section>
+
+        {/* ========================================================================= */}
+        {/* 14.5. COMPARE WITH OTHER UNIVERSITIES */}
+        {/* ========================================================================= */}
+        {comparisonUnis.length > 0 && (
+          <section className="bg-white p-8 sm:p-10 rounded-3xl border border-[#D9E2EC] shadow-xs space-y-6">
+            <div className="space-y-2">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#063280] bg-[#EBF3FA] px-3.5 py-1 rounded-full border border-[#D9E2EC]">
+                Side-by-Side Evaluation
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-black text-[#063280]">
+                Compare {uni.name} with Top Uzbekistan Medical Colleges
+              </h2>
+              <p className="text-xs text-[#475569]">
+                Evaluate tuition fees, hospital bed count, and student living costs against peer institutions.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {comparisonUnis.map((compUni) => (
+                <div key={compUni.id} className="p-6 rounded-2xl bg-[#F7FAFC] border border-[#D9E2EC] space-y-4 flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-[#063280] text-white">
+                        {compUni.type} Academy
+                      </span>
+                      <span className="text-xs text-[#475569]">{compUni.city}, Uzbekistan</span>
+                    </div>
+                    <h3 className="text-lg font-bold text-[#063280] mt-3">{compUni.name}</h3>
+                    <p className="text-xs text-[#475569] mt-1 line-clamp-2">{compUni.hero?.description}</p>
+                    <div className="grid grid-cols-2 gap-2 mt-4 text-xs">
+                      <div className="p-2.5 rounded-xl bg-white border border-[#D9E2EC]">
+                        <span className="text-[10px] text-[#475569]">Annual Tuition</span>
+                        <p className="font-bold text-[#063280]">${compUni.fees?.annualTuitionUSD?.toLocaleString()}/yr</p>
+                      </div>
+                      <div className="p-2.5 rounded-xl bg-white border border-[#D9E2EC]">
+                        <span className="text-[10px] text-[#475569]">Clinical Beds</span>
+                        <p className="font-bold text-[#063280]">
+                          {compUni.quickHighlights?.find((h) => h.label.includes("Beds"))?.value || "2,500+ Beds"}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <Link
+                    to={`/universities/uzbekistan/${compUni.slug}`}
+                    className="inline-flex items-center justify-between text-xs font-bold text-[#063280] hover:text-[#1558A9] pt-2 border-t border-[#D9E2EC]"
+                  >
+                    <span>Compare Fees & Admission with {compUni.name}</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* ========================================================================= */}
         {/* 15. POPULAR MBBS DESTINATIONS FOR INDIAN STUDENTS IN UZBEKISTAN */}

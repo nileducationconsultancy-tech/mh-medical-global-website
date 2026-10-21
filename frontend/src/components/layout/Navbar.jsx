@@ -15,12 +15,15 @@ import {
   Sparkles,
   Globe
 } from "lucide-react";
+import { siteConfig } from "../../config/site";
 
 export function Navbar({ onOpenLeadModal }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(null);
   const navigate = useNavigate();
   const location = useLocation();
+
+  const isPhonePlaceholder = !siteConfig.phone || siteConfig.phone.startsWith("TODO_REPLACE");
 
   const handleNavClick = () => {
     setMobileMenuOpen(false);
@@ -43,20 +46,24 @@ export function Navbar({ onOpenLeadModal }) {
           </div>
 
           <div className="flex items-center gap-4 text-[11px] text-red-100">
-            <a
-              href="tel:+919876543210"
-              className="hover:text-white transition-colors flex items-center gap-1 font-bold text-white"
-            >
-              <PhoneCall className="w-3 h-3 text-white" />
-              <span>Call / WhatsApp: +91 98765 43210</span>
-            </a>
-            <span className="text-red-300/60">|</span>
-            <Link
-              to="/admin"
-              className="text-red-100 hover:text-white transition-colors"
-            >
-              Counsellor Portal
-            </Link>
+            {!isPhonePlaceholder ? (
+              <a
+                href={`tel:${siteConfig.phone}`}
+                className="hover:text-white transition-colors flex items-center gap-1 font-bold text-white"
+              >
+                <PhoneCall className="w-3 h-3 text-white" />
+                <span>Call / WhatsApp: {siteConfig.phoneDisplay}</span>
+              </a>
+            ) : (
+              <button
+                type="button"
+                onClick={() => onOpenLeadModal("Navbar Top Helpline")}
+                className="hover:text-white transition-colors flex items-center gap-1 font-bold text-white cursor-pointer"
+              >
+                <PhoneCall className="w-3 h-3 text-white" />
+                <span>Admissions Helpline (24/7)</span>
+              </button>
+            )}
           </div>
         </div>
       </div>

@@ -12,6 +12,7 @@ import {
   ShieldCheck
 } from "lucide-react";
 import { submitToGoogleSheet } from "../../services/googleSheetService";
+import { track } from "../../utils/analytics";
 
 export function EligibilityChecker({ onOpenLeadModal }) {
   const [formData, setFormData] = useState({
@@ -101,8 +102,20 @@ export function EligibilityChecker({ onOpenLeadModal }) {
       setEvaluationResult(result);
       setIsEvaluating(false);
 
+      // Track eligibility assessment
+      track("eligibility_checked", {
+        status,
+        pcbScore: Number(pcbPercentage),
+        category: formData.category,
+        neetStatus: formData.neetStatus
+      });
+
       // Save lead query to Google Sheet & CRM
       if (formData.name && formData.phone) {
+        track("generate_lead", {
+          value: "Eligibility Assessment Lead",
+          currency: "INR"
+        });
         submitToGoogleSheet({
           name: formData.name,
           phone: formData.phone,

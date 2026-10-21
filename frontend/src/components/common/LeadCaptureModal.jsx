@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { MessageCircle, Phone, X, CheckCircle2, Send, Sparkles } from "lucide-react";
 import { saveLead } from "../../data/mockLeads";
 import { submitToGoogleSheet } from "../../services/googleSheetService";
+import { siteConfig } from "../../config/site";
+import { track } from "../../utils/analytics";
 
 export function WhatsAppFloat({ onOpenLeadModal }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,7 +11,20 @@ export function WhatsAppFloat({ onOpenLeadModal }) {
   const defaultMessage = encodeURIComponent(
     "Hello MH GLOBAL EDUCATION CONSULTANT, I would like guidance regarding MBBS Admission in Uzbekistan (2026-2027 intake)."
   );
-  const whatsappUrl = `https://wa.me/919876543210?text=${defaultMessage}`;
+  
+  const isWaPlaceholder = !siteConfig.whatsappNumber || siteConfig.whatsappNumber.startsWith("TODO_REPLACE");
+  const whatsappUrl = isWaPlaceholder
+    ? "#"
+    : `https://wa.me/${siteConfig.whatsappNumber}?text=${defaultMessage}`;
+
+  const handleWhatsAppClick = (e) => {
+    track("whatsapp_click", { location: "whatsapp_float" });
+    if (isWaPlaceholder) {
+      e.preventDefault();
+      setIsOpen(false);
+      if (onOpenLeadModal) onOpenLeadModal("WhatsApp Widget (Direct Helpline)");
+    }
+  };
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3 font-sans">
@@ -36,8 +51,9 @@ export function WhatsAppFloat({ onOpenLeadModal }) {
           <div className="space-y-2 pt-1">
             <a
               href={whatsappUrl}
-              target="_blank"
+              target={isWaPlaceholder ? "_self" : "_blank"}
               rel="noopener noreferrer"
+              onClick={handleWhatsAppClick}
               className="w-full flex items-center justify-center gap-2 bg-[#063280] hover:bg-[#1558A9] text-white font-medium py-2.5 px-4 rounded-xl text-xs transition-colors shadow-sm"
             >
               <MessageCircle className="w-4 h-4 text-emerald-300" />
@@ -96,14 +112,28 @@ export function LeadCaptureModal({ isOpen, onClose, initialTitle = "Book Free MB
     e.preventDefault();
     setIsSubmitting(true);
 
+    const sourcePath = typeof window !== "undefined" ? window.location.pathname : "";
+
     const leadPayload = {
       ...formData,
       state: formData.city,
       source: initialTitle,
-      sourcePage: window.location.pathname,
+      sourcePage: sourcePath,
       budgetRange: formData.budget,
       initialNote: formData.message
     };
+
+    // Track analytics event for lead generation
+    track("lead_form_submitted", {
+      form_name: initialTitle,
+      source_page: sourcePath,
+      preferred_university: formData.preferredUniversity,
+      budget: formData.budget
+    });
+    track("generate_lead", {
+      value: formData.budget,
+      currency: "INR"
+    });
 
     // Submit directly to Google Sheet Webhook & mirror in CRM
     await submitToGoogleSheet(leadPayload);

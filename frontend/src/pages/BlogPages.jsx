@@ -16,6 +16,7 @@ import {
   Sparkles
 } from "lucide-react";
 import { DisclaimerBanner } from "../components/common/SourceBadge";
+import { siteConfig } from "../config/site";
 
 export function BlogPage() {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -31,7 +32,7 @@ export function BlogPage() {
       <SEOHead
         title="Uzbekistan MBBS Knowledge Hub & Blog | NMC Guidelines, Fees & Rankings | MH GLOBAL EDUCATION CONSULTANT"
         description="Expert medical education articles, NMC FMGL regulations, NExT exam roadmaps, living costs, and verified university reviews for Indian medical students."
-        canonicalUrl="https://mhmedicalglobal.com/blog"
+        canonicalUrl={`${siteConfig.siteUrl}/blog`}
       />
 
       <section className="bg-linear-to-b from-[#063280] to-[#1558A9] text-white py-12 px-4 sm:px-6 lg:px-8">
@@ -161,7 +162,7 @@ export function BlogPostPage({ onOpenLeadModal }) {
       "name": "MH GLOBAL EDUCATION CONSULTANT",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://mhmedicalglobal.com/logo.png"
+        "url": `${siteConfig.siteUrl}/mh-medical-logo.webp`
       }
     },
     "datePublished": post.publishDate,
@@ -173,7 +174,7 @@ export function BlogPostPage({ onOpenLeadModal }) {
       <SEOHead
         title={`${post.title} | MH GLOBAL EDUCATION CONSULTANT Insights`}
         description={post.excerpt}
-        canonicalUrl={`https://mhmedicalglobal.com/blog/${post.slug}`}
+        canonicalUrl={`${siteConfig.siteUrl}/blog/${post.slug}`}
         schema={articleSchema}
       />
 
@@ -209,13 +210,32 @@ export function BlogPostPage({ onOpenLeadModal }) {
 
         {/* Featured Image */}
         <div className="rounded-3xl overflow-hidden shadow-md max-h-96">
-          <img src={post.featuredImage} alt={post.title} className="w-full h-full object-cover" />
+          <img src={post.featuredImage} alt={post.title} loading="lazy" decoding="async" className="w-full h-full object-cover" />
         </div>
 
         {/* Article Body */}
         <div className="bg-white p-8 sm:p-10 rounded-3xl border border-slate-200/80 shadow-xs prose prose-slate max-w-none text-xs sm:text-sm leading-relaxed space-y-4">
           <div className="whitespace-pre-line">
             {post.content}
+          </div>
+        </div>
+
+        {/* Contextual Internal Links */}
+        <div className="bg-[#EBF3FA] p-6 rounded-3xl border border-[#D9E2EC] space-y-3 text-xs">
+          <h4 className="font-extrabold text-sm text-[#063280]">Helpful Next Steps & Resources:</h4>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <Link to="/mbbs-fee-calculator" className="p-3 bg-white rounded-xl border border-[#D9E2EC] font-bold text-[#063280] hover:text-[#1558A9] flex items-center justify-between">
+              <span>Calculate 6-Yr Budget</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+            <Link to="/universities/uzbekistan/tashkent-medical-academy" className="p-3 bg-white rounded-xl border border-[#D9E2EC] font-bold text-[#063280] hover:text-[#1558A9] flex items-center justify-between">
+              <span>TMA Fee Structure</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+            <Link to="/universities/uzbekistan/samarkand-state-medical-university" className="p-3 bg-white rounded-xl border border-[#D9E2EC] font-bold text-[#063280] hover:text-[#1558A9] flex items-center justify-between">
+              <span>SSMU Admission Guide</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
           </div>
         </div>
 

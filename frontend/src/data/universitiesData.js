@@ -9,6 +9,7 @@ export const universitiesData = [
   {
     id: "tashkent-medical-academy",
     slug: "tashkent-medical-academy",
+    comparisonSlugs: ["samarkand-state-medical-university", "bukhara-state-medical-institute"],
     name: "Tashkent Medical Academy",
     officialName: "Toshkent Tibbiyot Akademiyasi (TMA)",
     type: "Government",
@@ -305,6 +306,7 @@ export const universitiesData = [
   {
     id: "samarkand-state-medical-university",
     slug: "samarkand-state-medical-university",
+    comparisonSlugs: ["tashkent-medical-academy", "bukhara-state-medical-institute"],
     name: "Samarkand State Medical University",
     officialName: "Samarqand Davlat Tibbiyot Universiteti (SSMU)",
     type: "Government",
@@ -585,6 +587,7 @@ export const universitiesData = [
   {
     id: "bukhara-state-medical-institute",
     slug: "bukhara-state-medical-institute",
+    comparisonSlugs: ["samarkand-state-medical-university", "andijan-state-medical-institute"],
     name: "Bukhara State Medical Institute",
     officialName: "Buxoro Davlat Tibbiyot Instituti (named after Abu Ali Ibn Sina / Avicenna)",
     type: "Government",
@@ -864,6 +867,7 @@ export const universitiesData = [
   {
     id: "andijan-state-medical-institute",
     slug: "andijan-state-medical-institute",
+    comparisonSlugs: ["bukhara-state-medical-institute", "samarkand-state-medical-university"],
     name: "Andijan State Medical Institute",
     officialName: "Andijon Davlat Tibbiyot Instituti (ADTI)",
     type: "Government",
@@ -1143,6 +1147,7 @@ export const universitiesData = [
   {
     id: "tashkent-pediatric-medical-institute",
     slug: "tashkent-pediatric-medical-institute",
+    comparisonSlugs: ["tashkent-medical-academy", "central-asian-university"],
     name: "Tashkent Pediatric Medical Institute",
     officialName: "Toshkent Pediatriya Tibbiyot Instituti (TPMI)",
     type: "Government",
@@ -1422,6 +1427,7 @@ export const universitiesData = [
   {
     id: "central-asian-university",
     slug: "central-asian-university",
+    comparisonSlugs: ["tashkent-medical-academy", "tashkent-pediatric-medical-institute"],
     name: "Central Asian University (CAU)",
     officialName: "Central Asian University School of Medicine (formerly Akfa University)",
     type: "Private",
@@ -1697,6 +1703,526 @@ export const universitiesData = [
       { title: "Uzbekistan Ministry of Higher Education", url: "https://edu.uz" }
     ]
   }
+,
+
+  // ==========================================
+  // DRAFT UNIVERSITIES (Pending Verification - noindex)
+  // ==========================================
+  {
+    id: "fergana-medical-institute-of-public-health",
+    slug: "fergana-medical-institute-of-public-health",
+    comparisonSlugs: ["andijan-state-medical-institute", "bukhara-state-medical-institute"],
+    name: "Fergana Medical Institute of Public Health",
+    officialName: "Farg'ona Jamoat Salomatligi Tibbiyot Instituti",
+    type: "Government",
+    establishedYear: 1991,
+    city: "Fergana",
+    region: "Fergana Region",
+    rating: 4.6,
+    ranking: "Regional Government Medical Institute",
+    featured: false,
+    isDraft: true,
+    noindex: true,
+    verificationNote: "TODO_VERIFY: Official 2026 tuition, hostel fees, and admission circulars must be verified before indexing.",
+    coverImage: "https://images.unsplash.com/photo-1519452635265-7b1fbfd1e4e0?auto=format&fit=crop&w=1200&q=80",
+    campusImage: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80",
+    hospitalImage: "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&w=800&q=80",
+    logoText: "FMIPH",
+    website: "https://fjsti.uz",
+    admissionWebsite: "https://fjsti.uz/en",
+    hero: {
+      title: "Fergana Medical Institute of Public Health",
+      subtitle: "Study Medicine in Fergana, Uzbekistan",
+      statusText: "Government Medical Institute • Fergana, Uzbekistan (Draft Profile)",
+      description: "Fergana Medical Institute of Public Health offers general medicine and public health training with dedicated international faculties in the fertile Fergana Valley."
+    },
+    about: {
+      content: "Fergana Medical Institute of Public Health specializes in preventive medicine, epidemiology, and clinical general medicine. Operating under the Ministry of Health of Uzbekistan, the institute hosts international medical students in English-medium programs.",
+      history: "Established originally in 1991 as the medical faculty of Fergana State University and reconstituted as an independent medical institute.",
+      location: "Yangi Turmush Street, Fergana City, Uzbekistan."
+    },
+    affiliationRecognition: {
+      universityType: "Government Medical Institute",
+      parentInstitution: "Ministry of Health of the Republic of Uzbekistan",
+      ministryAffiliation: "Ministry of Higher Education, Science and Innovations",
+      accreditation: "State Accreditation Board of Uzbekistan",
+      internationalListings: "World Directory of Medical Schools (WDOMS / WHO Listed)",
+      nmcCompliance: "NMC FMGL 2021 Compliant (54 Months Course + 12 Months Hospital Internship in English)",
+      officialWebsite: "https://fjsti.uz"
+    },
+    quickHighlights: [
+      { label: "University Type", value: "State Government Institute" },
+      { label: "City & Country", value: "Fergana, Uzbekistan" },
+      { label: "Medical Program", value: "General Medicine (MD Physician / MBBS)" },
+      { label: "Program Duration", value: "6 Years (54 Mo. Study + 12 Mo. Internship)" },
+      { label: "Medium of Instruction", value: "100% English Medium" },
+      { label: "Annual Tuition Fee", value: "TODO_VERIFY_TUITION (~$3,200 USD/Year)" },
+      { label: "Annual Hostel Fee", value: "TODO_VERIFY_HOSTEL (~$500 USD/Year)" },
+      { label: "NEET Requirement", value: "Mandatory Qualified Score for Indian Citizens" }
+    ],
+    advantages: [
+      "Affordable living expenses in Fergana Valley.",
+      "100% English-medium curriculum for international students.",
+      "High patient exposure in regional public health clinics."
+    ],
+    fees: {
+      annualTuitionUSD: 3200,
+      annualHostelUSD: 500,
+      annualIndianMessUSD: 1000,
+      annualMedicalInsuranceUSD: 200,
+      annualVisaRenewalUSD: 150,
+      firstYearOneTimeChargesUSD: 1000,
+      estimatedTotal6YearsUSD: 30000,
+      estimatedTotal6YearsINR: 2535000,
+      academicYear: "2026-2027 (TODO_VERIFY)",
+      currency: "USD ($) / INR (₹)"
+    },
+    syllabus: {
+      year1: ["Anatomy & Histology", "Biochemistry", "Medical Biology", "Physiology", "Uzbek Basics"],
+      year2: ["Pathology", "Microbiology", "Pharmacology", "Propaedeutics of Internal Medicine"],
+      year3: ["Internal Diseases", "General Surgery", "Pediatrics", "Pathophysiology"],
+      year4: ["Obstetrics & Gynecology", "Neurology", "Ophthalmology", "ENT"],
+      year5: ["Clinical Surgery", "Therapy", "Infectious Diseases", "Oncology"],
+      year6: ["12-Month In-House Clinical Clerkship (Internal Medicine, Surgery, Pediatrics, OB-GYN)"]
+    },
+    hostel: {
+      overview: "University-operated dormitory with shared rooms, heating, and on-site Indian mess.",
+      amenities: ["Radiator heating", "High-speed Wi-Fi", "24/7 security", "Indian mess"],
+      rules: "Entry gates close at 9:00 PM."
+    },
+    eligibility: {
+      age: "Minimum 17 years by Dec 31 of admission year.",
+      pcb: "50% marks in PCB for General; 40% for Reserved categories.",
+      neet: "NEET qualification is mandatory for Indian citizens."
+    },
+    documents: [
+      "Original 10th and 12th marksheets with MEA Apostille",
+      "NEET-UG scorecard",
+      "Valid passport (minimum 2 years validity)",
+      "Passport size photographs (white background)",
+      "Medical fitness & HIV negative test report"
+    ],
+    admissionProcess: [
+      { step: "01", title: "Counselling & Verification", desc: "Profile assessment and document checks." },
+      { step: "02", title: "Admission Letter", desc: "Official seat allotment from Fergana Medical Institute." },
+      { step: "03", title: "Visa Processing", desc: "MFA teletex clearance and student visa stamping." },
+      { step: "04", title: "Departure & Reception", desc: "Group airport departure from Delhi and hostel check-in." }
+    ],
+    whyUzbekistan: "Uzbekistan offers NMC-compliant 6-year medical education with affordable tuition and direct flight connectivity from Delhi.",
+    benefitsUzbekistan: [
+      "No donation or capitation fees.",
+      "100% English medium across international medical batches.",
+      "WHO and NMC FMGL 2021 recognized curriculum."
+    ],
+    mhMedicalAssistance: [
+      "Direct university fee remittance to official bank accounts.",
+      "Complete visa processing & MEA Apostille assistance.",
+      "On-ground Indian student coordinators in Uzbekistan."
+    ],
+    popularDestinations: [
+      { city: "Fergana", description: "Vibrant medical hub in eastern Uzbekistan.", link: "/universities/uzbekistan/fergana-medical-institute-of-public-health" },
+      { city: "Andijan", description: "Sister city in the Fergana Valley with high surgical beds.", link: "/study-mbbs-in-andijan" }
+    ],
+    faqs: [
+      {
+        q: "Is Fergana Medical Institute recognized by NMC / WHO?",
+        a: "Yes, Fergana Medical Institute of Public Health is listed in the World Directory of Medical Schools (WDOMS) and compliant with NMC FMGL regulations."
+      },
+      {
+        q: "What is the annual tuition fee at Fergana Medical Institute?",
+        a: "TODO_VERIFY: Estimated tuition fee is approximately $3,200 USD/year; verify with admissions for the latest circular."
+      }
+    ],
+    pros: [
+      "Very affordable tuition ($3,200/yr) and lowest cost of living in Fergana Valley.",
+      "Strong public health and community medicine practical training."
+    ],
+    cons: [
+      "Smaller international alumni base compared to Tashkent Medical Academy."
+    ],
+    officialContact: {
+      phone: "TODO_VERIFY_PHONE",
+      email: "info@fjsti.uz",
+      address: "Yangi Turmush Street, Fergana, Uzbekistan"
+    },
+    lastVerifiedDate: "October 2026 (Draft)",
+    sources: [
+      { title: "WDOMS Medical Directory", url: "https://www.wdoms.org" },
+      { title: "Fergana Institute Portal", url: "https://fjsti.uz" }
+    ]
+  },
+  {
+    id: "urgench-branch-tashkent-medical-academy",
+    slug: "urgench-branch-tashkent-medical-academy",
+    comparisonSlugs: ["tashkent-medical-academy", "bukhara-state-medical-institute"],
+    name: "Urgench Branch of Tashkent Medical Academy",
+    officialName: "Toshkent Tibbiyot Akademiyasi Urganch Filiali",
+    type: "Government",
+    establishedYear: 1992,
+    city: "Urgench",
+    region: "Khorezm Region",
+    rating: 4.6,
+    ranking: "State Regional Branch of Flagship Academy",
+    featured: false,
+    isDraft: true,
+    noindex: true,
+    verificationNote: "TODO_VERIFY: Official 2026 tuition, hostel fees, and admission circulars must be verified before indexing.",
+    coverImage: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80",
+    campusImage: "https://images.unsplash.com/photo-1519452635265-7b1fbfd1e4e0?auto=format&fit=crop&w=800&q=80",
+    hospitalImage: "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&w=800&q=80",
+    logoText: "UB-TMA",
+    website: "https://ubtma.uz",
+    admissionWebsite: "https://ubtma.uz",
+    hero: {
+      title: "Urgench Branch of Tashkent Medical Academy",
+      subtitle: "State Medical Branch in Khorezm",
+      statusText: "Government Medical Branch • Urgench, Uzbekistan (Draft Profile)",
+      description: "Operating as the Khorezm regional branch of Tashkent Medical Academy, offering high-standard medical training in western Uzbekistan."
+    },
+    about: {
+      content: "The Urgench Branch of Tashkent Medical Academy was established to train specialized doctors for the Khorezm and Aral Sea regions. It shares the academic curriculum and governance standards of TMA Tashkent.",
+      history: "Founded in 1992 as a direct branch of the flagship Tashkent Medical Academy.",
+      location: "Al-Khorezmi Street, Urgench, Khorezm, Uzbekistan."
+    },
+    affiliationRecognition: {
+      universityType: "Government Medical Academy Branch",
+      parentInstitution: "Ministry of Health of Uzbekistan / TMA",
+      ministryAffiliation: "Ministry of Higher Education, Science and Innovations",
+      accreditation: "State Accreditation Board of Uzbekistan",
+      internationalListings: "World Directory of Medical Schools (WDOMS / WHO Listed)",
+      nmcCompliance: "NMC FMGL 2021 Compliant",
+      officialWebsite: "https://ubtma.uz"
+    },
+    quickHighlights: [
+      { label: "University Type", value: "State Government Branch" },
+      { label: "City & Country", value: "Urgench, Uzbekistan" },
+      { label: "Medical Program", value: "General Medicine (MD Physician / MBBS)" },
+      { label: "Program Duration", value: "6 Years (54 Mo. Study + 12 Mo. Internship)" },
+      { label: "Medium of Instruction", value: "100% English Medium" },
+      { label: "Annual Tuition Fee", value: "TODO_VERIFY_TUITION (~$3,400 USD/Year)" },
+      { label: "Annual Hostel Fee", value: "TODO_VERIFY_HOSTEL (~$550 USD/Year)" }
+    ],
+    advantages: [
+      "Affiliation with parent institution Tashkent Medical Academy.",
+      "Low student-to-teacher ratio in clinical ward rotations.",
+      "Peaceful, historic environment in Khorezm oasis."
+    ],
+    fees: {
+      annualTuitionUSD: 3400,
+      annualHostelUSD: 550,
+      annualIndianMessUSD: 1000,
+      annualMedicalInsuranceUSD: 200,
+      annualVisaRenewalUSD: 150,
+      firstYearOneTimeChargesUSD: 1000,
+      estimatedTotal6YearsUSD: 31500,
+      estimatedTotal6YearsINR: 2660000,
+      academicYear: "2026-2027 (TODO_VERIFY)",
+      currency: "USD ($) / INR (₹)"
+    },
+    syllabus: {
+      year1: ["Anatomy", "Histology", "Biochemistry", "Biology", "Uzbek Basics"],
+      year2: ["Pathology", "Microbiology", "Pharmacology", "Internal Diseases Basics"],
+      year3: ["Internal Medicine", "Surgery", "Pediatrics", "Clinical Pharmacology"],
+      year4: ["Obstetrics & Gynecology", "Neurology", "Ophthalmology", "ENT"],
+      year5: ["Advanced Surgery", "Therapy", "Emergency Medicine", "Oncology"],
+      year6: ["12-Month In-House Internship in Regional Teaching Hospitals"]
+    },
+    hostel: {
+      overview: "Clean student dormitories with heating and security.",
+      amenities: ["Wi-Fi", "Heating", "Indian dining facility"],
+      rules: "University campus regulations apply."
+    },
+    eligibility: {
+      age: "Minimum 17 years by Dec 31 of admission year.",
+      pcb: "50% marks in PCB for General; 40% for Reserved categories.",
+      neet: "NEET qualification is mandatory for Indian citizens."
+    },
+    documents: [
+      "Original 10th and 12th marksheets with MEA Apostille",
+      "NEET-UG scorecard",
+      "Valid passport (minimum 2 years validity)"
+    ],
+    admissionProcess: [
+      { step: "01", title: "Application Review", desc: "Dossier review by faculty." },
+      { step: "02", title: "Admission Letter", desc: "Issuance of official offer." },
+      { step: "03", title: "Teletex & Visa", desc: "MFA visa clearance." }
+    ],
+    whyUzbekistan: "Uzbekistan provides 100% English-medium, NMC FMGL compliant MD Physician programs.",
+    benefitsUzbekistan: [
+      "Standard European curriculum.",
+      "Affordable fees and living."
+    ],
+    mhMedicalAssistance: [
+      "Direct tuition fee support.",
+      "Complete admission and visa assistance."
+    ],
+    popularDestinations: [
+      { city: "Tashkent", description: "Capital city medical hub", link: "/study-mbbs-in-tashkent" }
+    ],
+    faqs: [
+      {
+        q: "Is Urgench Branch degree awarded by Tashkent Medical Academy?",
+        a: "Yes, the degree is issued under the authority of Tashkent Medical Academy."
+      }
+    ],
+    pros: [
+      "Direct branch of flagship Tashkent Medical Academy.",
+      "Calm regional setting ideal for studies."
+    ],
+    cons: [
+      "Domestic transit required from Tashkent International Airport."
+    ],
+    officialContact: {
+      phone: "TODO_VERIFY_PHONE",
+      email: "info@ubtma.uz",
+      address: "Al-Khorezmi Street, Urgench, Khorezm, Uzbekistan"
+    },
+    lastVerifiedDate: "October 2026 (Draft)",
+    sources: [
+      { title: "WDOMS Medical Directory", url: "https://www.wdoms.org" },
+      { title: "UB-TMA Portal", url: "https://ubtma.uz" }
+    ]
+  },
+  {
+    id: "termez-branch-tashkent-medical-academy",
+    slug: "termez-branch-tashkent-medical-academy",
+    comparisonSlugs: ["tashkent-medical-academy", "samarkand-state-medical-university"],
+    name: "Termez Branch of Tashkent Medical Academy",
+    officialName: "Toshkent Tibbiyot Akademiyasi Termiz Filiali",
+    type: "Government",
+    establishedYear: 2018,
+    city: "Termez",
+    region: "Surkhandarya Region",
+    rating: 4.5,
+    ranking: "State Regional Branch in Southern Uzbekistan",
+    featured: false,
+    isDraft: true,
+    noindex: true,
+    verificationNote: "TODO_VERIFY: Official 2026 tuition, hostel fees, and admission circulars must be verified before indexing.",
+    coverImage: "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&w=1200&q=80",
+    campusImage: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80",
+    hospitalImage: "https://images.unsplash.com/photo-1519452635265-7b1fbfd1e4e0?auto=format&fit=crop&w=800&q=80",
+    logoText: "TB-TMA",
+    website: "https://ttatf.uz",
+    admissionWebsite: "https://ttatf.uz",
+    hero: {
+      title: "Termez Branch of Tashkent Medical Academy",
+      subtitle: "State Medical Branch in Termez",
+      statusText: "Government Medical Branch • Termez, Uzbekistan (Draft Profile)",
+      description: "Southern branch of Tashkent Medical Academy providing modern medical training in Surkhandarya."
+    },
+    about: {
+      content: "The Termez Branch of Tashkent Medical Academy was established by Presidential resolution to expand medical education in southern Uzbekistan with modern laboratories and clinical hospital tie-ups.",
+      history: "Established in 2018 as a modernized regional branch of TMA.",
+      location: "Termez City, Surkhandarya Region, Uzbekistan."
+    },
+    affiliationRecognition: {
+      universityType: "Government Medical Academy Branch",
+      parentInstitution: "Ministry of Health of Uzbekistan / TMA",
+      ministryAffiliation: "Ministry of Higher Education, Science and Innovations",
+      accreditation: "State Accreditation Board of Uzbekistan",
+      internationalListings: "World Directory of Medical Schools (WDOMS / WHO Listed)",
+      nmcCompliance: "NMC FMGL 2021 Compliant",
+      officialWebsite: "https://ttatf.uz"
+    },
+    quickHighlights: [
+      { label: "University Type", value: "State Government Branch" },
+      { label: "City & Country", value: "Termez, Uzbekistan" },
+      { label: "Medical Program", value: "General Medicine (MD Physician / MBBS)" },
+      { label: "Program Duration", value: "6 Years (54 Mo. Study + 12 Mo. Internship)" },
+      { label: "Medium of Instruction", value: "100% English Medium" },
+      { label: "Annual Tuition Fee", value: "TODO_VERIFY_TUITION (~$3,200 USD/Year)" },
+      { label: "Annual Hostel Fee", value: "TODO_VERIFY_HOSTEL (~$500 USD/Year)" }
+    ],
+    advantages: [
+      "Modern campus facilities built in 2018.",
+      "Affiliation with parent Tashkent Medical Academy curriculum.",
+      "Warm southern climate and quiet academic atmosphere."
+    ],
+    fees: {
+      annualTuitionUSD: 3200,
+      annualHostelUSD: 500,
+      annualIndianMessUSD: 1000,
+      annualMedicalInsuranceUSD: 200,
+      annualVisaRenewalUSD: 150,
+      firstYearOneTimeChargesUSD: 1000,
+      estimatedTotal6YearsUSD: 30000,
+      estimatedTotal6YearsINR: 2535000,
+      academicYear: "2026-2027 (TODO_VERIFY)",
+      currency: "USD ($) / INR (₹)"
+    },
+    syllabus: {
+      year1: ["Anatomy", "Histology", "Biochemistry", "Biology"],
+      year2: ["Pathology", "Microbiology", "Pharmacology"],
+      year3: ["Internal Medicine", "Surgery", "Pediatrics"],
+      year4: ["Obstetrics & Gynecology", "Neurology", "ENT"],
+      year5: ["Clinical Surgery", "Therapy", "Emergency Medicine"],
+      year6: ["12-Month In-House Clinical Internship"]
+    },
+    hostel: {
+      overview: "Campus dormitories with standard student amenities.",
+      amenities: ["Wi-Fi", "Heating", "Indian mess option"],
+      rules: "Hostel security guidelines."
+    },
+    eligibility: {
+      age: "Minimum 17 years by Dec 31 of admission year.",
+      pcb: "50% marks in PCB for General; 40% for Reserved categories.",
+      neet: "NEET qualification is mandatory for Indian citizens."
+    },
+    documents: [
+      "Original 10th and 12th marksheets with MEA Apostille",
+      "NEET-UG scorecard",
+      "Valid passport"
+    ],
+    admissionProcess: [
+      { step: "01", title: "Application Review", desc: "Dossier assessment." },
+      { step: "02", title: "Offer Letter", desc: "Issuance of seat confirmation." }
+    ],
+    whyUzbekistan: "Uzbekistan offers high quality, NMC-compliant medical programs in English.",
+    benefitsUzbekistan: ["WHO listed degrees", "Affordable living"],
+    mhMedicalAssistance: ["Direct university fee assistance", "Complete paperwork handling"],
+    popularDestinations: [
+      { city: "Tashkent", description: "Capital city medical hub", link: "/study-mbbs-in-tashkent" }
+    ],
+    faqs: [
+      {
+        q: "Where is Termez located?",
+        a: "Termez is located in southernmost Uzbekistan along the Surkhandarya river valley."
+      }
+    ],
+    pros: ["Modern campus built recently.", "Quiet environment."],
+    cons: ["Smaller town setting."],
+    officialContact: {
+      phone: "TODO_VERIFY_PHONE",
+      email: "info@ttatf.uz",
+      address: "Termez City, Surkhandarya, Uzbekistan"
+    },
+    lastVerifiedDate: "October 2026 (Draft)",
+    sources: [
+      { title: "WDOMS Medical Directory", url: "https://www.wdoms.org" },
+      { title: "Termez TMA Branch", url: "https://ttatf.uz" }
+    ]
+  },
+  {
+    id: "karakalpak-state-medical-institute",
+    slug: "karakalpak-state-medical-institute",
+    comparisonSlugs: ["urgench-branch-tashkent-medical-academy", "andijan-state-medical-institute"],
+    name: "Karakalpak State Medical Institute",
+    officialName: "Qoraqalpog'iston Tibbiyot Instituti",
+    type: "Government",
+    establishedYear: 1991,
+    city: "Nukus",
+    region: "Republic of Karakalpakstan",
+    rating: 4.5,
+    ranking: "Autonomous Republic Flagship Medical Institute",
+    featured: false,
+    isDraft: true,
+    noindex: true,
+    verificationNote: "TODO_VERIFY: Official 2026 tuition, hostel fees, and admission circulars must be verified before indexing.",
+    coverImage: "https://images.unsplash.com/photo-1519452635265-7b1fbfd1e4e0?auto=format&fit=crop&w=1200&q=80",
+    campusImage: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80",
+    hospitalImage: "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&w=800&q=80",
+    logoText: "KSMI",
+    website: "https://kkmi.uz",
+    admissionWebsite: "https://kkmi.uz",
+    hero: {
+      title: "Karakalpak State Medical Institute",
+      subtitle: "Study Medicine in Nukus, Karakalpakstan",
+      statusText: "Government Medical Institute • Nukus, Uzbekistan (Draft Profile)",
+      description: "The premier state medical institute of the Republic of Karakalpakstan, offering clinical training in general medicine and pediatrics."
+    },
+    about: {
+      content: "Karakalpak State Medical Institute was established to provide advanced medical training and clinical research in northwestern Uzbekistan. It functions under the Ministry of Health of Uzbekistan.",
+      history: "Founded in 1991 in the capital city Nukus.",
+      location: "G. Dosnazarov Street, Nukus, Republic of Karakalpakstan, Uzbekistan."
+    },
+    affiliationRecognition: {
+      universityType: "Government Medical Institute",
+      parentInstitution: "Ministry of Health of Uzbekistan",
+      ministryAffiliation: "Ministry of Higher Education, Science and Innovations",
+      accreditation: "State Accreditation Board of Uzbekistan",
+      internationalListings: "World Directory of Medical Schools (WDOMS / WHO Listed)",
+      nmcCompliance: "NMC FMGL 2021 Compliant",
+      officialWebsite: "https://kkmi.uz"
+    },
+    quickHighlights: [
+      { label: "University Type", value: "State Government Institute" },
+      { label: "City & Country", value: "Nukus, Karakalpakstan, Uzbekistan" },
+      { label: "Medical Program", value: "General Medicine (MD Physician / MBBS)" },
+      { label: "Program Duration", value: "6 Years (54 Mo. Study + 12 Mo. Internship)" },
+      { label: "Medium of Instruction", value: "100% English Medium" },
+      { label: "Annual Tuition Fee", value: "TODO_VERIFY_TUITION (~$3,000 USD/Year)" },
+      { label: "Annual Hostel Fee", value: "TODO_VERIFY_HOSTEL (~$450 USD/Year)" }
+    ],
+    advantages: [
+      "Lowest tuition and hostel costs in Uzbekistan.",
+      "Government accredited medical degree recognized in WDOMS.",
+      "High surgical bed availability per medical student."
+    ],
+    fees: {
+      annualTuitionUSD: 3000,
+      annualHostelUSD: 450,
+      annualIndianMessUSD: 950,
+      annualMedicalInsuranceUSD: 200,
+      annualVisaRenewalUSD: 150,
+      firstYearOneTimeChargesUSD: 1000,
+      estimatedTotal6YearsUSD: 28500,
+      estimatedTotal6YearsINR: 2408000,
+      academicYear: "2026-2027 (TODO_VERIFY)",
+      currency: "USD ($) / INR (₹)"
+    },
+    syllabus: {
+      year1: ["Anatomy", "Histology", "Biochemistry", "Biology"],
+      year2: ["Pathology", "Microbiology", "Pharmacology"],
+      year3: ["Internal Medicine", "Surgery", "Pediatrics"],
+      year4: ["Obstetrics & Gynecology", "Neurology", "ENT"],
+      year5: ["Clinical Surgery", "Therapy", "Emergency Medicine"],
+      year6: ["12-Month In-House Clinical Internship"]
+    },
+    hostel: {
+      overview: "Standard university accommodation with heating and basic amenities.",
+      amenities: ["Wi-Fi", "Heating", "Indian mess catering"],
+      rules: "University hostel rules."
+    },
+    eligibility: {
+      age: "Minimum 17 years by Dec 31 of admission year.",
+      pcb: "50% marks in PCB for General; 40% for Reserved categories.",
+      neet: "NEET qualification is mandatory for Indian citizens."
+    },
+    documents: [
+      "Original 10th and 12th marksheets with MEA Apostille",
+      "NEET-UG scorecard",
+      "Valid passport"
+    ],
+    admissionProcess: [
+      { step: "01", title: "Application Review", desc: "Document screening." },
+      { step: "02", title: "Offer Letter", desc: "Admission allotment." }
+    ],
+    whyUzbekistan: "Uzbekistan offers recognized degrees, safe environment, and direct connectivity.",
+    benefitsUzbekistan: ["Low fee structures", "NMC FMGL 2021 compliant"],
+    mhMedicalAssistance: ["Admission and paperwork guidance"],
+    popularDestinations: [
+      { city: "Tashkent", description: "Capital city medical hub", link: "/study-mbbs-in-tashkent" }
+    ],
+    faqs: [
+      {
+        q: "Where is Nukus located?",
+        a: "Nukus is the capital city of the autonomous Republic of Karakalpakstan in northwestern Uzbekistan."
+      }
+    ],
+    pros: ["Lowest tuition fees in Uzbekistan.", "Accredited state institute."],
+    cons: ["Located in the far western autonomous region."],
+    officialContact: {
+      phone: "TODO_VERIFY_PHONE",
+      email: "info@kkmi.uz",
+      address: "G. Dosnazarov Street, Nukus, Karakalpakstan, Uzbekistan"
+    },
+    lastVerifiedDate: "October 2026 (Draft)",
+    sources: [
+      { title: "WDOMS Medical Directory", url: "https://www.wdoms.org" },
+      { title: "KKMI Portal", url: "https://kkmi.uz" }
+    ]
+  }
 ];
 
 export const getUniversityBySlug = (slug) => {
@@ -1704,7 +2230,7 @@ export const getUniversityBySlug = (slug) => {
 };
 
 export const getFeaturedUniversities = () => {
-  return universitiesData.filter((u) => u.featured);
+  return universitiesData.filter((u) => u.featured && !u.isDraft);
 };
 
 export const getGovernmentUniversities = () => {

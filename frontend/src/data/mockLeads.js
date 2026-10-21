@@ -88,9 +88,16 @@ export const initialMockLeads = [
 ];
 
 export const getStoredLeads = () => {
+  if (typeof window === "undefined" || typeof localStorage === "undefined") {
+    return initialMockLeads;
+  }
   const data = localStorage.getItem(STORAGE_KEY);
   if (!data) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(initialMockLeads));
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(initialMockLeads));
+    } catch {
+      // ignore
+    }
     return initialMockLeads;
   }
   try {
@@ -109,7 +116,13 @@ export const saveLead = (leadData) => {
     createdAt: new Date().toISOString()
   };
   const updated = [newLead, ...current];
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+  if (typeof window !== "undefined" && typeof localStorage !== "undefined") {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+    } catch {
+      // ignore
+    }
+  }
   return newLead;
 };
 
@@ -125,6 +138,12 @@ export const updateLeadStatus = (leadId, newStatus, newNotes) => {
     }
     return lead;
   });
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+  if (typeof window !== "undefined" && typeof localStorage !== "undefined") {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+    } catch {
+      // ignore
+    }
+  }
   return updated;
 };

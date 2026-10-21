@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import {
   Users,
   Search,
@@ -147,7 +148,7 @@ export function AdminDashboardPage() {
     const testLead = {
       name: "Test Aspirant (Google Sheet Sync Test)",
       phone: "+91 99999 88888",
-      email: "test.student@mhmedicalglobal.com",
+      email: "test.student@mhglobalmedical.in",
       city: "New Delhi",
       neetStatus: "Qualified",
       neetScore: 450,

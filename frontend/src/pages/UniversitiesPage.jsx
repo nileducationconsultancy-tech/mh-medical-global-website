@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import SEOHead from "../components/common/SEOHead";
 import { universitiesData, USD_TO_INR_RATE } from "../data/universitiesData";
+import { siteConfig } from "../config/site";
 
 export function UniversitiesPage({ onOpenLeadModal }) {
   const [searchQuery, setSearchQuery] = useState("");
@@ -71,7 +72,7 @@ export function UniversitiesPage({ onOpenLeadModal }) {
       <SEOHead
         title="Medical Universities in Uzbekistan 2026: List of Government & Private Medical Colleges"
         description="Comprehensive directory of Uzbekistan medical universities for Indian students. Compare tuition fees, clinical hospital beds, NMC recognition, and admission requirements."
-        canonicalUrl="https://mhglobaledu.com/universities/uzbekistan"
+        canonicalUrl={`${siteConfig.siteUrl}/universities/uzbekistan`}
       />
 
       {/* Directory Hero */}
@@ -251,6 +252,8 @@ export function UniversitiesPage({ onOpenLeadModal }) {
                       <img
                         src={uni.coverImage}
                         alt={uni.name}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute top-3 left-3 flex gap-2">

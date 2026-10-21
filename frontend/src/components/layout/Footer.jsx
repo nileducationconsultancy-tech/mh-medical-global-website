@@ -9,8 +9,11 @@ import {
   BookOpen,
   Sparkles
 } from "lucide-react";
+import { siteConfig } from "../../config/site";
 
 export function Footer({ onOpenLeadModal }) {
+  const isPhonePlaceholder = !siteConfig.phone || siteConfig.phone.startsWith("TODO_REPLACE");
+  const isIndiaOfficePlaceholder = !siteConfig.indiaOffice.streetAddress || siteConfig.indiaOffice.streetAddress.startsWith("TODO_REPLACE");
   return (
     <footer className="bg-[#041B44] text-slate-300 font-sans pt-16 pb-12 border-t border-[#0B2D64]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -166,21 +169,25 @@ export function Footer({ onOpenLeadModal }) {
             </h4>
             <div className="space-y-2.5 text-xs text-slate-300">
               <div>
-                <p className="font-semibold text-white">India Office (Admissions HQ):</p>
-                <p>Level 4, Medical Education Wing, Connaught Place, New Delhi 110001, India</p>
+                <p className="font-semibold text-white">{siteConfig.indiaOffice.name}:</p>
+                <p>
+                  {isIndiaOfficePlaceholder ? "New Delhi 110001, India" : `${siteConfig.indiaOffice.streetAddress}, ${siteConfig.indiaOffice.addressLocality} ${siteConfig.indiaOffice.postalCode}, India`}
+                </p>
               </div>
               <div>
-                <p className="font-semibold text-white">Uzbekistan Coordinator Office:</p>
-                <p>Farabi Street, Olmazor District, Tashkent 100109, Uzbekistan</p>
+                <p className="font-semibold text-white">{siteConfig.uzbekistanOffice.name}:</p>
+                <p>{siteConfig.uzbekistanOffice.streetAddress}, {siteConfig.uzbekistanOffice.addressLocality} {siteConfig.uzbekistanOffice.postalCode}, Uzbekistan</p>
               </div>
               <div className="pt-1 space-y-1">
-                <a href="tel:+919876543210" className="flex items-center gap-2 text-[#9ABAD9] hover:text-white hover:underline">
-                  <Phone className="w-3.5 h-3.5" />
-                  +91 98765 43210 / +91 98123 45678
-                </a>
-                <a href="mailto:admissions@mhglobaledu.com" className="flex items-center gap-2 text-[#9ABAD9] hover:text-white hover:underline">
+                {!isPhonePlaceholder && (
+                  <a href={`tel:${siteConfig.phone}`} className="flex items-center gap-2 text-[#9ABAD9] hover:text-white hover:underline">
+                    <Phone className="w-3.5 h-3.5" />
+                    {siteConfig.phoneDisplay}
+                  </a>
+                )}
+                <a href={`mailto:${siteConfig.email}`} className="flex items-center gap-2 text-[#9ABAD9] hover:text-white hover:underline">
                   <Mail className="w-3.5 h-3.5" />
-                  admissions@mhglobaledu.com
+                  {siteConfig.email}
                 </a>
               </div>
             </div>
@@ -199,16 +206,13 @@ export function Footer({ onOpenLeadModal }) {
 
         {/* Bottom Bar */}
         <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-          <p>© {new Date().getFullYear()} MH GLOBAL EDUCATION CONSULTANT. All Rights Reserved.</p>
+          <p>© {new Date().getFullYear()} {siteConfig.brandName}. All Rights Reserved.</p>
           <div className="flex items-center gap-4">
             <Link to="/about-us" className="hover:text-white transition-colors">
               About Us & Leadership
             </Link>
             <Link to="/contact" className="hover:text-white transition-colors">
               Contact & Grievance
-            </Link>
-            <Link to="/admin" className="hover:text-white transition-colors text-slate-400">
-              Admin CRM Login
             </Link>
           </div>
         </div>
