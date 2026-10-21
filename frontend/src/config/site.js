@@ -70,5 +70,13 @@ export const siteConfig = {
     role: "MBBS Academic Advisor & International Admissions Facilitator",
     // TODO_REPLACE: Replace with real founder portrait image path or URL
     photoUrl: "TODO_REPLACE_FOUNDER_PHOTO_URL"
+  },
+
+  // Counsellor CRM & Admin Portal Security
+  admin: {
+    username: "admin",
+    // TODO_REPLACE: Set strong counsellor dashboard password before live launch
+    password: "TODO_REPLACE_ADMIN_PASSWORD",
+    fallbackPasskey: "mhglobal@2026"
   }
 };
