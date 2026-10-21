@@ -1,0 +1,25 @@
+# https://www.mhglobalmedical.in/robots.txt
+# MH GLOBAL EDUCATION CONSULTANT Robots Directive
+
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api/
+
+# Explicit AI Search Engine & Retrieval Bots
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+Sitemap: https://www.mhglobalmedical.in/sitemap.xml
