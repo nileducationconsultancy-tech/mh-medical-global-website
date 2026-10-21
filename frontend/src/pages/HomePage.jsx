@@ -99,7 +99,7 @@ export function HomePage({ onOpenLeadModal }) {
 
       {/* 1. HERO SECTION */}
       <section className="relative overflow-hidden bg-linear-to-b from-[#063280] via-[#0E438D] to-[#1558A9] text-white pt-12 pb-20 sm:pb-28 border-b border-[#0B2D64]">
-        <BannerBackground image="/collageimages/banner-1.png" opacity="opacity-[0.14] sm:opacity-[0.18]" />
+        <BannerBackground image="/collageimages/banner-1.png" />
         <div className="absolute inset-0 bg-pattern-grid opacity-10 pointer-events-none"></div>
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-[#9ABAD9]/20 rounded-full blur-3xl pointer-events-none"></div>
         <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-[#9B193A]/15 rounded-full blur-3xl pointer-events-none"></div>

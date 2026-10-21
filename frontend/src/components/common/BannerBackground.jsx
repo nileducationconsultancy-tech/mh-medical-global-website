@@ -29,13 +29,13 @@ export function getBannerImageBySeed(seed, fallbackIndex = 0) {
 }
 
 /**
- * Subtle collage background overlay for page banners and hero headers.
- * Minimal opacity (12-16%) preserves 100% typography contrast and accessibility
- * while introducing authentic medical student and campus imagery.
+ * Prominent collage background overlay for page banners and hero headers.
+ * Increased opacity (35-45%) brings forward medical campus & student imagery
+ * while the soft navy gradient wash protects typography contrast.
  */
 export function BannerBackground({
   image = "/collageimages/banner-1.png",
-  opacity = "opacity-[0.12] sm:opacity-[0.16]",
+  opacity = "opacity-[0.35] sm:opacity-[0.45]",
   className = ""
 }) {
   return (
@@ -49,10 +49,10 @@ export function BannerBackground({
         role="presentation"
         loading="eager"
         decoding="async"
-        className={`w-full h-full object-cover object-center ${opacity} mix-blend-overlay filter contrast-125 saturate-110`}
+        className={`w-full h-full object-cover object-center ${opacity} mix-blend-overlay filter contrast-120 saturate-125`}
       />
-      {/* Soft gradient wash to guarantee contrast over text */}
-      <div className="absolute inset-0 bg-linear-to-b from-[#063280]/40 via-transparent to-[#063280]/60 pointer-events-none" />
+      {/* Soft gradient wash to guarantee contrast over text while showcasing background */}
+      <div className="absolute inset-0 bg-linear-to-b from-[#063280]/50 via-[#063280]/30 to-[#063280]/70 pointer-events-none" />
     </div>
   );
 }

@@ -187,7 +187,7 @@ export function UniversityDetailPage({ onOpenLeadModal }) {
       {/* 1. HERO SECTION */}
       {/* ========================================================================= */}
       <section className="relative overflow-hidden bg-linear-to-b from-[#063280] via-[#0E438D] to-[#1558A9] text-white pt-8 pb-14 px-4 sm:px-6 lg:px-8 border-b border-[#0B2D64]">
-        <BannerBackground image={getBannerImageBySeed(uni?.slug || "tma")} opacity="opacity-[0.14] sm:opacity-[0.18]" />
+        <BannerBackground image={getBannerImageBySeed(uni?.slug || "tma")} />
         <div className="relative max-w-7xl mx-auto space-y-6">
           {/* Draft Notice if applicable */}
           {uni.isDraft && (

@@ -77,7 +77,7 @@ export function MbbsInUzbekistanPage({ onOpenLeadModal }) {
 
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-linear-to-b from-[#063280] via-[#0E438D] to-[#1558A9] text-white py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-b border-[#0B2D64]">
-        <BannerBackground image="/collageimages/banner-2.png" opacity="opacity-[0.14] sm:opacity-[0.18]" />
+        <BannerBackground image="/collageimages/banner-2.png" />
         <div className="relative max-w-5xl mx-auto space-y-6 text-center">
           <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/10 text-[#9ABAD9] text-xs font-bold uppercase tracking-wider border border-[#9ABAD9]/30">
             <Sparkles className="w-3.5 h-3.5 text-white" />
