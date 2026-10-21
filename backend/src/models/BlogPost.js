@@ -30,11 +30,11 @@ const BlogPostSchema = new mongoose.Schema(
     author: {
       name: {
         type: String,
-        default: 'Dr. M. H. Siddiqui'
+        default: 'Dr. M. H. Akhtar'
       },
       title: {
         type: String,
-        default: 'Senior Medical Education Consultant'
+        default: 'Founder & Senior Medical Education Consultant'
       },
       avatar: String
     },

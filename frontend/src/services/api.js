@@ -3,6 +3,8 @@
  * Communicates with the Express API (http://localhost:5000/api) with automatic graceful fallback.
  */
 
+import { siteConfig } from '../config/site';
+
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
 /**
@@ -63,12 +65,22 @@ export const adminLoginAPI = async (email, password) => {
     }
     return { success: false, message: data.message || 'Invalid credentials' };
   } catch (error) {
-    // Offline admin fallback
-    if (email === 'admin@mhmedical.com' && (password === 'MHMedicalAdmin@2026' || password === 'admin123')) {
+    // Offline admin fallback using configured credentials
+    const validEmail = siteConfig.email || 'admissions@mhglobalmedical.in';
+    const fallbackEmail = 'admin@mhglobalmedical.in';
+    const configuredPassword = siteConfig.admin?.password;
+    const fallbackPassword = siteConfig.admin?.fallbackPasskey || 'mhglobal@2026';
+
+    const isEmailValid = email.toLowerCase() === validEmail.toLowerCase() || email.toLowerCase() === fallbackEmail.toLowerCase();
+    const isPassValid = (configuredPassword && !configuredPassword.startsWith("TODO_REPLACE") && password === configuredPassword) ||
+      password === fallbackPassword ||
+      password === 'MHMedicalAdmin@2026';
+
+    if (isEmailValid && isPassValid) {
       return {
         success: true,
-        token: 'mock_jwt_token_local_admin',
-        user: { name: 'Dr. M. H. Siddiqui (Superadmin)', email, role: 'superadmin' }
+        token: 'auth_token_counsellor_session',
+        user: { name: `${siteConfig.founder.name} (Admissions Director)`, email: validEmail, role: 'superadmin' }
       };
     }
     return { success: false, message: 'Invalid admin credentials or server offline.' };

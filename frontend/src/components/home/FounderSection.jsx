@@ -135,7 +135,9 @@ export function StudentTestimonials() {
       university: "Tashkent Medical Academy (TMA)",
       hometown: "Jaipur, Rajasthan",
       neetScore: "NEET 442",
-      image: "https://images.unsplash.com/photo-1594824813501-48fe75e7a3b3?auto=format&fit=crop&w=400&q=80",
+      // TODO_REPLACE_PHOTO: Real verified student photo for Dr. Ananya Sharma
+      image: null,
+      initials: "AS",
       quote: "Studying at TMA has been an extraordinary experience. The professors are very supportive, lectures are 100% in English, and the clinical postings in Tashkent Republican Hospital gave me immense surgical exposure. The Indian mess food feels just like home!"
     },
     {
@@ -153,7 +155,9 @@ export function StudentTestimonials() {
       university: "Bukhara State Medical Institute",
       hometown: "Kochi, Kerala",
       neetScore: "NEET 418",
-      image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=400&q=80",
+      // TODO_REPLACE_PHOTO: Real verified student photo for Priya Nair
+      image: null,
+      initials: "PN",
       quote: "Bukhara's brand-new 2023 campus is incredible. The hostels, labs, and 400-bed hospital are all in one secure campus. The south Indian food in mess (idli, dosa, sambar) is prepared fresh daily."
     }
   ];

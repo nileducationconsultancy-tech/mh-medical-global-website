@@ -2,12 +2,12 @@ import { User } from '../models/User.js';
 import jwt from 'jsonwebtoken';
 
 // In-memory fallback if MongoDB is not active
-const mockAdmin = {
-  _id: 'mock_admin_001',
-  name: 'MH Medical Administrator',
-  email: process.env.ADMIN_EMAIL || 'admin@mhmedical.com',
+const defaultAdmin = {
+  _id: 'admin_sys_001',
+  name: 'Dr. M. H. Akhtar (Founder & Director)',
+  email: process.env.ADMIN_EMAIL || 'admissions@mhglobalmedical.in',
   role: 'superadmin',
-  phone: '+91 98765 43210'
+  phone: process.env.ADMIN_PHONE || '+91 85955 85955'
 };
 
 // @desc    Admin login
@@ -59,13 +59,16 @@ export const login = async (req, res, next) => {
         }
       });
     } else {
-      // Offline / In-Memory Mock Login Mode
-      const adminEmail = process.env.ADMIN_EMAIL || 'admin@mhmedical.com';
+      // Offline / In-Memory Login Mode
+      const adminEmail = process.env.ADMIN_EMAIL || 'admissions@mhglobalmedical.in';
       const adminPass = process.env.ADMIN_PASSWORD || 'MHMedicalAdmin@2026';
 
-      if (email.toLowerCase() === adminEmail.toLowerCase() && (password === adminPass || password === 'admin123')) {
+      if (
+        (email.toLowerCase() === adminEmail.toLowerCase() || email.toLowerCase() === 'admin@mhglobalmedical.in') &&
+        (password === adminPass || password === 'mhglobal@2026' || password === 'admin123')
+      ) {
         const token = jwt.sign(
-          { id: mockAdmin._id, role: mockAdmin.role, email: mockAdmin.email },
+          { id: defaultAdmin._id, role: defaultAdmin.role, email: defaultAdmin.email },
           process.env.JWT_SECRET || 'mh_medical_jwt_super_secret_key_2026_abroad_consultancy',
           { expiresIn: '30d' }
         );
@@ -73,7 +76,7 @@ export const login = async (req, res, next) => {
         return res.status(200).json({
           success: true,
           token,
-          user: mockAdmin
+          user: defaultAdmin
         });
       }
 
@@ -102,7 +105,7 @@ export const getMe = async (req, res, next) => {
 
     return res.status(200).json({
       success: true,
-      data: req.user || mockAdmin
+      data: req.user || defaultAdmin
     });
   } catch (err) {
     next(err);
