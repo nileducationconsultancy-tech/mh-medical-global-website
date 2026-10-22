@@ -27,7 +27,7 @@ export function WhatsAppFloat({ onOpenLeadModal }) {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3 font-sans">
+    <div className="fixed bottom-20 sm:bottom-6 right-4 sm:right-6 z-50 flex flex-col items-end gap-3 font-sans">
       {isOpen && (
         <div className="bg-white rounded-2xl shadow-2xl border border-[#D9E2EC] p-4 w-72 sm:w-80 animate-in fade-in slide-in-from-bottom-5 duration-200">
           <div className="flex items-center justify-between pb-3 border-b border-[#D9E2EC]">

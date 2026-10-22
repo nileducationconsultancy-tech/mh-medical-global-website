@@ -132,7 +132,7 @@ export function AICounselorWidget({ onOpenLeadModal }) {
   ];
 
   return (
-    <div className="fixed bottom-6 left-6 z-50 font-sans print:hidden">
+    <div className="fixed bottom-20 sm:bottom-6 left-4 sm:left-6 z-50 font-sans print:hidden">
       {isOpen ? (
         <div className="bg-white w-80 sm:w-96 rounded-3xl shadow-2xl border border-[#D9E2EC] overflow-hidden flex flex-col h-[500px] animate-in fade-in slide-in-from-bottom-5 duration-200">
           {/* Header */}

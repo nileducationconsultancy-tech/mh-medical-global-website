@@ -23,7 +23,7 @@ export function Footer({ onOpenLeadModal }) {
             <div className="space-y-2 text-center lg:text-left">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#9B193A] text-white text-xs font-bold uppercase tracking-wider">
                 <Sparkles className="w-3.5 h-3.5" />
-                Guaranteed NMC FMGL 2021 Compliance Support
+                NMC FMGL 2021 Eligibility Guidance
               </span>
               <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
                 Begin Your Medical Career in Uzbekistan
@@ -195,24 +195,30 @@ export function Footer({ onOpenLeadModal }) {
         </div>
 
         {/* Regulatory Disclaimer Notice */}
-        <div className="mt-8 pt-6 pb-6 text-[11px] text-slate-400 leading-relaxed border-b border-[#0B2D64]">
-          <p className="font-semibold text-slate-300 mb-1">
-            Official E-E-A-T Compliance & Legal Disclaimer:
+        <div className="mt-8 pt-6 pb-6 text-[11px] text-slate-400 leading-relaxed border-b border-[#0B2D64] space-y-2">
+          <p className="font-semibold text-slate-300">
+            Official E-E-A-T Compliance, Advisory Role & Legal Disclaimer:
           </p>
           <p>
-            MH GLOBAL EDUCATION CONSULTANT operates strictly as an academic advisory and student support facilitator. We do NOT guarantee university admissions, visa grants, foreign government licenses, or Indian licensing (NExT/FMGE) examination outcomes. Medical admission is strictly subject to the student fulfilling official university entrance criteria and qualifying NEET-UG under National Medical Commission guidelines. All tuition and hostel fees are payable directly to the respective medical university as per officially published notices.
+            MH GLOBAL EDUCATION CONSULTANT operates strictly as an academic advisory and student facilitation service. We do NOT guarantee university admissions, visa grants, foreign government licenses, or Indian licensing (NExT/FMGE) examination outcomes. Medical admission is strictly subject to the student fulfilling official university entrance criteria and qualifying NEET-UG under National Medical Commission guidelines. All tuition and hostel fees are payable directly to the respective medical university as per officially published decrees.
+          </p>
+          <p className="text-[10px] text-slate-500">
+            Company Reg. (CIN): TODO_REPLACE_COMPANY_CIN • Registered Office: New Delhi, India • Advisory services subject to student documentation verification.
           </p>
         </div>
 
         {/* Bottom Bar */}
         <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <p>© {new Date().getFullYear()} {siteConfig.brandName}. All Rights Reserved.</p>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center gap-4">
             <Link to="/about-us" className="hover:text-white transition-colors">
               About Us & Leadership
             </Link>
             <Link to="/contact" className="hover:text-white transition-colors">
               Contact & Grievance
+            </Link>
+            <Link to="/privacy-policy" className="hover:text-white transition-colors">
+              Privacy Policy & Refund Terms
             </Link>
           </div>
         </div>

@@ -12,7 +12,7 @@ function findHtml(dir, fileList = []) {
     const full = path.join(dir, file);
     if (fs.statSync(full).isDirectory()) {
       findHtml(full, fileList);
-    } else if (file.endsWith('.html')) {
+    } else if (file.endsWith('.html') && !file.startsWith('google')) {
       fileList.push(full);
     }
   }

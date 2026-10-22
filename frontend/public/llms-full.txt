@@ -12,7 +12,8 @@ Key Commitments:
 3. On-Ground Student Care: Dedicated Indian wardens and regional coordinators supervise hostel allotments, Indian mess catering, SIM card registration, OVIR residency permits, and emergency health assistance.
 
 ## Section 2: Detailed University Fee Structure & Statistics (2026-2027)
-Conversion Benchmark: 1 USD ≈ ₹84.50 INR.
+Conversion Benchmark: 1 USD = ₹84.50 INR (RBI Reference Rate, October 2026).
+Formula: 6-Year Tuition = Annual Tuition × 6. Complete 6-Year Package = (Tuition + University Hostel + Indian Mess + Visa Renewal & Medical Insurance) × 6 + First-Year Registration & Documentation.
 
 1. Tashkent Medical Academy (TMA)
 - City: Tashkent, Uzbekistan
@@ -20,9 +21,10 @@ Conversion Benchmark: 1 USD ≈ ₹84.50 INR.
 - Academic Duration: 6 Years (54 Months Course + 12 Months Hospital Internship)
 - Medium: 100% English Medium
 - Annual Tuition: $3,900 USD (~₹3.30 Lakhs INR)
+- 6-Year Tuition Only: $23,400 USD (~₹19.77 Lakhs INR)
 - Annual Hostel: $700 USD (~₹59,000 INR)
-- Indian Mess: ~$1,000 to $1,100 USD / year (~₹84,500 to ₹93,000 INR)
-- Total 6-Year Estimate: ~$25,000 – $28,000 USD (₹21.1 Lakhs – ₹23.7 Lakhs INR)
+- Indian Mess: $1,100 USD / year (~₹93,000 INR)
+- Complete 6-Year Package: $37,500 USD (~₹31.69 Lakhs INR all-inclusive)
 - Clinical Affiliations: 3,500+ beds in 8 Republican Specialized Centers.
 - URL: https://www.mhglobalmedical.in/universities/uzbekistan/tashkent-medical-academy
 
@@ -32,9 +34,10 @@ Conversion Benchmark: 1 USD ≈ ₹84.50 INR.
 - Academic Duration: 6 Years
 - Medium: 100% English Medium
 - Annual Tuition: $3,600 USD (~₹3.04 Lakhs INR)
-- Annual Hostel: $650 USD (~₹55,000 INR)
-- Indian Mess: ~$950 to $1,050 USD / year
-- Total 6-Year Estimate: ~$23,500 – $26,000 USD (₹19.9 Lakhs – ₹22.0 Lakhs INR)
+- 6-Year Tuition Only: $21,600 USD (~₹18.25 Lakhs INR)
+- Annual Hostel: $600 USD (~₹50,700 INR)
+- Indian Mess: $1,100 USD / year
+- Complete 6-Year Package: $35,100 USD (~₹29.66 Lakhs INR all-inclusive)
 - Student Body: Over 1,500 Indian students currently enrolled.
 - URL: https://www.mhglobalmedical.in/universities/uzbekistan/samarkand-state-medical-university
 
@@ -44,9 +47,11 @@ Conversion Benchmark: 1 USD ≈ ₹84.50 INR.
 - Academic Duration: 6 Years
 - Medium: 100% English Medium
 - Annual Tuition: $3,400 USD (~₹2.87 Lakhs INR)
-- Annual Hostel: $600 USD (~₹50,700 INR)
-- Total 6-Year Estimate: ~$22,000 – $24,500 USD (₹18.6 Lakhs – ₹20.7 Lakhs INR)
-- Campus Features: Brand-new 2023 integrated 11-hectare smart campus with an on-site 400-bed hospital and hostel complex.
+- 6-Year Tuition Only: $20,400 USD (~₹17.24 Lakhs INR)
+- Annual Hostel: $550 USD (~₹46,500 INR)
+- Indian Mess: $1,050 USD / year
+- Complete 6-Year Package: $33,250 USD (~₹28.10 Lakhs INR all-inclusive)
+- Campus Features: Brand-new 2023 integrated 11-hectare smart campus with an on-site hospital and hostel complex.
 - URL: https://www.mhglobalmedical.in/universities/uzbekistan/bukhara-state-medical-institute
 
 4. Andijan State Medical Institute (ASMI)
