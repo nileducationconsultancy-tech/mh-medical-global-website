@@ -7,6 +7,7 @@
 import { saveLead } from "../data/mockLeads";
 
 // Default or configured Webhook URL (Can be set via .env or in /admin settings)
+const DEFAULT_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbz1VKH-FJGbHBwh4YfCkR5nabyLnPyitw2U2N9-qgPLcA9El3JPhwjFPn61ZdKVOoH0yA/exec";
 const DEFAULT_WEBHOOK_STORAGE_KEY = "mh_medical_google_sheet_webhook_url";
 
 export const getGoogleSheetWebhookUrl = () => {
@@ -15,8 +16,7 @@ export const getGoogleSheetWebhookUrl = () => {
   }
   return (
     localStorage.getItem(DEFAULT_WEBHOOK_STORAGE_KEY) ||
-    import.meta.env.VITE_GOOGLE_SHEET_WEBHOOK_URL ||
-    ""
+    import.meta.env.VITE_GOOGLE_SHEET_WEBHOOK_URL || DEFAULT_WEBHOOK_URL
   );
 };
 
