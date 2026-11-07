@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import confetti from "canvas-confetti";
 import {
   CheckCircle2,
@@ -9,12 +9,15 @@ import {
   FileCheck,
   Award,
   ArrowRight,
-  ShieldCheck
+  ShieldCheck,
+  Plane
 } from "lucide-react";
+import { submitLeadAPI } from "../../services/api";
 import { submitToGoogleSheet } from "../../services/googleSheetService";
 import { track } from "../../utils/analytics";
 
 export function EligibilityChecker({ onOpenLeadModal }) {
+  const resultRef = useRef(null);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -27,7 +30,7 @@ export function EligibilityChecker({ onOpenLeadModal }) {
     englishPass: true,
     neetStatus: "Qualified", // "Qualified", "Appearing", "Not Qualified"
     neetScore: 380,
-    hasPassport: true,
+    passportStatus: "Not created yet", // "Ready / Valid (2+ Years)", "Applied / In Process", "Not valid", "Not created yet"
     preferredCity: "Tashkent"
   });
 
@@ -42,94 +45,113 @@ export function EligibilityChecker({ onOpenLeadModal }) {
   const birthYear = new Date(formData.dob).getFullYear();
   const calculatedAgeIn2026 = 2026 - birthYear;
 
-  const handleEvaluate = (e) => {
+  const handleEvaluate = async (e) => {
     e.preventDefault();
     setIsEvaluating(true);
 
-    setTimeout(() => {
-      const isReserved = ["OBC", "SC", "ST"].includes(formData.category);
-      const minPcbRequired = isReserved ? 40 : 50;
+    const isReserved = ["OBC", "SC", "ST"].includes(formData.category);
+    const minPcbRequired = isReserved ? 40 : 50;
 
-      const pcbPassed = Number(pcbPercentage) >= minPcbRequired;
-      const agePassed = calculatedAgeIn2026 >= 17;
-      const neetPassed = formData.neetStatus === "Qualified" || formData.neetStatus === "Appearing";
-      const englishPassed = formData.englishPass;
+    const pcbPassed = Number(pcbPercentage) >= minPcbRequired;
+    const agePassed = calculatedAgeIn2026 >= 17;
+    const neetPassed = formData.neetStatus === "Qualified" || formData.neetStatus === "Appearing";
+    const englishPassed = formData.englishPass;
 
-      let status = "Eligible";
-      let reasonList = [];
+    let status = "Eligible";
+    let reasonList = [];
 
-      if (!agePassed) {
-        status = "Not Eligible";
-        reasonList.push(`Age is below 17 years by Dec 31, 2026 (NMC requirement).`);
+    if (!agePassed) {
+      status = "Not Eligible";
+      reasonList.push(`Age is below 17 years by Dec 31, 2026 (NMC requirement).`);
+    }
+
+    if (!pcbPassed) {
+      status = "Not Eligible";
+      reasonList.push(`PCB aggregate is ${pcbPercentage}%, below the required ${minPcbRequired}% for ${formData.category} category.`);
+    }
+
+    if (!englishPassed) {
+      status = "Not Eligible";
+      reasonList.push(`Must have passed English as a core subject in 10+2.`);
+    }
+
+    if (formData.neetStatus === "Not Qualified") {
+      status = "Conditional / Verification Required";
+      reasonList.push(`NEET-UG qualification is mandatory for Indian citizens as per NMC Foreign Medical Licentiate Regulations. You must appear/qualify NEET.`);
+    }
+
+    if (status === "Eligible") {
+      try {
+        confetti({
+          particleCount: 80,
+          spread: 60,
+          origin: { y: 0.6 }
+        });
+      } catch {
+        // ignore if canvas-confetti is not loaded
       }
+    }
 
-      if (!pcbPassed) {
-        status = "Not Eligible";
-        reasonList.push(`PCB aggregate is ${pcbPercentage}%, below the required ${minPcbRequired}% for ${formData.category} category.`);
-      }
+    const result = {
+      status,
+      pcbPercentage,
+      minPcbRequired,
+      age: calculatedAgeIn2026,
+      passportStatus: formData.passportStatus,
+      reasons: reasonList,
+      timestamp: new Date().toISOString()
+    };
 
-      if (!englishPassed) {
-        status = "Not Eligible";
-        reasonList.push(`Must have passed English as a core subject in 10+2.`);
-      }
+    setEvaluationResult(result);
+    setIsEvaluating(false);
 
-      if (formData.neetStatus === "Not Qualified") {
-        status = "Conditional / Verification Required";
-        reasonList.push(`NEET-UG qualification is mandatory for Indian citizens as per NMC Foreign Medical Licentiate Regulations. You must appear/qualify NEET.`);
-      }
+    // Track eligibility assessment
+    track("eligibility_checked", {
+      status,
+      pcbScore: Number(pcbPercentage),
+      category: formData.category,
+      neetStatus: formData.neetStatus,
+      passportStatus: formData.passportStatus
+    });
 
-      if (status === "Eligible") {
-        try {
-          confetti({
-            particleCount: 80,
-            spread: 60,
-            origin: { y: 0.6 }
-          });
-        } catch {
-          // ignore if canvas-confetti is not loaded
-        }
-      }
+    // 1. Submit directly to backend database (MongoDB API)
+    const leadPayload = {
+      name: formData.name || "Aspirant (Eligibility Checker)",
+      phone: formData.phone || "Not Provided",
+      email: formData.email || undefined,
+      city: formData.preferredCity,
+      state: formData.preferredCity,
+      category: formData.category,
+      neetStatus: formData.neetStatus,
+      neetScore: formData.neetScore,
+      pcbPercentage: Number(pcbPercentage),
+      source: "Interactive Eligibility & Fee Checker Tool",
+      sourcePage: typeof window !== "undefined" ? window.location.pathname : "/mbbs-eligibility",
+      message: `Evaluation: ${status} | Category: ${formData.category} | PCB: ${pcbPercentage}% | NEET: ${formData.neetStatus} | Passport: ${formData.passportStatus || 'Not Specified'} | Age: ${calculatedAgeIn2026}`
+    };
 
-      const result = {
-        status,
-        pcbPercentage,
-        minPcbRequired,
-        age: calculatedAgeIn2026,
-        reasons: reasonList,
-        timestamp: new Date().toISOString()
-      };
+    try {
+      submitLeadAPI(leadPayload).catch((err) => console.warn('[Backend Lead Sync Warning]', err));
+    } catch (err) {
+      console.warn('Backend submission skipped:', err);
+    }
 
-      setEvaluationResult(result);
-      setIsEvaluating(false);
-
-      // Track eligibility assessment
-      track("eligibility_checked", {
-        status,
-        pcbScore: Number(pcbPercentage),
-        category: formData.category,
-        neetStatus: formData.neetStatus
+    // 2. Submit to Google Sheet Webhook & LocalStorage Mirror
+    try {
+      submitToGoogleSheet({
+        ...leadPayload,
+        preferredUniversity: formData.preferredCity ? `${formData.preferredCity} Medical University` : "Tashkent Medical Academy",
+        budget: "Eligible for Govt / Private Colleges",
+        notes: leadPayload.message
       });
+    } catch (err) {
+      console.warn('Google Sheet submission skipped:', err);
+    }
 
-      // Save lead query to Google Sheet & CRM
-      if (formData.name && formData.phone) {
-        track("generate_lead", {
-          value: "Eligibility Assessment Lead",
-          currency: "INR"
-        });
-        submitToGoogleSheet({
-          name: formData.name,
-          phone: formData.phone,
-          email: formData.email,
-          neetStatus: formData.neetStatus,
-          neetScore: formData.neetScore,
-          pcbPercentage: Number(pcbPercentage),
-          source: "Interactive Eligibility Checker Tool",
-          preferredUniversity: formData.preferredCity ? `${formData.preferredCity} Medical University` : "Tashkent Medical Academy",
-          budget: "Eligible for Govt / Private",
-          notes: `Eligibility Status: ${status} | Category: ${formData.category} | Age: ${calculatedAgeIn2026} | PCB: ${pcbPercentage}%`
-        });
-      }
-    }, 400);
+    // Smooth scroll down to the result directly below the checker
+    setTimeout(() => {
+      resultRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 100);
   };
 
   return (
@@ -293,16 +315,23 @@ export function EligibilityChecker({ onOpenLeadModal }) {
           </div>
 
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-[#063280] mb-1.5">
-              Passport Readiness
-            </label>
+            <div className="flex items-center justify-between mb-1.5">
+              <label className="block text-xs font-bold uppercase tracking-wider text-[#063280]">
+                Passport Readiness
+              </label>
+              <span className="text-[10px] font-semibold text-slate-500 bg-slate-200/80 px-2 py-0.5 rounded-full">
+                Optional
+              </span>
+            </div>
             <select
-              value={formData.hasPassport ? "yes" : "no"}
-              onChange={(e) => setFormData({ ...formData, hasPassport: e.target.value === "yes" })}
-              className="w-full text-sm px-3.5 py-2.5 rounded-xl border border-[#D9E2EC] bg-[#F7FAFC] font-medium text-[#0F172A]"
+              value={formData.passportStatus}
+              onChange={(e) => setFormData({ ...formData, passportStatus: e.target.value })}
+              className="w-full text-sm px-3.5 py-2.5 rounded-xl border border-[#D9E2EC] bg-[#F7FAFC] font-medium text-[#0F172A] focus:ring-2 focus:ring-[#063280] focus:outline-hidden"
             >
-              <option value="yes">Ready / Valid for 2+ Years</option>
-              <option value="no">Applied / In Process</option>
+              <option value="Ready / Valid for 2+ Years">Ready / Valid for 2+ Years</option>
+              <option value="Applied / In Process">Applied / In Process</option>
+              <option value="Not valid">Not valid</option>
+              <option value="Not created yet">Not created yet</option>
             </select>
           </div>
         </div>
@@ -326,11 +355,11 @@ export function EligibilityChecker({ onOpenLeadModal }) {
         </div>
       </form>
 
-      {/* Result Card */}
+      {/* Result Card (Rendered Directly Below the Form) */}
       {evaluationResult && (
-        <div className="mt-8 pt-6 border-t border-[#D9E2EC] animate-in fade-in duration-300">
+        <div ref={resultRef} className="mt-8 pt-6 border-t border-[#D9E2EC] animate-in fade-in duration-300 scroll-mt-6">
           <div
-            className={`p-6 rounded-3xl border ${
+            className={`p-6 sm:p-8 rounded-3xl border ${
               evaluationResult.status === "Eligible"
                 ? "bg-[#EBF3FA] border-[#063280] text-[#063280]"
                 : evaluationResult.status === "Not Eligible"
@@ -354,7 +383,7 @@ export function EligibilityChecker({ onOpenLeadModal }) {
                   </div>
                 )}
                 <div>
-                  <span className="text-xs font-bold uppercase tracking-wider opacity-75">Evaluation Result</span>
+                  <span className="text-xs font-bold uppercase tracking-wider opacity-75">Admission Assessment Result</span>
                   <h3 className="text-xl sm:text-2xl font-black">{evaluationResult.status}</h3>
                 </div>
               </div>
@@ -369,12 +398,17 @@ export function EligibilityChecker({ onOpenLeadModal }) {
               {evaluationResult.status === "Eligible" ? (
                 <div className="space-y-2">
                   <p className="font-semibold text-[#063280]">
-                    🎉 Outstanding! You meet all statutory NMC FMGL 2021 & Uzbekistan University admission criteria:
+                    🎉 Outstanding! You meet statutory NMC FMGL 2021 & Uzbekistan University admission criteria:
                   </p>
-                  <ul className="list-disc pl-5 space-y-1 opacity-90 text-xs text-[#0F172A]">
-                    <li>12th PCB Aggregate: <strong>{evaluationResult.pcbPercentage}%</strong> (Meets minimum {evaluationResult.minPcbRequired}% benchmark).</li>
-                    <li>Age requirement: <strong>{evaluationResult.age} years</strong> (Completed 17+ requirement).</li>
-                    <li>Eligible for <strong>Tashkent Medical Academy, Samarkand State Medical University, Bukhara State Medical Institute</strong>, and other premier government colleges.</li>
+                  <ul className="list-disc pl-5 space-y-1.5 opacity-90 text-xs text-[#0F172A]">
+                    <li>12th PCB Aggregate: <strong>{evaluationResult.pcbPercentage}%</strong> (Meets minimum {evaluationResult.minPcbRequired}% benchmark for {formData.category} category).</li>
+                    <li>Age requirement: <strong>{evaluationResult.age} years</strong> (Completed mandatory 17+ requirement by Dec 31, 2026).</li>
+                    <li>Passport Status: <strong>{evaluationResult.passportStatus || 'Not Specified'}</strong> {
+                      evaluationResult.passportStatus === "Not created yet" || evaluationResult.passportStatus === "Not valid"
+                        ? "— You can still receive a provisional admission letter immediately; passport is only required later for visa processing."
+                        : "— Ready for expedited student visa documentation."
+                    }</li>
+                    <li>Eligible for <strong>Tashkent Medical Academy, Samarkand State Medical University, Bukhara State Medical Institute</strong>, and top government colleges.</li>
                   </ul>
                 </div>
               ) : (
@@ -385,6 +419,11 @@ export function EligibilityChecker({ onOpenLeadModal }) {
                       <li key={i}>{r}</li>
                     ))}
                   </ul>
+                  {evaluationResult.passportStatus && (
+                    <p className="text-xs opacity-80 pt-1">
+                      Passport Note: <strong>{evaluationResult.passportStatus}</strong> (Can be arranged via Tatkaal scheme; our team will guide you).
+                    </p>
+                  )}
                 </div>
               )}
             </div>

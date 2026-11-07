@@ -5,6 +5,7 @@
  */
 
 import { saveLead } from "../data/mockLeads";
+import { submitLeadAPI } from "./api";
 
 // Default or configured Webhook URL (Can be set via .env or in /admin settings)
 const DEFAULT_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbz1VKH-FJGbHBwh4YfCkR5nabyLnPyitw2U2N9-qgPLcA9El3JPhwjFPn61ZdKVOoH0yA/exec";
@@ -74,7 +75,28 @@ export const submitToGoogleSheet = async (leadData) => {
     console.warn("Could not save to localStorage:", e);
   }
 
-  // 2. Submit to Google Apps Script Webhook
+  // 2. Submit directly to Backend Database API (MongoDB)
+  try {
+    submitLeadAPI({
+      name: formattedData.Name,
+      phone: formattedData.Phone,
+      email: formattedData.Email,
+      city: formattedData.City_State,
+      state: formattedData.City_State,
+      neetStatus: formattedData.NEET_Status,
+      neetScore: formattedData.NEET_Score,
+      pcbPercentage: formattedData.PCB_Percentage,
+      preferredUniversity: formattedData.Preferred_University,
+      budget: formattedData.Budget_Range,
+      source: formattedData.Source_CTA,
+      sourcePage: formattedData.Source_Page,
+      message: formattedData.Message_Notes
+    }).catch(err => console.warn('[Backend Sync Error]', err?.message || err));
+  } catch (e) {
+    console.warn("Could not submit to backend API:", e);
+  }
+
+  // 3. Submit to Google Apps Script Webhook
   const webhookUrl = getGoogleSheetWebhookUrl();
 
   if (!webhookUrl) {

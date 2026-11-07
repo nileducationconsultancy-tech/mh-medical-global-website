@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   ShieldCheck,
@@ -16,6 +16,7 @@ import {
   CANONICAL_PRICING_SUMMARY,
   formatLakhs
 } from "../data/universitiesData";
+import { HeroBanner } from "../components/home/HeroBanner";
 import { TrustBar } from "../components/home/TrustBar";
 import { KeyFactsBox } from "../components/home/KeyFactsBox";
 import { HeroQuickForm } from "../components/home/HeroQuickForm";
@@ -42,6 +43,14 @@ export function HomePage({ onOpenLeadModal }) {
   const [lang, setLang] = useState("en"); // "en" or "hi"
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
   const [isVerifyModalOpen, setIsVerifyModalOpen] = useState(false);
+
+  useEffect(() => {
+    const handleLang = (e) => {
+      if (e.detail) setLang(e.detail);
+    };
+    window.addEventListener("lang_change", handleLang);
+    return () => window.removeEventListener("lang_change", handleLang);
+  }, []);
 
   const t = i18nHomepage[lang] || i18nHomepage.en;
   const allQuestions = getAllFaqs();
@@ -87,7 +96,8 @@ export function HomePage({ onOpenLeadModal }) {
       "@type": "Person",
       "@id": `${siteConfig.siteUrl}/#founder`,
       "name": siteConfig.founder.name,
-      "jobTitle": siteConfig.founder.title,
+      "jobTitle": `${siteConfig.founder.title} ${siteConfig.founder.qualifications || ""}`.trim(),
+      "image": `${siteConfig.siteUrl}${siteConfig.founder.photoUrl}`,
       "worksFor": {
         "@id": `${siteConfig.siteUrl}/#organization`
       },
@@ -140,126 +150,10 @@ export function HomePage({ onOpenLeadModal }) {
         schema={homeSchema}
       />
 
-      {/* 1. UPGRADED HERO SECTION (Split Layout) */}
-      <section className="relative overflow-hidden bg-linear-to-b from-[#063280] via-[#0B3578] to-[#041B44] text-white pt-10 pb-20 sm:pb-28 border-b border-[#0B2D64]">
-        {/* Contrast-guaranteeing gradient & preloaded background image */}
-        <BannerBackground image="/collageimages/banner-1.png" />
-        <div className="absolute inset-0 bg-pattern-grid opacity-10 pointer-events-none"></div>
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-[#9ABAD9]/20 rounded-full blur-3xl pointer-events-none"></div>
-        <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-[#9B193A]/25 rounded-full blur-3xl pointer-events-none"></div>
+      {/* 1. HERO BANNER — MAIN VISUAL SECTION */}
+      <HeroBanner onOpenLeadModal={onOpenLeadModal} />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Top Bar: Language Toggle Scaffolding & Verification Link */}
-          <div className="flex items-center justify-between gap-4 pb-6 mb-6 border-b border-white/10 text-xs text-slate-200">
-            <div className="flex items-center gap-2">
-              <span className="text-[11px] font-bold text-[#9ABAD9] uppercase">Language:</span>
-              <div className="inline-flex bg-white/10 p-0.5 rounded-lg border border-white/20">
-                <button
-                  onClick={() => {
-                    setLang("en");
-                    track("lang_toggle", { lang: "en" });
-                  }}
-                  className={`px-2.5 py-1 rounded-md text-[11px] font-bold transition-all cursor-pointer ${
-                    lang === "en" ? "bg-white text-[#063280] shadow-xs" : "text-white/80 hover:text-white"
-                  }`}
-                >
-                  English
-                </button>
-                <button
-                  onClick={() => {
-                    setLang("hi");
-                    track("lang_toggle", { lang: "hi" });
-                  }}
-                  className={`px-2.5 py-1 rounded-md text-[11px] font-bold transition-all cursor-pointer ${
-                    lang === "hi" ? "bg-white text-[#063280] shadow-xs" : "text-white/80 hover:text-white"
-                  }`}
-                >
-                  हिन्दी
-                </button>
-              </div>
-            </div>
-
-            <button
-              onClick={() => setIsVerifyModalOpen(true)}
-              className="inline-flex items-center gap-1.5 text-xs text-[#9ABAD9] hover:text-white font-bold underline cursor-pointer"
-            >
-              <ShieldCheck className="w-4 h-4 text-emerald-400" />
-              <span>How We Verify Data & Fees</span>
-            </button>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-            {/* Left Hero Content (7 Cols) */}
-            <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-[#9ABAD9]/30 text-[#9ABAD9] text-xs sm:text-sm font-bold tracking-wide">
-                <Sparkles className="w-4 h-4 text-white" />
-                <span>{t.heroTag}</span>
-              </div>
-
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.12]">
-                {t.heroH1Part1} <br className="hidden sm:inline" />
-                <span className="text-transparent bg-clip-text bg-linear-to-r from-white via-[#9ABAD9] to-white">
-                  {t.heroH1Highlight}
-                </span>
-              </h1>
-
-              <p className="text-sm sm:text-base lg:text-lg text-slate-200 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
-                {t.heroValueProp}
-              </p>
-
-              {/* Reduced Hero CTAs: Exactly ONE Primary + ONE Secondary */}
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
-                <Link
-                  to="/mbbs-eligibility"
-                  onClick={() => track("hero_cta_eligibility_click")}
-                  className="px-7 py-4 rounded-xl bg-[#9B193A] hover:bg-[#7E142F] text-white font-black text-sm sm:text-base transition-all duration-200 shadow-xl hover:shadow-rose-950/30 flex items-center gap-2 cursor-pointer active:scale-98"
-                >
-                  <CheckCircle2 className="w-5 h-5 text-white" />
-                  <span>{t.ctaEligibility}</span>
-                </Link>
-
-                <a
-                  href="#fee-calculator-section"
-                  onClick={() => track("hero_cta_calculator_click")}
-                  className="px-6 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-extrabold text-sm sm:text-base border border-white/25 transition-all flex items-center gap-2 cursor-pointer"
-                >
-                  <Calculator className="w-5 h-5 text-[#9ABAD9]" />
-                  <span>{t.ctaCalculator}</span>
-                </a>
-              </div>
-
-              {/* 3 Trust Stats (Transparent & Non-Contradictory) */}
-              <div className="pt-6 grid grid-cols-3 gap-4 border-t border-white/15 max-w-xl mx-auto lg:mx-0 text-left">
-                <div className="space-y-0.5">
-                  <p className="text-2xl sm:text-3xl font-black text-white">{t.trustStatDuration}</p>
-                  <p className="text-xs text-[#9ABAD9] font-medium">{t.trustStatDurationSub}</p>
-                </div>
-                <div className="space-y-0.5">
-                  <p className="text-2xl sm:text-3xl font-black text-white">{t.trustStatMedium}</p>
-                  <p className="text-xs text-[#9ABAD9] font-medium">{t.trustStatMediumSub}</p>
-                </div>
-                <div className="space-y-0.5">
-                  <p className="text-2xl sm:text-3xl font-black text-white">{t.trustStatTuition}</p>
-                  <p className="text-xs text-[#9ABAD9] font-medium">{t.trustStatTuitionSub}</p>
-                </div>
-              </div>
-
-              {/* Author & Verification Byline */}
-              <div className="pt-2 text-xs text-slate-300 flex items-center justify-center lg:justify-start gap-2">
-                <Calendar className="w-3.5 h-3.5 text-[#9ABAD9]" />
-                <span>{t.lastUpdatedText} <strong>{CANONICAL_PRICING_SUMMARY.exchangeRateDate}</strong> • {t.authorByline}</span>
-              </div>
-            </div>
-
-            {/* Right Hero: Compact 3-Field Lead Form with WhatsApp Alternative (5 Cols) */}
-            <div className="lg:col-span-5 relative">
-              <HeroQuickForm onOpenLeadModal={onOpenLeadModal} />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 2. REGULATORY & INSTITUTIONAL TRUST BAR */}
+      {/* 2. REGULATORY & INSTITUTIONAL STATISTICS TRUST BAR */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 sm:-mt-12 relative z-20">
         <TrustBar />
       </section>
@@ -393,6 +287,33 @@ export function HomePage({ onOpenLeadModal }) {
               </div>
             );
           })}
+        </div>
+      </section>
+
+      {/* 17. FINAL ADMISSIONS INTAKE / QUICK APPLICATION FORM (JUST ABOVE FOOTER) */}
+      <section id="admissions-inquiry-section" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-linear-to-b from-[#0B0F19] via-[#0F172A] to-[#0B0F19] rounded-3xl p-6 sm:p-10 border border-slate-800 shadow-2xl relative overflow-hidden">
+          <BannerBackground
+            image="/collageimages/banner-2.png"
+            opacity="opacity-15 sm:opacity-20"
+            mixBlend="mix-blend-normal"
+            washGradient="from-[#0B0F19]/90 via-[#0F172A]/85 to-[#0B0F19]/95"
+          />
+          <div className="text-center max-w-xl mx-auto space-y-2 mb-8 relative z-10">
+            <span className="text-[11px] font-bold uppercase tracking-widest text-rose-300 bg-rose-950/40 border border-rose-500/30 px-3.5 py-1 rounded-full">
+              Admissions Intake 2026-27
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-white">
+              Apply for MBBS in Uzbekistan with Direct Support
+            </h2>
+            <p className="text-slate-300 text-xs sm:text-sm">
+              Get direct university eligibility, verified 6-year fee breakdowns, and personal guidance from senior counselors.
+            </p>
+          </div>
+
+          <div className="relative z-10 max-w-xl mx-auto">
+            <HeroQuickForm onOpenLeadModal={onOpenLeadModal} />
+          </div>
         </div>
       </section>
 

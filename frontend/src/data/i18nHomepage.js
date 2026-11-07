@@ -21,7 +21,7 @@ export const i18nHomepage = {
     whyHeading: "European-Standard Medical Training at 1/4th the Cost",
     faqHeading: "Answers to Important MBBS Abroad Questions",
     lastUpdatedText: "Last Updated & Verified:",
-    authorByline: "By Dr. M. H. Akhtar & MH Global Academic Advisory Board"
+    authorByline: "By Dr. Firoz Khan (MD Physician) & MH Global Academic Advisory Board"
   },
   hi: {
     heroTag: "एनएमसी एफएमजीएल 2021 और डब्लूएचओ-डब्ल्यूडीओएमएस मान्यता प्राप्त मेडिकल शिक्षा",

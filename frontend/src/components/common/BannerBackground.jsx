@@ -36,7 +36,10 @@ export function getBannerImageBySeed(seed, fallbackIndex = 0) {
 export function BannerBackground({
   image = "/collageimages/banner-1.png",
   opacity = "opacity-[0.35] sm:opacity-[0.45]",
-  className = ""
+  className = "",
+  imgClassName = "object-cover object-center",
+  washGradient = "from-[#063280]/50 via-[#063280]/30 to-[#063280]/70",
+  mixBlend = "mix-blend-overlay"
 }) {
   return (
     <div
@@ -49,10 +52,12 @@ export function BannerBackground({
         role="presentation"
         loading="eager"
         decoding="async"
-        className={`w-full h-full object-cover object-center ${opacity} mix-blend-overlay filter contrast-120 saturate-125`}
+        className={`w-full h-full ${imgClassName} ${opacity} ${mixBlend} filter contrast-120 saturate-125`}
       />
       {/* Soft gradient wash to guarantee contrast over text while showcasing background */}
-      <div className="absolute inset-0 bg-linear-to-b from-[#063280]/50 via-[#063280]/30 to-[#063280]/70 pointer-events-none" />
+      {washGradient && (
+        <div className={`absolute inset-0 bg-linear-to-b ${washGradient} pointer-events-none`} />
+      )}
     </div>
   );
 }

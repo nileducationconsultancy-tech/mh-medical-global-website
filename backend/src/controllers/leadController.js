@@ -11,100 +11,81 @@ export const createLead = async (req, res, next) => {
     const {
       name,
       phone,
+      whatsapp,
       email,
+      city,
       state,
       neetScore,
       neetStatus,
       category,
       pcbPercentage,
       preferredUniversity,
+      budget,
       budgetRange,
       targetYear,
       source,
       sourcePage,
-      utmParams,
-      initialNote
+      message,
+      initialNote,
+      notes,
+      ...extraFields
     } = req.body;
 
-    if (!name || !phone) {
+    if (!name && !phone) {
       return res.status(400).json({
         success: false,
-        message: 'Please provide student name and contact phone number'
+        message: 'Please provide at least a name or contact number'
       });
     }
 
-    // Clean phone number
-    const cleanedPhone = phone.replace(/[\s\-()]/g, '');
+    // Clean phone number if present
+    const cleanedPhone = phone ? String(phone).replace(/[\s\-()]/g, '') : (whatsapp ? String(whatsapp).replace(/[\s\-()]/g, '') : '');
 
     const leadData = {
-      name: name.trim(),
-      phone: cleanedPhone,
+      name: (name || 'Website Inquiry').trim(),
+      phone: cleanedPhone || 'Not Provided',
       email: email ? email.trim().toLowerCase() : undefined,
-      state: state || 'Not Specified',
+      city: city || '',
+      state: state || city || 'Not Specified',
       neetScore: neetScore ? Number(neetScore) : undefined,
       neetStatus: neetStatus || (neetScore && Number(neetScore) >= 137 ? 'Qualified' : 'Appearing in 2026'),
       category: category || 'General',
       pcbPercentage: pcbPercentage ? Number(pcbPercentage) : undefined,
-      preferredUniversity: preferredUniversity || 'Flexible / Expert Recommendation',
-      budgetRange: budgetRange || '₹25 Lakhs - ₹35 Lakhs',
+      preferredUniversity: preferredUniversity || 'Flexible / General Inquiry',
+      budgetRange: budgetRange || budget || '',
       targetYear: targetYear || '2026-2027',
       source: source || 'Website Form',
       sourcePage: sourcePage || '/',
-      utmParams: utmParams || {},
-      ipAddress: req.ip || req.connection.remoteAddress,
+      message: message || initialNote || '',
+      formData: extraFields || {},
+      ipAddress: req.ip || req.connection?.remoteAddress,
       userAgent: req.headers['user-agent']
     };
 
-    if (initialNote) {
+    if (message || initialNote) {
       leadData.notes = [
         {
-          text: initialNote,
-          author: 'Student / Lead Submission',
+          text: message || initialNote,
+          author: 'Website Form Submission',
           createdAt: new Date()
         }
       ];
     }
 
-    // If MongoDB is connected
+    // Save directly to MongoDB if connected
     if (Lead.db.readyState === 1) {
-      // Check for recent duplicate within last 24h
-      const oneDayAgo = new Date(Date.now() - 24 * 60 * 60 * 1000);
-      const existingLead = await Lead.findOne({
-        phone: cleanedPhone,
-        createdAt: { $gte: oneDayAgo }
-      });
-
-      if (existingLead) {
-        // Append note instead of duplicate entry
-        existingLead.notes.push({
-          text: `Repeated inquiry from ${sourcePage || 'website'} (Preferred Uni: ${preferredUniversity || 'N/A'})`,
-          author: 'System Auto-Deduplication',
-          createdAt: new Date()
-        });
-        if (preferredUniversity) existingLead.preferredUniversity = preferredUniversity;
-        if (neetScore) existingLead.neetScore = Number(neetScore);
-        await existingLead.save();
-
-        return res.status(200).json({
-          success: true,
-          message: 'Thank you! Your updated admission consultation request has been received.',
-          leadId: existingLead._id
-        });
-      }
-
       const newLead = await Lead.create(leadData);
       return res.status(201).json({
         success: true,
-        message: 'Thank you! An MH Medical Senior Counselor will reach out to you on WhatsApp / Phone within 15 minutes.',
+        message: 'Your inquiry has been successfully saved to the database.',
         leadId: newLead._id
       });
     } else {
-      // In-Memory Fallback
+      // In-Memory Fallback if database is temporarily offline
       const newLeadMem = {
         _id: `lead_mem_${Date.now()}`,
         ...leadData,
         status: 'New',
-        assignedTo: 'Senior Admission Counselor',
         createdAt: new Date(),
         updatedAt: new Date()
       };
@@ -112,7 +93,7 @@ export const createLead = async (req, res, next) => {
 
       return res.status(201).json({
         success: true,
-        message: 'Thank you! An MH Medical Senior Counselor will reach out to you on WhatsApp / Phone within 15 minutes.',
+        message: 'Your inquiry has been recorded successfully.',
         leadId: newLeadMem._id
       });
     }

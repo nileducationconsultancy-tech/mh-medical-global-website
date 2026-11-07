@@ -65,11 +65,11 @@ export const siteConfig = {
 
   // Founder Information
   founder: {
-    name: "Dr. M. H. Akhtar",
+    name: "Dr. Firoz Khan",
+    qualifications: "(MD Physician)",
     title: "Founder & Managing Director",
     role: "MBBS Academic Advisor & International Admissions Facilitator",
-    // TODO_REPLACE: Replace with real founder portrait image path or URL
-    photoUrl: "TODO_REPLACE_FOUNDER_PHOTO_URL"
+    photoUrl: "/founderImg/feeroz_pic.jpg"
   },
 
   // Counsellor CRM & Admin Portal Security

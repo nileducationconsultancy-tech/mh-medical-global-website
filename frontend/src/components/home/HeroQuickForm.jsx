@@ -83,7 +83,7 @@ export function HeroQuickForm({ onOpenLeadModal }) {
       {/* Header */}
       <div className="flex items-center justify-between pb-4 border-b border-white/15">
         <div>
-          <span className="text-[10px] font-extrabold tracking-wider uppercase text-[#9ABAD9] block">
+          <span className="text-[10px] font-extrabold tracking-wider uppercase text-rose-300 block">
             Admissions Intake 2026-27
           </span>
           <h3 className="font-extrabold text-lg text-white">Get Direct Eligibility & Seat Matrix</h3>
@@ -140,7 +140,7 @@ export function HeroQuickForm({ onOpenLeadModal }) {
               value={formData.name}
               onChange={handleChange}
               placeholder="e.g. Rahul Sharma"
-              className="w-full px-4 py-2.5 rounded-xl bg-white/10 border border-white/25 text-white placeholder-slate-300 text-xs sm:text-sm focus:outline-hidden focus:ring-2 focus:ring-[#9ABAD9] focus:bg-white/20 transition-all"
+              className="w-full px-4 py-2.5 rounded-xl bg-white/10 border border-white/25 text-white placeholder-slate-300 text-xs sm:text-sm focus:outline-hidden focus:ring-2 focus:ring-rose-400/80 focus:bg-white/20 transition-all"
             />
           </div>
 
@@ -149,8 +149,8 @@ export function HeroQuickForm({ onOpenLeadModal }) {
             <label className="block text-xs font-bold text-slate-200 mb-1">
               WhatsApp / Mobile Number <span className="text-rose-400">*</span>
             </label>
-            <div className="relative flex rounded-xl border border-white/25 bg-white/10 focus-within:ring-2 focus-within:ring-[#9ABAD9] focus-within:bg-white/20 transition-all overflow-hidden">
-              <span className="inline-flex items-center px-3 text-xs font-bold text-[#9ABAD9] border-r border-white/20 bg-white/5">
+            <div className="relative flex rounded-xl border border-white/25 bg-white/10 focus-within:ring-2 focus-within:ring-rose-400/80 focus-within:bg-white/20 transition-all overflow-hidden">
+              <span className="inline-flex items-center px-3 text-xs font-bold text-slate-200 border-r border-white/20 bg-white/5">
                 +91
               </span>
               <input
@@ -169,7 +169,7 @@ export function HeroQuickForm({ onOpenLeadModal }) {
 
           {/* Optional OTP-ready verification indicator */}
           {showOtpField && (
-            <div className="flex items-center justify-between text-[11px] text-[#9ABAD9] px-1">
+            <div className="flex items-center justify-between text-[11px] text-slate-300 px-1">
               <span>Mobile verification ready</span>
               <span className="text-emerald-300 font-semibold flex items-center gap-1">
                 <CheckCircle2 className="w-3 h-3" /> Valid Indian Format
@@ -188,7 +188,7 @@ export function HeroQuickForm({ onOpenLeadModal }) {
               value={formData.neetScore}
               onChange={handleChange}
               placeholder="e.g. 350 / Appearing NEET 2026"
-              className="w-full px-4 py-2.5 rounded-xl bg-white/10 border border-white/25 text-white placeholder-slate-300 text-xs sm:text-sm focus:outline-hidden focus:ring-2 focus:ring-[#9ABAD9] focus:bg-white/20 transition-all"
+              className="w-full px-4 py-2.5 rounded-xl bg-white/10 border border-white/25 text-white placeholder-slate-300 text-xs sm:text-sm focus:outline-hidden focus:ring-2 focus:ring-rose-400/80 focus:bg-white/20 transition-all"
             />
           </div>
 

@@ -16,8 +16,8 @@ import { apiLimiter } from './middleware/rateLimiter.js';
 // Load environment variables
 dotenv.config();
 
-// Connect to MongoDB
-connectDB();
+// Connect to MongoDB before accepting incoming requests
+await connectDB();
 
 const app = express();
 
@@ -91,9 +91,11 @@ app.use(errorHandler);
 const PORT = process.env.PORT || 5000;
 
 const server = app.listen(PORT, () => {
+  const dbStatus = getDBStatus();
   console.log(`=======================================================`);
   console.log(` MH Medical API Server running on port ${PORT}`);
   console.log(` Mode: ${process.env.NODE_ENV || 'development'}`);
+  console.log(` Database: ${dbStatus.connected ? '✅ CONNECTED (' + dbStatus.host + ')' : '❌ NOT CONNECTED (In-Memory Mock)'}`);
   console.log(` Health Check: http://localhost:${PORT}/api/health`);
   console.log(`=======================================================`);
 });

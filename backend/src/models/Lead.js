@@ -22,6 +22,11 @@ const LeadSchema = new mongoose.Schema(
         'Please provide a valid email address'
       ]
     },
+    city: {
+      type: String,
+      trim: true,
+      default: ''
+    },
     state: {
       type: String,
       trim: true,
@@ -34,12 +39,10 @@ const LeadSchema = new mongoose.Schema(
     },
     neetStatus: {
       type: String,
-      enum: ['Qualified', 'Appearing in 2026', 'Not Qualified', 'Planning Next Year'],
       default: 'Qualified'
     },
     category: {
       type: String,
-      enum: ['General', 'OBC', 'SC', 'ST', 'EWS'],
       default: 'General'
     },
     pcbPercentage: {
@@ -49,11 +52,11 @@ const LeadSchema = new mongoose.Schema(
     },
     preferredUniversity: {
       type: String,
-      default: 'Flexible / Expert Recommendation'
+      default: 'Flexible / General Inquiry'
     },
     budgetRange: {
       type: String,
-      default: '₹25 Lakhs - ₹35 Lakhs'
+      default: ''
     },
     targetYear: {
       type: String,
@@ -67,6 +70,10 @@ const LeadSchema = new mongoose.Schema(
       type: String,
       default: '/'
     },
+    message: {
+      type: String,
+      default: ''
+    },
     utmParams: {
       utm_source: String,
       utm_medium: String,
@@ -75,19 +82,18 @@ const LeadSchema = new mongoose.Schema(
     },
     status: {
       type: String,
-      enum: ['New', 'Contacted', 'Document Review', 'Eligible', 'Admission Letter Issued', 'Visa Processing', 'Enrolled', 'Closed / Lost'],
       default: 'New'
     },
     assignedTo: {
       type: String,
-      default: 'Senior Admission Counselor'
+      default: ''
     },
     notes: [
       {
         text: String,
         author: {
           type: String,
-          default: 'System / Counselor'
+          default: 'System'
         },
         createdAt: {
           type: Date,
@@ -95,6 +101,10 @@ const LeadSchema = new mongoose.Schema(
         }
       }
     ],
+    formData: {
+      type: mongoose.Schema.Types.Mixed,
+      default: {}
+    },
     ipAddress: String,
     userAgent: String
   },

@@ -250,10 +250,10 @@ export function AICounselorWidget({ onOpenLeadModal }) {
         <div className="flex items-center gap-2">
           <button
             onClick={() => setIsOpen(true)}
-            className="group flex items-center gap-2.5 bg-linear-to-r from-[#063280] via-[#0E438D] to-[#1558A9] text-white px-4 py-3 rounded-full shadow-xl hover:shadow-blue-950/30 transition-all duration-300 hover:scale-105 active:scale-95 border border-white/20 cursor-pointer"
+            className="group flex items-center gap-2.5 bg-[#0F172A] hover:bg-slate-800 text-white px-4 py-3 rounded-full shadow-xl hover:shadow-slate-900/40 transition-all duration-300 hover:scale-105 active:scale-95 border border-slate-700 cursor-pointer"
           >
             <div className="relative">
-              <Bot className="w-5 h-5 text-[#9ABAD9] group-hover:rotate-12 transition-transform" />
+              <Bot className="w-5 h-5 text-rose-300 group-hover:rotate-12 transition-transform" />
               <span className="absolute -top-1 -right-1 flex h-2.5 w-2.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#9B193A] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#9B193A]"></span>
@@ -261,7 +261,7 @@ export function AICounselorWidget({ onOpenLeadModal }) {
             </div>
             <div className="text-left hidden sm:block">
               <p className="text-xs font-bold leading-tight">AI Medical Counselor</p>
-              <p className="text-[10px] text-[#9ABAD9]">Instant Answers & Fee Check</p>
+              <p className="text-[10px] text-slate-300">Instant Answers & Fee Check</p>
             </div>
           </button>
         </div>

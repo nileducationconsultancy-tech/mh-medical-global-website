@@ -8,7 +8,6 @@ import {
   PhoneCall,
   Sparkles,
   Quote,
-  ExternalLink,
   ChevronLeft,
   ChevronRight,
   GraduationCap
@@ -29,54 +28,56 @@ export function FounderSection({ onOpenLeadModal }) {
               {isFounderPhotoPlaceholder ? (
                 <div
                   className="w-full h-80 flex flex-col items-center justify-center bg-linear-to-b from-[#0E438D] to-[#063280] text-white p-6 text-center border-b border-white/10 relative"
-                  data-todo-marker="TODO_REPLACE: Founder Dr. M. H. Akhtar verified photo in siteConfig.founder.photoUrl"
+                  data-todo-marker="TODO_REPLACE: Founder Dr. Firoz Khan verified photo in siteConfig.founder.photoUrl"
                 >
                   <div className="w-24 h-24 rounded-full bg-white/10 border-2 border-[#9ABAD9]/50 flex items-center justify-center mb-3 shadow-inner">
                     <GraduationCap className="w-12 h-12 text-[#9ABAD9]" />
                   </div>
                   <h4 className="font-extrabold text-lg text-white">{siteConfig.founder.name}</h4>
-                  <p className="text-xs text-[#9ABAD9] font-medium">{siteConfig.founder.title}</p>
+                  <p className="text-xs text-[#9ABAD9] font-medium">{siteConfig.founder.qualifications || siteConfig.founder.title}</p>
                   <span className="text-[10px] text-white/70 mt-2 bg-black/25 px-3 py-1 rounded-full border border-white/10">
                     Lead Medical Academic Advisor
                   </span>
                 </div>
               ) : (
-                <img
-                  src={siteConfig.founder.photoUrl}
-                  alt={`${siteConfig.founder.name} - ${siteConfig.founder.title}`}
-                  className="w-full h-80 object-cover object-top"
-                  loading="lazy"
-                  decoding="async"
-                />
+                <div className="w-full bg-white flex items-end justify-center aspect-[4/5] max-h-[400px] overflow-hidden relative">
+                  <img
+                    src={siteConfig.founder.photoUrl}
+                    alt={`${siteConfig.founder.name} ${siteConfig.founder.qualifications || ""}`}
+                    className="w-full h-full object-contain object-bottom transition-transform duration-300 hover:scale-[1.02]"
+                    loading="lazy"
+                    decoding="async"
+                    onError={(e) => {
+                      if (!e.currentTarget.dataset.retried) {
+                        e.currentTarget.dataset.retried = "true";
+                        e.currentTarget.src = "/founderImg/feeroz_pic.jpg";
+                      }
+                    }}
+                  />
+                </div>
               )}
 
               {/* Founder Meta Details */}
-              <div className="p-5 text-white space-y-2">
-                <div className="flex items-center justify-between">
-                  <h4 className="font-extrabold text-lg text-white">{siteConfig.founder.name}</h4>
-                  <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-[#9B193A] text-white">
+              <div className="p-5 text-white space-y-2.5 bg-linear-to-b from-[#082B57] to-[#062447]">
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <h4 className="font-extrabold text-xl text-white tracking-tight leading-tight">
+                      {siteConfig.founder.name}
+                    </h4>
+                    <p className="text-xs font-bold text-[#9ABAD9] mt-0.5">
+                      {siteConfig.founder.qualifications || "(MD Physician)"}
+                    </p>
+                  </div>
+                  <span className="text-[11px] font-bold px-3 py-1 rounded-full bg-[#D90436] text-white shadow-xs shrink-0 tracking-wide uppercase">
                     Managing Director
                   </span>
                 </div>
-                <p className="text-xs text-[#9ABAD9]">{siteConfig.founder.role}</p>
-                <p className="text-[11px] text-slate-200">
+                <p className="text-xs text-slate-200">
+                  {siteConfig.founder.role}
+                </p>
+                <p className="text-[11px] text-slate-300">
                   12+ Years Advisory Experience • 5,000+ Indian Medical Students Guided Across Uzbekistan
                 </p>
-
-                {/* LinkedIn / Professional Verification Link */}
-                <div className="pt-2 border-t border-white/15 flex items-center justify-between text-xs">
-                  <span className="text-slate-300">Professional Profile:</span>
-                  <a
-                    href={siteConfig.social.linkedin.startsWith("http") ? siteConfig.social.linkedin : "https://linkedin.com"}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-[#9ABAD9] hover:text-white font-bold hover:underline"
-                    aria-label="Visit Founder LinkedIn Profile"
-                  >
-                    <span>LinkedIn Profile</span>
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </a>
-                </div>
               </div>
             </div>
           </div>

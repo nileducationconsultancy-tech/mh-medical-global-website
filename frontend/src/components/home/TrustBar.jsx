@@ -1,77 +1,85 @@
 import React from "react";
-import { ShieldCheck, ExternalLink } from "lucide-react";
+import { Users, Landmark, Star, Globe, Headphones } from "lucide-react";
 
 export function TrustBar() {
-  const accreditations = [
+  const stats = [
     {
-      name: "National Medical Commission (NMC)",
-      country: "India",
-      status: "FMGL 2021 Alignment (54m + 12m)",
-      url: "https://www.nmc.org.in/",
-      badge: "NMC India"
+      value: "5000+",
+      label: "Students Counselled",
+      subtext: "Across Indian States & UTs",
+      icon: Users,
+      bgColor: "bg-rose-100",
+      iconColor: "text-[#D90436]"
     },
     {
-      name: "World Directory of Medical Schools (WDOMS / WHO)",
-      country: "Global",
-      status: "Official Listing & ECFMG Sponsor",
-      url: "https://www.wdoms.org/",
-      badge: "WDOMS / WHO"
+      value: "20+",
+      label: "Government Universities",
+      subtext: "State Medical Academies",
+      icon: Landmark,
+      bgColor: "bg-blue-100",
+      iconColor: "text-[#0752B8]"
     },
     {
-      name: "Ministry of Health of Uzbekistan",
-      country: "Uzbekistan",
-      status: "Chartered State Medical Academies",
-      url: "https://ssv.uz/en",
-      badge: "Ministry of Health UZ"
+      value: "100%",
+      label: "Verified Information",
+      subtext: "NMC FMGL 2021 Compliant",
+      icon: Star,
+      bgColor: "bg-amber-100",
+      iconColor: "text-amber-500",
+      iconFill: true
     },
     {
-      name: "FAIMER / ECFMG Directory",
-      country: "USA",
-      status: "USMLE Eligibility Listing",
-      url: "https://www.faimer.org/",
-      badge: "FAIMER USA"
+      value: "3+",
+      label: "Countries",
+      subtext: "Uzbekistan, Kazakhstan, etc.",
+      icon: Globe,
+      bgColor: "bg-indigo-100",
+      iconColor: "text-indigo-600"
+    },
+    {
+      value: "24/7",
+      label: "Admission Support",
+      subtext: "Dedicated Student Desk",
+      icon: Headphones,
+      bgColor: "bg-rose-100",
+      iconColor: "text-[#D90436]"
     }
   ];
 
   return (
-    <div className="bg-[#041B44] text-white border-y border-[#0B2D64] py-6 px-4 sm:px-6 lg:px-8 font-sans">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-6">
-        {/* Left Trust Statement */}
-        <div className="flex items-center gap-3 shrink-0 text-center lg:text-left">
-          <div className="w-10 h-10 rounded-xl bg-white/10 border border-[#9ABAD9]/30 flex items-center justify-center text-[#9ABAD9] shrink-0">
-            <ShieldCheck className="w-5 h-5" />
-          </div>
-          <div>
-            <p className="text-xs font-bold text-white uppercase tracking-wider">
-              Official Regulatory Alignment & Accreditation
-            </p>
-            <p className="text-[11px] text-slate-300">
-              Recognized under Indian NMC FMGL 2021 Guidelines & International Medical Directories
-            </p>
-          </div>
-        </div>
-
-        {/* Accreditation Logos / Pills with Outbound Source Links */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full lg:w-auto">
-          {accreditations.map((item) => (
-            <a
-              key={item.name}
-              href={item.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group p-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#9ABAD9]/50 transition-all flex flex-col justify-center text-center sm:text-left"
-              title={`Visit official ${item.name} portal`}
+    <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-xl shadow-slate-200/50 p-4 sm:p-6 font-sans">
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-2 items-center divide-y md:divide-y-0 md:divide-x divide-slate-100">
+        {stats.map((stat, idx) => {
+          const Icon = stat.icon;
+          return (
+            <div
+              key={stat.label}
+              className={`flex items-center gap-3.5 ${
+                idx === 4 ? "col-span-2 md:col-span-1 justify-center md:justify-start pt-3 md:pt-0" : ""
+              } ${idx > 0 && idx < 4 ? "pt-3 md:pt-0 md:pl-4" : ""} ${idx === 0 ? "md:pr-3" : ""}`}
             >
-              <div className="flex items-center justify-between gap-1 text-[11px] font-extrabold text-white group-hover:text-[#9ABAD9]">
-                <span>{item.badge}</span>
-                <ExternalLink className="w-3 h-3 text-slate-400 group-hover:text-white shrink-0" />
+              {/* Colorful Circular Icon */}
+              <div
+                className={`w-11 h-11 sm:w-12 sm:h-12 rounded-full ${stat.bgColor} ${stat.iconColor} flex items-center justify-center shrink-0 shadow-2xs`}
+              >
+                <Icon className={`w-5 h-5 sm:w-6 sm:h-6 ${stat.iconFill ? "fill-amber-500" : ""}`} />
               </div>
-              <span className="text-[10px] text-slate-300 font-medium truncate mt-0.5">
-                {item.status}
-              </span>
-            </a>
-          ))}
-        </div>
+
+              {/* Stat Value & Label */}
+              <div className="leading-tight">
+                <p className="text-xl sm:text-2xl lg:text-[26px] font-black text-[#082B57] tracking-tight">
+                  {stat.value}
+                </p>
+                <p className="text-xs sm:text-[13px] font-bold text-[#082B57] mt-0.5 whitespace-nowrap">
+                  {stat.label}
+                </p>
+                <p className="text-[10px] text-[#64748B] font-medium hidden sm:block truncate mt-0.5">
+                  {stat.subtext}
+                </p>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
