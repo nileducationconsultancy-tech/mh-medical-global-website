@@ -24,8 +24,9 @@ import {
 } from "./pages/GuidePages";
 import { CityGuidePage } from "./pages/CityGuidePage";
 import { BlogPage, BlogPostPage } from "./pages/BlogPages";
+import { AboutUsPage } from "./pages/AboutUsPage";
 import { ContactPage } from "./pages/ContactPage";
-import { AboutUsPage, PrivacyPolicyPage } from "./pages/CompanyPages";
+import { PrivacyPolicyPage } from "./pages/CompanyPages";
 import { AdminDashboardPage, NotFoundPage } from "./pages/AdminDashboardPage";
 
 // Scroll to top helper (safe for SSR)
