@@ -79,11 +79,11 @@ export function HeroQuickForm({ onOpenLeadModal }) {
   const waUrl = isWaPlaceholder ? "#" : `https://wa.me/${siteConfig.whatsappNumber}?text=${defaultWaMessage}`;
 
   return (
-    <div className="bg-[#201C1A]/95 backdrop-blur-md rounded-3xl p-6 sm:p-8 border border-[#E8D2B5]/30 shadow-2xl space-y-5 text-white font-sans">
+    <div className="bg-white/10 backdrop-blur-md rounded-3xl p-6 sm:p-8 border border-white/20 shadow-2xl space-y-5 text-white font-sans">
       {/* Header */}
       <div className="flex items-center justify-between pb-4 border-b border-white/15">
         <div>
-          <span className="text-[10px] font-extrabold tracking-wider uppercase text-[#E8D2B5] block">
+          <span className="text-[10px] font-extrabold tracking-wider uppercase text-rose-300 block">
             Admissions Intake 2026-27
           </span>
           <h3 className="font-extrabold text-lg text-white">Get Direct Eligibility & Seat Matrix</h3>
@@ -95,7 +95,7 @@ export function HeroQuickForm({ onOpenLeadModal }) {
       </div>
 
       {isSubmitted ? (
-        <div className="p-6 rounded-2xl bg-white/10 border border-white/20 text-center space-y-3 animate-in fade-in duration-300">
+        <div className="p-6 rounded-2xl bg-white/15 border border-white/20 text-center space-y-3 animate-in fade-in duration-300">
           <div className="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-400 text-emerald-300 mx-auto flex items-center justify-center">
             <CheckCircle2 className="w-6 h-6" />
           </div>
@@ -130,8 +130,8 @@ export function HeroQuickForm({ onOpenLeadModal }) {
 
           {/* 1. Student Full Name */}
           <div>
-            <label className="block text-xs font-bold text-[#E8D2B5] mb-1">
-              Student Full Name <span className="text-[#E8D2B5]">*</span>
+            <label className="block text-xs font-bold text-slate-200 mb-1">
+              Student Full Name <span className="text-rose-400">*</span>
             </label>
             <input
               type="text"
@@ -140,16 +140,16 @@ export function HeroQuickForm({ onOpenLeadModal }) {
               value={formData.name}
               onChange={handleChange}
               placeholder="e.g. Rahul Sharma"
-              className="w-full px-4 py-2.5 rounded-xl bg-white/10 border border-white/25 text-white placeholder-stone-400 text-xs sm:text-sm focus:outline-hidden focus:ring-2 focus:ring-[#E8D2B5]/80 focus:bg-white/20 transition-all"
+              className="w-full px-4 py-2.5 rounded-xl bg-white/10 border border-white/25 text-white placeholder-slate-300 text-xs sm:text-sm focus:outline-hidden focus:ring-2 focus:ring-rose-400/80 focus:bg-white/20 transition-all"
             />
           </div>
 
           {/* 2. Mobile Number (+91 format & OTP-ready) */}
           <div>
-            <label className="block text-xs font-bold text-[#E8D2B5] mb-1">
-              WhatsApp / Mobile Number <span className="text-[#E8D2B5]">*</span>
+            <label className="block text-xs font-bold text-slate-200 mb-1">
+              WhatsApp / Mobile Number <span className="text-rose-400">*</span>
             </label>
-            <div className="relative flex rounded-xl border border-white/25 bg-white/10 focus-within:ring-2 focus-within:ring-[#E8D2B5]/80 focus-within:bg-white/20 transition-all overflow-hidden">
+            <div className="relative flex rounded-xl border border-white/25 bg-white/10 focus-within:ring-2 focus-within:ring-rose-400/80 focus-within:bg-white/20 transition-all overflow-hidden">
               <span className="inline-flex items-center px-3 text-xs font-bold text-slate-200 border-r border-white/20 bg-white/5">
                 +91
               </span>
@@ -162,7 +162,7 @@ export function HeroQuickForm({ onOpenLeadModal }) {
                 onChange={handleChange}
                 onBlur={handlePhoneBlur}
                 placeholder="10-digit mobile number"
-                className="w-full px-3 py-2.5 bg-transparent text-white placeholder-stone-400 text-xs sm:text-sm focus:outline-hidden"
+                className="w-full px-3 py-2.5 bg-transparent text-white placeholder-slate-300 text-xs sm:text-sm focus:outline-hidden"
               />
             </div>
           </div>
@@ -179,7 +179,7 @@ export function HeroQuickForm({ onOpenLeadModal }) {
 
           {/* 3. NEET Score / Status */}
           <div>
-            <label className="block text-xs font-bold text-[#E8D2B5] mb-1">
+            <label className="block text-xs font-bold text-slate-200 mb-1">
               NEET Score (or Expected)
             </label>
             <input
@@ -188,12 +188,12 @@ export function HeroQuickForm({ onOpenLeadModal }) {
               value={formData.neetScore}
               onChange={handleChange}
               placeholder="e.g. 350 / Appearing NEET 2026"
-              className="w-full px-4 py-2.5 rounded-xl bg-white/10 border border-white/25 text-white placeholder-stone-400 text-xs sm:text-sm focus:outline-hidden focus:ring-2 focus:ring-[#E8D2B5]/80 focus:bg-white/20 transition-all"
+              className="w-full px-4 py-2.5 rounded-xl bg-white/10 border border-white/25 text-white placeholder-slate-300 text-xs sm:text-sm focus:outline-hidden focus:ring-2 focus:ring-rose-400/80 focus:bg-white/20 transition-all"
             />
           </div>
 
           {errorMessage && (
-            <p className="text-xs text-rose-300 bg-rose-950/60 p-2 rounded-lg border border-rose-500/30">
+            <p className="text-xs text-rose-300 bg-rose-900/40 p-2 rounded-lg border border-rose-500/30">
               {errorMessage}
             </p>
           )}
@@ -202,13 +202,13 @@ export function HeroQuickForm({ onOpenLeadModal }) {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full py-3.5 bg-[#590907] hover:bg-[#3D0605] text-[#E8D2B5] font-black text-xs sm:text-sm rounded-xl transition-all shadow-lg border border-[#E8D2B5]/30 cursor-pointer flex items-center justify-center gap-2 active:scale-98 disabled:opacity-70"
+            className="w-full py-3.5 bg-[#9B193A] hover:bg-[#7E142F] text-white font-black text-xs sm:text-sm rounded-xl transition-all shadow-lg hover:shadow-rose-950/30 cursor-pointer flex items-center justify-center gap-2 active:scale-98 disabled:opacity-70"
           >
             {isSubmitting ? (
               <span>Verifying Eligibility...</span>
             ) : (
               <>
-                <Send className="w-4 h-4 text-[#E8D2B5]" />
+                <Send className="w-4 h-4 text-white" />
                 <span>Get Free 2026 Seat & Fee Breakdown</span>
               </>
             )}

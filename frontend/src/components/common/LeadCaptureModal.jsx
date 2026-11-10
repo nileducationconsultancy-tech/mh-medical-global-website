@@ -33,7 +33,7 @@ export function WhatsAppFloat({ onOpenLeadModal }) {
           <div className="flex items-center justify-between pb-3 border-b border-slate-100">
             <div className="flex items-center gap-2">
               <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></div>
-              <p className="font-bold text-sm text-[#201C1A]">MBBS Expert Online</p>
+              <p className="font-bold text-sm text-[#082B57]">MBBS Expert Online</p>
             </div>
             <button
               onClick={() => setIsOpen(false)}
@@ -64,9 +64,9 @@ export function WhatsAppFloat({ onOpenLeadModal }) {
                 setIsOpen(false);
                 if (onOpenLeadModal) onOpenLeadModal("WhatsApp Widget Quick Consultation");
               }}
-              className="w-full flex items-center justify-center gap-2 bg-slate-50 hover:bg-slate-100 text-[#201C1A] border border-[#DEDCD4] font-bold py-2 px-4 rounded-xl text-xs transition-colors cursor-pointer"
+              className="w-full flex items-center justify-center gap-2 bg-slate-50 hover:bg-slate-100 text-[#082B57] border border-slate-200 font-bold py-2 px-4 rounded-xl text-xs transition-colors cursor-pointer"
             >
-              <Phone className="w-3.5 h-3.5 text-[#590907]" />
+              <Phone className="w-3.5 h-3.5 text-[#082B57]" />
               Request Free Call Back
             </button>
           </div>
@@ -90,7 +90,7 @@ export function WhatsAppFloat({ onOpenLeadModal }) {
           </span>
         </div>
         <div className="text-left leading-tight">
-          <p className="text-xs sm:text-[13px] font-black text-[#201C1A] tracking-tight group-hover:text-[#590907] transition-colors">
+          <p className="text-xs sm:text-[13px] font-black text-[#082B57] tracking-tight group-hover:text-[#0752B8] transition-colors">
             Chat with Our Expert
           </p>
           <p className="text-[10px] sm:text-[11px] font-bold text-emerald-600">
@@ -163,12 +163,12 @@ export function LeadCaptureModal({ isOpen, onClose, initialTitle = "Book Free MB
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-xs p-2 sm:p-4 overflow-y-auto">
-      <div className="bg-white w-full max-w-lg rounded-2xl shadow-2xl border border-[#DEDCD4] overflow-hidden animate-in fade-in zoom-in-95 duration-200 my-auto max-h-[96vh] flex flex-col">
+      <div className="bg-white w-full max-w-lg rounded-2xl shadow-2xl border border-[#D9E2EC] overflow-hidden animate-in fade-in zoom-in-95 duration-200 my-auto max-h-[96vh] flex flex-col">
         {/* Modal Header */}
-        <div className="bg-linear-to-r from-[#590907] via-[#480706] to-[#3D0605] text-white px-4 py-2.5 sm:px-5 sm:py-3 flex items-center justify-between relative border-b border-[#3D0605] shrink-0">
+        <div className="bg-linear-to-r from-[#0B0F19] via-[#0F172A] to-[#1E293B] text-white px-4 py-2.5 sm:px-5 sm:py-3 flex items-center justify-between relative border-b border-slate-700/60 shrink-0">
           <div className="pr-3 flex items-center gap-2 min-w-0">
-            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#E8D2B5] text-[#590907] text-[10px] font-bold tracking-wide uppercase shrink-0">
-              <Sparkles className="w-2.5 h-2.5 text-[#590907]" />
+            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#9B193A] text-white text-[10px] font-bold tracking-wide uppercase shrink-0">
+              <Sparkles className="w-2.5 h-2.5 text-white" />
               1-on-1 Expert Desk
             </span>
             <h3 className="text-xs sm:text-sm font-bold text-white leading-tight truncate">{initialTitle}</h3>
@@ -186,16 +186,16 @@ export function LeadCaptureModal({ isOpen, onClose, initialTitle = "Book Free MB
         <div className="p-3.5 sm:p-4.5 overflow-y-auto">
           {submitted ? (
             <div className="text-center py-6 space-y-3">
-              <div className="w-12 h-12 bg-[#ECEDE8] text-[#590907] rounded-full flex items-center justify-center mx-auto border-2 border-[#590907]">
+              <div className="w-12 h-12 bg-[#EBF3FA] text-[#063280] rounded-full flex items-center justify-center mx-auto border-2 border-[#063280]">
                 <CheckCircle2 className="w-8 h-8" />
               </div>
-              <h4 className="text-lg font-bold text-[#590907]">Application Received Successfully!</h4>
-              <p className="text-[#77776F] text-xs max-w-sm mx-auto leading-relaxed">
+              <h4 className="text-lg font-bold text-[#063280]">Application Received Successfully!</h4>
+              <p className="text-[#475569] text-xs max-w-sm mx-auto leading-relaxed">
                 Thank you <strong>{formData.name}</strong>. Our senior MBBS counsellor will contact you on <strong>{formData.phone || formData.whatsapp}</strong> within 2 hours with verified university prospectuses and eligibility guidance.
               </p>
               <button
                 onClick={handleReset}
-                className="inline-flex items-center justify-center px-5 py-2 bg-[#590907] hover:bg-[#3D0605] text-white rounded-lg text-xs font-semibold transition-colors mt-1 cursor-pointer"
+                className="inline-flex items-center justify-center px-5 py-2 bg-[#063280] hover:bg-[#1558A9] text-white rounded-lg text-xs font-semibold transition-colors mt-1 cursor-pointer"
               >
                 Close Window
               </button>
@@ -205,25 +205,25 @@ export function LeadCaptureModal({ isOpen, onClose, initialTitle = "Book Free MB
               {/* Row 1: Name & Mobile */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 <div>
-                  <label className="block text-[11px] font-bold text-[#201C1A] mb-0.5">Student Full Name *</label>
+                  <label className="block text-[11px] font-bold text-[#063280] mb-0.5">Student Full Name *</label>
                   <input
                     type="text"
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="e.g. Priya Sharma"
-                    className="w-full text-xs px-2.5 py-1.5 h-8 rounded-lg border border-[#DEDCD4] bg-[#F7F5F0] focus:outline-hidden focus:ring-1 focus:ring-[#590907] focus:border-[#590907] text-[#201C1A]"
+                    className="w-full text-xs px-2.5 py-1.5 h-8 rounded-lg border border-[#D9E2EC] bg-[#F7FAFC] focus:outline-hidden focus:ring-1 focus:ring-[#063280] focus:border-[#063280]"
                   />
                 </div>
                 <div>
-                  <label className="block text-[11px] font-bold text-[#201C1A] mb-0.5">Mobile / Calling No. *</label>
+                  <label className="block text-[11px] font-bold text-[#063280] mb-0.5">Mobile / Calling No. *</label>
                   <input
                     type="tel"
                     required
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     placeholder="+91 93106 48055"
-                    className="w-full text-xs px-2.5 py-1.5 h-8 rounded-lg border border-[#DEDCD4] bg-[#F7F5F0] focus:outline-hidden focus:ring-1 focus:ring-[#590907] focus:border-[#590907] text-[#201C1A]"
+                    className="w-full text-xs px-2.5 py-1.5 h-8 rounded-lg border border-[#D9E2EC] bg-[#F7FAFC] focus:outline-hidden focus:ring-1 focus:ring-[#063280] focus:border-[#063280]"
                   />
                 </div>
               </div>
@@ -231,23 +231,23 @@ export function LeadCaptureModal({ isOpen, onClose, initialTitle = "Book Free MB
               {/* Row 2: WhatsApp & Email */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 <div>
-                  <label className="block text-[11px] font-bold text-[#201C1A] mb-0.5">WhatsApp Number</label>
+                  <label className="block text-[11px] font-bold text-[#063280] mb-0.5">WhatsApp Number</label>
                   <input
                     type="tel"
                     value={formData.whatsapp}
                     onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}
                     placeholder="For brochure on WhatsApp"
-                    className="w-full text-xs px-2.5 py-1.5 h-8 rounded-lg border border-[#DEDCD4] bg-[#F7F5F0] focus:outline-hidden focus:ring-1 focus:ring-[#590907] text-[#201C1A]"
+                    className="w-full text-xs px-2.5 py-1.5 h-8 rounded-lg border border-[#D9E2EC] bg-[#F7FAFC] focus:outline-hidden focus:ring-1 focus:ring-[#063280]"
                   />
                 </div>
                 <div>
-                  <label className="block text-[11px] font-bold text-[#201C1A] mb-0.5">Email Address</label>
+                  <label className="block text-[11px] font-bold text-[#063280] mb-0.5">Email Address</label>
                   <input
                     type="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="student@example.com"
-                    className="w-full text-xs px-2.5 py-1.5 h-8 rounded-lg border border-[#DEDCD4] bg-[#F7F5F0] focus:outline-hidden focus:ring-1 focus:ring-[#590907] text-[#201C1A]"
+                    className="w-full text-xs px-2.5 py-1.5 h-8 rounded-lg border border-[#D9E2EC] bg-[#F7FAFC] focus:outline-hidden focus:ring-1 focus:ring-[#063280]"
                   />
                 </div>
               </div>
@@ -255,11 +255,11 @@ export function LeadCaptureModal({ isOpen, onClose, initialTitle = "Book Free MB
               {/* Row 3: NEET Status, Score, 12th PCB */}
               <div className="grid grid-cols-3 gap-2">
                 <div>
-                  <label className="block text-[11px] font-bold text-[#201C1A] mb-0.5 truncate">NEET Status</label>
+                  <label className="block text-[11px] font-bold text-[#063280] mb-0.5 truncate">NEET Status</label>
                   <select
                     value={formData.neetStatus}
                     onChange={(e) => setFormData({ ...formData, neetStatus: e.target.value })}
-                    className="w-full text-xs px-2 py-1.5 h-8 rounded-lg border border-[#DEDCD4] bg-[#F7F5F0] focus:ring-1 focus:ring-[#590907] text-[#201C1A]"
+                    className="w-full text-xs px-2 py-1.5 h-8 rounded-lg border border-[#D9E2EC] bg-[#F7FAFC] focus:ring-1 focus:ring-[#063280] text-[#0F172A]"
                   >
                     <option value="Qualified">Qualified</option>
                     <option value="Appearing">Appearing</option>
@@ -267,23 +267,23 @@ export function LeadCaptureModal({ isOpen, onClose, initialTitle = "Book Free MB
                   </select>
                 </div>
                 <div>
-                  <label className="block text-[11px] font-bold text-[#201C1A] mb-0.5 truncate">NEET Score</label>
+                  <label className="block text-[11px] font-bold text-[#063280] mb-0.5 truncate">NEET Score</label>
                   <input
                     type="number"
                     value={formData.neetScore}
                     onChange={(e) => setFormData({ ...formData, neetScore: e.target.value })}
                     placeholder="e.g. 430"
-                    className="w-full text-xs px-2 py-1.5 h-8 rounded-lg border border-[#DEDCD4] bg-[#F7F5F0] focus:ring-1 focus:ring-[#590907] text-[#201C1A]"
+                    className="w-full text-xs px-2 py-1.5 h-8 rounded-lg border border-[#D9E2EC] bg-[#F7FAFC] focus:ring-1 focus:ring-[#063280]"
                   />
                 </div>
                 <div>
-                  <label className="block text-[11px] font-bold text-[#201C1A] mb-0.5 truncate">12th PCB %</label>
+                  <label className="block text-[11px] font-bold text-[#063280] mb-0.5 truncate">12th PCB %</label>
                   <input
                     type="number"
                     value={formData.pcbPercentage}
                     onChange={(e) => setFormData({ ...formData, pcbPercentage: e.target.value })}
                     placeholder="e.g. 78%"
-                    className="w-full text-xs px-2 py-1.5 h-8 rounded-lg border border-[#DEDCD4] bg-[#F7F5F0] focus:ring-1 focus:ring-[#590907] text-[#201C1A]"
+                    className="w-full text-xs px-2 py-1.5 h-8 rounded-lg border border-[#D9E2EC] bg-[#F7FAFC] focus:ring-1 focus:ring-[#063280]"
                   />
                 </div>
               </div>
@@ -291,11 +291,11 @@ export function LeadCaptureModal({ isOpen, onClose, initialTitle = "Book Free MB
               {/* Row 4: Preferred University & City */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 <div>
-                  <label className="block text-[11px] font-bold text-[#201C1A] mb-0.5">Preferred University</label>
+                  <label className="block text-[11px] font-bold text-[#063280] mb-0.5">Preferred University</label>
                   <select
                     value={formData.preferredUniversity}
                     onChange={(e) => setFormData({ ...formData, preferredUniversity: e.target.value })}
-                    className="w-full text-xs px-2.5 py-1.5 h-8 rounded-lg border border-[#DEDCD4] bg-[#F7F5F0] focus:ring-1 focus:ring-[#590907] text-[#201C1A]"
+                    className="w-full text-xs px-2.5 py-1.5 h-8 rounded-lg border border-[#D9E2EC] bg-[#F7FAFC] focus:ring-1 focus:ring-[#063280] text-[#0F172A]"
                   >
                     <option value="Tashkent Medical Academy">Tashkent Medical Academy (Govt)</option>
                     <option value="Samarkand State Medical University">Samarkand State Medical Univ (Govt)</option>
@@ -308,26 +308,26 @@ export function LeadCaptureModal({ isOpen, onClose, initialTitle = "Book Free MB
                   </select>
                 </div>
                 <div>
-                  <label className="block text-[11px] font-bold text-[#201C1A] mb-0.5">Your City / State</label>
+                  <label className="block text-[11px] font-bold text-[#063280] mb-0.5">Your City / State</label>
                   <input
                     type="text"
                     value={formData.city}
                     onChange={(e) => setFormData({ ...formData, city: e.target.value })}
                     placeholder="e.g. Jaipur, Rajasthan"
-                    className="w-full text-xs px-2.5 py-1.5 h-8 rounded-lg border border-[#DEDCD4] bg-[#F7F5F0] focus:ring-1 focus:ring-[#590907] text-[#201C1A]"
+                    className="w-full text-xs px-2.5 py-1.5 h-8 rounded-lg border border-[#D9E2EC] bg-[#F7FAFC] focus:ring-1 focus:ring-[#063280]"
                   />
                 </div>
               </div>
 
               {/* Row 5: Notes / Questions */}
               <div>
-                <label className="block text-[11px] font-bold text-[#201C1A] mb-0.5">Specific Questions / Notes</label>
+                <label className="block text-[11px] font-bold text-[#063280] mb-0.5">Specific Questions / Notes</label>
                 <input
                   type="text"
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   placeholder="Ask about hostel rooms, Indian food, total fees, or admission deadlines..."
-                  className="w-full text-xs px-2.5 py-1.5 h-8 rounded-lg border border-[#DEDCD4] bg-[#F7F5F0] focus:ring-1 focus:ring-[#590907] text-[#201C1A]"
+                  className="w-full text-xs px-2.5 py-1.5 h-8 rounded-lg border border-[#D9E2EC] bg-[#F7FAFC] focus:ring-1 focus:ring-[#063280]"
                 />
               </div>
 
@@ -336,20 +336,20 @@ export function LeadCaptureModal({ isOpen, onClose, initialTitle = "Book Free MB
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-2.5 px-4 bg-[#590907] hover:bg-[#3D0605] text-[#E8D2B5] font-bold rounded-lg text-xs sm:text-sm transition-all duration-200 shadow-md flex items-center justify-center gap-2 cursor-pointer border-b-2 border-[#3D0605] active:scale-99 disabled:opacity-70"
+                  className="w-full py-2.5 px-4 bg-[#063280] hover:bg-[#1558A9] text-white font-bold rounded-lg text-xs sm:text-sm transition-all duration-200 shadow-md flex items-center justify-center gap-2 cursor-pointer border-b-2 border-[#9B193A] active:scale-99 disabled:opacity-70"
                 >
                   {isSubmitting ? (
                     <span>Submitting Application...</span>
                   ) : (
                     <>
-                      <Send className="w-3.5 h-3.5 text-[#E8D2B5]" />
+                      <Send className="w-3.5 h-3.5 text-white" />
                       <span>Get Free University Prospectus & Guidance</span>
                     </>
                   )}
                 </button>
               </div>
 
-              <p className="text-[10px] text-center text-[#77776F] leading-tight">
+              <p className="text-[10px] text-center text-[#475569] leading-tight">
                 🔒 100% Privacy Guaranteed • Zero Spam • Free Guidance
               </p>
             </form>

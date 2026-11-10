@@ -15,7 +15,7 @@ export function StickyMobileBottomBar({ onOpenLeadModal }) {
   const waUrl = isWaPlaceholder ? "#" : `https://wa.me/${siteConfig.whatsappNumber}?text=${defaultWaMessage}`;
 
   return (
-    <div className="block sm:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-[#DEDCD4] px-3 py-2.5 shadow-2xl font-sans">
+    <div className="block sm:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-[#D9E2EC] px-3 py-2.5 shadow-2xl font-sans">
       <div className="grid grid-cols-3 gap-2">
         {/* 1. Direct Call */}
         <a
@@ -27,9 +27,9 @@ export function StickyMobileBottomBar({ onOpenLeadModal }) {
               onOpenLeadModal("Sticky Bar Call Helpline");
             }
           }}
-          className="flex flex-col items-center justify-center py-2 px-1 rounded-xl bg-[#F7F5F0] border border-[#DEDCD4] text-[#201C1A] active:scale-95 transition-all text-center"
+          className="flex flex-col items-center justify-center py-2 px-1 rounded-xl bg-[#F7FAFC] border border-[#D9E2EC] text-[#063280] active:scale-95 transition-all text-center"
         >
-          <Phone className="w-4 h-4 text-[#590907] mb-0.5" />
+          <Phone className="w-4 h-4 text-[#063280] mb-0.5" />
           <span className="text-[10px] font-extrabold leading-none">Call Expert</span>
         </a>
 
@@ -55,9 +55,9 @@ export function StickyMobileBottomBar({ onOpenLeadModal }) {
         <Link
           to="/mbbs-eligibility"
           onClick={() => track("sticky_bar_eligibility_click")}
-          className="flex flex-col items-center justify-center py-2 px-1 rounded-xl bg-[#590907] text-[#E8D2B5] active:scale-95 transition-all text-center shadow-xs"
+          className="flex flex-col items-center justify-center py-2 px-1 rounded-xl bg-[#063280] text-white active:scale-95 transition-all text-center shadow-xs"
         >
-          <CheckCircle2 className="w-4 h-4 text-[#E8D2B5] mb-0.5" />
+          <CheckCircle2 className="w-4 h-4 text-[#9ABAD9] mb-0.5" />
           <span className="text-[10px] font-extrabold leading-none">Eligibility</span>
         </Link>
       </div>

@@ -542,7 +542,7 @@ export function AdminDashboardPage() {
                                 ? "bg-amber-100 text-amber-800"
                                 : l.status === "Admission Received" || l.status === "Joined"
                                 ? "bg-emerald-100 text-emerald-800"
-                                : "bg-[#ECEDE8] text-[#590907]"
+                                : "bg-blue-100 text-blue-800"
                             }`}
                           >
                             {l.status}

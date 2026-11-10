@@ -99,18 +99,18 @@ export function FeeCalculator({ onOpenLeadModal }) {
   };
 
   return (
-    <div className="bg-white rounded-3xl shadow-xl border border-[#DEDCD4] p-6 sm:p-8 lg:p-10 font-sans" id="fee-calculator-tool">
+    <div className="bg-white rounded-3xl shadow-xl border border-[#D9E2EC] p-6 sm:p-8 lg:p-10 font-sans" id="fee-calculator-tool">
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-[#DEDCD4]">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-[#D9E2EC]">
         <div>
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#ECEDE8] text-[#590907] text-xs font-bold uppercase tracking-wider mb-2 border border-[#DEDCD4]">
-            <Calculator className="w-3.5 h-3.5 text-[#590907]" />
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#EBF3FA] text-[#063280] text-xs font-bold uppercase tracking-wider mb-2 border border-[#D9E2EC]">
+            <Calculator className="w-3.5 h-3.5 text-[#063280]" />
             <span>Interactive 6-Year Budget Simulator</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-black text-[#201C1A]">
+          <h2 className="text-2xl sm:text-3xl font-black text-[#063280]">
             MBBS in Uzbekistan Fee & Cost Calculator (2026-27 Intake)
           </h2>
-          <p className="text-[#77776F] text-xs sm:text-sm mt-1">
+          <p className="text-[#475569] text-xs sm:text-sm mt-1">
             Calculate accurate itemized tuition, hostel, and Indian mess expenses with transparent RBI benchmark rates.
           </p>
         </div>
@@ -119,20 +119,20 @@ export function FeeCalculator({ onOpenLeadModal }) {
         <div className="flex items-center gap-2 self-start md:self-auto">
           <button
             onClick={handleShare}
-            className="flex items-center gap-1.5 px-3 py-2 rounded-xl border border-[#DEDCD4] bg-[#F7F5F0] text-xs font-bold text-[#201C1A] hover:bg-[#ECEDE8] transition-all cursor-pointer shadow-2xs"
+            className="flex items-center gap-1.5 px-3 py-2 rounded-xl border border-[#D9E2EC] bg-[#F7FAFC] text-xs font-bold text-[#063280] hover:bg-[#EBF3FA] transition-all cursor-pointer shadow-2xs"
             title="Share this calculation"
           >
             <Share2 className="w-3.5 h-3.5" />
             <span>{copiedLink ? "Link Copied!" : "Share Calculation"}</span>
           </button>
 
-          <div className="flex items-center bg-[#F7F5F0] p-1 rounded-xl border border-[#DEDCD4]">
+          <div className="flex items-center bg-[#F7FAFC] p-1 rounded-xl border border-[#D9E2EC]">
             <button
               onClick={() => handleCurrencyChange("INR")}
               className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
                 currency === "INR"
-                  ? "bg-[#590907] text-white shadow-xs"
-                  : "text-[#77776F] hover:text-[#590907]"
+                  ? "bg-[#063280] text-white shadow-xs"
+                  : "text-[#475569] hover:text-[#063280]"
               }`}
             >
               <span>🇮🇳 INR (₹)</span>
@@ -141,8 +141,8 @@ export function FeeCalculator({ onOpenLeadModal }) {
               onClick={() => handleCurrencyChange("USD")}
               className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
                 currency === "USD"
-                  ? "bg-[#590907] text-white shadow-xs"
-                  : "text-[#77776F] hover:text-[#590907]"
+                  ? "bg-[#063280] text-white shadow-xs"
+                  : "text-[#475569] hover:text-[#063280]"
               }`}
             >
               <span>🇺🇸 USD ($)</span>
@@ -157,13 +157,13 @@ export function FeeCalculator({ onOpenLeadModal }) {
         <div className="lg:col-span-7 space-y-6">
           {/* University Selector */}
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-[#201C1A] mb-2">
+            <label className="block text-xs font-bold uppercase tracking-wider text-[#063280] mb-2">
               Select Medical University
             </label>
             <select
               value={selectedUniId}
               onChange={(e) => handleUniChange(e.target.value)}
-              className="w-full text-sm font-semibold p-3.5 rounded-xl border border-[#DEDCD4] bg-[#F7F5F0] text-[#201C1A] focus:ring-2 focus:ring-[#590907] focus:outline-hidden cursor-pointer"
+              className="w-full text-sm font-semibold p-3.5 rounded-xl border border-[#D9E2EC] bg-[#F7FAFC] text-[#0F172A] focus:ring-2 focus:ring-[#063280] focus:outline-hidden cursor-pointer"
             >
               {universitiesData.map((u) => (
                 <option key={u.id} value={u.id}>
@@ -175,7 +175,7 @@ export function FeeCalculator({ onOpenLeadModal }) {
 
           {/* Inclusions & Custom Switches */}
           <div className="space-y-3">
-            <label className="block text-xs font-bold uppercase tracking-wider text-[#201C1A]">
+            <label className="block text-xs font-bold uppercase tracking-wider text-[#063280]">
               Customize Living & Hostel Inclusions
             </label>
 
@@ -185,13 +185,13 @@ export function FeeCalculator({ onOpenLeadModal }) {
                 onClick={() => setIncludeHostel(!includeHostel)}
                 className={`p-3 rounded-xl border text-left text-xs transition-all flex flex-col justify-between cursor-pointer ${
                   includeHostel
-                    ? "bg-[#ECEDE8] border-[#590907] text-[#590907] font-semibold"
-                    : "bg-[#F7F5F0] border-[#DEDCD4] text-[#77776F]"
+                    ? "bg-[#EBF3FA] border-[#063280] text-[#063280] font-semibold"
+                    : "bg-[#F7FAFC] border-[#D9E2EC] text-[#475569]"
                 }`}
               >
                 <div className="flex items-center justify-between mb-1">
                   <span>University Hostel</span>
-                  {includeHostel && <CheckCircle2 className="w-4 h-4 text-[#590907]" />}
+                  {includeHostel && <CheckCircle2 className="w-4 h-4 text-[#063280]" />}
                 </div>
                 <span className="text-[11px] opacity-80">
                   {formatAmount(selectedUni.fees?.annualHostelUSD || 0)} / yr
@@ -203,13 +203,13 @@ export function FeeCalculator({ onOpenLeadModal }) {
                 onClick={() => setIncludeMess(!includeMess)}
                 className={`p-3 rounded-xl border text-left text-xs transition-all flex flex-col justify-between cursor-pointer ${
                   includeMess
-                    ? "bg-[#ECEDE8] border-[#590907] text-[#590907] font-semibold"
-                    : "bg-[#F7F5F0] border-[#DEDCD4] text-[#77776F]"
+                    ? "bg-[#EBF3FA] border-[#063280] text-[#063280] font-semibold"
+                    : "bg-[#F7FAFC] border-[#D9E2EC] text-[#475569]"
                 }`}
               >
                 <div className="flex items-center justify-between mb-1">
                   <span>Indian Mess (3 Meals)</span>
-                  {includeMess && <CheckCircle2 className="w-4 h-4 text-[#590907]" />}
+                  {includeMess && <CheckCircle2 className="w-4 h-4 text-[#063280]" />}
                 </div>
                 <span className="text-[11px] opacity-80">
                   {formatAmount(selectedUni.fees?.annualIndianMessUSD || 0)} / yr
@@ -221,13 +221,13 @@ export function FeeCalculator({ onOpenLeadModal }) {
                 onClick={() => setIncludeInsuranceVisa(!includeInsuranceVisa)}
                 className={`p-3 rounded-xl border text-left text-xs transition-all flex flex-col justify-between cursor-pointer ${
                   includeInsuranceVisa
-                    ? "bg-[#ECEDE8] border-[#590907] text-[#590907] font-semibold"
-                    : "bg-[#F7F5F0] border-[#DEDCD4] text-[#77776F]"
+                    ? "bg-[#EBF3FA] border-[#063280] text-[#063280] font-semibold"
+                    : "bg-[#F7FAFC] border-[#D9E2EC] text-[#475569]"
                 }`}
               >
                 <div className="flex items-center justify-between mb-1">
                   <span>Visa & Medical Ins.</span>
-                  {includeInsuranceVisa && <CheckCircle2 className="w-4 h-4 text-[#590907]" />}
+                  {includeInsuranceVisa && <CheckCircle2 className="w-4 h-4 text-[#063280]" />}
                 </div>
                 <span className="text-[11px] opacity-80">
                   {formatAmount((selectedUni.fees?.annualMedicalInsuranceUSD || 0) + (selectedUni.fees?.annualVisaRenewalUSD || 0))} / yr
@@ -237,10 +237,10 @@ export function FeeCalculator({ onOpenLeadModal }) {
           </div>
 
           {/* Travel Trips Slider */}
-          <div className="bg-[#F7F5F0] p-4 rounded-2xl border border-[#DEDCD4] space-y-2">
-            <div className="flex items-center justify-between text-xs font-bold text-[#201C1A]">
+          <div className="bg-[#F7FAFC] p-4 rounded-2xl border border-[#D9E2EC] space-y-2">
+            <div className="flex items-center justify-between text-xs font-bold text-[#0F172A]">
               <span>Delhi ⇄ Tashkent Annual Flights:</span>
-              <span className="text-[#590907] bg-[#ECEDE8] px-2.5 py-0.5 rounded-md font-black border border-[#DEDCD4]">
+              <span className="text-[#063280] bg-[#EBF3FA] px-2.5 py-0.5 rounded-md font-black border border-[#D9E2EC]">
                 {travelTripsPerYear} Trip(s) / Year (~{formatAmount(airfarePerYearUSD)})
               </span>
             </div>
@@ -251,9 +251,9 @@ export function FeeCalculator({ onOpenLeadModal }) {
               step="1"
               value={travelTripsPerYear}
               onChange={(e) => setTravelTripsPerYear(parseInt(e.target.value))}
-              className="w-full accent-[#590907] h-2 bg-slate-200 rounded-lg cursor-pointer"
+              className="w-full accent-[#063280] h-2 bg-slate-200 rounded-lg cursor-pointer"
             />
-            <div className="flex justify-between text-[10px] text-[#77776F]">
+            <div className="flex justify-between text-[10px] text-[#475569]">
               <span>0 Trips (Hostel stay during vacation)</span>
               <span>1 Trip (Annual Summer break home)</span>
               <span>2 Trips (Summer & Winter vacations)</span>
@@ -261,85 +261,85 @@ export function FeeCalculator({ onOpenLeadModal }) {
           </div>
 
           {/* Itemized Table */}
-          <div className="border border-[#DEDCD4] rounded-2xl overflow-hidden text-xs">
-            <div className="bg-[#A5A79B]/20 font-bold text-[#201C1A] px-4 py-2.5 flex justify-between border-b border-[#DEDCD4]">
+          <div className="border border-[#D9E2EC] rounded-2xl overflow-hidden text-xs">
+            <div className="bg-[#F7FAFC] font-bold text-[#063280] px-4 py-2.5 flex justify-between border-b border-[#D9E2EC]">
               <span>Annual Fee Component</span>
               <span>Estimated Cost ({currency})</span>
             </div>
-            <div className="divide-y divide-[#DEDCD4] bg-white">
-              <div className="px-4 py-2.5 flex justify-between text-[#201C1A]">
+            <div className="divide-y divide-[#D9E2EC] bg-white">
+              <div className="px-4 py-2.5 flex justify-between text-[#0F172A]">
                 <span className="font-medium">University Tuition Fee (Official Decree)</span>
-                <span className="font-bold text-[#590907]">{formatAmount(tuitionPerYearUSD)}</span>
+                <span className="font-bold text-[#063280]">{formatAmount(tuitionPerYearUSD)}</span>
               </div>
-              <div className="px-4 py-2.5 flex justify-between text-[#201C1A]">
+              <div className="px-4 py-2.5 flex justify-between text-[#0F172A]">
                 <span className="font-medium">University Hostel Accommodation</span>
-                <span className="font-bold text-[#590907]">{formatAmount(hostelPerYearUSD)}</span>
+                <span className="font-bold text-[#063280]">{formatAmount(hostelPerYearUSD)}</span>
               </div>
-              <div className="px-4 py-2.5 flex justify-between text-[#201C1A]">
+              <div className="px-4 py-2.5 flex justify-between text-[#0F172A]">
                 <span className="font-medium">Indian Mess Food (3 Meals Daily)</span>
-                <span className="font-bold text-[#590907]">{formatAmount(messPerYearUSD)}</span>
+                <span className="font-bold text-[#063280]">{formatAmount(messPerYearUSD)}</span>
               </div>
-              <div className="px-4 py-2.5 flex justify-between text-[#201C1A]">
+              <div className="px-4 py-2.5 flex justify-between text-[#0F172A]">
                 <span className="font-medium">Medical Insurance & Annual Visa Extension</span>
-                <span className="font-bold text-[#590907]">{formatAmount(insuranceVisaPerYearUSD)}</span>
+                <span className="font-bold text-[#063280]">{formatAmount(insuranceVisaPerYearUSD)}</span>
               </div>
-              <div className="px-4 py-2.5 flex justify-between text-[#201C1A]">
+              <div className="px-4 py-2.5 flex justify-between text-[#0F172A]">
                 <span className="font-medium">Annual Non-Stop Delhi ⇄ Tashkent Flights</span>
-                <span className="font-bold text-[#590907]">{formatAmount(airfarePerYearUSD)}</span>
+                <span className="font-bold text-[#063280]">{formatAmount(airfarePerYearUSD)}</span>
               </div>
-              <div className="px-4 py-2.5 flex justify-between text-[#201C1A] bg-[#ECEDE8]">
-                <span className="font-bold text-[#201C1A]">Total Annual Recurring Expense</span>
-                <span className="font-black text-[#590907] text-sm">{formatAmount(annualRecurringUSD)}</span>
+              <div className="px-4 py-2.5 flex justify-between text-[#0F172A] bg-[#EBF3FA]/70">
+                <span className="font-bold text-[#063280]">Total Annual Recurring Expense</span>
+                <span className="font-black text-[#063280] text-sm">{formatAmount(annualRecurringUSD)}</span>
               </div>
             </div>
           </div>
         </div>
 
         {/* Right Output Summary Card (5 Cols) */}
-        <div className="lg:col-span-5 flex flex-col justify-between bg-linear-to-br from-[#590907] via-[#480706] to-[#3D0605] rounded-3xl p-6 sm:p-8 text-white shadow-xl relative overflow-hidden border border-[#E8D2B5]/20">
+        <div className="lg:col-span-5 flex flex-col justify-between bg-linear-to-br from-[#063280] via-[#0E438D] to-[#1558A9] rounded-3xl p-6 sm:p-8 text-white shadow-xl relative overflow-hidden border border-[#9ABAD9]/20">
           <div className="space-y-6">
             <div className="flex items-center justify-between border-b border-white/15 pb-4">
               <div>
-                <p className="text-xs text-[#E8D2B5] uppercase tracking-widest font-bold">University Selected</p>
+                <p className="text-xs text-[#9ABAD9] uppercase tracking-widest font-bold">University Selected</p>
                 <h3 className="text-lg font-extrabold text-white leading-tight mt-0.5">{selectedUni.name}</h3>
-                <p className="text-xs text-[#ECEDE8]/80">{selectedUni.city}, Uzbekistan • {selectedUni.type} Academy</p>
+                <p className="text-xs text-slate-200">{selectedUni.city}, Uzbekistan • {selectedUni.type} Academy</p>
               </div>
-              <span className="text-xs font-bold px-2.5 py-1 bg-white/10 text-[#E8D2B5] rounded-lg border border-[#E8D2B5]/30">
+              <span className="text-xs font-bold px-2.5 py-1 bg-white/10 text-[#9ABAD9] rounded-lg border border-[#9ABAD9]/30">
                 6-Year MD
               </span>
             </div>
 
             {/* Total 6-Year Grand Total Highlight */}
             <div className="bg-white/10 rounded-2xl p-5 border border-white/15 space-y-1">
-              <p className="text-xs text-[#ECEDE8]/90 font-medium">Complete Estimated 6-Year Budget</p>
+              <p className="text-xs text-slate-200 font-medium">Complete Estimated 6-Year Budget</p>
               <div className="flex items-baseline gap-2">
                 <span className="text-3xl sm:text-4xl font-black text-white">
                   {formatAmount(total6YearUSD)}
                 </span>
                 {currency === "INR" && (
-                  <span className="text-sm font-bold text-[#E8D2B5]">
+                  <span className="text-sm font-bold text-[#9ABAD9]">
                     ({formatLakhs(total6YearUSD)})
                   </span>
                 )}
               </div>
-              <p className="text-[11px] text-[#ECEDE8]/80 pt-1">
+              <p className="text-[11px] text-slate-300 pt-1">
                 *Covers 6 years tuition + hostel + Indian mess + visa renewal + 1st-year official documentation.
               </p>
             </div>
 
             {/* Annual Breakdown Quick Preview */}
             <div className="space-y-2 text-xs">
-              <div className="flex justify-between text-[#ECEDE8]/90 pb-1.5 border-b border-white/15">
+              <div className="flex justify-between text-slate-200 pb-1.5 border-b border-white/15">
                 <span>Per-Year Average Cost:</span>
                 <span className="font-bold text-white">{formatAmount(annualRecurringUSD)}/yr</span>
               </div>
-              <div className="flex justify-between text-[#ECEDE8]/90 pb-1.5 border-b border-white/15">
+              <div className="flex justify-between text-slate-200 pb-1.5 border-b border-white/15">
                 <span>1st-Year One-Time Charges:</span>
                 <span className="font-bold text-white">{formatAmount(firstYearOneTimeUSD)}</span>
               </div>
-              <div className="flex justify-between text-[#ECEDE8]/90">
+              <div className="flex justify-between text-slate-200">
                 <span>Indian Private Medical College Est.:</span>
-                <span className="font-bold text-[#E8D2B5] line-through">₹75 Lakhs – ₹1.2 Crore</span>
+                <span className="font-bold text-[#9ABAD9] line-through">₹75 Lakhs – ₹1.2 Crore</span>
               </div>
             </div>
           </div>
@@ -355,9 +355,9 @@ export function FeeCalculator({ onOpenLeadModal }) {
                 });
                 onOpenLeadModal(`Download Itemized Fee PDF: ${selectedUni.name}`);
               }}
-              className="w-full py-3.5 px-4 bg-[#E8D2B5] hover:bg-white text-[#590907] font-extrabold rounded-2xl text-xs sm:text-sm transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer"
+              className="w-full py-3.5 px-4 bg-[#9B193A] hover:bg-[#7E142F] text-white font-extrabold rounded-2xl text-xs sm:text-sm transition-all shadow-lg hover:shadow-rose-950/30 flex items-center justify-center gap-2 cursor-pointer"
             >
-              <Download className="w-4 h-4 text-[#590907]" />
+              <Download className="w-4 h-4 text-white" />
               <span>Download Itemized 6-Year Fee PDF</span>
             </button>
 
@@ -366,13 +366,13 @@ export function FeeCalculator({ onOpenLeadModal }) {
                 track("fee_calculator_counselling_click", { university: selectedUni.name });
                 onOpenLeadModal(`Fee Consultation for ${selectedUni.name}`);
               }}
-              className="w-full py-2.5 px-4 bg-white/10 hover:bg-white/20 text-[#E8D2B5] font-bold rounded-xl text-xs transition-colors border border-white/20 flex items-center justify-center gap-2 cursor-pointer"
+              className="w-full py-2.5 px-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl text-xs transition-colors border border-white/20 flex items-center justify-center gap-2 cursor-pointer"
             >
-              <Sparkles className="w-3.5 h-3.5 text-[#E8D2B5]" />
+              <Sparkles className="w-3.5 h-3.5 text-[#9ABAD9]" />
               <span>Request Official Rectorate Fee Notice</span>
             </button>
 
-            <p className="text-[10px] text-center text-[#ECEDE8]/80">
+            <p className="text-[10px] text-center text-slate-300">
               *Exchange rate reference: 1 USD = ₹{USD_TO_INR_RATE} ({EXCHANGE_RATE_DATE}). All tuition payable directly to university bank account.
             </p>
           </div>
@@ -380,11 +380,11 @@ export function FeeCalculator({ onOpenLeadModal }) {
       </div>
 
       {/* Source Footnote */}
-      <div className="mt-8 pt-4 border-t border-[#DEDCD4] flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-[#77776F]">
+      <div className="mt-8 pt-4 border-t border-[#D9E2EC] flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-[#475569]">
         <span className="font-medium">
           Source: Official Uzbekistan Ministry of Higher Education & Rectorate Decree 2026.
         </span>
-        <span className="font-bold text-[#590907]">
+        <span className="font-bold text-[#063280]">
           Last Verified: {CANONICAL_PRICING_SUMMARY.exchangeRateDate}
         </span>
       </div>

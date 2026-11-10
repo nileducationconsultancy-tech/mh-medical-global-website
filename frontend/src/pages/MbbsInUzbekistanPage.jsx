@@ -76,10 +76,10 @@ export function MbbsInUzbekistanPage({ onOpenLeadModal }) {
       />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-linear-to-b from-[#590907] via-[#480706] to-[#3D0605] text-white py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-b border-[#3D0605]">
+      <section className="relative overflow-hidden bg-linear-to-b from-[#063280] via-[#0E438D] to-[#1558A9] text-white py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-b border-[#0B2D64]">
         <BannerBackground image="/collageimages/banner-2.png" />
         <div className="relative max-w-5xl mx-auto space-y-6 text-center">
-          <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/10 text-[#E8D2B5] text-xs font-bold uppercase tracking-wider border border-[#E8D2B5]/30">
+          <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/10 text-[#9ABAD9] text-xs font-bold uppercase tracking-wider border border-[#9ABAD9]/30">
             <Sparkles className="w-3.5 h-3.5 text-white" />
             Authoritative Medical Education Guide (2026-2027)
           </span>
@@ -95,7 +95,7 @@ export function MbbsInUzbekistanPage({ onOpenLeadModal }) {
           <div className="flex flex-wrap items-center justify-center gap-3.5 pt-2">
             <Link
               to="/mbbs-fee-calculator"
-              className="px-6 py-3.5 rounded-xl bg-[#E8D2B5] hover:bg-white text-[#590907] font-extrabold text-sm transition-all shadow-md flex items-center gap-2 cursor-pointer"
+              className="px-6 py-3.5 rounded-xl bg-[#9B193A] hover:bg-[#7E142F] text-white font-extrabold text-sm transition-all shadow-md flex items-center gap-2 cursor-pointer"
             >
               <Calculator className="w-4 h-4" />
               Calculate 6-Year Fees
@@ -105,13 +105,13 @@ export function MbbsInUzbekistanPage({ onOpenLeadModal }) {
               to="/mbbs-eligibility"
               className="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm border border-white/20 transition-all flex items-center gap-2 cursor-pointer"
             >
-              <CheckCircle2 className="w-4 h-4 text-[#E8D2B5]" />
+              <CheckCircle2 className="w-4 h-4 text-[#9ABAD9]" />
               Check Eligibility
             </Link>
 
             <button
               onClick={() => onOpenLeadModal("MBBS in Uzbekistan Guide Counselling")}
-              className="px-5 py-3.5 rounded-xl text-[#E8D2B5] hover:text-white text-sm font-bold flex items-center gap-1.5 hover:underline cursor-pointer"
+              className="px-5 py-3.5 rounded-xl text-[#9ABAD9] hover:text-white text-sm font-bold flex items-center gap-1.5 hover:underline cursor-pointer"
             >
               Request Free Consultation <ArrowRight className="w-4 h-4" />
             </button>
@@ -122,28 +122,28 @@ export function MbbsInUzbekistanPage({ onOpenLeadModal }) {
       {/* Quick Summary Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="bg-white p-5 rounded-2xl border border-[#DEDCD4] shadow-2xs space-y-1">
-            <span className="text-[11px] text-[#77776F] font-semibold uppercase">Total Program Duration</span>
-            <p className="text-lg sm:text-xl font-extrabold text-[#590907]">6 Years (5+1 Format)</p>
-            <p className="text-xs text-[#77776F]">54 Mo. Course + 12 Mo. Internship</p>
+          <div className="bg-white p-5 rounded-2xl border border-[#D9E2EC] shadow-2xs space-y-1">
+            <span className="text-[11px] text-[#475569] font-semibold uppercase">Total Program Duration</span>
+            <p className="text-lg sm:text-xl font-extrabold text-[#063280]">6 Years (5+1 Format)</p>
+            <p className="text-xs text-[#1558A9]">54 Mo. Course + 12 Mo. Internship</p>
           </div>
 
-          <div className="bg-white p-5 rounded-2xl border border-[#DEDCD4] shadow-2xs space-y-1">
-            <span className="text-[11px] text-[#77776F] font-semibold uppercase">Annual Tuition Range</span>
-            <p className="text-lg sm:text-xl font-extrabold text-[#590907]">$3,200 – $3,900 USD</p>
-            <p className="text-xs text-[#77776F]">Approx. ₹2.7L – ₹3.3L / year</p>
+          <div className="bg-white p-5 rounded-2xl border border-[#D9E2EC] shadow-2xs space-y-1">
+            <span className="text-[11px] text-[#475569] font-semibold uppercase">Annual Tuition Range</span>
+            <p className="text-lg sm:text-xl font-extrabold text-[#063280]">$3,200 – $3,900 USD</p>
+            <p className="text-xs text-[#1558A9]">Approx. ₹2.7L – ₹3.3L / year</p>
           </div>
 
-          <div className="bg-white p-5 rounded-2xl border border-[#DEDCD4] shadow-2xs space-y-1">
-            <span className="text-[11px] text-[#77776F] font-semibold uppercase">Medium of Instruction</span>
-            <p className="text-lg sm:text-xl font-extrabold text-[#590907]">100% English Medium</p>
-            <p className="text-xs text-[#77776F]">Dedicated International Faculty</p>
+          <div className="bg-white p-5 rounded-2xl border border-[#D9E2EC] shadow-2xs space-y-1">
+            <span className="text-[11px] text-[#475569] font-semibold uppercase">Medium of Instruction</span>
+            <p className="text-lg sm:text-xl font-extrabold text-[#063280]">100% English Medium</p>
+            <p className="text-xs text-[#1558A9]">Dedicated International Faculty</p>
           </div>
 
-          <div className="bg-white p-5 rounded-2xl border border-[#DEDCD4] shadow-2xs space-y-1">
-            <span className="text-[11px] text-[#77776F] font-semibold uppercase">NEET Requirement</span>
-            <p className="text-lg sm:text-xl font-extrabold text-[#590907]">Mandatory (Qualified)</p>
-            <p className="text-xs text-[#77776F]">Valid for 3 Years in India</p>
+          <div className="bg-white p-5 rounded-2xl border border-[#D9E2EC] shadow-2xs space-y-1">
+            <span className="text-[11px] text-[#475569] font-semibold uppercase">NEET Requirement</span>
+            <p className="text-lg sm:text-xl font-extrabold text-[#063280]">Mandatory (Qualified)</p>
+            <p className="text-xs text-[#1558A9]">Valid for 3 Years in India</p>
           </div>
         </div>
       </section>
@@ -151,34 +151,34 @@ export function MbbsInUzbekistanPage({ onOpenLeadModal }) {
       {/* Main Educational Content */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Section 1: Overview */}
-        <div className="bg-white p-8 sm:p-10 rounded-3xl border border-[#DEDCD4] shadow-xs space-y-4 leading-relaxed">
-          <h2 className="text-2xl font-black text-[#201C1A]">
+        <div className="bg-white p-8 sm:p-10 rounded-3xl border border-[#D9E2EC] shadow-xs space-y-4 leading-relaxed">
+          <h2 className="text-2xl font-black text-[#063280]">
             1. Why Indian Medical Aspirants Are Choosing Uzbekistan
           </h2>
-          <p className="text-sm text-[#77776F]">
+          <p className="text-sm text-[#475569]">
             Over the past five years, Uzbekistan has transformed into the premier medical education hub for Indian students seeking a high-quality, English-medium MBBS degree abroad. With over <strong>10,000+ Indian students</strong> currently studying across Tashkent, Samarkand, Bukhara, and Andijan, the country offers a welcoming environment, state-of-the-art hospitals, and very affordable tuition fees compared to private medical colleges in India.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
-            <div className="p-4 rounded-xl bg-[#F7F5F0] border border-[#DEDCD4] space-y-1 text-xs">
-              <span className="font-bold text-[#590907]">Government Teaching Hospitals:</span>
-              <p className="text-[#77776F]">Universities are attached to 500 to 1,500+ bed tertiary government referral centers with high patient flow.</p>
+            <div className="p-4 rounded-xl bg-[#F7FAFC] border border-[#D9E2EC] space-y-1 text-xs">
+              <span className="font-bold text-[#063280]">Government Teaching Hospitals:</span>
+              <p className="text-[#475569]">Universities are attached to 500 to 1,500+ bed tertiary government referral centers with high patient flow.</p>
             </div>
-            <div className="p-4 rounded-xl bg-[#F7F5F0] border border-[#DEDCD4] space-y-1 text-xs">
-              <span className="font-bold text-[#590907]">Direct Flight Connectivity:</span>
-              <p className="text-[#77776F]">Direct 3.5-hour flights between Delhi (DEL) and Tashkent (TAS) make regular vacations seamless.</p>
+            <div className="p-4 rounded-xl bg-[#F7FAFC] border border-[#D9E2EC] space-y-1 text-xs">
+              <span className="font-bold text-[#063280]">Direct Flight Connectivity:</span>
+              <p className="text-[#475569]">Direct 3.5-hour flights between Delhi (DEL) and Tashkent (TAS) make regular vacations seamless.</p>
             </div>
           </div>
         </div>
 
         {/* Section 2: NMC Regulations */}
-        <div className="bg-white p-8 sm:p-10 rounded-3xl border border-[#DEDCD4] shadow-xs space-y-4 leading-relaxed">
-          <h2 className="text-2xl font-black text-[#201C1A]">
+        <div className="bg-white p-8 sm:p-10 rounded-3xl border border-[#D9E2EC] shadow-xs space-y-4 leading-relaxed">
+          <h2 className="text-2xl font-black text-[#063280]">
             2. Compliance with NMC Foreign Medical Graduate Licentiate (FMGL) Regulations 2021
           </h2>
-          <p className="text-sm text-[#77776F]">
+          <p className="text-sm text-[#475569]">
             The National Medical Commission (NMC) in India mandates strict criteria under the Foreign Medical Graduate Licentiate (FMGL) Gazette dated November 18, 2021. Uzbekistan medical programs are fully aligned with every single parameter:
           </p>
-          <ul className="list-disc pl-5 space-y-2 text-xs sm:text-sm text-[#201C1A]">
+          <ul className="list-disc pl-5 space-y-2 text-xs sm:text-sm text-[#0F172A]">
             <li><strong>Duration:</strong> 54 months of theoretical & clinical coursework + 12 months in-house clinical internship (Total 6 Years).</li>
             <li><strong>Medium:</strong> 100% English language throughout all 6 years.</li>
             <li><strong>Internship Location:</strong> Mandatory 1-year internship in the same institution / teaching hospital in Uzbekistan.</li>
@@ -195,14 +195,14 @@ export function MbbsInUzbekistanPage({ onOpenLeadModal }) {
 
         {/* Section 3: Fee Breakdown (Target H2) */}
         <div className="space-y-6">
-          <div className="bg-white p-8 sm:p-10 rounded-3xl border border-[#DEDCD4] shadow-xs space-y-3">
-            <span className="text-xs font-extrabold uppercase tracking-widest text-[#590907] bg-[#ECEDE8] px-3.5 py-1 rounded-full border border-[#DEDCD4]">
+          <div className="bg-white p-8 sm:p-10 rounded-3xl border border-[#D9E2EC] shadow-xs space-y-3">
+            <span className="text-xs font-extrabold uppercase tracking-widest text-[#063280] bg-[#EBF3FA] px-3.5 py-1 rounded-full border border-[#D9E2EC]">
               Transparent Budget Structure
             </span>
-            <h2 className="text-2xl sm:text-3xl font-black text-[#201C1A]">
+            <h2 className="text-2xl sm:text-3xl font-black text-[#063280]">
               Total Fees & Hostel Expense Breakdown
             </h2>
-            <p className="text-xs sm:text-sm text-[#77776F]">
+            <p className="text-xs sm:text-sm text-[#475569]">
               Studying MBBS in Uzbekistan is approximately 70% cheaper than private medical colleges in India. The complete 6-year budget ranges from ₹20 Lakhs to ₹26 Lakhs INR including tuition, hostel, and authentic Indian mess food.
             </p>
           </div>
@@ -211,15 +211,15 @@ export function MbbsInUzbekistanPage({ onOpenLeadModal }) {
         </div>
 
         {/* Section 4: List of Medical Colleges (Target H2) */}
-        <div className="bg-white p-8 sm:p-10 rounded-3xl border border-[#DEDCD4] shadow-xs space-y-6">
+        <div className="bg-white p-8 sm:p-10 rounded-3xl border border-[#D9E2EC] shadow-xs space-y-6">
           <div className="space-y-2">
-            <span className="text-xs font-extrabold uppercase tracking-widest text-[#590907] bg-[#ECEDE8] px-3.5 py-1 rounded-full border border-[#DEDCD4]">
+            <span className="text-xs font-extrabold uppercase tracking-widest text-[#063280] bg-[#EBF3FA] px-3.5 py-1 rounded-full border border-[#D9E2EC]">
               Accredited Institutions
             </span>
-            <h2 className="text-2xl sm:text-3xl font-black text-[#201C1A]">
+            <h2 className="text-2xl sm:text-3xl font-black text-[#063280]">
               List of Medical Colleges in Uzbekistan for Indian Students
             </h2>
-            <p className="text-xs sm:text-sm text-[#77776F]">
+            <p className="text-xs sm:text-sm text-[#475569]">
               Explore top government and private medical universities offering recognized 6-year MD Physician programs in Uzbekistan.
             </p>
           </div>
@@ -228,25 +228,25 @@ export function MbbsInUzbekistanPage({ onOpenLeadModal }) {
             {publishedUnis.map((uni) => (
               <div
                 key={uni.id}
-                className="p-5 rounded-2xl bg-[#F7F5F0] border border-[#DEDCD4] hover:border-[#590907] transition-colors flex flex-col justify-between space-y-4"
+                className="p-5 rounded-2xl bg-[#F7FAFC] border border-[#D9E2EC] hover:border-[#063280] transition-colors flex flex-col justify-between space-y-4"
               >
                 <div>
                   <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-[#590907] text-white">
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-[#063280] text-white">
                       {uni.type}
                     </span>
-                    <span className="text-xs text-[#77776F]">{uni.city}</span>
+                    <span className="text-xs text-[#475569]">{uni.city}</span>
                   </div>
-                  <h3 className="font-bold text-base text-[#201C1A] mt-2 line-clamp-1">{uni.name}</h3>
-                  <p className="text-xs text-[#77776F] mt-1">Est. {uni.establishedYear} • {uni.ranking}</p>
-                  <p className="text-xs font-bold text-[#590907] mt-2">
+                  <h3 className="font-bold text-base text-[#063280] mt-2 line-clamp-1">{uni.name}</h3>
+                  <p className="text-xs text-[#475569] mt-1">Est. {uni.establishedYear} • {uni.ranking}</p>
+                  <p className="text-xs font-bold text-[#1558A9] mt-2">
                     Tuition: ${(uni.fees?.annualTuitionUSD || 0).toLocaleString()}/yr (~₹{Math.round(((uni.fees?.annualTuitionUSD || 0) * USD_TO_INR_RATE) / 100000)}L)
                   </p>
                 </div>
 
                 <Link
                   to={`/universities/uzbekistan/${uni.slug}`}
-                  className="inline-flex items-center justify-between text-xs font-bold text-[#590907] hover:text-[#3D0605] pt-2 border-t border-[#DEDCD4]"
+                  className="inline-flex items-center justify-between text-xs font-bold text-[#063280] hover:text-[#1558A9] pt-2 border-t border-[#D9E2EC]"
                 >
                   <span>View Details & Fee Structure</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -257,30 +257,30 @@ export function MbbsInUzbekistanPage({ onOpenLeadModal }) {
         </div>
 
         {/* Section 5: Eligibility Criteria */}
-        <div className="bg-white p-8 sm:p-10 rounded-3xl border border-[#DEDCD4] shadow-xs space-y-6">
+        <div className="bg-white p-8 sm:p-10 rounded-3xl border border-[#D9E2EC] shadow-xs space-y-6">
           <div className="space-y-2">
-            <h2 className="text-2xl font-black text-[#201C1A]">
+            <h2 className="text-2xl font-black text-[#063280]">
               Eligibility Criteria for Indian Students (2026 Intake)
             </h2>
-            <p className="text-xs sm:text-sm text-[#77776F]">
+            <p className="text-xs sm:text-sm text-[#475569]">
               Admission requirements mandated by the Ministry of Higher Education of Uzbekistan and the NMC:
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
-            <div className="p-4 rounded-2xl bg-[#ECEDE8] border border-[#DEDCD4] space-y-1">
-              <span className="font-extrabold text-[#590907] text-sm">Age Criteria</span>
-              <p className="text-[#77776F]">Must complete at least <strong>17 years of age</strong> on or before December 31st of the admission year.</p>
+            <div className="p-4 rounded-2xl bg-[#EBF3FA] border border-[#D9E2EC] space-y-1">
+              <span className="font-extrabold text-[#063280] text-sm">Age Criteria</span>
+              <p className="text-[#475569]">Must complete at least <strong>17 years of age</strong> on or before December 31st of the admission year.</p>
             </div>
 
-            <div className="p-4 rounded-2xl bg-[#ECEDE8] border border-[#DEDCD4] space-y-1">
-              <span className="font-extrabold text-[#590907] text-sm">12th PCB Aggregate</span>
-              <p className="text-[#77776F]">Minimum <strong>50% in PCB</strong> for General category; minimum <strong>40% in PCB</strong> for OBC/SC/ST categories.</p>
+            <div className="p-4 rounded-2xl bg-[#EBF3FA] border border-[#D9E2EC] space-y-1">
+              <span className="font-extrabold text-[#063280] text-sm">12th PCB Aggregate</span>
+              <p className="text-[#475569]">Minimum <strong>50% in PCB</strong> for General category; minimum <strong>40% in PCB</strong> for OBC/SC/ST categories.</p>
             </div>
 
-            <div className="p-4 rounded-2xl bg-[#ECEDE8] border border-[#DEDCD4] space-y-1">
-              <span className="font-extrabold text-[#590907] text-sm">NEET Qualification</span>
-              <p className="text-[#77776F]">Must have qualified NEET-UG in the current year or within the last 2 years (3-year validity).</p>
+            <div className="p-4 rounded-2xl bg-[#EBF3FA] border border-[#D9E2EC] space-y-1">
+              <span className="font-extrabold text-[#063280] text-sm">NEET Qualification</span>
+              <p className="text-[#475569]">Must have qualified NEET-UG in the current year or within the last 2 years (3-year validity).</p>
             </div>
           </div>
 
@@ -290,22 +290,22 @@ export function MbbsInUzbekistanPage({ onOpenLeadModal }) {
         </div>
 
         {/* Section 6: Comprehensive Internal Linking Grid */}
-        <div className="bg-linear-to-br from-[#590907] via-[#480706] to-[#3D0605] text-white p-8 sm:p-10 rounded-3xl shadow-xl space-y-6 border border-[#E8D2B5]/20">
+        <div className="bg-linear-to-br from-[#063280] to-[#1558A9] text-white p-8 sm:p-10 rounded-3xl shadow-xl space-y-6">
           <div className="space-y-2">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#E8D2B5]">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#9ABAD9]">
               Quick Exploration Grid
             </span>
             <h3 className="text-2xl font-black text-white">
               Explore Uzbekistan MBBS Hubs, Tools & Admissions Portals
             </h3>
-            <p className="text-xs sm:text-sm text-[#ECEDE8]/80">
+            <p className="text-xs sm:text-sm text-slate-200">
               Access in-depth university profiles, budget calculators, city guides, and official regulatory frameworks.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
             <div className="bg-white/10 p-4 rounded-2xl border border-white/15 space-y-2">
-              <h4 className="font-bold text-[#E8D2B5] text-sm">Top Universities</h4>
+              <h4 className="font-bold text-[#9ABAD9] text-sm">Top Universities</h4>
               <ul className="space-y-1.5 text-slate-200">
                 <li>
                   <Link to="/universities/uzbekistan/tashkent-medical-academy" className="hover:text-white underline">
@@ -331,7 +331,7 @@ export function MbbsInUzbekistanPage({ onOpenLeadModal }) {
             </div>
 
             <div className="bg-white/10 p-4 rounded-2xl border border-white/15 space-y-2">
-              <h4 className="font-bold text-[#E8D2B5] text-sm">Interactive Tools</h4>
+              <h4 className="font-bold text-[#9ABAD9] text-sm">Interactive Tools</h4>
               <ul className="space-y-1.5 text-slate-200">
                 <li>
                   <Link to="/mbbs-fee-calculator" className="hover:text-white underline">
@@ -357,7 +357,7 @@ export function MbbsInUzbekistanPage({ onOpenLeadModal }) {
             </div>
 
             <div className="bg-white/10 p-4 rounded-2xl border border-white/15 space-y-2">
-              <h4 className="font-bold text-[#E8D2B5] text-sm">City Guides</h4>
+              <h4 className="font-bold text-[#9ABAD9] text-sm">City Guides</h4>
               <ul className="space-y-1.5 text-slate-200">
                 <li>
                   <Link to="/study-mbbs-in-tashkent" className="hover:text-white underline">
@@ -383,7 +383,7 @@ export function MbbsInUzbekistanPage({ onOpenLeadModal }) {
             </div>
 
             <div className="bg-white/10 p-4 rounded-2xl border border-white/15 space-y-2">
-              <h4 className="font-bold text-[#E8D2B5] text-sm">Guidelines & Visa</h4>
+              <h4 className="font-bold text-[#9ABAD9] text-sm">Guidelines & Visa</h4>
               <ul className="space-y-1.5 text-slate-200">
                 <li>
                   <Link to="/nmc-guidelines-for-mbbs-abroad" className="hover:text-white underline">
