@@ -54,7 +54,7 @@ export default function App({ url }) {
   };
 
   const appContent = (
-    <div className="min-h-screen flex flex-col bg-[#F7F5F0] text-[#201C1A] font-sans selection:bg-[#590907] selection:text-white">
+    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-800 font-sans selection:bg-teal-500 selection:text-white">
       <ScrollToTop />
       <Navbar onOpenLeadModal={handleOpenLeadModal} />
 

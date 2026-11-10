@@ -7,29 +7,28 @@ import {
   ShieldCheck,
   Building2,
   BookOpen,
-  Sparkles,
-  ArrowRight
+  Sparkles
 } from "lucide-react";
 import { siteConfig } from "../../config/site";
 
 export function Footer({ onOpenLeadModal }) {
   const isPhonePlaceholder = !siteConfig.phone || siteConfig.phone.startsWith("TODO_REPLACE");
-
+  const isIndiaOfficePlaceholder = !siteConfig.indiaOffice.streetAddress || siteConfig.indiaOffice.streetAddress.startsWith("TODO_REPLACE");
   return (
-    <footer className="bg-[#201C1A] text-[#A5A79B] font-sans pt-16 pb-12 border-t border-[#390605]">
+    <footer className="bg-[#041B44] text-slate-300 font-sans pt-16 pb-12 border-t border-[#0B2D64]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top CTA Banner inside footer */}
-        <div className="bg-linear-to-r from-[#590907] via-[#3F0605] to-[#390605] rounded-3xl p-8 sm:p-10 mb-14 text-white shadow-2xl relative overflow-hidden border border-[#E8D2B5]/30">
+        <div className="bg-linear-to-r from-[#063280] via-[#0E438D] to-[#1558A9] rounded-3xl p-8 sm:p-10 mb-14 text-white shadow-xl relative overflow-hidden border border-[#9ABAD9]/20">
           <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-6">
             <div className="space-y-2 text-center lg:text-left">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#E8D2B5] text-[#590907] text-xs font-black uppercase tracking-wider">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#9B193A] text-white text-xs font-bold uppercase tracking-wider">
                 <Sparkles className="w-3.5 h-3.5" />
                 NMC FMGL 2021 Eligibility Guidance
               </span>
-              <h3 className="text-2xl sm:text-3xl font-serif font-bold text-[#F7F5F0]">
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
                 Begin Your Medical Career in Uzbekistan
               </h3>
-              <p className="text-[#E8D2B5]/90 text-sm max-w-2xl leading-relaxed">
+              <p className="text-slate-200 text-sm max-w-2xl">
                 Get impartial university comparisons, itemized 6-year fee structures, and end-to-end admission and visa guidance with zero hidden charges.
               </p>
             </div>
@@ -37,42 +36,41 @@ export function Footer({ onOpenLeadModal }) {
             <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
               <Link
                 to="/mbbs-fee-calculator"
-                className="px-5 py-3 rounded-xl bg-white text-[#590907] hover:bg-[#ECEDE8] font-bold text-xs sm:text-sm transition-all shadow-md"
+                className="px-5 py-3 rounded-xl bg-white text-[#063280] hover:bg-slate-100 font-bold text-xs sm:text-sm transition-all shadow-md"
               >
                 Calculate 6-Yr Budget
               </Link>
               <button
                 onClick={() => onOpenLeadModal("Footer Banner Counselling")}
-                className="px-5 py-3 rounded-xl bg-[#E8D2B5] hover:bg-white text-[#590907] font-black text-xs sm:text-sm transition-all shadow-md cursor-pointer flex items-center gap-1.5"
+                className="px-5 py-3 rounded-xl bg-[#9B193A] hover:bg-[#7E142F] text-white font-bold text-xs sm:text-sm transition-all shadow-md cursor-pointer"
               >
-                <span>Talk to Senior Counsellor</span>
-                <ArrowRight className="w-4 h-4" />
+                Talk to Senior Counsellor
               </button>
             </div>
           </div>
         </div>
 
         {/* 4-Column Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-[#390605]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-[#0B2D64]">
           {/* Brand & Overview */}
           <div className="space-y-4">
-            <Link to="/" className="inline-block bg-[#F7F5F0] px-3 py-2 rounded-xl shadow-md group">
+            <Link to="/" className="inline-block bg-white px-3 py-2 rounded-xl shadow-md group">
               <img
                 src="/mh-medical-logo.webp"
                 alt="MH GLOBAL EDUCATION CONSULTANT"
                 className="h-12 w-auto object-contain transition-transform group-hover:scale-105"
               />
             </Link>
-            <p className="text-xs text-[#A5A79B] leading-relaxed">
+            <p className="text-xs text-slate-300 leading-relaxed">
               MH GLOBAL EDUCATION CONSULTANT is a dedicated international medical education portal and advisory network. We empower Indian students and parents with verified data, official university circulars, and transparent guidance for studying medicine in Uzbekistan.
             </p>
-            <div className="pt-2 text-xs space-y-1.5 text-[#E8D2B5]">
+            <div className="pt-2 text-xs space-y-1.5 text-slate-300">
               <p className="flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-[#E8D2B5] shrink-0" />
+                <ShieldCheck className="w-4 h-4 text-[#9ABAD9] shrink-0" />
                 <span>NMC (FMGL 2021) & WHO/WDOMS Compliant</span>
               </p>
               <p className="flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-[#E8D2B5] shrink-0" />
+                <ShieldCheck className="w-4 h-4 text-[#9ABAD9] shrink-0" />
                 <span>On-Ground Student Support in Tashkent & Samarkand</span>
               </p>
             </div>
@@ -80,38 +78,38 @@ export function Footer({ onOpenLeadModal }) {
 
           {/* Quick Links / Discovery */}
           <div className="space-y-3">
-            <h4 className="text-sm font-serif font-bold text-[#E8D2B5] uppercase tracking-wider flex items-center gap-2">
-              <Building2 className="w-4 h-4 text-[#E8D2B5]" />
+            <h4 className="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
+              <Building2 className="w-4 h-4 text-[#9ABAD9]" />
               Uzbekistan Universities
             </h4>
-            <ul className="space-y-2 text-xs text-[#A5A79B]">
+            <ul className="space-y-2 text-xs text-slate-300">
               <li>
-                <Link to="/universities/uzbekistan/tashkent-medical-academy" className="hover:text-[#E8D2B5] transition-colors">
+                <Link to="/universities/uzbekistan/tashkent-medical-academy" className="hover:text-white transition-colors">
                   Tashkent Medical Academy
                 </Link>
               </li>
               <li>
-                <Link to="/universities/uzbekistan/samarkand-state-medical-university" className="hover:text-[#E8D2B5] transition-colors">
+                <Link to="/universities/uzbekistan/samarkand-state-medical-university" className="hover:text-white transition-colors">
                   Samarkand State Medical University
                 </Link>
               </li>
               <li>
-                <Link to="/universities/uzbekistan/bukhara-state-medical-institute" className="hover:text-[#E8D2B5] transition-colors">
+                <Link to="/universities/uzbekistan/bukhara-state-medical-institute" className="hover:text-white transition-colors">
                   Bukhara State Medical Institute
                 </Link>
               </li>
               <li>
-                <Link to="/universities/uzbekistan/andijan-state-medical-institute" className="hover:text-[#E8D2B5] transition-colors">
+                <Link to="/universities/uzbekistan/andijan-state-medical-institute" className="hover:text-white transition-colors">
                   Andijan State Medical Institute
                 </Link>
               </li>
               <li>
-                <Link to="/universities/uzbekistan/central-asian-university" className="hover:text-[#E8D2B5] transition-colors">
+                <Link to="/universities/uzbekistan/central-asian-university" className="hover:text-white transition-colors">
                   Central Asian University (CAU)
                 </Link>
               </li>
               <li>
-                <Link to="/government-vs-private-medical-universities-uzbekistan" className="hover:text-[#E8D2B5] transition-colors text-[#E8D2B5] font-medium">
+                <Link to="/government-vs-private-medical-universities-uzbekistan" className="hover:text-white transition-colors text-[#9ABAD9] font-medium">
                   Government vs Private Colleges
                 </Link>
               </li>
@@ -120,43 +118,43 @@ export function Footer({ onOpenLeadModal }) {
 
           {/* Interactive Tools & Guides */}
           <div className="space-y-3">
-            <h4 className="text-sm font-serif font-bold text-[#E8D2B5] uppercase tracking-wider flex items-center gap-2">
-              <BookOpen className="w-4 h-4 text-[#E8D2B5]" />
+            <h4 className="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
+              <BookOpen className="w-4 h-4 text-[#9ABAD9]" />
               Portals & City Guides
             </h4>
-            <ul className="space-y-2 text-xs text-[#A5A79B]">
+            <ul className="space-y-2 text-xs text-slate-300">
               <li>
-                <Link to="/mbbs-fee-calculator" className="hover:text-[#E8D2B5] transition-colors">
+                <Link to="/mbbs-fee-calculator" className="hover:text-white transition-colors">
                   6-Year MBBS Fee Calculator (INR/USD)
                 </Link>
               </li>
               <li>
-                <Link to="/mbbs-eligibility" className="hover:text-[#E8D2B5] transition-colors">
+                <Link to="/mbbs-eligibility" className="hover:text-white transition-colors">
                   Live NEET Eligibility Checker
                 </Link>
               </li>
               <li>
-                <Link to="/compare-universities" className="hover:text-[#E8D2B5] transition-colors">
+                <Link to="/compare-universities" className="hover:text-white transition-colors">
                   Multi-University Comparison Tool
                 </Link>
               </li>
               <li>
-                <Link to="/nmc-guidelines-for-mbbs-abroad" className="hover:text-[#E8D2B5] transition-colors">
+                <Link to="/nmc-guidelines-for-mbbs-abroad" className="hover:text-white transition-colors">
                   NMC FMGL 2021 Rules & NExT Pathway
                 </Link>
               </li>
               <li>
-                <Link to="/uzbekistan-student-visa" className="hover:text-[#E8D2B5] transition-colors">
+                <Link to="/uzbekistan-student-visa" className="hover:text-white transition-colors">
                   Uzbekistan Student Visa Process
                 </Link>
               </li>
               <li>
-                <Link to="/study-mbbs-in-tashkent" className="hover:text-[#E8D2B5] transition-colors">
+                <Link to="/study-mbbs-in-tashkent" className="hover:text-white transition-colors">
                   Tashkent City Guide
                 </Link>
               </li>
               <li>
-                <Link to="/study-mbbs-in-samarkand" className="hover:text-[#E8D2B5] transition-colors">
+                <Link to="/study-mbbs-in-samarkand" className="hover:text-white transition-colors">
                   Samarkand City Guide
                 </Link>
               </li>
@@ -165,18 +163,18 @@ export function Footer({ onOpenLeadModal }) {
 
           {/* Official Contact & Head Office */}
           <div className="space-y-3">
-            <h4 className="text-sm font-serif font-bold text-[#E8D2B5] uppercase tracking-wider flex items-center gap-2">
-              <MapPin className="w-4 h-4 text-[#E8D2B5]" />
+            <h4 className="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
+              <MapPin className="w-4 h-4 text-[#9ABAD9]" />
               Head Office & Support
             </h4>
-            <div className="space-y-2.5 text-xs text-[#A5A79B]">
+            <div className="space-y-2.5 text-xs text-slate-300">
               <div>
                 <p className="font-semibold text-white">{siteConfig.indiaOffice.name}:</p>
                 <a
                   href={siteConfig.indiaOffice.mapsUrl || "https://www.google.com/maps/search/?api=1&query=G-4,+Maan+House,+School+Block,+Shakarpur,+New+Delhi,+Delhi+110092,+India"}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-[#E8D2B5] hover:underline transition-colors block mt-0.5"
+                  className="hover:text-white hover:underline transition-colors block mt-0.5"
                   title="View on Google Maps"
                 >
                   {siteConfig.indiaOffice.fullAddress || `${siteConfig.indiaOffice.streetAddress}, ${siteConfig.indiaOffice.addressLocality} ${siteConfig.indiaOffice.postalCode}, India`}
@@ -188,12 +186,12 @@ export function Footer({ onOpenLeadModal }) {
               </div>
               <div className="pt-1 space-y-1">
                 {!isPhonePlaceholder && (
-                  <a href={`tel:${siteConfig.phone}`} className="flex items-center gap-2 text-[#E8D2B5] hover:text-white hover:underline">
+                  <a href={`tel:${siteConfig.phone}`} className="flex items-center gap-2 text-[#9ABAD9] hover:text-white hover:underline">
                     <Phone className="w-3.5 h-3.5" />
                     {siteConfig.phoneDisplay}
                   </a>
                 )}
-                <a href={`mailto:${siteConfig.email}`} className="flex items-center gap-2 text-[#E8D2B5] hover:text-white hover:underline">
+                <a href={`mailto:${siteConfig.email}`} className="flex items-center gap-2 text-[#9ABAD9] hover:text-white hover:underline">
                   <Mail className="w-3.5 h-3.5" />
                   {siteConfig.email}
                 </a>
@@ -203,17 +201,17 @@ export function Footer({ onOpenLeadModal }) {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#77776F]">
+        <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <p>© {new Date().getFullYear()} {siteConfig.brandName}. All Rights Reserved.</p>
           <div className="flex flex-wrap items-center gap-4">
-            <Link to="/about-us" className="hover:text-[#E8D2B5] transition-colors">
+            <Link to="/about-us" className="hover:text-white transition-colors">
               About Us & Leadership
             </Link>
-            <Link to="/contact" className="hover:text-[#E8D2B5] transition-colors">
+            <Link to="/contact" className="hover:text-white transition-colors">
               Contact & Grievance
             </Link>
-            <Link to="/privacy-policy" className="hover:text-[#E8D2B5] transition-colors">
-              Privacy Policy & Terms
+            <Link to="/privacy-policy" className="hover:text-white transition-colors">
+              Privacy Policy & Refund Terms
             </Link>
           </div>
         </div>
@@ -221,5 +219,3 @@ export function Footer({ onOpenLeadModal }) {
     </footer>
   );
 }
-
-export default Footer;

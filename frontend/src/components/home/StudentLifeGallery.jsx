@@ -52,26 +52,26 @@ export function StudentLifeGallery() {
   const filteredPhotos = activeTab === "all" ? photos : photos.filter((p) => p.category === activeTab);
 
   return (
-    <section className="bg-[#F7F5F0] rounded-3xl p-6 sm:p-10 lg:p-12 border border-[#DEDCD4] shadow-xs font-sans space-y-8">
+    <section className="bg-[#F7FAFC] rounded-3xl p-6 sm:p-10 lg:p-12 border border-[#D9E2EC] shadow-xs font-sans space-y-8">
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div className="space-y-2 max-w-2xl">
-          <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#590907] bg-[#E8D2B5]/50 px-3.5 py-1 rounded-full border border-[#DEDCD4]">
+          <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#063280] bg-[#EBF3FA] px-3.5 py-1 rounded-full border border-[#D9E2EC]">
             Vibrant Campus Experience
           </span>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#201C1A]">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#063280]">
             Student Life & Hospital Environment in Uzbekistan
           </h2>
-          <p className="text-xs sm:text-sm text-[#77776F] leading-relaxed">
+          <p className="text-xs sm:text-sm text-[#475569] leading-relaxed">
             Experience world-class digital dissection suites, active bedside clinical postings, and a warm community of over 10,000+ Indian medical students.
           </p>
         </div>
 
         {/* Filter Tabs */}
-        <div className="flex items-center gap-1.5 bg-white p-1 rounded-xl border border-[#DEDCD4] shadow-2xs self-start md:self-auto">
+        <div className="flex items-center gap-1.5 bg-white p-1 rounded-xl border border-[#D9E2EC] shadow-2xs self-start md:self-auto">
           <button
             onClick={() => setActiveTab("all")}
             className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-              activeTab === "all" ? "bg-[#590907] text-white shadow-xs" : "text-[#77776F] hover:text-[#590907]"
+              activeTab === "all" ? "bg-[#063280] text-white shadow-xs" : "text-[#475569] hover:text-[#063280]"
             }`}
           >
             All Life
@@ -79,7 +79,7 @@ export function StudentLifeGallery() {
           <button
             onClick={() => setActiveTab("academic")}
             className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-              activeTab === "academic" ? "bg-[#590907] text-white shadow-xs" : "text-[#77776F] hover:text-[#590907]"
+              activeTab === "academic" ? "bg-[#063280] text-white shadow-xs" : "text-[#475569] hover:text-[#063280]"
             }`}
           >
             Labs & Anatomy
@@ -87,7 +87,7 @@ export function StudentLifeGallery() {
           <button
             onClick={() => setActiveTab("hospital")}
             className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-              activeTab === "hospital" ? "bg-[#590907] text-white shadow-xs" : "text-[#77776F] hover:text-[#590907]"
+              activeTab === "hospital" ? "bg-[#063280] text-white shadow-xs" : "text-[#475569] hover:text-[#063280]"
             }`}
           >
             Hospitals
@@ -95,7 +95,7 @@ export function StudentLifeGallery() {
           <button
             onClick={() => setActiveTab("life")}
             className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-              activeTab === "life" ? "bg-[#590907] text-white shadow-xs" : "text-[#77776F] hover:text-[#590907]"
+              activeTab === "life" ? "bg-[#063280] text-white shadow-xs" : "text-[#475569] hover:text-[#063280]"
             }`}
           >
             Hostel & Community
@@ -108,7 +108,7 @@ export function StudentLifeGallery() {
         {filteredPhotos.map((item) => (
           <div
             key={item.title}
-            className="group bg-white rounded-3xl overflow-hidden border border-[#DEDCD4] shadow-xs hover:shadow-lg transition-all flex flex-col justify-between"
+            className="group bg-white rounded-3xl overflow-hidden border border-[#D9E2EC] shadow-xs hover:shadow-lg transition-all flex flex-col justify-between"
           >
             <div className="relative overflow-hidden">
               <ImageWithFallback
@@ -118,16 +118,16 @@ export function StudentLifeGallery() {
                 placeholderText={item.title}
                 todoMarker={`TODO_REPLACE: Authentic photo for ${item.title}`}
               />
-              <span className="absolute top-3 left-3 bg-[#590907]/90 backdrop-blur-xs text-[#E8D2B5] text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-xs">
+              <span className="absolute top-3 left-3 bg-[#063280]/90 backdrop-blur-xs text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-xs">
                 {item.tag}
               </span>
             </div>
 
             <div className="p-5 space-y-1.5">
-              <h3 className="font-serif font-bold text-sm text-[#201C1A] group-hover:text-[#590907] transition-colors">
+              <h3 className="font-extrabold text-sm text-[#063280] group-hover:text-[#1558A9] transition-colors">
                 {item.title}
               </h3>
-              <p className="text-xs text-[#77776F] leading-relaxed">
+              <p className="text-xs text-[#475569] leading-relaxed">
                 {item.desc}
               </p>
             </div>

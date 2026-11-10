@@ -185,13 +185,13 @@ export function HomePage({ onOpenLeadModal }) {
       {/* 8. DEDICATED LIVE ELIGIBILITY CHECKER (STANDALONE SECTION) */}
       <section id="eligibility-checker-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24">
         <div className="text-center max-w-3xl mx-auto space-y-3 mb-8">
-          <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#590907] bg-[#ECEDE8] px-3.5 py-1 rounded-full border border-[#DEDCD4]">
+          <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#063280] bg-[#EBF3FA] px-3.5 py-1 rounded-full border border-[#D9E2EC]">
             NMC Eligibility Evaluation
           </span>
-          <h2 className="text-2xl sm:text-3xl font-serif font-black text-[#201C1A]">
+          <h2 className="text-2xl sm:text-3xl font-black text-[#063280]">
             Check Your NEET & 10+2 MBBS Eligibility Instantly
           </h2>
-          <p className="text-xs sm:text-sm text-[#77776F]">
+          <p className="text-xs sm:text-sm text-[#475569]">
             Verify compliance with National Medical Commission norms (50% PCB for General, 40% for OBC/SC/ST, minimum 17 years age, and NEET-UG qualification).
           </p>
         </div>
@@ -235,15 +235,15 @@ export function HomePage({ onOpenLeadModal }) {
       </section>
 
       {/* 16. EXPANDED FAQS (ALL ANSWERS IN DOM FOR SEARCH ENGINES & CRAWLERS) */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 font-sans">
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-3 mb-10">
-          <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#590907] bg-[#E8D2B5]/50 px-3.5 py-1 rounded-full border border-[#DEDCD4]">
+          <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#063280] bg-[#EBF3FA] px-3.5 py-1 rounded-full border border-[#D9E2EC]">
             Frequently Asked Questions
           </span>
-          <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#201C1A]">
+          <h2 className="text-2xl sm:text-3xl font-black text-[#063280]">
             Frequently Asked Questions by Indian Students & Parents
           </h2>
-          <p className="text-[#77776F] text-xs sm:text-sm">
+          <p className="text-[#475569] text-xs sm:text-sm">
             Everything you need to know about NMC Foreign Medical Graduate Licentiate regulations, fees, safety, and student visas in Uzbekistan.
           </p>
         </div>
@@ -254,7 +254,7 @@ export function HomePage({ onOpenLeadModal }) {
             return (
               <div
                 key={faq.q}
-                className="bg-white rounded-2xl border border-[#DEDCD4] overflow-hidden shadow-xs transition-all"
+                className="bg-white rounded-2xl border border-[#D9E2EC] overflow-hidden shadow-xs transition-all"
               >
                 <button
                   type="button"
@@ -262,10 +262,10 @@ export function HomePage({ onOpenLeadModal }) {
                   aria-expanded={isOpen}
                   aria-controls={`faq-panel-${i}`}
                   onClick={() => setOpenFaqIndex(isOpen ? null : i)}
-                  className="w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 font-bold text-sm sm:text-base text-[#201C1A] hover:text-[#590907] transition-colors cursor-pointer"
+                  className="w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 font-bold text-sm sm:text-base text-[#0F172A] hover:text-[#063280] transition-colors cursor-pointer"
                 >
                   <span>{faq.q}</span>
-                  <span className="text-[#590907] text-xl font-bold shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-[#ECEDE8]">
+                  <span className="text-[#063280] text-xl font-black shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-[#EBF3FA]">
                     {isOpen ? "−" : "+"}
                   </span>
                 </button>
@@ -279,7 +279,7 @@ export function HomePage({ onOpenLeadModal }) {
                     isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0 pointer-events-none"
                   }`}
                 >
-                  <div className="p-4 sm:p-5 pt-0 text-xs sm:text-sm text-[#77776F] leading-relaxed border-t border-[#DEDCD4] bg-[#F7F5F0]">
+                  <div className="p-4 sm:p-5 pt-0 text-xs sm:text-sm text-[#475569] leading-relaxed border-t border-[#D9E2EC] bg-[#F7FAFC]">
                     {faq.a}
                   </div>
                 </div>
@@ -290,22 +290,22 @@ export function HomePage({ onOpenLeadModal }) {
       </section>
 
       {/* 17. FINAL ADMISSIONS INTAKE / QUICK APPLICATION FORM (JUST ABOVE FOOTER) */}
-      <section id="admissions-inquiry-section" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 font-sans">
-        <div className="bg-linear-to-b from-[#590907] via-[#3F0605] to-[#201C1A] rounded-3xl p-6 sm:p-10 border border-[#E8D2B5]/30 shadow-2xl relative overflow-hidden">
+      <section id="admissions-inquiry-section" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-linear-to-b from-[#0B0F19] via-[#0F172A] to-[#0B0F19] rounded-3xl p-6 sm:p-10 border border-slate-800 shadow-2xl relative overflow-hidden">
           <BannerBackground
             image="/collageimages/banner-2.png"
             opacity="opacity-15 sm:opacity-20"
             mixBlend="mix-blend-normal"
-            washGradient="from-[#590907]/90 via-[#3F0605]/85 to-[#201C1A]/95"
+            washGradient="from-[#0B0F19]/90 via-[#0F172A]/85 to-[#0B0F19]/95"
           />
           <div className="text-center max-w-xl mx-auto space-y-2 mb-8 relative z-10">
-            <span className="text-[11px] font-bold uppercase tracking-widest text-[#590907] bg-[#E8D2B5] border border-[#E8D2B5]/50 px-3.5 py-1 rounded-full">
+            <span className="text-[11px] font-bold uppercase tracking-widest text-rose-300 bg-rose-950/40 border border-rose-500/30 px-3.5 py-1 rounded-full">
               Admissions Intake 2026-27
             </span>
-            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white">
+            <h2 className="text-2xl sm:text-3xl font-black text-white">
               Apply for MBBS in Uzbekistan with Direct Support
             </h2>
-            <p className="text-[#F7F5F0]/85 text-xs sm:text-sm">
+            <p className="text-slate-300 text-xs sm:text-sm">
               Get direct university eligibility, verified 6-year fee breakdowns, and personal guidance from senior counselors.
             </p>
           </div>
