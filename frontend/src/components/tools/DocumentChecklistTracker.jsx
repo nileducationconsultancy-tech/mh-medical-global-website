@@ -119,18 +119,18 @@ export function DocumentChecklistTracker({ onOpenLeadModal }) {
   };
 
   return (
-    <div className="bg-white rounded-3xl shadow-xl border border-[#D9E2EC] p-6 sm:p-8 lg:p-10 font-sans print:shadow-none print:border-none">
+    <div className="bg-white rounded-3xl shadow-xl border border-[#DEDCD4] p-6 sm:p-8 lg:p-10 font-sans print:shadow-none print:border-none">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#D9E2EC]">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#DEDCD4]">
         <div>
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EBF3FA] text-[#063280] text-xs font-bold uppercase tracking-wider mb-2 border border-[#D9E2EC]">
-            <FileCheck2 className="w-3.5 h-3.5 text-[#063280]" />
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#ECEDE8] text-[#590907] text-xs font-bold uppercase tracking-wider mb-2 border border-[#DEDCD4]">
+            <FileCheck2 className="w-3.5 h-3.5 text-[#590907]" />
             Interactive Document Tracker
           </div>
-          <h2 className="text-2xl sm:text-3xl font-black text-[#063280]">
+          <h2 className="text-2xl sm:text-3xl font-serif font-black text-[#201C1A]">
             Uzbekistan MBBS Document Readiness Checklist
           </h2>
-          <p className="text-[#475569] text-sm mt-1">
+          <p className="text-[#77776F] text-sm mt-1">
             Track your required admission, Apostille, and A-2 student visa documents step-by-step.
           </p>
         </div>
@@ -139,14 +139,14 @@ export function DocumentChecklistTracker({ onOpenLeadModal }) {
         <div className="flex items-center gap-2 self-start sm:self-auto print:hidden">
           <button
             onClick={handlePrint}
-            className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#F7FAFC] hover:bg-[#EBF3FA] text-[#063280] border border-[#D9E2EC] text-xs font-bold transition-colors cursor-pointer"
+            className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#F7F5F0] hover:bg-[#ECEDE8] text-[#590907] border border-[#DEDCD4] text-xs font-bold transition-colors cursor-pointer"
           >
             <Printer className="w-3.5 h-3.5" />
             <span>Print Checklist</span>
           </button>
           <button
             onClick={handleReset}
-            className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#F7FAFC] hover:bg-rose-50 hover:text-[#9B193A] text-[#475569] border border-[#D9E2EC] text-xs font-bold transition-colors cursor-pointer"
+            className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#F7F5F0] hover:bg-rose-50 hover:text-[#390605] text-[#77776F] border border-[#DEDCD4] text-xs font-bold transition-colors cursor-pointer"
             title="Reset checked items"
           >
             <RotateCcw className="w-3.5 h-3.5" />
@@ -156,23 +156,23 @@ export function DocumentChecklistTracker({ onOpenLeadModal }) {
       </div>
 
       {/* Progress Bar */}
-      <div className="py-6 border-b border-[#D9E2EC]">
-        <div className="flex items-center justify-between text-xs font-bold text-[#0F172A] mb-2">
+      <div className="py-6 border-b border-[#DEDCD4]">
+        <div className="flex items-center justify-between text-xs font-bold text-[#201C1A] mb-2">
           <span>Your Document Readiness:</span>
-          <span className="text-[#063280] font-extrabold text-sm">
+          <span className="text-[#590907] font-extrabold text-sm">
             {completedCount} of {totalCount} Completed ({progressPercent}%)
           </span>
         </div>
-        <div className="w-full h-3 bg-[#EBF3FA] rounded-full overflow-hidden border border-[#D9E2EC]">
+        <div className="w-full h-3 bg-[#ECEDE8] rounded-full overflow-hidden border border-[#DEDCD4]">
           <div
-            className="h-full bg-linear-to-r from-[#063280] to-[#1558A9] transition-all duration-300 rounded-full"
+            className="h-full bg-linear-to-r from-[#590907] to-[#590907] transition-all duration-300 rounded-full"
             style={{ width: `${progressPercent}%` }}
           ></div>
         </div>
       </div>
 
       {/* Documents List */}
-      <div className="divide-y divide-[#D9E2EC] pt-4">
+      <div className="divide-y divide-[#DEDCD4] pt-4">
         {defaultDocuments.map((doc) => {
           const isChecked = !!checkedDocs[doc.id];
           return (
@@ -180,32 +180,32 @@ export function DocumentChecklistTracker({ onOpenLeadModal }) {
               key={doc.id}
               onClick={() => handleToggle(doc.id)}
               className={`py-4 px-3 sm:px-4 rounded-2xl transition-all cursor-pointer flex items-start gap-4 ${
-                isChecked ? "bg-[#EBF3FA]/60" : "hover:bg-[#F7FAFC]"
+                isChecked ? "bg-[#ECEDE8]/60" : "hover:bg-[#F7F5F0]"
               }`}
             >
               <div className="pt-0.5 shrink-0">
                 {isChecked ? (
-                  <CheckCircle2 className="w-5 h-5 text-[#063280]" />
+                  <CheckCircle2 className="w-5 h-5 text-[#590907]" />
                 ) : (
-                  <Circle className="w-5 h-5 text-slate-300 hover:text-[#063280]" />
+                  <Circle className="w-5 h-5 text-slate-300 hover:text-[#590907]" />
                 )}
               </div>
 
               <div className="flex-1 space-y-1">
                 <div className="flex flex-wrap items-center gap-2">
-                  <h4 className={`text-sm font-bold ${isChecked ? "line-through text-slate-400" : "text-[#0F172A]"}`}>
+                  <h4 className={`text-sm font-bold ${isChecked ? "line-through text-slate-400" : "text-[#201C1A]"}`}>
                     {doc.title}
                   </h4>
-                  <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-[#EBF3FA] text-[#063280] border border-[#D9E2EC]">
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-[#ECEDE8] text-[#590907] border border-[#DEDCD4]">
                     {doc.category}
                   </span>
                   {doc.required && (
-                    <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-[#9B193A]/10 text-[#9B193A] border border-[#9B193A]/20">
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-[#390605]/10 text-[#390605] border border-[#390605]/20">
                       Mandatory
                     </span>
                   )}
                 </div>
-                <p className="text-xs text-[#475569] leading-relaxed">
+                <p className="text-xs text-[#77776F] leading-relaxed">
                   {doc.description}
                 </p>
               </div>
@@ -215,17 +215,17 @@ export function DocumentChecklistTracker({ onOpenLeadModal }) {
       </div>
 
       {/* Assistance Footer Card */}
-      <div className="mt-8 p-5 rounded-2xl bg-[#F7FAFC] border border-[#D9E2EC] flex flex-col sm:flex-row items-center justify-between gap-4 print:hidden">
+      <div className="mt-8 p-5 rounded-2xl bg-[#F7F5F0] border border-[#DEDCD4] flex flex-col sm:flex-row items-center justify-between gap-4 print:hidden">
         <div className="flex items-center gap-3">
-          <ShieldCheck className="w-8 h-8 text-[#063280] shrink-0" />
+          <ShieldCheck className="w-8 h-8 text-[#590907] shrink-0" />
           <div className="text-xs">
-            <p className="font-bold text-[#063280]">Need Help with MEA Apostille & Notarization?</p>
-            <p className="text-[#475569]">MH GLOBAL EDUCATION CONSULTANT handles complete government apostille, embassy translation, and visa teletex clearances.</p>
+            <p className="font-bold text-[#590907]">Need Help with MEA Apostille & Notarization?</p>
+            <p className="text-[#77776F]">MH GLOBAL EDUCATION CONSULTANT handles complete government apostille, embassy translation, and visa teletex clearances.</p>
           </div>
         </div>
         <button
           onClick={() => onOpenLeadModal("Apostille & Document Support Request")}
-          className="px-4 py-2.5 bg-[#063280] hover:bg-[#1558A9] text-white text-xs font-bold rounded-xl transition-colors shrink-0 cursor-pointer border-b-2 border-[#9B193A]"
+          className="px-4 py-2.5 bg-[#590907] hover:bg-[#590907] text-white text-xs font-bold rounded-xl transition-colors shrink-0 cursor-pointer border-b-2 border-[#390605]"
         >
           Get Free Document Assistance
         </button>

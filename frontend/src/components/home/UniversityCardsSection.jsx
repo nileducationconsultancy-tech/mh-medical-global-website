@@ -2,15 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   MapPin,
-  Building2,
   CheckCircle2,
-  ArrowRight,
-  ShieldCheck,
-  Scale,
-  DollarSign,
-  Utensils,
-  Award,
-  Clock
+  ArrowRight
 } from "lucide-react";
 import { ImageWithFallback } from "../common/ImageWithFallback";
 import { CompareDrawer } from "./CompareDrawer";
@@ -18,8 +11,7 @@ import {
   universitiesData,
   formatLakhs,
   get6YearTuitionINR,
-  get6YearCompletePackageINR,
-  CANONICAL_PRICING_SUMMARY
+  get6YearCompletePackageINR
 } from "../../data/universitiesData";
 
 export function UniversityCardsSection({ onOpenLeadModal }) {
@@ -53,20 +45,20 @@ export function UniversityCardsSection({ onOpenLeadModal }) {
       {/* Header with Direct-Answer GEO text */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div className="max-w-2xl space-y-2">
-          <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#063280] bg-[#EBF3FA] px-3.5 py-1 rounded-full border border-[#D9E2EC]">
+          <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#590907] bg-[#E8D2B5]/50 px-3.5 py-1 rounded-full border border-[#DEDCD4]">
             Verified Medical Universities
           </span>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#063280]">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#201C1A]">
             Recognized Medical Universities in Uzbekistan
           </h2>
-          <p className="text-xs sm:text-sm text-[#475569] leading-relaxed">
+          <p className="text-xs sm:text-sm text-[#77776F] leading-relaxed">
             All listed universities are state-recognized, compliant with India's NMC FMGL 2021 regulations, offer 100% English-medium instruction, and operate dedicated Indian mess facilities.
           </p>
         </div>
 
         <Link
           to="/universities/uzbekistan"
-          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#063280] hover:text-[#1558A9] hover:underline self-start md:self-auto shrink-0"
+          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#590907] hover:text-[#3F0605] hover:underline self-start md:self-auto shrink-0"
         >
           <span>View All 10 Medical Universities</span>
           <ArrowRight className="w-4 h-4" />
@@ -86,8 +78,8 @@ export function UniversityCardsSection({ onOpenLeadModal }) {
               key={uni.id}
               className={`bg-white rounded-3xl border transition-all duration-200 flex flex-col justify-between overflow-hidden shadow-xs hover:shadow-xl ${
                 isSelected
-                  ? "border-[#063280] ring-2 ring-[#063280]/20"
-                  : "border-[#D9E2EC] hover:border-[#9ABAD9]"
+                  ? "border-[#590907] ring-2 ring-[#590907]/20"
+                  : "border-[#DEDCD4] hover:border-[#E8D2B5]"
               }`}
             >
               {/* Card Top: Image & Header Badges */}
@@ -102,19 +94,19 @@ export function UniversityCardsSection({ onOpenLeadModal }) {
                   />
 
                   {/* University Type Badge */}
-                  <div className="absolute top-3 left-3 bg-[#063280] text-white text-[11px] font-extrabold px-3 py-1 rounded-full shadow-md">
+                  <div className="absolute top-3 left-3 bg-[#590907] text-white text-[11px] font-extrabold px-3 py-1 rounded-full shadow-md">
                     {uni.type} Academy
                   </div>
 
                   {/* Compare Checkbox in Top Right */}
                   <label
-                    className="absolute top-3 right-3 bg-white/95 backdrop-blur-xs text-[#063280] text-[11px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1.5 shadow-md cursor-pointer select-none hover:bg-white"
+                    className="absolute top-3 right-3 bg-white/95 backdrop-blur-xs text-[#201C1A] text-[11px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1.5 shadow-md cursor-pointer select-none hover:bg-white border border-[#DEDCD4]"
                   >
                     <input
                       type="checkbox"
                       checked={isSelected}
                       onChange={() => handleToggleCompare(uni.id)}
-                      className="w-3.5 h-3.5 rounded-sm text-[#063280] focus:ring-[#063280] cursor-pointer"
+                      className="w-3.5 h-3.5 rounded-sm text-[#590907] focus:ring-[#590907] cursor-pointer"
                     />
                     <span>Compare</span>
                   </label>
@@ -124,34 +116,34 @@ export function UniversityCardsSection({ onOpenLeadModal }) {
                 <div className="p-6 space-y-4">
                   {/* Name & Location */}
                   <div>
-                    <h3 className="text-lg font-black text-[#063280] leading-snug">
+                    <h3 className="text-lg font-serif font-bold text-[#201C1A] leading-snug">
                       {uni.name}
                     </h3>
-                    <p className="text-xs text-[#475569] flex items-center gap-1.5 mt-1">
-                      <MapPin className="w-3.5 h-3.5 text-[#1558A9] shrink-0" />
+                    <p className="text-xs text-[#77776F] flex items-center gap-1.5 mt-1">
+                      <MapPin className="w-3.5 h-3.5 text-[#590907] shrink-0" />
                       <span>{uni.city}, Uzbekistan • Established {uni.establishedYear}</span>
                     </p>
                   </div>
 
                   {/* Uniform 2-Column Fee & Hospital Matrix */}
                   <div className="grid grid-cols-2 gap-3 text-xs">
-                    <div className="bg-[#F7FAFC] p-3 rounded-2xl border border-[#D9E2EC] space-y-0.5">
-                      <span className="text-[10px] font-bold text-[#475569] uppercase tracking-wider block">
+                    <div className="bg-[#F7F5F0] p-3 rounded-2xl border border-[#DEDCD4] space-y-0.5">
+                      <span className="text-[10px] font-bold text-[#77776F] uppercase tracking-wider block">
                         Annual Tuition
                       </span>
-                      <p className="font-black text-[#063280] text-sm">
+                      <p className="font-bold text-[#590907] text-sm">
                         ${annualUSD.toLocaleString()} USD
                       </p>
-                      <p className="text-[11px] text-[#1558A9] font-bold">
+                      <p className="text-[11px] text-[#201C1A] font-bold">
                         6-Yr: {formatLakhs(sixYearTuitionINR)}
                       </p>
                     </div>
 
-                    <div className="bg-[#F7FAFC] p-3 rounded-2xl border border-[#D9E2EC] space-y-0.5">
-                      <span className="text-[10px] font-bold text-[#475569] uppercase tracking-wider block">
+                    <div className="bg-[#F7F5F0] p-3 rounded-2xl border border-[#DEDCD4] space-y-0.5">
+                      <span className="text-[10px] font-bold text-[#77776F] uppercase tracking-wider block">
                         Clinical Bed Base
                       </span>
-                      <p className="font-black text-[#063280] text-sm">
+                      <p className="font-bold text-[#590907] text-sm">
                         {uni.clinicalBeds ? `${uni.clinicalBeds.toLocaleString()}+ Beds` : "3,000+ Beds"}
                       </p>
                       <p className="text-[11px] text-emerald-700 font-bold">
@@ -160,22 +152,22 @@ export function UniversityCardsSection({ onOpenLeadModal }) {
                     </div>
                   </div>
 
-                  {/* Consistent Feature List (No truncated text) */}
-                  <div className="space-y-2 text-xs text-[#475569] pt-1">
+                  {/* Consistent Feature List */}
+                  <div className="space-y-2 text-xs text-[#77776F] pt-1">
                     <div className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-[#1558A9] shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-[#590907] shrink-0 mt-0.5" />
                       <span><strong>Coursework:</strong> 54 Months Academic + 12 Months Internship</span>
                     </div>
                     <div className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-[#1558A9] shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-[#590907] shrink-0 mt-0.5" />
                       <span><strong>Faculty:</strong> 100% English-Medium Instruction</span>
                     </div>
                     <div className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-[#1558A9] shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-[#590907] shrink-0 mt-0.5" />
                       <span><strong>Indian Mess:</strong> Dedicated Veg & Halal Non-Veg 3 Meals/Day</span>
                     </div>
                     <div className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-[#1558A9] shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-[#590907] shrink-0 mt-0.5" />
                       <span><strong>All-Inclusive 6-Yr Est:</strong> {formatLakhs(sixYearTotalINR)} (Tuition + Hostel + Mess)</span>
                     </div>
                   </div>
@@ -186,14 +178,14 @@ export function UniversityCardsSection({ onOpenLeadModal }) {
               <div className="p-6 pt-0 space-y-2">
                 <Link
                   to={`/universities/uzbekistan/${uni.slug}`}
-                  className="w-full block text-center py-3 px-4 bg-[#063280] hover:bg-[#1558A9] text-white font-extrabold rounded-xl text-xs sm:text-sm transition-all shadow-xs"
+                  className="w-full block text-center py-3 px-4 bg-[#590907] hover:bg-[#3F0605] text-white font-extrabold rounded-xl text-xs sm:text-sm transition-all shadow-xs"
                 >
                   View Verified Syllabus & Full Fees
                 </Link>
                 
                 <button
                   onClick={() => onOpenLeadModal(`University Assessment: ${uni.name}`)}
-                  className="w-full text-center py-2 text-xs font-bold text-[#1558A9] hover:text-[#063280] hover:underline cursor-pointer"
+                  className="w-full text-center py-2 text-xs font-bold text-[#590907] hover:text-[#3F0605] hover:underline cursor-pointer"
                 >
                   Check Seat Availability for 2026 Intake
                 </button>

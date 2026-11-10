@@ -254,19 +254,19 @@ export function AdminDashboardPage() {
           robots="noindex, nofollow"
         />
 
-        <div className="w-full max-w-md bg-white rounded-3xl shadow-xl border border-[#D9E2EC] p-8 space-y-6">
+        <div className="w-full max-w-md bg-white rounded-3xl shadow-xl border border-[#DEDCD4] p-8 space-y-6">
           <div className="text-center space-y-3">
-            <div className="w-16 h-16 rounded-2xl bg-[#EBF3FA] border-2 border-[#063280] text-[#063280] flex items-center justify-center mx-auto shadow-inner">
+            <div className="w-16 h-16 rounded-2xl bg-[#ECEDE8] border-2 border-[#590907] text-[#590907] flex items-center justify-center mx-auto shadow-inner">
               <Lock className="w-8 h-8" />
             </div>
             <div>
-              <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#9B193A] bg-red-50 px-3 py-1 rounded-full border border-red-200">
+              <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#590907] bg-red-50 px-3 py-1 rounded-full border border-red-200">
                 Restricted Counsellor Access
               </span>
-              <h1 className="text-2xl font-black text-[#063280] mt-2">
+              <h1 className="text-2xl font-black text-[#590907] mt-2">
                 Admissions CRM Portal
               </h1>
-              <p className="text-xs text-[#475569] mt-1">
+              <p className="text-xs text-[#77776F] mt-1">
                 Authorized admissions advisors and counsellors only. Student lead data is protected under privacy guidelines.
               </p>
             </div>
@@ -281,7 +281,7 @@ export function AdminDashboardPage() {
 
           <form onSubmit={handleLogin} className="space-y-4">
             <div className="space-y-1 text-xs">
-              <label className="font-bold text-[#063280]">Counsellor Username / ID</label>
+              <label className="font-bold text-[#590907]">Counsellor Username / ID</label>
               <div className="relative">
                 <input
                   type="text"
@@ -289,13 +289,13 @@ export function AdminDashboardPage() {
                   value={loginUsername}
                   onChange={(e) => setLoginUsername(e.target.value)}
                   placeholder="e.g. admin or counsellor"
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-[#D9E2EC] focus:border-[#063280] focus:outline-hidden text-xs bg-slate-50 focus:bg-white transition-colors"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-[#DEDCD4] focus:border-[#590907] focus:outline-hidden text-xs bg-slate-50 focus:bg-white transition-colors"
                 />
               </div>
             </div>
 
             <div className="space-y-1 text-xs">
-              <label className="font-bold text-[#063280]">Access Password</label>
+              <label className="font-bold text-[#590907]">Access Password</label>
               <div className="relative">
                 <input
                   type={showPassword ? "text" : "password"}
@@ -303,12 +303,12 @@ export function AdminDashboardPage() {
                   value={loginPassword}
                   onChange={(e) => setLoginPassword(e.target.value)}
                   placeholder="Enter admissions access passkey"
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-[#D9E2EC] focus:border-[#063280] focus:outline-hidden text-xs bg-slate-50 focus:bg-white transition-colors"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-[#DEDCD4] focus:border-[#590907] focus:outline-hidden text-xs bg-slate-50 focus:bg-white transition-colors"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-2.5 text-xs text-[#475569] hover:text-[#063280] font-semibold cursor-pointer"
+                  className="absolute right-3 top-2.5 text-xs text-[#77776F] hover:text-[#590907] font-semibold cursor-pointer"
                 >
                   {showPassword ? "Hide" : "Show"}
                 </button>
@@ -317,17 +317,17 @@ export function AdminDashboardPage() {
 
             <button
               type="submit"
-              className="w-full py-3 bg-[#063280] hover:bg-[#1558A9] text-white font-bold rounded-xl text-xs transition-colors shadow-md flex items-center justify-center gap-2 cursor-pointer border-b-2 border-[#9B193A]"
+              className="w-full py-3 bg-[#590907] hover:bg-[#590907] text-white font-bold rounded-xl text-xs transition-colors shadow-md flex items-center justify-center gap-2 cursor-pointer border-b-2 border-[#590907]"
             >
               <Key className="w-4 h-4" />
               <span>Unlock Counsellor Dashboard</span>
             </button>
           </form>
 
-          <div className="pt-2 border-t border-[#D9E2EC] text-center">
+          <div className="pt-2 border-t border-[#DEDCD4] text-center">
             <Link
               to="/"
-              className="text-xs text-[#063280] hover:text-[#1558A9] font-bold hover:underline"
+              className="text-xs text-[#590907] hover:text-[#590907] font-bold hover:underline"
             >
               ← Return to Public Website
             </Link>
@@ -349,12 +349,12 @@ export function AdminDashboardPage() {
       />
 
       {/* Top Banner */}
-      <section className="relative overflow-hidden bg-linear-to-r from-[#063280] to-[#1558A9] text-white py-8 px-4 sm:px-6 lg:px-8 border-b border-[#0B2D64]">
+      <section className="relative overflow-hidden bg-linear-to-r from-[#590907] via-[#3F0605] to-[#201C1A] text-white py-8 px-4 sm:px-6 lg:px-8 border-b border-[#3F0605]">
         <BannerBackground image="/collageimages/banner-5.png" />
         <div className="relative max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <div className="flex items-center gap-2">
-              <span className="text-[#9ABAD9] text-xs font-bold uppercase tracking-wider">
+              <span className="text-[#E8D2B5] text-xs font-bold uppercase tracking-wider">
                 Admissions Desk CRM
               </span>
               <span className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-white/20 text-white text-[10px] font-semibold">
@@ -373,7 +373,7 @@ export function AdminDashboardPage() {
           <div className="flex flex-wrap items-center gap-2.5">
             <button
               onClick={() => setShowSheetModal(true)}
-              className="flex items-center gap-2 px-3.5 py-2 bg-[#9B193A] hover:bg-[#851430] text-white font-bold rounded-xl text-xs transition-colors shadow-xs cursor-pointer"
+              className="flex items-center gap-2 px-3.5 py-2 bg-[#590907] hover:bg-[#3F0605] text-white font-bold rounded-xl text-xs transition-colors shadow-xs cursor-pointer"
             >
               <Sheet className="w-4 h-4" />
               <span>Google Sheet Setup</span>
@@ -392,9 +392,9 @@ export function AdminDashboardPage() {
 
             <button
               onClick={handleExportCSV}
-              className="flex items-center gap-2 px-3.5 py-2 bg-white hover:bg-slate-100 text-[#063280] font-bold rounded-xl text-xs transition-colors shadow-xs border border-white/20 cursor-pointer"
+              className="flex items-center gap-2 px-3.5 py-2 bg-white hover:bg-slate-100 text-[#590907] font-bold rounded-xl text-xs transition-colors shadow-xs border border-white/20 cursor-pointer"
             >
-              <FileSpreadsheet className="w-4 h-4 text-[#063280]" />
+              <FileSpreadsheet className="w-4 h-4 text-[#590907]" />
               <span>Export CSV</span>
             </button>
 
@@ -413,23 +413,23 @@ export function AdminDashboardPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         {/* Metric Cards */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
-          <div className="bg-white p-4 rounded-2xl border border-[#D9E2EC] shadow-2xs space-y-1">
+          <div className="bg-white p-4 rounded-2xl border border-[#DEDCD4] shadow-2xs space-y-1">
             <span className="text-slate-500 font-semibold uppercase">Total Inquiries</span>
             <p className="text-2xl font-black text-slate-900">{leads.length}</p>
           </div>
-          <div className="bg-white p-4 rounded-2xl border border-[#D9E2EC] shadow-2xs space-y-1">
+          <div className="bg-white p-4 rounded-2xl border border-[#DEDCD4] shadow-2xs space-y-1">
             <span className="text-slate-500 font-semibold uppercase">New Leads</span>
-            <p className="text-2xl font-black text-[#9B193A]">
+            <p className="text-2xl font-black text-[#590907]">
               {leads.filter((l) => l.status === "New").length}
             </p>
           </div>
-          <div className="bg-white p-4 rounded-2xl border border-[#D9E2EC] shadow-2xs space-y-1">
+          <div className="bg-white p-4 rounded-2xl border border-[#DEDCD4] shadow-2xs space-y-1">
             <span className="text-slate-500 font-semibold uppercase">Documents Review</span>
             <p className="text-2xl font-black text-slate-900">
               {leads.filter((l) => l.status === "Documents Pending").length}
             </p>
           </div>
-          <div className="bg-white p-4 rounded-2xl border border-[#D9E2EC] shadow-2xs space-y-1">
+          <div className="bg-white p-4 rounded-2xl border border-[#DEDCD4] shadow-2xs space-y-1">
             <span className="text-slate-500 font-semibold uppercase">Admissions Confirmed</span>
             <p className="text-2xl font-black text-emerald-600">
               {leads.filter((l) => l.status === "Admission Received" || l.status === "Joined").length}
@@ -438,7 +438,7 @@ export function AdminDashboardPage() {
         </div>
 
         {/* Filters & Search Toolbar */}
-        <div className="bg-white p-4 rounded-2xl border border-[#D9E2EC] shadow-2xs flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+        <div className="bg-white p-4 rounded-2xl border border-[#DEDCD4] shadow-2xs flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
           <div className="relative w-full sm:w-80">
             <Search className="w-4 h-4 text-slate-400 absolute left-3 top-2.5" />
             <input
@@ -446,7 +446,7 @@ export function AdminDashboardPage() {
               placeholder="Search by student name, phone, city or university..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-3.5 py-2 rounded-xl border border-slate-200 text-xs focus:outline-hidden focus:border-[#063280]"
+              className="w-full pl-9 pr-3.5 py-2 rounded-xl border border-slate-200 text-xs focus:outline-hidden focus:border-[#590907]"
             />
           </div>
 
@@ -455,7 +455,7 @@ export function AdminDashboardPage() {
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="px-3 py-2 rounded-xl border border-slate-200 text-xs text-slate-700 font-medium focus:outline-hidden focus:border-[#063280]"
+              className="px-3 py-2 rounded-xl border border-slate-200 text-xs text-slate-700 font-medium focus:outline-hidden focus:border-[#590907]"
             >
               <option value="all">All Lead Statuses ({leads.length})</option>
               {leadStatuses.map((st) => (
@@ -470,9 +470,9 @@ export function AdminDashboardPage() {
         {/* Leads Table & Detail View */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* Table (8 Cols) */}
-          <div className="lg:col-span-8 bg-white rounded-3xl border border-[#D9E2EC] shadow-xs overflow-hidden">
-            <div className="p-4 border-b border-[#D9E2EC] flex items-center justify-between">
-              <span className="font-bold text-sm text-[#063280]">
+          <div className="lg:col-span-8 bg-white rounded-3xl border border-[#DEDCD4] shadow-xs overflow-hidden">
+            <div className="p-4 border-b border-[#DEDCD4] flex items-center justify-between">
+              <span className="font-bold text-sm text-[#590907]">
                 Student Inquiries ({filteredLeads.length})
               </span>
               <span className="text-[11px] text-slate-500">
@@ -482,7 +482,7 @@ export function AdminDashboardPage() {
 
             <div className="overflow-x-auto">
               <table className="w-full text-left text-xs">
-                <thead className="bg-[#F7FAFC] text-slate-600 font-bold border-b border-[#D9E2EC]">
+                <thead className="bg-[#F7F5F0] text-slate-600 font-bold border-b border-[#DEDCD4]">
                   <tr>
                     <th className="p-3.5">Student Name</th>
                     <th className="p-3.5">Contact</th>
@@ -491,7 +491,7 @@ export function AdminDashboardPage() {
                     <th className="p-3.5">Status</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-[#D9E2EC]">
+                <tbody className="divide-y divide-[#DEDCD4]">
                   {filteredLeads.length === 0 ? (
                     <tr>
                       <td colSpan="5" className="p-12 text-center text-slate-500">
@@ -513,12 +513,12 @@ export function AdminDashboardPage() {
                       <tr
                         key={l.id}
                         onClick={() => handleOpenLead(l)}
-                        className={`hover:bg-[#EBF3FA]/50 cursor-pointer transition-colors ${
-                          selectedLead?.id === l.id ? "bg-[#EBF3FA]" : ""
+                        className={`hover:bg-[#ECEDE8]/50 cursor-pointer transition-colors ${
+                          selectedLead?.id === l.id ? "bg-[#ECEDE8]" : ""
                         }`}
                       >
                         <td className="p-3.5">
-                          <p className="font-bold text-[#063280]">{l.name}</p>
+                          <p className="font-bold text-[#590907]">{l.name}</p>
                           <p className="text-[10px] text-slate-400">{l.city || "India"}</p>
                         </td>
                         <td className="p-3.5">
@@ -559,10 +559,10 @@ export function AdminDashboardPage() {
           {/* Lead Detail Card (4 Cols) */}
           <div className="lg:col-span-4">
             {selectedLead ? (
-              <div className="bg-white rounded-3xl border border-[#D9E2EC] shadow-md p-6 space-y-4 sticky top-24">
-                <div className="flex items-center justify-between pb-3 border-b border-[#D9E2EC]">
+              <div className="bg-white rounded-3xl border border-[#DEDCD4] shadow-md p-6 space-y-4 sticky top-24">
+                <div className="flex items-center justify-between pb-3 border-b border-[#DEDCD4]">
                   <div>
-                    <h3 className="font-extrabold text-base text-[#063280]">{selectedLead.name}</h3>
+                    <h3 className="font-extrabold text-base text-[#590907]">{selectedLead.name}</h3>
                     <p className="text-xs text-slate-500">Inquiry ID: {selectedLead.id}</p>
                   </div>
                   <button
@@ -577,7 +577,7 @@ export function AdminDashboardPage() {
                   <div>
                     <span className="text-slate-400 text-[10px] font-bold uppercase">Phone & WhatsApp:</span>
                     <p className="font-bold text-slate-800 flex items-center gap-1.5 pt-0.5">
-                      <Phone className="w-3.5 h-3.5 text-[#063280]" />
+                      <Phone className="w-3.5 h-3.5 text-[#590907]" />
                       <a href={`tel:${selectedLead.phone}`} className="hover:underline">
                         {selectedLead.phone}
                       </a>
@@ -587,7 +587,7 @@ export function AdminDashboardPage() {
                   <div>
                     <span className="text-slate-400 text-[10px] font-bold uppercase">Email:</span>
                     <p className="font-bold text-slate-800 flex items-center gap-1.5 pt-0.5">
-                      <Mail className="w-3.5 h-3.5 text-[#063280]" />
+                      <Mail className="w-3.5 h-3.5 text-[#590907]" />
                       {selectedLead.email ? (
                         <a href={`mailto:${selectedLead.email}`} className="hover:underline truncate">
                           {selectedLead.email}
@@ -599,13 +599,13 @@ export function AdminDashboardPage() {
                   </div>
 
                   <div className="grid grid-cols-2 gap-2 pt-1">
-                    <div className="p-2.5 rounded-xl bg-[#F7FAFC] border border-[#D9E2EC]">
+                    <div className="p-2.5 rounded-xl bg-[#F7F5F0] border border-[#DEDCD4]">
                       <span className="text-[10px] text-slate-500">NEET Status</span>
-                      <p className="font-bold text-[#063280]">{selectedLead.neetScore || selectedLead.neetStatus || "N/A"}</p>
+                      <p className="font-bold text-[#590907]">{selectedLead.neetScore || selectedLead.neetStatus || "N/A"}</p>
                     </div>
-                    <div className="p-2.5 rounded-xl bg-[#F7FAFC] border border-[#D9E2EC]">
+                    <div className="p-2.5 rounded-xl bg-[#F7F5F0] border border-[#DEDCD4]">
                       <span className="text-[10px] text-slate-500">PCB %</span>
-                      <p className="font-bold text-[#063280]">{selectedLead.pcbPercentage ? `${selectedLead.pcbPercentage}%` : "N/A"}</p>
+                      <p className="font-bold text-[#590907]">{selectedLead.pcbPercentage ? `${selectedLead.pcbPercentage}%` : "N/A"}</p>
                     </div>
                   </div>
 
@@ -622,7 +622,7 @@ export function AdminDashboardPage() {
                     <select
                       value={editingStatus}
                       onChange={(e) => setEditingStatus(e.target.value)}
-                      className="w-full p-2 rounded-xl border border-slate-300 font-bold text-xs text-[#063280]"
+                      className="w-full p-2 rounded-xl border border-slate-300 font-bold text-xs text-[#590907]"
                     >
                       {leadStatuses.map((st) => (
                         <option key={st} value={st}>{st}</option>
@@ -640,13 +640,13 @@ export function AdminDashboardPage() {
                       value={editingNotes}
                       onChange={(e) => setEditingNotes(e.target.value)}
                       placeholder="Add conversation notes, parent details, documentation progress..."
-                      className="w-full p-2.5 rounded-xl border border-slate-300 text-xs focus:outline-hidden focus:border-[#063280]"
+                      className="w-full p-2.5 rounded-xl border border-slate-300 text-xs focus:outline-hidden focus:border-[#590907]"
                     />
                   </div>
 
                   <button
                     onClick={handleSaveLeadChanges}
-                    className="w-full py-2.5 bg-[#063280] hover:bg-[#1558A9] text-white font-bold rounded-xl text-xs transition-colors flex items-center justify-center gap-2 shadow-xs cursor-pointer"
+                    className="w-full py-2.5 bg-[#590907] hover:bg-[#590907] text-white font-bold rounded-xl text-xs transition-colors flex items-center justify-center gap-2 shadow-xs cursor-pointer"
                   >
                     <CheckCircle2 className="w-3.5 h-3.5" />
                     <span>Save Counsellor Updates</span>
@@ -654,7 +654,7 @@ export function AdminDashboardPage() {
                 </div>
               </div>
             ) : (
-              <div className="bg-white rounded-3xl border border-[#D9E2EC] p-8 text-center text-slate-400 text-xs space-y-2">
+              <div className="bg-white rounded-3xl border border-[#DEDCD4] p-8 text-center text-slate-400 text-xs space-y-2">
                 <Users className="w-10 h-10 text-slate-300 mx-auto" />
                 <p className="font-bold text-slate-600">No Student Selected</p>
                 <p>Click any student lead from the table to view contact info, history, and add notes.</p>
@@ -667,10 +667,10 @@ export function AdminDashboardPage() {
       {/* Google Sheet Integration Modal */}
       {showSheetModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-xs p-4 overflow-y-auto">
-          <div className="bg-white w-full max-w-2xl rounded-3xl shadow-2xl border border-[#D9E2EC] overflow-hidden animate-in fade-in zoom-in-95 duration-150 my-8">
-            <div className="bg-linear-to-r from-[#063280] to-[#1558A9] text-white p-6 flex items-center justify-between">
+          <div className="bg-white w-full max-w-2xl rounded-3xl shadow-2xl border border-[#DEDCD4] overflow-hidden animate-in fade-in zoom-in-95 duration-150 my-8">
+            <div className="bg-linear-to-r from-[#590907] via-[#3F0605] to-[#201C1A] text-white p-6 flex items-center justify-between">
               <div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-[#9ABAD9]">Zero-Database Architecture</span>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#E8D2B5]">Zero-Database Architecture</span>
                 <h3 className="text-xl font-extrabold text-white">Live Google Sheets Webhook Sync</h3>
               </div>
               <button
@@ -691,11 +691,11 @@ export function AdminDashboardPage() {
                     value={webhookUrlInput}
                     onChange={(e) => setWebhookUrlInput(e.target.value)}
                     placeholder="https://script.google.com/macros/s/AKfycb.../exec"
-                    className="flex-1 p-2.5 rounded-xl border border-slate-300 font-mono text-[11px] focus:outline-hidden focus:border-[#063280]"
+                    className="flex-1 p-2.5 rounded-xl border border-slate-300 font-mono text-[11px] focus:outline-hidden focus:border-[#590907]"
                   />
                   <button
                     onClick={handleSaveWebhookUrl}
-                    className="px-4 py-2.5 bg-[#063280] hover:bg-[#1558A9] text-white font-bold rounded-xl text-xs transition-colors shrink-0 cursor-pointer"
+                    className="px-4 py-2.5 bg-[#590907] hover:bg-[#590907] text-white font-bold rounded-xl text-xs transition-colors shrink-0 cursor-pointer"
                   >
                     Save URL
                   </button>
@@ -716,7 +716,7 @@ export function AdminDashboardPage() {
                 <button
                   onClick={handleSendTestLeadToSheet}
                   disabled={isTestingSheet}
-                  className="px-4 py-2 bg-[#9B193A] hover:bg-[#851430] disabled:bg-slate-300 text-white font-bold rounded-xl text-xs transition-colors shrink-0 flex items-center gap-1.5 cursor-pointer"
+                  className="px-4 py-2 bg-[#590907] hover:bg-[#3F0605] disabled:bg-slate-300 text-white font-bold rounded-xl text-xs transition-colors shrink-0 flex items-center gap-1.5 cursor-pointer"
                 >
                   <Send className="w-3.5 h-3.5" />
                   <span>{isTestingSheet ? "Dispatching..." : "Send Test Lead"}</span>
@@ -746,7 +746,7 @@ export function AdminDashboardPage() {
               {/* 4-Step Setup Guide */}
               <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200 space-y-3">
                 <h4 className="font-bold text-slate-900 text-xs flex items-center gap-1.5">
-                  <Sparkles className="w-3.5 h-3.5 text-[#063280]" />
+                  <Sparkles className="w-3.5 h-3.5 text-[#590907]" />
                   How to setup in Google Sheets in 60 Seconds:
                 </h4>
                 <ol className="list-decimal list-inside space-y-1.5 text-slate-600 text-[11px] leading-relaxed">
@@ -765,7 +765,7 @@ export function AdminDashboardPage() {
                   <span>Google Apps Script (Code.gs):</span>
                   <button
                     onClick={handleCopyAppsScriptCode}
-                    className="text-[#063280] hover:text-[#1558A9] font-bold flex items-center gap-1 cursor-pointer"
+                    className="text-[#590907] hover:text-[#590907] font-bold flex items-center gap-1 cursor-pointer"
                   >
                     <Copy className="w-3 h-3" /> Copy
                   </button>
@@ -780,7 +780,7 @@ export function AdminDashboardPage() {
             <div className="bg-slate-100 p-4 flex items-center justify-end">
               <button
                 onClick={() => setShowSheetModal(false)}
-                className="px-5 py-2 bg-[#063280] hover:bg-[#1558A9] text-white font-bold rounded-xl text-xs transition-colors cursor-pointer"
+                className="px-5 py-2 bg-[#590907] hover:bg-[#590907] text-white font-bold rounded-xl text-xs transition-colors cursor-pointer"
               >
                 Done
               </button>
@@ -800,23 +800,23 @@ export function NotFoundPage() {
         description="The medical admission page, university guide, or cost simulator you requested could not be found."
         robots="noindex, nofollow"
       />
-      <div className="w-20 h-20 bg-[#EBF3FA] text-[#063280] rounded-full flex items-center justify-center mx-auto text-3xl font-black border border-[#D9E2EC]">
+      <div className="w-20 h-20 bg-[#ECEDE8] text-[#590907] rounded-full flex items-center justify-center mx-auto text-3xl font-black border border-[#DEDCD4]">
         404
       </div>
-      <h1 className="text-3xl font-black text-[#063280]">Page Not Found</h1>
-      <p className="text-[#475569] text-sm max-w-md mx-auto">
+      <h1 className="text-3xl font-black text-[#590907]">Page Not Found</h1>
+      <p className="text-[#77776F] text-sm max-w-md mx-auto">
         The admission guide, university profile, or tool page you are looking for might have moved or is temporarily unavailable.
       </p>
       <div className="pt-4 flex items-center justify-center gap-3">
         <Link
           to="/"
-          className="px-6 py-3 bg-[#063280] hover:bg-[#1558A9] text-white font-bold rounded-xl text-xs transition-colors shadow-xs"
+          className="px-6 py-3 bg-[#590907] hover:bg-[#590907] text-white font-bold rounded-xl text-xs transition-colors shadow-xs"
         >
           Return to Homepage
         </Link>
         <Link
           to="/universities/uzbekistan"
-          className="px-6 py-3 bg-[#9B193A] hover:bg-[#7E142F] text-white font-bold rounded-xl text-xs transition-colors shadow-xs"
+          className="px-6 py-3 bg-[#590907] hover:bg-[#3F0605] text-white font-bold rounded-xl text-xs transition-colors shadow-xs"
         >
           Explore Universities
         </Link>

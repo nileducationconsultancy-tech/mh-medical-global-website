@@ -102,51 +102,51 @@ export function Navbar({ onOpenLeadModal }) {
     : searchableLinks.slice(0, 5);
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-slate-200/90 shadow-2xs font-sans">
-      {/* 1. SLIM NAVY ANNOUNCEMENT BAR (Height ~48-52px) */}
-      <div className="bg-[#082B57] text-white text-xs py-2.5 px-4 sm:px-6 lg:px-8 border-b border-[#051C3A]">
+    <header className="sticky top-0 z-50 bg-[#F7F5F0]/95 backdrop-blur-md border-b border-[#DEDCD4] shadow-xs font-sans">
+      {/* 1. SLIM BRAND TOP ANNOUNCEMENT BAR */}
+      <div className="bg-[#590907] text-[#E8D2B5] text-xs py-2 px-4 sm:px-6 lg:px-8 border-b border-[#3F0605]">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
           {/* Left Claims & Compliance Highlights */}
-          <div className="flex items-center gap-2 sm:gap-3 text-white text-[11px] sm:text-xs overflow-hidden whitespace-nowrap">
+          <div className="flex items-center gap-2 sm:gap-3 text-[#E8D2B5] text-[11px] sm:text-xs overflow-hidden whitespace-nowrap">
             <div className="inline-flex items-center gap-1.5 font-bold text-white shrink-0">
-              <GraduationCap className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+              <span className="w-2 h-2 rounded-full bg-[#E8D2B5] animate-pulse"></span>
               <span>2026–2027 Admissions Open</span>
             </div>
 
-            <span className="text-white/30 hidden md:inline shrink-0">|</span>
+            <span className="text-[#E8D2B5]/30 hidden md:inline shrink-0">|</span>
 
-            <div className="hidden md:inline-flex items-center gap-1.5 text-slate-200 font-medium shrink-0">
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+            <div className="hidden md:inline-flex items-center gap-1.5 text-[#F7F5F0]/90 font-medium shrink-0">
+              <ShieldCheck className="w-3.5 h-3.5 text-[#E8D2B5] shrink-0" />
               <span>NMC FMGL 2021 Compliant</span>
             </div>
 
-            <span className="text-white/30 hidden lg:inline shrink-0">|</span>
+            <span className="text-[#E8D2B5]/30 hidden lg:inline shrink-0">|</span>
 
-            <div className="hidden lg:inline-flex items-center gap-1.5 text-slate-200 font-medium shrink-0">
-              <Globe className="w-3.5 h-3.5 text-sky-400 shrink-0" />
+            <div className="hidden lg:inline-flex items-center gap-1.5 text-[#F7F5F0]/90 font-medium shrink-0">
+              <Globe className="w-3.5 h-3.5 text-[#E8D2B5] shrink-0" />
               <span>100% English Medium</span>
             </div>
 
-            <span className="text-white/30 hidden xl:inline shrink-0">|</span>
+            <span className="text-[#E8D2B5]/30 hidden xl:inline shrink-0">|</span>
 
-            <div className="hidden xl:inline-flex items-center gap-1.5 text-slate-200 font-medium shrink-0">
-              <Building2 className="w-3.5 h-3.5 text-indigo-300 shrink-0" />
+            <div className="hidden xl:inline-flex items-center gap-1.5 text-[#F7F5F0]/90 font-medium shrink-0">
+              <Building2 className="w-3.5 h-3.5 text-[#E8D2B5] shrink-0" />
               <span>Government Medical Universities in Uzbekistan</span>
             </div>
           </div>
 
-          {/* Right Helpline & Red Enquire CTA */}
+          {/* Right Helpline & Enquire CTA */}
           <div className="flex items-center gap-3 shrink-0">
             <a
               href={phoneLink}
               className="flex items-center gap-2 text-right group hover:opacity-90 transition-opacity"
               title="Call Admissions Helpline"
             >
-              <div className="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center text-white shrink-0 group-hover:bg-white/20 transition-colors">
-                <Phone className="w-3.5 h-3.5 text-white" />
+              <div className="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center text-[#E8D2B5] shrink-0 group-hover:bg-white/20 transition-colors">
+                <Phone className="w-3.5 h-3.5 text-[#E8D2B5]" />
               </div>
               <div className="hidden sm:block text-left leading-tight">
-                <span className="text-[10px] text-slate-300 block font-semibold uppercase tracking-wider">
+                <span className="text-[10px] text-[#E8D2B5]/80 block font-semibold uppercase tracking-wider">
                   Admissions Helpline (24/7)
                 </span>
                 <span className="text-xs font-black text-white tracking-wide">
@@ -158,7 +158,7 @@ export function Navbar({ onOpenLeadModal }) {
             <button
               type="button"
               onClick={() => onOpenLeadModal("Top Bar Enquire Now")}
-              className="bg-[#D90436] hover:bg-[#B8032D] text-white text-[11px] sm:text-xs font-black px-3.5 sm:px-4 py-1.5 rounded-full shadow-xs hover:shadow-red-950/20 transition-all flex items-center gap-1 active:scale-95 cursor-pointer shrink-0"
+              className="bg-[#E8D2B5] hover:bg-white text-[#590907] text-[11px] sm:text-xs font-black px-3.5 sm:px-4 py-1.5 rounded-full shadow-xs transition-all flex items-center gap-1 active:scale-95 cursor-pointer shrink-0"
             >
               <span>Enquire Now</span>
               <ArrowRight className="w-3 h-3" />
@@ -167,9 +167,9 @@ export function Navbar({ onOpenLeadModal }) {
         </div>
       </div>
 
-      {/* 2. MAIN NAVIGATION HEADER (Height ~95-105px) */}
+      {/* 2. MAIN NAVIGATION HEADER */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-22 sm:h-24 md:h-26 gap-4">
+        <div className="flex items-center justify-between h-20 sm:h-22 gap-4">
           {/* Left: Official Brand Logo */}
           <Link
             to="/"
@@ -179,12 +179,12 @@ export function Navbar({ onOpenLeadModal }) {
             <img
               src="/mh-medical-logo.webp"
               alt="MH GLOBAL EDUCATION CONSULTANT"
-              className="h-14 sm:h-16 md:h-18 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              className="h-13 sm:h-15 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
           </Link>
 
           {/* Center: Desktop Navigation Links */}
-          <nav className="hidden xl:flex items-center gap-1 2xl:gap-2 text-[13px] font-bold text-[#082B57] whitespace-nowrap">
+          <nav className="hidden xl:flex items-center gap-1 2xl:gap-1.5 text-[13px] font-bold text-[#201C1A] whitespace-nowrap">
             {/* 1. Home (Pill Style) */}
             <NavLink
               to="/"
@@ -192,8 +192,8 @@ export function Navbar({ onOpenLeadModal }) {
               className={({ isActive }) =>
                 `whitespace-nowrap px-4 py-2 rounded-full transition-all duration-200 font-extrabold ${
                   isActive
-                    ? "bg-[#0752B8] text-white shadow-xs"
-                    : "text-[#082B57] hover:text-[#0752B8] hover:bg-slate-100/80"
+                    ? "bg-[#590907] text-white shadow-xs"
+                    : "text-[#201C1A] hover:text-[#590907] hover:bg-[#ECEDE8]/80"
                 }`
               }
             >
@@ -211,34 +211,34 @@ export function Navbar({ onOpenLeadModal }) {
                   dropdownOpen === "abroad" ||
                   location.pathname.includes("/universities") ||
                   location.pathname === "/mbbs-in-uzbekistan"
-                    ? "text-[#0752B8] font-extrabold bg-blue-50/70"
-                    : "hover:text-[#0752B8] hover:bg-slate-100/70"
+                    ? "text-[#590907] font-extrabold bg-[#ECEDE8]"
+                    : "hover:text-[#590907] hover:bg-[#ECEDE8]/70"
                 }`}
               >
                 <span>MBBS Abroad</span>
-                <ChevronDown className="w-3.5 h-3.5 opacity-70 shrink-0 text-[#0752B8]" />
+                <ChevronDown className="w-3.5 h-3.5 opacity-70 shrink-0 text-[#590907]" />
               </button>
 
               {dropdownOpen === "abroad" && (
-                <div className="absolute top-full left-0 w-80 bg-white rounded-2xl shadow-xl border border-slate-200 p-2 text-xs animate-in fade-in slide-in-from-top-2 duration-150 z-50">
+                <div className="absolute top-full left-0 w-80 bg-white rounded-2xl shadow-xl border border-[#DEDCD4] p-2 text-xs animate-in fade-in slide-in-from-top-2 duration-150 z-50">
                   <Link
                     to="/mbbs-in-uzbekistan"
                     onClick={() => setDropdownOpen(null)}
-                    className="flex items-start gap-2.5 p-2.5 rounded-xl bg-blue-50/80 hover:bg-blue-100/80 transition-colors text-[#082B57] font-bold"
+                    className="flex items-start gap-2.5 p-2.5 rounded-xl bg-[#F7F5F0] hover:bg-[#ECEDE8] transition-colors text-[#201C1A] font-bold"
                   >
-                    <Building2 className="w-4 h-4 text-[#0752B8] mt-0.5 shrink-0" />
+                    <Building2 className="w-4 h-4 text-[#590907] mt-0.5 shrink-0" />
                     <div>
-                      <p className="text-[#082B57] font-extrabold">MBBS in Uzbekistan (Primary Focus)</p>
-                      <p className="text-slate-500 text-[11px] font-normal">NMC FMGL 2021 Approved 6-Year Course</p>
+                      <p className="text-[#590907] font-extrabold">MBBS in Uzbekistan (Primary Focus)</p>
+                      <p className="text-[#77776F] text-[11px] font-normal">NMC FMGL 2021 Approved 6-Year Course</p>
                     </div>
                   </Link>
 
-                  <div className="my-1 border-t border-slate-100"></div>
+                  <div className="my-1 border-t border-[#DEDCD4]/60"></div>
 
                   <Link
                     to="/universities/uzbekistan"
                     onClick={() => setDropdownOpen(null)}
-                    className="block p-2 rounded-lg hover:bg-blue-50 text-[#0752B8] font-bold"
+                    className="block p-2 rounded-lg hover:bg-[#ECEDE8] text-[#590907] font-bold"
                   >
                     All Uzbekistan Universities Directory →
                   </Link>
@@ -246,7 +246,7 @@ export function Navbar({ onOpenLeadModal }) {
                   <Link
                     to="/universities/uzbekistan/tashkent-medical-academy"
                     onClick={() => setDropdownOpen(null)}
-                    className="block p-2 rounded-lg hover:bg-slate-50 text-slate-700 hover:text-[#082B57]"
+                    className="block p-2 rounded-lg hover:bg-[#ECEDE8] text-[#201C1A] hover:text-[#590907]"
                   >
                     Tashkent Medical Academy (Rank #1 Govt)
                   </Link>
@@ -254,7 +254,7 @@ export function Navbar({ onOpenLeadModal }) {
                   <Link
                     to="/universities/uzbekistan/samarkand-state-medical-university"
                     onClick={() => setDropdownOpen(null)}
-                    className="block p-2 rounded-lg hover:bg-slate-50 text-slate-700 hover:text-[#082B57]"
+                    className="block p-2 rounded-lg hover:bg-[#ECEDE8] text-[#201C1A] hover:text-[#590907]"
                   >
                     Samarkand State Medical University
                   </Link>
@@ -262,7 +262,7 @@ export function Navbar({ onOpenLeadModal }) {
                   <Link
                     to="/universities/uzbekistan/bukhara-state-medical-institute"
                     onClick={() => setDropdownOpen(null)}
-                    className="block p-2 rounded-lg hover:bg-slate-50 text-slate-700 hover:text-[#082B57]"
+                    className="block p-2 rounded-lg hover:bg-[#ECEDE8] text-[#201C1A] hover:text-[#590907]"
                   >
                     Bukhara State Medical Institute
                   </Link>
@@ -270,19 +270,19 @@ export function Navbar({ onOpenLeadModal }) {
                   <Link
                     to="/universities/uzbekistan/andijan-state-medical-institute"
                     onClick={() => setDropdownOpen(null)}
-                    className="block p-2 rounded-lg hover:bg-slate-50 text-slate-700 hover:text-[#082B57]"
+                    className="block p-2 rounded-lg hover:bg-[#ECEDE8] text-[#201C1A] hover:text-[#590907]"
                   >
                     Andijan State Medical Institute
                   </Link>
 
-                  <div className="my-1 border-t border-slate-100"></div>
+                  <div className="my-1 border-t border-[#DEDCD4]/60"></div>
 
                   <Link
                     to="/compare-universities"
                     onClick={() => setDropdownOpen(null)}
-                    className="flex items-center gap-2 p-2 rounded-lg hover:bg-rose-50 text-[#D90436] font-extrabold"
+                    className="flex items-center gap-2 p-2 rounded-lg hover:bg-[#E8D2B5]/30 text-[#590907] font-extrabold"
                   >
-                    <Scale className="w-3.5 h-3.5 text-[#D90436] shrink-0" />
+                    <Scale className="w-3.5 h-3.5 text-[#590907] shrink-0" />
                     <span>Compare Top Universities</span>
                   </Link>
                 </div>
@@ -299,49 +299,49 @@ export function Navbar({ onOpenLeadModal }) {
                 className={`whitespace-nowrap flex items-center gap-1 px-3 py-2 rounded-lg transition-colors cursor-pointer ${
                   location.pathname === "/mbbs-fee-calculator" ||
                   location.pathname === "/mbbs-eligibility"
-                    ? "text-[#0752B8] font-extrabold bg-blue-50/70"
-                    : "hover:text-[#0752B8] hover:bg-slate-100/70"
+                    ? "text-[#590907] font-extrabold bg-[#ECEDE8]"
+                    : "hover:text-[#590907] hover:bg-[#ECEDE8]/70"
                 }`}
               >
                 <span>Fees & Eligibility</span>
-                <ChevronDown className="w-3.5 h-3.5 opacity-70 shrink-0 text-[#0752B8]" />
+                <ChevronDown className="w-3.5 h-3.5 opacity-70 shrink-0 text-[#590907]" />
               </button>
 
               {dropdownOpen === "fees" && (
-                <div className="absolute top-full left-0 w-72 bg-white rounded-2xl shadow-xl border border-slate-200 p-2 text-xs animate-in fade-in slide-in-from-top-2 duration-150 z-50">
+                <div className="absolute top-full left-0 w-72 bg-white rounded-2xl shadow-xl border border-[#DEDCD4] p-2 text-xs animate-in fade-in slide-in-from-top-2 duration-150 z-50">
                   <Link
                     to="/mbbs-fee-calculator"
                     onClick={() => setDropdownOpen(null)}
-                    className="flex items-start gap-2.5 p-2 rounded-xl hover:bg-blue-50 text-slate-800 font-semibold"
+                    className="flex items-start gap-2.5 p-2 rounded-xl hover:bg-[#ECEDE8] text-[#201C1A] font-semibold"
                   >
-                    <Calculator className="w-4 h-4 text-[#0752B8] mt-0.5 shrink-0" />
+                    <Calculator className="w-4 h-4 text-[#590907] mt-0.5 shrink-0" />
                     <div>
-                      <p className="font-extrabold text-[#082B57]">6-Year Fee Calculator</p>
-                      <p className="text-[11px] text-slate-500 font-normal">Calculate total USD & INR budget</p>
+                      <p className="font-extrabold text-[#590907]">6-Year Fee Calculator</p>
+                      <p className="text-[11px] text-[#77776F] font-normal">Calculate total USD & INR budget</p>
                     </div>
                   </Link>
 
                   <Link
                     to="/mbbs-eligibility"
                     onClick={() => setDropdownOpen(null)}
-                    className="flex items-start gap-2.5 p-2 rounded-xl hover:bg-blue-50 text-slate-800 font-semibold"
+                    className="flex items-start gap-2.5 p-2 rounded-xl hover:bg-[#ECEDE8] text-[#201C1A] font-semibold"
                   >
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 mt-0.5 shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-emerald-700 mt-0.5 shrink-0" />
                     <div>
-                      <p className="font-extrabold text-[#082B57]">NEET Eligibility Checker</p>
-                      <p className="text-[11px] text-slate-500 font-normal">Instant NMC rule evaluation</p>
+                      <p className="font-extrabold text-[#590907]">NEET Eligibility Checker</p>
+                      <p className="text-[11px] text-[#77776F] font-normal">Instant NMC rule evaluation</p>
                     </div>
                   </Link>
 
                   <Link
                     to="/document-checklist"
                     onClick={() => setDropdownOpen(null)}
-                    className="flex items-start gap-2.5 p-2 rounded-xl hover:bg-blue-50 text-slate-800 font-semibold"
+                    className="flex items-start gap-2.5 p-2 rounded-xl hover:bg-[#ECEDE8] text-[#201C1A] font-semibold"
                   >
-                    <FileCheck2 className="w-4 h-4 text-[#D90436] mt-0.5 shrink-0" />
+                    <FileCheck2 className="w-4 h-4 text-[#590907] mt-0.5 shrink-0" />
                     <div>
-                      <p className="font-extrabold text-[#082B57]">Document Checklist</p>
-                      <p className="text-[11px] text-slate-500 font-normal">Apostille & Visa readiness</p>
+                      <p className="font-extrabold text-[#590907]">Document Checklist</p>
+                      <p className="text-[11px] text-[#77776F] font-normal">Apostille & Visa readiness</p>
                     </div>
                   </Link>
                 </div>
@@ -357,48 +357,48 @@ export function Navbar({ onOpenLeadModal }) {
               <button
                 className={`whitespace-nowrap flex items-center gap-1 px-3 py-2 rounded-lg transition-colors cursor-pointer ${
                   dropdownOpen === "countries"
-                    ? "text-[#0752B8] font-extrabold bg-blue-50/70"
-                    : "hover:text-[#0752B8] hover:bg-slate-100/70"
+                    ? "text-[#590907] font-extrabold bg-[#ECEDE8]"
+                    : "hover:text-[#590907] hover:bg-[#ECEDE8]/70"
                 }`}
               >
                 <span>Countries</span>
-                <ChevronDown className="w-3.5 h-3.5 opacity-70 shrink-0 text-[#0752B8]" />
+                <ChevronDown className="w-3.5 h-3.5 opacity-70 shrink-0 text-[#590907]" />
               </button>
 
               {dropdownOpen === "countries" && (
-                <div className="absolute top-full left-0 w-72 bg-white rounded-2xl shadow-xl border border-slate-200 p-2 text-xs animate-in fade-in slide-in-from-top-2 duration-150 z-50">
+                <div className="absolute top-full left-0 w-72 bg-white rounded-2xl shadow-xl border border-[#DEDCD4] p-2 text-xs animate-in fade-in slide-in-from-top-2 duration-150 z-50">
                   <Link
                     to="/mbbs-in-uzbekistan"
                     onClick={() => setDropdownOpen(null)}
-                    className="flex items-center justify-between p-2 rounded-xl bg-blue-50/80 hover:bg-blue-100/80 text-[#082B57] font-extrabold"
+                    className="flex items-center justify-between p-2 rounded-xl bg-[#F7F5F0] hover:bg-[#ECEDE8] text-[#590907] font-extrabold"
                   >
                     <div className="flex items-center gap-2">
                       <span className="text-base">🇺🇿</span>
                       <span>Uzbekistan</span>
                     </div>
-                    <span className="text-[10px] bg-[#D90436] text-white px-2 py-0.5 rounded-full font-bold">
+                    <span className="text-[10px] bg-[#590907] text-[#E8D2B5] px-2 py-0.5 rounded-full font-bold">
                       Primary
                     </span>
                   </Link>
 
-                  <div className="my-1 border-t border-slate-100"></div>
+                  <div className="my-1 border-t border-[#DEDCD4]/60"></div>
 
-                  <div className="p-2 space-y-1 text-slate-600 font-medium text-[11px]">
-                    <div className="flex items-center justify-between p-1.5 rounded-lg hover:bg-slate-50">
+                  <div className="p-2 space-y-1 text-[#201C1A] font-medium text-[11px]">
+                    <div className="flex items-center justify-between p-1.5 rounded-lg hover:bg-[#ECEDE8]">
                       <span className="flex items-center gap-2"><span>🇰🇿</span> Kazakhstan</span>
-                      <span className="text-slate-400 text-[10px]">Govt Academies</span>
+                      <span className="text-[#77776F] text-[10px]">Govt Academies</span>
                     </div>
-                    <div className="flex items-center justify-between p-1.5 rounded-lg hover:bg-slate-50">
+                    <div className="flex items-center justify-between p-1.5 rounded-lg hover:bg-[#ECEDE8]">
                       <span className="flex items-center gap-2"><span>🇰🇬</span> Kyrgyzstan</span>
-                      <span className="text-slate-400 text-[10px]">Bishkek & Osh</span>
+                      <span className="text-[#77776F] text-[10px]">Bishkek & Osh</span>
                     </div>
-                    <div className="flex items-center justify-between p-1.5 rounded-lg hover:bg-slate-50">
+                    <div className="flex items-center justify-between p-1.5 rounded-lg hover:bg-[#ECEDE8]">
                       <span className="flex items-center gap-2"><span>🇷🇺</span> Russia</span>
-                      <span className="text-slate-400 text-[10px]">Federal Unis</span>
+                      <span className="text-[#77776F] text-[10px]">Federal Unis</span>
                     </div>
-                    <div className="flex items-center justify-between p-1.5 rounded-lg hover:bg-slate-50">
+                    <div className="flex items-center justify-between p-1.5 rounded-lg hover:bg-[#ECEDE8]">
                       <span className="flex items-center gap-2"><span>🇬🇪</span> Georgia</span>
-                      <span className="text-slate-400 text-[10px]">European ECTS</span>
+                      <span className="text-[#77776F] text-[10px]">European ECTS</span>
                     </div>
                   </div>
                 </div>
@@ -409,8 +409,8 @@ export function Navbar({ onOpenLeadModal }) {
             <NavLink
               to="/about-us"
               className={({ isActive }) =>
-                `whitespace-nowrap px-3 py-2 rounded-lg transition-colors hover:text-[#0752B8] hover:bg-slate-100/70 ${
-                  isActive ? "text-[#0752B8] font-extrabold bg-blue-50/70" : ""
+                `whitespace-nowrap px-3 py-2 rounded-lg transition-colors hover:text-[#590907] hover:bg-[#ECEDE8]/70 ${
+                  isActive ? "text-[#590907] font-extrabold bg-[#ECEDE8]" : ""
                 }`
               }
             >
@@ -421,8 +421,8 @@ export function Navbar({ onOpenLeadModal }) {
             <NavLink
               to="/blog"
               className={({ isActive }) =>
-                `whitespace-nowrap px-3 py-2 rounded-lg transition-colors hover:text-[#0752B8] hover:bg-slate-100/70 ${
-                  isActive ? "text-[#0752B8] font-extrabold bg-blue-50/70" : ""
+                `whitespace-nowrap px-3 py-2 rounded-lg transition-colors hover:text-[#590907] hover:bg-[#ECEDE8]/70 ${
+                  isActive ? "text-[#590907] font-extrabold bg-[#ECEDE8]" : ""
                 }`
               }
             >
@@ -433,8 +433,8 @@ export function Navbar({ onOpenLeadModal }) {
             <NavLink
               to="/contact"
               className={({ isActive }) =>
-                `whitespace-nowrap px-3 py-2 rounded-lg transition-colors hover:text-[#0752B8] hover:bg-slate-100/70 ${
-                  isActive ? "text-[#0752B8] font-extrabold bg-blue-50/70" : ""
+                `whitespace-nowrap px-3 py-2 rounded-lg transition-colors hover:text-[#590907] hover:bg-[#ECEDE8]/70 ${
+                  isActive ? "text-[#590907] font-extrabold bg-[#ECEDE8]" : ""
                 }`
               }
             >
@@ -442,13 +442,13 @@ export function Navbar({ onOpenLeadModal }) {
             </NavLink>
           </nav>
 
-          {/* Right-Side Actions: Search + Social Media Icons (Instagram, Facebook, YouTube) + Red Free Counselling CTA */}
+          {/* Right-Side Actions: Search + Social Media Icons + Burgundy Free Counselling CTA */}
           <div className="hidden lg:flex items-center gap-2.5 shrink-0">
             {/* Search Icon Trigger */}
             <button
               type="button"
               onClick={() => setSearchOpen(true)}
-              className="p-2 rounded-full text-slate-600 hover:text-[#0752B8] hover:bg-slate-100 transition-colors cursor-pointer"
+              className="p-2 rounded-full text-[#201C1A] hover:text-[#590907] hover:bg-[#ECEDE8] transition-colors cursor-pointer"
               title="Search universities and admission guides"
               aria-label="Search"
             >
@@ -456,14 +456,14 @@ export function Navbar({ onOpenLeadModal }) {
             </button>
 
             {/* Social Media Links: Instagram, Facebook, YouTube */}
-            <div className="flex items-center gap-1.5 pl-2 border-l border-slate-200">
+            <div className="flex items-center gap-1.5 pl-2 border-l border-[#DEDCD4]">
               <a
                 href={siteConfig.social.instagram.startsWith("http") ? siteConfig.social.instagram : "https://instagram.com"}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
                 title="Follow us on Instagram"
-                className="w-8.5 h-8.5 rounded-full flex items-center justify-center text-slate-600 hover:text-[#E4405F] hover:bg-rose-50 border border-slate-200/90 transition-all cursor-pointer shadow-2xs hover:border-[#E4405F]/40"
+                className="w-8.5 h-8.5 rounded-full flex items-center justify-center text-[#201C1A] hover:text-[#E4405F] hover:bg-rose-50 border border-[#DEDCD4] transition-all cursor-pointer shadow-2xs hover:border-[#E4405F]/40"
               >
                 <InstagramIcon className="w-4 h-4" />
               </a>
@@ -473,7 +473,7 @@ export function Navbar({ onOpenLeadModal }) {
                 rel="noopener noreferrer"
                 aria-label="Facebook"
                 title="Follow us on Facebook"
-                className="w-8.5 h-8.5 rounded-full flex items-center justify-center text-slate-600 hover:text-[#1877F2] hover:bg-blue-50 border border-slate-200/90 transition-all cursor-pointer shadow-2xs hover:border-[#1877F2]/40"
+                className="w-8.5 h-8.5 rounded-full flex items-center justify-center text-[#201C1A] hover:text-[#1877F2] hover:bg-blue-50 border border-[#DEDCD4] transition-all cursor-pointer shadow-2xs hover:border-[#1877F2]/40"
               >
                 <FacebookIcon className="w-4 h-4" />
               </a>
@@ -483,16 +483,16 @@ export function Navbar({ onOpenLeadModal }) {
                 rel="noopener noreferrer"
                 aria-label="YouTube"
                 title="Subscribe on YouTube"
-                className="w-8.5 h-8.5 rounded-full flex items-center justify-center text-slate-600 hover:text-[#FF0000] hover:bg-red-50 border border-slate-200/90 transition-all cursor-pointer shadow-2xs hover:border-[#FF0000]/40"
+                className="w-8.5 h-8.5 rounded-full flex items-center justify-center text-[#201C1A] hover:text-[#FF0000] hover:bg-red-50 border border-[#DEDCD4] transition-all cursor-pointer shadow-2xs hover:border-[#FF0000]/40"
               >
                 <YoutubeIcon className="w-4 h-4" />
               </a>
             </div>
 
-            {/* Primary Red CTA Button */}
+            {/* Primary Burgundy CTA Button */}
             <button
               onClick={() => onOpenLeadModal("Navbar Free Counselling CTA")}
-              className="whitespace-nowrap px-5 py-3 rounded-full bg-[#D90436] hover:bg-[#B8032D] text-white font-black text-xs sm:text-sm tracking-wide transition-all duration-200 shadow-md hover:shadow-red-950/20 active:scale-95 cursor-pointer flex items-center gap-1.5"
+              className="whitespace-nowrap px-5 py-2.5 rounded-full bg-[#590907] hover:bg-[#3F0605] text-white font-black text-xs sm:text-sm tracking-wide transition-all duration-200 shadow-md hover:shadow-[#590907]/30 active:scale-95 cursor-pointer flex items-center gap-1.5"
             >
               <span>Free Counselling</span>
               <ArrowRight className="w-4 h-4" />
@@ -504,7 +504,7 @@ export function Navbar({ onOpenLeadModal }) {
             <button
               type="button"
               onClick={() => setSearchOpen(true)}
-              className="p-2 text-slate-700 hover:text-[#0752B8]"
+              className="p-2 text-[#201C1A] hover:text-[#590907]"
               aria-label="Search"
             >
               <Search className="w-5 h-5" />
@@ -512,14 +512,14 @@ export function Navbar({ onOpenLeadModal }) {
 
             <button
               onClick={() => onOpenLeadModal("Mobile Header Free Counselling")}
-              className="px-3.5 py-1.5 rounded-full bg-[#D90436] hover:bg-[#B8032D] text-white font-extrabold text-xs shadow-xs"
+              className="px-3.5 py-1.5 rounded-full bg-[#590907] hover:bg-[#3F0605] text-white font-extrabold text-xs shadow-xs"
             >
               Apply
             </button>
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-xl text-[#082B57] hover:bg-slate-100 transition-colors focus:outline-hidden"
+              className="p-2 rounded-xl text-[#201C1A] hover:bg-[#ECEDE8] transition-colors focus:outline-hidden"
               aria-label="Toggle Navigation Menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -530,53 +530,53 @@ export function Navbar({ onOpenLeadModal }) {
 
       {/* 3. MOBILE DRAWER MENU */}
       {mobileMenuOpen && (
-        <div className="xl:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-3 animate-in fade-in slide-in-from-top-2 duration-200 max-h-[85vh] overflow-y-auto">
+        <div className="xl:hidden bg-[#F7F5F0] border-b border-[#DEDCD4] px-4 pt-3 pb-6 space-y-3 animate-in fade-in slide-in-from-top-2 duration-200 max-h-[85vh] overflow-y-auto">
           {/* Quick Shortcuts */}
-          <div className="grid grid-cols-2 gap-2 pb-2 border-b border-slate-200">
+          <div className="grid grid-cols-2 gap-2 pb-2 border-b border-[#DEDCD4]">
             <Link
               to="/mbbs-fee-calculator"
               onClick={handleNavClick}
-              className="flex items-center gap-2 p-2.5 rounded-xl bg-slate-50 text-xs font-bold text-[#082B57] border border-slate-200"
+              className="flex items-center gap-2 p-2.5 rounded-xl bg-white text-xs font-bold text-[#201C1A] border border-[#DEDCD4]"
             >
-              <Calculator className="w-4 h-4 text-[#0752B8]" />
+              <Calculator className="w-4 h-4 text-[#590907]" />
               <span>Fee Calculator</span>
             </Link>
             <Link
               to="/mbbs-eligibility"
               onClick={handleNavClick}
-              className="flex items-center gap-2 p-2.5 rounded-xl bg-slate-50 text-xs font-bold text-[#082B57] border border-slate-200"
+              className="flex items-center gap-2 p-2.5 rounded-xl bg-white text-xs font-bold text-[#201C1A] border border-[#DEDCD4]"
             >
-              <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+              <CheckCircle2 className="w-4 h-4 text-emerald-700" />
               <span>Eligibility</span>
             </Link>
           </div>
 
-          <div className="space-y-1 text-sm font-bold text-[#082B57]">
+          <div className="space-y-1 text-sm font-bold text-[#201C1A]">
             <Link
               to="/"
               onClick={handleNavClick}
-              className="block px-3 py-2 rounded-lg bg-blue-50 text-[#0752B8]"
+              className="block px-3 py-2 rounded-lg bg-[#590907] text-white"
             >
               Home
             </Link>
             <Link
               to="/mbbs-in-uzbekistan"
               onClick={handleNavClick}
-              className="block px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800"
+              className="block px-3 py-2 rounded-lg hover:bg-[#ECEDE8] text-[#201C1A]"
             >
               MBBS in Uzbekistan
             </Link>
             <Link
               to="/universities/uzbekistan"
               onClick={handleNavClick}
-              className="block px-3 py-2 rounded-lg hover:bg-slate-50 text-[#0752B8]"
+              className="block px-3 py-2 rounded-lg hover:bg-[#ECEDE8] text-[#590907]"
             >
               All Universities Directory
             </Link>
             <Link
               to="/compare-universities"
               onClick={handleNavClick}
-              className="block px-3 py-2 rounded-lg hover:bg-slate-50 text-[#D90436]"
+              className="block px-3 py-2 rounded-lg hover:bg-[#ECEDE8] text-[#590907]"
             >
               Compare Universities
             </Link>
@@ -584,36 +584,36 @@ export function Navbar({ onOpenLeadModal }) {
             <Link
               to="/document-checklist"
               onClick={handleNavClick}
-              className="block px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800"
+              className="block px-3 py-2 rounded-lg hover:bg-[#ECEDE8] text-[#201C1A]"
             >
               Document Checklist & Visa
             </Link>
             <Link
               to="/about-us"
               onClick={handleNavClick}
-              className="block px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800"
+              className="block px-3 py-2 rounded-lg hover:bg-[#ECEDE8] text-[#201C1A]"
             >
               About Us
             </Link>
             <Link
               to="/blog"
               onClick={handleNavClick}
-              className="block px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800"
+              className="block px-3 py-2 rounded-lg hover:bg-[#ECEDE8] text-[#201C1A]"
             >
               Blogs & Knowledge Hub
             </Link>
             <Link
               to="/contact"
               onClick={handleNavClick}
-              className="block px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800"
+              className="block px-3 py-2 rounded-lg hover:bg-[#ECEDE8] text-[#201C1A]"
             >
               Contact Us
             </Link>
           </div>
 
           {/* Social Media Links in Mobile */}
-          <div className="pt-2 border-t border-slate-200 flex items-center justify-between text-xs">
-            <span className="font-bold text-slate-600">Follow Our Updates:</span>
+          <div className="pt-2 border-t border-[#DEDCD4] flex items-center justify-between text-xs">
+            <span className="font-bold text-[#77776F]">Follow Our Updates:</span>
             <div className="flex items-center gap-2">
               <a
                 href={siteConfig.social.instagram.startsWith("http") ? siteConfig.social.instagram : "https://instagram.com"}
@@ -621,7 +621,7 @@ export function Navbar({ onOpenLeadModal }) {
                 rel="noopener noreferrer"
                 aria-label="Instagram"
                 title="Instagram"
-                className="w-8 h-8 rounded-full flex items-center justify-center text-slate-600 hover:text-[#E4405F] hover:bg-rose-50 border border-slate-200 transition-colors"
+                className="w-8 h-8 rounded-full flex items-center justify-center text-[#201C1A] hover:text-[#E4405F] hover:bg-rose-50 border border-[#DEDCD4] transition-colors"
               >
                 <InstagramIcon className="w-4 h-4" />
               </a>
@@ -631,7 +631,7 @@ export function Navbar({ onOpenLeadModal }) {
                 rel="noopener noreferrer"
                 aria-label="Facebook"
                 title="Facebook"
-                className="w-8 h-8 rounded-full flex items-center justify-center text-slate-600 hover:text-[#1877F2] hover:bg-blue-50 border border-slate-200 transition-colors"
+                className="w-8 h-8 rounded-full flex items-center justify-center text-[#201C1A] hover:text-[#1877F2] hover:bg-blue-50 border border-[#DEDCD4] transition-colors"
               >
                 <FacebookIcon className="w-4 h-4" />
               </a>
@@ -641,7 +641,7 @@ export function Navbar({ onOpenLeadModal }) {
                 rel="noopener noreferrer"
                 aria-label="YouTube"
                 title="YouTube"
-                className="w-8 h-8 rounded-full flex items-center justify-center text-slate-600 hover:text-[#FF0000] hover:bg-red-50 border border-slate-200 transition-colors"
+                className="w-8 h-8 rounded-full flex items-center justify-center text-[#201C1A] hover:text-[#FF0000] hover:bg-red-50 border border-[#DEDCD4] transition-colors"
               >
                 <YoutubeIcon className="w-4 h-4" />
               </a>
@@ -654,7 +654,7 @@ export function Navbar({ onOpenLeadModal }) {
                 setMobileMenuOpen(false);
                 onOpenLeadModal("Mobile Menu Free Consultation");
               }}
-              className="w-full py-3 bg-[#D90436] hover:bg-[#B8032D] text-white font-black rounded-xl text-center shadow-md cursor-pointer transition-colors flex items-center justify-center gap-1.5"
+              className="w-full py-3 bg-[#590907] hover:bg-[#3F0605] text-white font-black rounded-xl text-center shadow-md cursor-pointer transition-colors flex items-center justify-center gap-1.5"
             >
               <span>Book Free 1-on-1 Counselling</span>
               <ArrowRight className="w-4 h-4" />
@@ -665,28 +665,28 @@ export function Navbar({ onOpenLeadModal }) {
 
       {/* 4. FAST SEARCH MODAL */}
       {searchOpen && (
-        <div className="fixed inset-0 z-50 flex items-start justify-center bg-slate-900/60 backdrop-blur-xs p-4 pt-16 sm:pt-24 animate-in fade-in duration-150">
-          <div className="bg-white w-full max-w-xl rounded-2xl shadow-2xl border border-slate-200 overflow-hidden">
-            <div className="p-4 border-b border-slate-200 flex items-center gap-3">
-              <Search className="w-5 h-5 text-slate-400 shrink-0" />
+        <div className="fixed inset-0 z-50 flex items-start justify-center bg-[#201C1A]/60 backdrop-blur-xs p-4 pt-16 sm:pt-24 animate-in fade-in duration-150">
+          <div className="bg-white w-full max-w-xl rounded-2xl shadow-2xl border border-[#DEDCD4] overflow-hidden">
+            <div className="p-4 border-b border-[#DEDCD4] flex items-center gap-3">
+              <Search className="w-5 h-5 text-[#77776F] shrink-0" />
               <input
                 type="text"
                 autoFocus
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search medical universities, fee calculators, eligibility..."
-                className="w-full text-sm outline-hidden text-[#082B57] placeholder-slate-400"
+                className="w-full text-sm outline-hidden text-[#201C1A] placeholder-[#77776F]"
               />
               <button
                 onClick={() => setSearchOpen(false)}
-                className="p-1 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100 cursor-pointer"
+                className="p-1 rounded-lg text-[#77776F] hover:text-[#201C1A] hover:bg-[#ECEDE8] cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
             <div className="p-3 max-h-80 overflow-y-auto space-y-1">
-              <p className="text-[10px] uppercase font-bold tracking-wider text-slate-400 px-3 py-1">
+              <p className="text-[10px] uppercase font-bold tracking-wider text-[#77776F] px-3 py-1">
                 {searchQuery ? "Search Results" : "Quick Navigation"}
               </p>
               {filteredSearchResults.length > 0 ? (
@@ -695,16 +695,16 @@ export function Navbar({ onOpenLeadModal }) {
                     key={item.url}
                     to={item.url}
                     onClick={() => setSearchOpen(false)}
-                    className="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50 text-xs font-bold text-[#082B57] transition-colors"
+                    className="flex items-center justify-between p-2.5 rounded-xl hover:bg-[#ECEDE8] text-xs font-bold text-[#201C1A] hover:text-[#590907] transition-colors"
                   >
                     <span>{item.title}</span>
-                    <span className="text-[10px] text-slate-400 font-semibold bg-slate-100 px-2 py-0.5 rounded-md">
+                    <span className="text-[10px] text-[#77776F] font-semibold bg-[#F7F5F0] px-2 py-0.5 rounded-md border border-[#DEDCD4]">
                       {item.category}
                     </span>
                   </Link>
                 ))
               ) : (
-                <div className="p-6 text-center text-xs text-slate-500">
+                <div className="p-6 text-center text-xs text-[#77776F]">
                   No matching university or guide found. Try searching "Tashkent", "Fee", or "NEET".
                 </div>
               )}

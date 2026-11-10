@@ -8,7 +8,6 @@ import {
   Stamp,
   Plane,
   Home,
-  Utensils,
   BookOpen,
   ArrowRight,
   ShieldCheck
@@ -73,20 +72,20 @@ export function AdmissionsRoadmapTimeline({ onOpenLeadModal }) {
   ];
 
   return (
-    <section className="bg-linear-to-r from-[#063280] via-[#0E438D] to-[#1558A9] rounded-3xl p-6 sm:p-10 lg:p-12 text-white text-center space-y-10 shadow-xl relative overflow-hidden border border-[#9ABAD9]/20 font-sans">
+    <section className="bg-linear-to-r from-[#590907] via-[#3F0605] to-[#201C1A] rounded-3xl p-6 sm:p-10 lg:p-12 text-white text-center space-y-10 shadow-2xl relative overflow-hidden border border-[#E8D2B5]/30 font-sans">
       <div className="space-y-3 max-w-2xl mx-auto">
-        <span className="text-[11px] font-bold uppercase tracking-widest text-white bg-[#9B193A] px-3.5 py-1 rounded-full shadow-xs">
+        <span className="text-[11px] font-bold uppercase tracking-widest text-[#590907] bg-[#E8D2B5] px-3.5 py-1 rounded-full shadow-xs">
           Hassle-Free 9-Step Pathway
         </span>
-        <h2 className="text-2xl sm:text-4xl font-black text-white">
+        <h2 className="text-2xl sm:text-4xl font-serif font-bold text-white">
           Complete 9-Step Admission Roadmap for Indian Students
         </h2>
-        <p className="text-slate-200 text-xs sm:text-sm leading-relaxed">
+        <p className="text-[#F7F5F0]/90 text-xs sm:text-sm leading-relaxed">
           From your initial eligibility check to airport reception in Tashkent — our step-by-step guidance ensures 100% peace of mind with zero surprises.
         </p>
       </div>
 
-      {/* 9-Step Responsive Grid / Vertical Timeline */}
+      {/* 9-Step Responsive Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-left">
         {steps.map((st) => {
           const Icon = st.icon;
@@ -97,15 +96,15 @@ export function AdmissionsRoadmapTimeline({ onOpenLeadModal }) {
             >
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-black text-[#9ABAD9] bg-white/10 px-2.5 py-0.5 rounded-md">
+                  <span className="text-xs font-black text-[#E8D2B5] bg-white/10 px-2.5 py-0.5 rounded-md">
                     Step {st.num}
                   </span>
-                  <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-white">
+                  <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-[#E8D2B5]">
                     <Icon className="w-4 h-4" />
                   </div>
                 </div>
-                <h4 className="font-extrabold text-sm text-white">{st.title}</h4>
-                <p className="text-[11px] text-slate-200 leading-relaxed">{st.desc}</p>
+                <h4 className="font-serif font-bold text-sm text-white">{st.title}</h4>
+                <p className="text-[11px] text-[#A5A79B] leading-relaxed">{st.desc}</p>
               </div>
             </div>
           );
@@ -115,7 +114,7 @@ export function AdmissionsRoadmapTimeline({ onOpenLeadModal }) {
       <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
         <Link
           to="/mbbs-admission-uzbekistan"
-          className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white hover:bg-slate-100 text-[#063280] font-extrabold text-xs sm:text-sm transition-all shadow-md"
+          className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white hover:bg-[#ECEDE8] text-[#590907] font-extrabold text-xs sm:text-sm transition-all shadow-md"
         >
           <span>Explore Detailed Step-by-Step Admission Guide</span>
           <ArrowRight className="w-4 h-4" />
@@ -123,7 +122,7 @@ export function AdmissionsRoadmapTimeline({ onOpenLeadModal }) {
 
         <button
           onClick={() => onOpenLeadModal("Admission Roadmap Free Application Form")}
-          className="px-6 py-3.5 rounded-xl bg-[#9B193A] hover:bg-[#7E142F] text-white font-extrabold text-xs sm:text-sm transition-all shadow-md cursor-pointer"
+          className="px-6 py-3.5 rounded-xl bg-[#E8D2B5] hover:bg-white text-[#590907] font-extrabold text-xs sm:text-sm transition-all shadow-md cursor-pointer"
         >
           Start Step 01 Today (100% Free)
         </button>

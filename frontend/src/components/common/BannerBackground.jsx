@@ -38,7 +38,7 @@ export function BannerBackground({
   opacity = "opacity-[0.35] sm:opacity-[0.45]",
   className = "",
   imgClassName = "object-cover object-center",
-  washGradient = "from-[#063280]/50 via-[#063280]/30 to-[#063280]/70",
+  washGradient = "from-[#590907]/60 via-[#3F0605]/40 to-[#201C1A]/70",
   mixBlend = "mix-blend-overlay"
 }) {
   return (
