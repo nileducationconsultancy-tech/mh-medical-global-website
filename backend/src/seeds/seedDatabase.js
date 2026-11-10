@@ -23,7 +23,7 @@ const seedDB = async () => {
       email: process.env.ADMIN_EMAIL || 'admissions@mhglobalmedical.in',
       password: process.env.ADMIN_PASSWORD || 'MHMedicalAdmin@2026',
       role: 'superadmin',
-      phone: process.env.ADMIN_PHONE || '+91 85955 85955'
+      phone: process.env.ADMIN_PHONE || '+91 93106 48055'
     });
     console.log(`[Seed] Admin User Created: ${adminUser.email}`);
 

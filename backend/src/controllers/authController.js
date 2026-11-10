@@ -7,7 +7,7 @@ const defaultAdmin = {
   name: 'Dr. M. H. Akhtar (Founder & Director)',
   email: process.env.ADMIN_EMAIL || 'admissions@mhglobalmedical.in',
   role: 'superadmin',
-  phone: process.env.ADMIN_PHONE || '+91 85955 85955'
+  phone: process.env.ADMIN_PHONE || '+91 93106 48055'
 };
 
 // @desc    Admin login

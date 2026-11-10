@@ -21,8 +21,8 @@ This document tracks all placeholder fields and authentic assets required from t
 ---
 
 ### 2. Contact Details & Official Company Registration
-- [ ] **Company Phone Number**: Replace `TODO_REPLACE_PHONE_NUMBER` and `TODO_REPLACE_PHONE_DISPLAY` in `frontend/src/config/site.js` with the official toll-free / mobile helpline (e.g. `+91 98765 43210`).
-- [ ] **Official WhatsApp Number**: Replace `TODO_REPLACE_WHATSAPP_NUMBER` in `frontend/src/config/site.js` with the 10-digit country-coded WhatsApp Business number (e.g. `919876543210`).
+- [x] **Company Phone Number**: Configured with verified helpline: `+91 93106 48055` (`+919310648055`).
+- [x] **Official WhatsApp Number**: Configured with verified WhatsApp Business number: `+91 93106 48055` (`919310648055`).
 - [ ] **Registered Office Address**: Replace `TODO_REPLACE_STREET_ADDRESS` in `frontend/src/config/site.js` with the registered office address in New Delhi.
 - [ ] **Uzbekistan Local Hotline**: Replace `TODO_REPLACE_UZBEKISTAN_PHONE` in `frontend/src/config/site.js` with the Tashkent on-ground coordinator's phone number.
 - [ ] **Company CIN / LLPIN**: Replace `TODO_REPLACE_COMPANY_CIN` in `frontend/src/components/layout/Footer.jsx` with the Ministry of Corporate Affairs (MCA) registration number.

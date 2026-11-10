@@ -196,7 +196,7 @@ export function EligibilityChecker({ onOpenLeadModal }) {
               required
               value={formData.phone}
               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-              placeholder="+91 98765 43210"
+              placeholder="+91 93106 48055"
               className="w-full text-sm px-3.5 py-2.5 rounded-xl border border-[#D9E2EC] bg-[#F7FAFC] focus:ring-2 focus:ring-[#063280] focus:outline-hidden"
             />
           </div>

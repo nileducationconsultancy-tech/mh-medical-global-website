@@ -170,9 +170,15 @@ export function Footer({ onOpenLeadModal }) {
             <div className="space-y-2.5 text-xs text-slate-300">
               <div>
                 <p className="font-semibold text-white">{siteConfig.indiaOffice.name}:</p>
-                <p>
-                  {isIndiaOfficePlaceholder ? "New Delhi 110001, India" : `${siteConfig.indiaOffice.streetAddress}, ${siteConfig.indiaOffice.addressLocality} ${siteConfig.indiaOffice.postalCode}, India`}
-                </p>
+                <a
+                  href={siteConfig.indiaOffice.mapsUrl || "https://www.google.com/maps/search/?api=1&query=G-4,+Maan+House,+School+Block,+Shakarpur,+New+Delhi,+Delhi+110092,+India"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white hover:underline transition-colors block mt-0.5"
+                  title="View on Google Maps"
+                >
+                  {siteConfig.indiaOffice.fullAddress || `${siteConfig.indiaOffice.streetAddress}, ${siteConfig.indiaOffice.addressLocality} ${siteConfig.indiaOffice.postalCode}, India`}
+                </a>
               </div>
               <div>
                 <p className="font-semibold text-white">{siteConfig.uzbekistanOffice.name}:</p>
@@ -203,7 +209,7 @@ export function Footer({ onOpenLeadModal }) {
             MH GLOBAL EDUCATION CONSULTANT operates strictly as an academic advisory and student facilitation service. We do NOT guarantee university admissions, visa grants, foreign government licenses, or Indian licensing (NExT/FMGE) examination outcomes. Medical admission is strictly subject to the student fulfilling official university entrance criteria and qualifying NEET-UG under National Medical Commission guidelines. All tuition and hostel fees are payable directly to the respective medical university as per officially published decrees.
           </p>
           <p className="text-[10px] text-slate-500">
-            Company Reg. (CIN): TODO_REPLACE_COMPANY_CIN • Registered Office: New Delhi, India • Advisory services subject to student documentation verification.
+            Registered Office: G-4, Maan House, School Block, Shakarpur, New Delhi, Delhi 110092, India • Advisory services subject to student documentation verification.
           </p>
         </div>
 

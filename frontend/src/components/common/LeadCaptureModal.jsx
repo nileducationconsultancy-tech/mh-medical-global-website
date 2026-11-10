@@ -222,7 +222,7 @@ export function LeadCaptureModal({ isOpen, onClose, initialTitle = "Book Free MB
                     required
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    placeholder="+91 98765 43210"
+                    placeholder="+91 93106 48055"
                     className="w-full text-xs px-2.5 py-1.5 h-8 rounded-lg border border-[#D9E2EC] bg-[#F7FAFC] focus:outline-hidden focus:ring-1 focus:ring-[#063280] focus:border-[#063280]"
                   />
                 </div>

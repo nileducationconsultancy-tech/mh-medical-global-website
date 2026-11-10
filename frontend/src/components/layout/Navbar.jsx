@@ -60,12 +60,12 @@ export function Navbar({ onOpenLeadModal }) {
 
   const displayPhone =
     !siteConfig.phone || siteConfig.phone.startsWith("TODO_REPLACE")
-      ? "+91 98765 43210"
+      ? "+91 93106 48055"
       : siteConfig.phoneDisplay || siteConfig.phone;
 
   const phoneLink =
     !siteConfig.phone || siteConfig.phone.startsWith("TODO_REPLACE")
-      ? "tel:+919876543210"
+      ? "tel:+919310648055"
       : `tel:${siteConfig.phone}`;
 
   // Close dropdowns on route change

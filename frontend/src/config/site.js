@@ -10,31 +10,29 @@
 export const siteConfig = {
   // Canonical Domain
   siteUrl: "https://www.mhglobalmedical.in",
-  brandName: "MH GLOBAL EDUCATION CONSULTANT",
+  brandName: "MH Global Medical",
   legalName: "MH Global Education Consultant Pvt. Ltd.",
   tagline: "Authoritative Medical Education & Uzbekistan MBBS Discovery Platform",
 
-  // Contact Information
-  // TODO_REPLACE: Replace with verified company phone number
-  phone: "TODO_REPLACE_PHONE_NUMBER", // e.g. "+91 9XXXXXXXXX"
-  phoneDisplay: "TODO_REPLACE_PHONE_DISPLAY", // e.g. "+91 9XXXX XXXXX"
+  // Contact Information (Verified)
+  phone: "+919310648055",
+  phoneDisplay: "+91 93106 48055",
+  whatsappNumber: "919310648055",
   
-  // TODO_REPLACE: Replace with verified company WhatsApp number (digits only with country code, no + or spaces)
-  whatsappNumber: "TODO_REPLACE_WHATSAPP_NUMBER", // e.g. "919XXXXXXXXX"
-  
-  // Verified Domain Email
-  email: "admissions@mhglobalmedical.in",
-  supportEmail: "support@mhglobalmedical.in",
+  // Verified Official Email
+  email: "mhglobalmedical@gmail.com",
+  supportEmail: "mhglobalmedical@gmail.com",
 
   // Addresses
   indiaOffice: {
-    name: "India Admissions HQ",
-    // TODO_REPLACE: Verify exact physical street address in New Delhi
-    streetAddress: "TODO_REPLACE_STREET_ADDRESS", // e.g. "Connaught Place"
+    name: "India Head Office",
+    streetAddress: "G-4, Maan House, School Block, Shakarpur",
     addressLocality: "New Delhi",
     addressRegion: "Delhi",
-    postalCode: "110001",
+    postalCode: "110092",
     addressCountry: "IN",
+    fullAddress: "G-4, Maan House, School Block, Shakarpur, New Delhi, Delhi 110092, India",
+    mapsUrl: "https://www.google.com/maps/search/?api=1&query=G-4,+Maan+House,+School+Block,+Shakarpur,+New+Delhi,+Delhi+110092,+India",
     operatingHours: "Monday – Saturday (9:30 AM – 7:00 PM IST)"
   },
   uzbekistanOffice: {
@@ -43,8 +41,7 @@ export const siteConfig = {
     addressLocality: "Tashkent",
     postalCode: "100109",
     addressCountry: "UZ",
-    // TODO_REPLACE: Replace with verified local Uzbekistan coordinator hotline
-    phone: "TODO_REPLACE_UZBEKISTAN_PHONE"
+    phone: ""
   },
 
   // Social Channels
