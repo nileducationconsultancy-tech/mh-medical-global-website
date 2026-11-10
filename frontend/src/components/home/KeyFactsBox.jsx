@@ -43,17 +43,17 @@ export function KeyFactsBox() {
   ];
 
   return (
-    <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#D9E2EC] shadow-md font-sans">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-6 border-b border-[#D9E2EC]">
+    <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#DEDCD4] shadow-md font-sans">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-6 border-b border-[#DEDCD4]">
         <div>
-          <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#063280] bg-[#EBF3FA] px-3 py-1 rounded-full border border-[#D9E2EC]">
+          <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#590907] bg-[#ECEDE8] px-3 py-1 rounded-full border border-[#DEDCD4]">
             Quick Facts & Canonical Verification
           </span>
-          <h3 className="text-xl sm:text-2xl font-black text-[#063280] mt-1.5">
+          <h3 className="text-xl sm:text-2xl font-black text-[#201C1A] mt-1.5">
             Key MBBS in Uzbekistan Metrics for 2026-2027 Admissions
           </h3>
         </div>
-        <span className="text-xs text-[#475569] font-medium bg-[#F7FAFC] px-3 py-1.5 rounded-xl border border-[#D9E2EC] self-start sm:self-auto">
+        <span className="text-xs text-[#77776F] font-medium bg-[#F7F5F0] px-3 py-1.5 rounded-xl border border-[#DEDCD4] self-start sm:self-auto">
           Last Verified: {CANONICAL_PRICING_SUMMARY.exchangeRateDate}
         </span>
       </div>
@@ -64,17 +64,17 @@ export function KeyFactsBox() {
           return (
             <div
               key={fact.label}
-              className="p-4 rounded-2xl bg-[#F7FAFC] hover:bg-[#EBF3FA]/50 border border-[#D9E2EC] transition-all flex items-start gap-3.5"
+              className="p-4 rounded-2xl bg-[#F7F5F0] hover:bg-[#ECEDE8] border border-[#DEDCD4] transition-all flex items-start gap-3.5"
             >
-              <div className="w-10 h-10 rounded-xl bg-white text-[#063280] border border-[#D9E2EC] shadow-xs flex items-center justify-center shrink-0">
-                <Icon className="w-5 h-5 text-[#063280]" />
+              <div className="w-10 h-10 rounded-xl bg-white text-[#590907] border border-[#DEDCD4] shadow-xs flex items-center justify-center shrink-0">
+                <Icon className="w-5 h-5 text-[#590907]" />
               </div>
               <div className="space-y-0.5">
-                <p className="text-[11px] font-bold text-[#475569] uppercase tracking-wider">
+                <p className="text-[11px] font-bold text-[#77776F] uppercase tracking-wider">
                   {fact.label}
                 </p>
-                <p className="text-sm font-black text-[#063280]">{fact.value}</p>
-                <p className="text-[11px] text-[#475569] leading-tight">{fact.subtext}</p>
+                <p className="text-sm font-black text-[#590907]">{fact.value}</p>
+                <p className="text-[11px] text-[#77776F] leading-tight">{fact.subtext}</p>
               </div>
             </div>
           );

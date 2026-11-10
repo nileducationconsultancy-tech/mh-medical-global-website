@@ -155,17 +155,17 @@ export function EligibilityChecker({ onOpenLeadModal }) {
   };
 
   return (
-    <div className="bg-white rounded-3xl shadow-xl border border-[#D9E2EC] p-6 sm:p-8 lg:p-10 font-sans">
+    <div className="bg-white rounded-3xl shadow-xl border border-[#DEDCD4] p-6 sm:p-8 lg:p-10 font-sans">
       {/* Header */}
-      <div className="pb-6 border-b border-[#D9E2EC]">
-        <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#EBF3FA] text-[#063280] text-xs font-bold uppercase tracking-wider mb-2 border border-[#D9E2EC]">
-          <Award className="w-3.5 h-3.5 text-[#063280]" />
+      <div className="pb-6 border-b border-[#DEDCD4]">
+        <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#ECEDE8] text-[#590907] text-xs font-bold uppercase tracking-wider mb-2 border border-[#DEDCD4]">
+          <Award className="w-3.5 h-3.5 text-[#590907]" />
           NMC & University Rule Compliance Engine
         </div>
-        <h2 className="text-2xl sm:text-3xl font-black text-[#063280]">
+        <h2 className="text-2xl sm:text-3xl font-black text-[#201C1A]">
           Uzbekistan MBBS Eligibility Evaluator
         </h2>
-        <p className="text-[#475569] text-sm mt-1">
+        <p className="text-[#77776F] text-sm mt-1">
           Instant rule-based assessment under NMC FMGL 2021 guidelines and Uzbekistan Ministry of Higher Education norms.
         </p>
       </div>
@@ -174,7 +174,7 @@ export function EligibilityChecker({ onOpenLeadModal }) {
         {/* Student Profile Row */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-[#063280] mb-1.5">
+            <label className="block text-xs font-bold uppercase tracking-wider text-[#201C1A] mb-1.5">
               Full Name *
             </label>
             <input
@@ -183,12 +183,12 @@ export function EligibilityChecker({ onOpenLeadModal }) {
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               placeholder="e.g. Aman Sharma"
-              className="w-full text-sm px-3.5 py-2.5 rounded-xl border border-[#D9E2EC] bg-[#F7FAFC] focus:ring-2 focus:ring-[#063280] focus:outline-hidden"
+              className="w-full text-sm px-3.5 py-2.5 rounded-xl border border-[#DEDCD4] bg-[#F7F5F0] focus:ring-2 focus:ring-[#590907] focus:outline-hidden text-[#201C1A]"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-[#063280] mb-1.5">
+            <label className="block text-xs font-bold uppercase tracking-wider text-[#201C1A] mb-1.5">
               Mobile Number (WhatsApp) *
             </label>
             <input
@@ -197,18 +197,18 @@ export function EligibilityChecker({ onOpenLeadModal }) {
               value={formData.phone}
               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
               placeholder="+91 93106 48055"
-              className="w-full text-sm px-3.5 py-2.5 rounded-xl border border-[#D9E2EC] bg-[#F7FAFC] focus:ring-2 focus:ring-[#063280] focus:outline-hidden"
+              className="w-full text-sm px-3.5 py-2.5 rounded-xl border border-[#DEDCD4] bg-[#F7F5F0] focus:ring-2 focus:ring-[#590907] focus:outline-hidden text-[#201C1A]"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-[#063280] mb-1.5">
+            <label className="block text-xs font-bold uppercase tracking-wider text-[#201C1A] mb-1.5">
               Category (Quota Rules)
             </label>
             <select
               value={formData.category}
               onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-              className="w-full text-sm px-3.5 py-2.5 rounded-xl border border-[#D9E2EC] bg-[#F7FAFC] focus:ring-2 focus:ring-[#063280] focus:outline-hidden font-medium text-[#0F172A]"
+              className="w-full text-sm px-3.5 py-2.5 rounded-xl border border-[#DEDCD4] bg-[#F7F5F0] focus:ring-2 focus:ring-[#590907] focus:outline-hidden font-medium text-[#201C1A]"
             >
               <option value="General">General / Open (50% PCB required)</option>
               <option value="OBC">OBC (40% PCB required)</option>
@@ -220,12 +220,12 @@ export function EligibilityChecker({ onOpenLeadModal }) {
         </div>
 
         {/* 12th Marks Grid */}
-        <div className="bg-[#F7FAFC] p-5 rounded-2xl border border-[#D9E2EC] space-y-4">
+        <div className="bg-[#F7F5F0] p-5 rounded-2xl border border-[#DEDCD4] space-y-4">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#063280]">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#201C1A]">
               10+2 / 12th Standard Subject Marks (Out of 100)
             </span>
-            <span className="text-xs font-bold text-[#063280] bg-[#EBF3FA] px-2.5 py-0.5 rounded-full border border-[#D9E2EC]">
+            <span className="text-xs font-bold text-[#590907] bg-[#ECEDE8] px-2.5 py-0.5 rounded-full border border-[#DEDCD4]">
               Current PCB Aggregate: {pcbPercentage}%
             </span>
           </div>
@@ -287,13 +287,13 @@ export function EligibilityChecker({ onOpenLeadModal }) {
         {/* NEET & Age Details */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-[#063280] mb-1.5">
+            <label className="block text-xs font-bold uppercase tracking-wider text-[#201C1A] mb-1.5">
               NEET Qualification Status *
             </label>
             <select
               value={formData.neetStatus}
               onChange={(e) => setFormData({ ...formData, neetStatus: e.target.value })}
-              className="w-full text-sm px-3.5 py-2.5 rounded-xl border border-[#D9E2EC] bg-[#F7FAFC] font-semibold text-[#0F172A]"
+              className="w-full text-sm px-3.5 py-2.5 rounded-xl border border-[#DEDCD4] bg-[#F7F5F0] font-semibold text-[#201C1A]"
             >
               <option value="Qualified">Qualified in NEET-UG (2024 / 2025 / 2026)</option>
               <option value="Appearing">Appearing in NEET-UG 2026</option>
@@ -302,7 +302,7 @@ export function EligibilityChecker({ onOpenLeadModal }) {
           </div>
 
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-[#063280] mb-1.5">
+            <label className="block text-xs font-bold uppercase tracking-wider text-[#201C1A] mb-1.5">
               Date of Birth (For Age Check)
             </label>
             <input
@@ -310,23 +310,23 @@ export function EligibilityChecker({ onOpenLeadModal }) {
               required
               value={formData.dob}
               onChange={(e) => setFormData({ ...formData, dob: e.target.value })}
-              className="w-full text-sm px-3.5 py-2 rounded-xl border border-[#D9E2EC] font-medium text-[#0F172A] bg-[#F7FAFC]"
+              className="w-full text-sm px-3.5 py-2 rounded-xl border border-[#DEDCD4] font-medium text-[#201C1A] bg-[#F7F5F0]"
             />
           </div>
 
           <div>
             <div className="flex items-center justify-between mb-1.5">
-              <label className="block text-xs font-bold uppercase tracking-wider text-[#063280]">
+              <label className="block text-xs font-bold uppercase tracking-wider text-[#201C1A]">
                 Passport Readiness
               </label>
-              <span className="text-[10px] font-semibold text-slate-500 bg-slate-200/80 px-2 py-0.5 rounded-full">
+              <span className="text-[10px] font-semibold text-[#77776F] bg-[#ECEDE8] px-2 py-0.5 rounded-full">
                 Optional
               </span>
             </div>
             <select
               value={formData.passportStatus}
               onChange={(e) => setFormData({ ...formData, passportStatus: e.target.value })}
-              className="w-full text-sm px-3.5 py-2.5 rounded-xl border border-[#D9E2EC] bg-[#F7FAFC] font-medium text-[#0F172A] focus:ring-2 focus:ring-[#063280] focus:outline-hidden"
+              className="w-full text-sm px-3.5 py-2.5 rounded-xl border border-[#DEDCD4] bg-[#F7F5F0] font-medium text-[#201C1A] focus:ring-2 focus:ring-[#590907] focus:outline-hidden"
             >
               <option value="Ready / Valid for 2+ Years">Ready / Valid for 2+ Years</option>
               <option value="Applied / In Process">Applied / In Process</option>
@@ -341,13 +341,13 @@ export function EligibilityChecker({ onOpenLeadModal }) {
           <button
             type="submit"
             disabled={isEvaluating}
-            className="w-full py-4 px-6 bg-[#063280] hover:bg-[#1558A9] text-white font-extrabold rounded-2xl text-sm sm:text-base transition-all duration-200 shadow-md flex items-center justify-center gap-2 cursor-pointer border-b-2 border-[#9B193A]"
+            className="w-full py-4 px-6 bg-[#590907] hover:bg-[#3D0605] text-[#E8D2B5] font-extrabold rounded-2xl text-sm sm:text-base transition-all duration-200 shadow-md flex items-center justify-center gap-2 cursor-pointer border-b-2 border-[#3D0605]"
           >
             {isEvaluating ? (
               <span>Evaluating Academic & Regulatory Eligibility...</span>
             ) : (
               <>
-                <Sparkles className="w-5 h-5 text-[#9ABAD9]" />
+                <Sparkles className="w-5 h-5 text-[#E8D2B5]" />
                 Check Instant Admission Eligibility
               </>
             )}
@@ -357,11 +357,11 @@ export function EligibilityChecker({ onOpenLeadModal }) {
 
       {/* Result Card (Rendered Directly Below the Form) */}
       {evaluationResult && (
-        <div ref={resultRef} className="mt-8 pt-6 border-t border-[#D9E2EC] animate-in fade-in duration-300 scroll-mt-6">
+        <div ref={resultRef} className="mt-8 pt-6 border-t border-[#DEDCD4] animate-in fade-in duration-300 scroll-mt-6">
           <div
             className={`p-6 sm:p-8 rounded-3xl border ${
               evaluationResult.status === "Eligible"
-                ? "bg-[#EBF3FA] border-[#063280] text-[#063280]"
+                ? "bg-[#ECEDE8] border-[#590907] text-[#201C1A]"
                 : evaluationResult.status === "Not Eligible"
                 ? "bg-rose-50/80 border-rose-300 text-rose-950"
                 : "bg-amber-50/80 border-amber-300 text-amber-950"
@@ -370,7 +370,7 @@ export function EligibilityChecker({ onOpenLeadModal }) {
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 border-b border-black/10">
               <div className="flex items-center gap-3">
                 {evaluationResult.status === "Eligible" ? (
-                  <div className="w-12 h-12 rounded-2xl bg-[#063280] text-white flex items-center justify-center shrink-0 shadow-sm">
+                  <div className="w-12 h-12 rounded-2xl bg-[#590907] text-[#E8D2B5] flex items-center justify-center shrink-0 shadow-sm">
                     <CheckCircle2 className="w-7 h-7" />
                   </div>
                 ) : evaluationResult.status === "Not Eligible" ? (
@@ -388,7 +388,7 @@ export function EligibilityChecker({ onOpenLeadModal }) {
                 </div>
               </div>
 
-              <div className="text-xs font-bold px-3 py-1.5 rounded-xl bg-white border border-[#D9E2EC] shadow-2xs text-[#063280]">
+              <div className="text-xs font-bold px-3 py-1.5 rounded-xl bg-white border border-[#DEDCD4] shadow-2xs text-[#590907]">
                 Calculated Age: {evaluationResult.age} Yrs • PCB: {evaluationResult.pcbPercentage}%
               </div>
             </div>
@@ -397,10 +397,10 @@ export function EligibilityChecker({ onOpenLeadModal }) {
             <div className="py-4 space-y-3 text-xs sm:text-sm">
               {evaluationResult.status === "Eligible" ? (
                 <div className="space-y-2">
-                  <p className="font-semibold text-[#063280]">
+                  <p className="font-semibold text-[#590907]">
                     🎉 Outstanding! You meet statutory NMC FMGL 2021 & Uzbekistan University admission criteria:
                   </p>
-                  <ul className="list-disc pl-5 space-y-1.5 opacity-90 text-xs text-[#0F172A]">
+                  <ul className="list-disc pl-5 space-y-1.5 opacity-90 text-xs text-[#201C1A]">
                     <li>12th PCB Aggregate: <strong>{evaluationResult.pcbPercentage}%</strong> (Meets minimum {evaluationResult.minPcbRequired}% benchmark for {formData.category} category).</li>
                     <li>Age requirement: <strong>{evaluationResult.age} years</strong> (Completed mandatory 17+ requirement by Dec 31, 2026).</li>
                     <li>Passport Status: <strong>{evaluationResult.passportStatus || 'Not Specified'}</strong> {
@@ -436,7 +436,7 @@ export function EligibilityChecker({ onOpenLeadModal }) {
                     `Eligibility Verified (${evaluationResult.status} - PCB ${evaluationResult.pcbPercentage}%)`
                   )
                 }
-                className="px-5 py-2.5 bg-[#063280] hover:bg-[#1558A9] text-white font-bold rounded-xl text-xs sm:text-sm transition-colors shadow-sm flex items-center gap-2 cursor-pointer"
+                className="px-5 py-2.5 bg-[#590907] hover:bg-[#3D0605] text-[#E8D2B5] font-bold rounded-xl text-xs sm:text-sm transition-colors shadow-sm flex items-center gap-2 cursor-pointer"
               >
                 <span>Request University Seat Matrix & Letter</span>
                 <ArrowRight className="w-4 h-4" />
@@ -447,8 +447,8 @@ export function EligibilityChecker({ onOpenLeadModal }) {
       )}
 
       {/* Footnote */}
-      <div className="mt-6 text-[11px] text-[#475569] leading-relaxed flex items-start gap-2">
-        <ShieldCheck className="w-4 h-4 text-[#063280] shrink-0 mt-0.5" />
+      <div className="mt-6 text-[11px] text-[#77776F] leading-relaxed flex items-start gap-2">
+        <ShieldCheck className="w-4 h-4 text-[#590907] shrink-0 mt-0.5" />
         <p>
           *Disclaimer: This tool calculates eligibility according to National Medical Commission (NMC) Gazette notifications and standard university admission guidelines. Official confirmation is issued upon document verification by the university admissions committee.
         </p>

@@ -29,15 +29,15 @@ export function VerificationMethodologyModal({ isOpen, onClose }) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-xs font-sans animate-in fade-in duration-200">
-      <div className="bg-white rounded-3xl shadow-2xl border border-[#D9E2EC] max-w-2xl w-full p-6 sm:p-8 space-y-6 max-h-[90vh] overflow-y-auto">
-        <div className="flex items-center justify-between pb-4 border-b border-[#D9E2EC]">
+      <div className="bg-white rounded-3xl shadow-2xl border border-[#DEDCD4] max-w-2xl w-full p-6 sm:p-8 space-y-6 max-h-[90vh] overflow-y-auto">
+        <div className="flex items-center justify-between pb-4 border-b border-[#DEDCD4]">
           <div className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-xl bg-[#EBF3FA] text-[#063280] flex items-center justify-center font-bold">
+            <div className="w-9 h-9 rounded-xl bg-[#ECEDE8] text-[#590907] flex items-center justify-center font-bold">
               <ShieldCheck className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="font-black text-lg text-[#063280]">How We Verify Medical Universities</h3>
-              <p className="text-xs text-[#475569]">Our 5-Pillar Editorial & Institutional Verification Standard</p>
+              <h3 className="font-black text-lg text-[#201C1A]">How We Verify Medical Universities</h3>
+              <p className="text-xs text-[#77776F]">Our 5-Pillar Editorial & Institutional Verification Standard</p>
             </div>
           </div>
           <button
@@ -50,22 +50,22 @@ export function VerificationMethodologyModal({ isOpen, onClose }) {
 
         <div className="space-y-4">
           {verificationPillars.map((p) => (
-            <div key={p.title} className="p-4 rounded-2xl bg-[#F7FAFC] border border-[#D9E2EC] space-y-1">
-              <h4 className="font-extrabold text-sm text-[#063280] flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#1558A9] shrink-0" />
+            <div key={p.title} className="p-4 rounded-2xl bg-[#F7F5F0] border border-[#DEDCD4] space-y-1">
+              <h4 className="font-extrabold text-sm text-[#201C1A] flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-[#590907] shrink-0" />
                 <span>{p.title}</span>
               </h4>
-              <p className="text-xs text-[#475569] leading-relaxed pl-6">
+              <p className="text-xs text-[#77776F] leading-relaxed pl-6">
                 {p.description}
               </p>
             </div>
           ))}
         </div>
 
-        <div className="pt-2 border-t border-[#D9E2EC] flex justify-end">
+        <div className="pt-2 border-t border-[#DEDCD4] flex justify-end">
           <button
             onClick={onClose}
-            className="px-6 py-2.5 bg-[#063280] hover:bg-[#1558A9] text-white font-extrabold text-xs rounded-xl transition-all shadow-xs cursor-pointer"
+            className="px-6 py-2.5 bg-[#590907] hover:bg-[#3D0605] text-[#E8D2B5] font-extrabold text-xs rounded-xl transition-all shadow-xs cursor-pointer"
           >
             Understood & Close
           </button>

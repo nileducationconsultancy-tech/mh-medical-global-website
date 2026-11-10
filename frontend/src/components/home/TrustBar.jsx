@@ -8,24 +8,24 @@ export function TrustBar() {
       label: "Students Counselled",
       subtext: "Across Indian States & UTs",
       icon: Users,
-      bgColor: "bg-rose-100",
-      iconColor: "text-[#D90436]"
+      bgColor: "bg-[#E8D2B5]/60",
+      iconColor: "text-[#590907]"
     },
     {
       value: "20+",
       label: "Government Universities",
       subtext: "State Medical Academies",
       icon: Landmark,
-      bgColor: "bg-blue-100",
-      iconColor: "text-[#0752B8]"
+      bgColor: "bg-[#ECEDE8]",
+      iconColor: "text-[#590907]"
     },
     {
       value: "100%",
       label: "Verified Information",
       subtext: "NMC FMGL 2021 Compliant",
       icon: Star,
-      bgColor: "bg-amber-100",
-      iconColor: "text-amber-500",
+      bgColor: "bg-[#A5A79B]/25",
+      iconColor: "text-[#201C1A]",
       iconFill: true
     },
     {
@@ -33,22 +33,22 @@ export function TrustBar() {
       label: "Countries",
       subtext: "Uzbekistan, Kazakhstan, etc.",
       icon: Globe,
-      bgColor: "bg-indigo-100",
-      iconColor: "text-indigo-600"
+      bgColor: "bg-[#E8D2B5]/60",
+      iconColor: "text-[#590907]"
     },
     {
       value: "24/7",
       label: "Admission Support",
       subtext: "Dedicated Student Desk",
       icon: Headphones,
-      bgColor: "bg-rose-100",
-      iconColor: "text-[#D90436]"
+      bgColor: "bg-[#ECEDE8]",
+      iconColor: "text-[#590907]"
     }
   ];
 
   return (
-    <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-xl shadow-slate-200/50 p-4 sm:p-6 font-sans">
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-2 items-center divide-y md:divide-y-0 md:divide-x divide-slate-100">
+    <div className="bg-white rounded-2xl sm:rounded-3xl border border-[#DEDCD4] shadow-md p-4 sm:p-6 font-sans">
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-2 items-center divide-y md:divide-y-0 md:divide-x divide-[#DEDCD4]">
         {stats.map((stat, idx) => {
           const Icon = stat.icon;
           return (
@@ -58,22 +58,22 @@ export function TrustBar() {
                 idx === 4 ? "col-span-2 md:col-span-1 justify-center md:justify-start pt-3 md:pt-0" : ""
               } ${idx > 0 && idx < 4 ? "pt-3 md:pt-0 md:pl-4" : ""} ${idx === 0 ? "md:pr-3" : ""}`}
             >
-              {/* Colorful Circular Icon */}
+              {/* Institutional Circular Icon */}
               <div
                 className={`w-11 h-11 sm:w-12 sm:h-12 rounded-full ${stat.bgColor} ${stat.iconColor} flex items-center justify-center shrink-0 shadow-2xs`}
               >
-                <Icon className={`w-5 h-5 sm:w-6 sm:h-6 ${stat.iconFill ? "fill-amber-500" : ""}`} />
+                <Icon className={`w-5 h-5 sm:w-6 sm:h-6 ${stat.iconFill ? "fill-[#201C1A]" : ""}`} />
               </div>
 
               {/* Stat Value & Label */}
               <div className="leading-tight">
-                <p className="text-xl sm:text-2xl lg:text-[26px] font-black text-[#082B57] tracking-tight">
+                <p className="text-xl sm:text-2xl lg:text-[26px] font-black text-[#201C1A] tracking-tight">
                   {stat.value}
                 </p>
-                <p className="text-xs sm:text-[13px] font-bold text-[#082B57] mt-0.5 whitespace-nowrap">
+                <p className="text-xs sm:text-[13px] font-bold text-[#201C1A] mt-0.5 whitespace-nowrap">
                   {stat.label}
                 </p>
-                <p className="text-[10px] text-[#64748B] font-medium hidden sm:block truncate mt-0.5">
+                <p className="text-[10px] text-[#77776F] font-medium hidden sm:block truncate mt-0.5">
                   {stat.subtext}
                 </p>
               </div>

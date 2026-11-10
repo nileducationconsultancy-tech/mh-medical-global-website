@@ -49,15 +49,15 @@ export function WhyUzbekistanSection() {
     <section className="space-y-8 font-sans">
       {/* Header with Direct-Answer GEO Paragraph */}
       <div className="text-center max-w-3xl mx-auto space-y-3">
-        <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#063280] bg-[#EBF3FA] px-3.5 py-1 rounded-full border border-[#D9E2EC]">
+        <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#590907] bg-[#ECEDE8] px-3.5 py-1 rounded-full border border-[#DEDCD4]">
           Why Indian Aspirants Choose Uzbekistan
         </span>
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#063280]">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#201C1A]">
           European-Standard Medical Training at 1/4th the Cost of Indian Private Colleges
         </h2>
         
-        {/* AI-Quotable Direct Answer Block (45 words) */}
-        <p className="text-xs sm:text-sm text-[#475569] leading-relaxed max-w-2xl mx-auto bg-[#F7FAFC] p-4 rounded-2xl border border-[#D9E2EC]">
+        {/* AI-Quotable Direct Answer Block (45 words) in Warm Beige */}
+        <p className="text-xs sm:text-sm text-[#201C1A] leading-relaxed max-w-2xl mx-auto bg-[#E8D2B5]/50 p-4 rounded-2xl border border-[#DEDCD4]">
           <strong>Direct Answer:</strong> Uzbekistan is a top MBBS destination for Indian students because its state universities deliver 100% English-medium, NMC FMGL 2021-compliant 6-year MD Physician degrees for ₹15.2L–₹19.8L tuition total, supported by 3,500+ hospital beds, on-campus Indian messes, and a quick 3.5-hour direct flight from Delhi.
         </p>
       </div>
@@ -69,15 +69,15 @@ export function WhyUzbekistanSection() {
           return (
             <div
               key={pt.title}
-              className="bg-white p-7 rounded-3xl border border-[#D9E2EC] shadow-xs hover:shadow-md transition-all space-y-3 group"
+              className="bg-white p-7 rounded-3xl border border-[#DEDCD4] shadow-xs hover:shadow-md transition-all space-y-3 group"
             >
-              <div className="w-12 h-12 rounded-2xl bg-[#EBF3FA] group-hover:bg-[#063280] text-[#063280] group-hover:text-white transition-colors flex items-center justify-center font-bold">
+              <div className="w-12 h-12 rounded-2xl bg-[#ECEDE8] group-hover:bg-[#590907] text-[#590907] group-hover:text-[#E8D2B5] transition-colors flex items-center justify-center font-bold">
                 <Icon className="w-6 h-6" />
               </div>
-              <h3 className="text-base font-extrabold text-[#063280] group-hover:text-[#1558A9] transition-colors">
+              <h3 className="text-base font-extrabold text-[#201C1A] group-hover:text-[#590907] transition-colors">
                 {pt.title}
               </h3>
-              <p className="text-xs text-[#475569] leading-relaxed">
+              <p className="text-xs text-[#77776F] leading-relaxed">
                 {pt.description}
               </p>
             </div>

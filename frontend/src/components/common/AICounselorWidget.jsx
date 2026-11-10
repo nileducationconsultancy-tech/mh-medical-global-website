@@ -134,19 +134,19 @@ export function AICounselorWidget({ onOpenLeadModal }) {
   return (
     <div className="fixed bottom-20 sm:bottom-6 left-4 sm:left-6 z-50 font-sans print:hidden">
       {isOpen ? (
-        <div className="bg-white w-80 sm:w-96 rounded-3xl shadow-2xl border border-[#D9E2EC] overflow-hidden flex flex-col h-[500px] animate-in fade-in slide-in-from-bottom-5 duration-200">
+        <div className="bg-white w-80 sm:w-96 rounded-3xl shadow-2xl border border-[#DEDCD4] overflow-hidden flex flex-col h-[500px] animate-in fade-in slide-in-from-bottom-5 duration-200">
           {/* Header */}
-          <div className="bg-linear-to-r from-[#063280] via-[#0E438D] to-[#1558A9] text-white p-4 flex items-center justify-between shadow-xs border-b border-[#0B2D64]">
+          <div className="bg-[#590907] text-white p-4 flex items-center justify-between shadow-xs border-b border-[#3D0605]">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-full bg-white/10 border border-white/20 flex items-center justify-center">
-                <Bot className="w-5 h-5 text-[#9ABAD9] animate-pulse" />
+                <Bot className="w-5 h-5 text-[#E8D2B5] animate-pulse" />
               </div>
               <div>
                 <div className="flex items-center gap-1.5">
                   <h4 className="font-bold text-sm text-white leading-none">MH GLOBAL AI Advisor</h4>
                   <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
                 </div>
-                <p className="text-[10px] text-[#9ABAD9] mt-0.5">Instant Medical Education Advisor</p>
+                <p className="text-[10px] text-[#E8D2B5] mt-0.5">Instant Medical Education Advisor</p>
               </div>
             </div>
 
@@ -159,26 +159,26 @@ export function AICounselorWidget({ onOpenLeadModal }) {
           </div>
 
           {/* Messages Area */}
-          <div className="flex-1 p-4 overflow-y-auto space-y-3 bg-[#F7FAFC] text-xs">
+          <div className="flex-1 p-4 overflow-y-auto space-y-3 bg-[#F7F5F0] text-xs">
             {messages.map((msg, i) => (
               <div
                 key={i}
                 className={`flex gap-2.5 ${msg.sender === "user" ? "justify-end" : "justify-start"}`}
               >
                 {msg.sender === "bot" && (
-                  <div className="w-6 h-6 rounded-full bg-[#063280] text-white flex items-center justify-center shrink-0 mt-0.5 shadow-xs">
-                    <Bot className="w-3.5 h-3.5 text-[#9ABAD9]" />
+                  <div className="w-6 h-6 rounded-full bg-[#590907] text-white flex items-center justify-center shrink-0 mt-0.5 shadow-xs">
+                    <Bot className="w-3.5 h-3.5 text-[#E8D2B5]" />
                   </div>
                 )}
                 <div
                   className={`max-w-[80%] p-3 rounded-2xl leading-relaxed ${
                     msg.sender === "user"
-                      ? "bg-[#063280] text-white rounded-br-xs"
-                      : "bg-white text-[#0F172A] border border-[#D9E2EC] shadow-2xs rounded-bl-xs"
+                      ? "bg-[#590907] text-[#E8D2B5] rounded-br-xs"
+                      : "bg-white text-[#201C1A] border border-[#DEDCD4] shadow-2xs rounded-bl-xs"
                   }`}
                 >
                   <p className="whitespace-pre-line">{msg.text}</p>
-                  <span className={`block text-[9px] mt-1 ${msg.sender === "user" ? "text-slate-300 text-right" : "text-[#475569]"}`}>
+                  <span className={`block text-[9px] mt-1 ${msg.sender === "user" ? "text-[#E8D2B5]/80 text-right" : "text-[#77776F]"}`}>
                     {msg.time}
                   </span>
                 </div>
@@ -186,10 +186,10 @@ export function AICounselorWidget({ onOpenLeadModal }) {
             ))}
 
             {isTyping && (
-              <div className="flex items-center gap-2 text-[#475569] text-[11px] italic pl-8">
-                <span className="w-1.5 h-1.5 bg-[#063280] rounded-full animate-bounce"></span>
-                <span className="w-1.5 h-1.5 bg-[#063280] rounded-full animate-bounce [animation-delay:0.2s]"></span>
-                <span className="w-1.5 h-1.5 bg-[#063280] rounded-full animate-bounce [animation-delay:0.4s]"></span>
+              <div className="flex items-center gap-2 text-[#77776F] text-[11px] italic pl-8">
+                <span className="w-1.5 h-1.5 bg-[#590907] rounded-full animate-bounce"></span>
+                <span className="w-1.5 h-1.5 bg-[#590907] rounded-full animate-bounce [animation-delay:0.2s]"></span>
+                <span className="w-1.5 h-1.5 bg-[#590907] rounded-full animate-bounce [animation-delay:0.4s]"></span>
                 <span>AI Counselor is typing...</span>
               </div>
             )}
@@ -197,12 +197,12 @@ export function AICounselorWidget({ onOpenLeadModal }) {
           </div>
 
           {/* Quick Questions Chips */}
-          <div className="p-2 bg-[#EBF3FA] border-t border-[#D9E2EC] overflow-x-auto flex gap-1.5 no-scrollbar">
+          <div className="p-2 bg-[#ECEDE8] border-t border-[#DEDCD4] overflow-x-auto flex gap-1.5 no-scrollbar">
             {quickPrompts.map((prompt, i) => (
               <button
                 key={i}
                 onClick={() => handleSendMessage(prompt)}
-                className="whitespace-nowrap px-2.5 py-1 rounded-full bg-white hover:bg-[#063280] hover:text-white text-[#063280] text-[10px] font-semibold border border-[#D9E2EC] shadow-2xs transition-colors shrink-0 cursor-pointer"
+                className="whitespace-nowrap px-2.5 py-1 rounded-full bg-white hover:bg-[#590907] hover:text-white text-[#201C1A] text-[10px] font-semibold border border-[#DEDCD4] shadow-2xs transition-colors shrink-0 cursor-pointer"
               >
                 {prompt}
               </button>
@@ -215,32 +215,32 @@ export function AICounselorWidget({ onOpenLeadModal }) {
               e.preventDefault();
               handleSendMessage();
             }}
-            className="p-3 bg-white border-t border-[#D9E2EC] flex items-center gap-2"
+            className="p-3 bg-white border-t border-[#DEDCD4] flex items-center gap-2"
           >
             <input
               type="text"
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               placeholder="Ask about fees, NMC rules, TMA..."
-              className="flex-1 text-xs px-3 py-2 rounded-xl border border-[#D9E2EC] bg-[#F7FAFC] focus:ring-2 focus:ring-[#063280] focus:outline-hidden"
+              className="flex-1 text-xs px-3 py-2 rounded-xl border border-[#DEDCD4] bg-[#F7F5F0] text-[#201C1A] focus:ring-2 focus:ring-[#590907] focus:outline-hidden"
             />
             <button
               type="submit"
-              className="p-2 bg-[#063280] hover:bg-[#1558A9] text-white rounded-xl shadow-xs transition-colors cursor-pointer"
+              className="p-2 bg-[#590907] hover:bg-[#3D0605] text-white rounded-xl shadow-xs transition-colors cursor-pointer"
             >
               <Send className="w-4 h-4" />
             </button>
           </form>
 
           {/* Connect Human Advisor Footer */}
-          <div className="bg-[#EBF3FA] px-3 py-1.5 border-t border-[#D9E2EC] text-[10px] text-[#063280] flex items-center justify-between">
+          <div className="bg-[#ECEDE8] px-3 py-1.5 border-t border-[#DEDCD4] text-[10px] text-[#201C1A] flex items-center justify-between">
             <span>Need official university letter?</span>
             <button
               onClick={() => {
                 setIsOpen(false);
                 onOpenLeadModal("AI Widget Connect to Senior Counselor");
               }}
-              className="font-bold underline text-[#063280] hover:text-[#9B193A] cursor-pointer"
+              className="font-bold underline text-[#590907] hover:text-[#3D0605] cursor-pointer"
             >
               Talk to Human Advisor
             </button>
@@ -250,18 +250,18 @@ export function AICounselorWidget({ onOpenLeadModal }) {
         <div className="flex items-center gap-2">
           <button
             onClick={() => setIsOpen(true)}
-            className="group flex items-center gap-2.5 bg-[#0F172A] hover:bg-slate-800 text-white px-4 py-3 rounded-full shadow-xl hover:shadow-slate-900/40 transition-all duration-300 hover:scale-105 active:scale-95 border border-slate-700 cursor-pointer"
+            className="group flex items-center gap-2.5 bg-[#201C1A] hover:bg-[#590907] text-[#E8D2B5] px-4 py-3 rounded-full shadow-xl hover:shadow-stone-900/40 transition-all duration-300 hover:scale-105 active:scale-95 border border-[#DEDCD4] cursor-pointer"
           >
             <div className="relative">
-              <Bot className="w-5 h-5 text-rose-300 group-hover:rotate-12 transition-transform" />
+              <Bot className="w-5 h-5 text-[#E8D2B5] group-hover:rotate-12 transition-transform" />
               <span className="absolute -top-1 -right-1 flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#9B193A] opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#9B193A]"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#590907] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#590907]"></span>
               </span>
             </div>
             <div className="text-left hidden sm:block">
-              <p className="text-xs font-bold leading-tight">AI Medical Counselor</p>
-              <p className="text-[10px] text-slate-300">Instant Answers & Fee Check</p>
+              <p className="text-xs font-bold leading-tight text-white">AI Medical Counselor</p>
+              <p className="text-[10px] text-[#ECEDE8]/80">Instant Answers & Fee Check</p>
             </div>
           </button>
         </div>

@@ -24,19 +24,19 @@ export function ImageWithFallback({
   if (hasError || !src) {
     return (
       <div
-        className={`relative flex flex-col items-center justify-center bg-linear-to-br from-[#063280] via-[#0E438D] to-[#1558A9] text-white p-4 text-center overflow-hidden ${aspectRatio}`}
+        className={`relative flex flex-col items-center justify-center bg-linear-to-br from-[#201C1A] via-[#3D0605] to-[#590907] text-[#E8D2B5] p-4 text-center overflow-hidden ${aspectRatio}`}
         role="img"
         aria-label={alt || placeholderText}
         data-todo-marker={todoMarker}
       >
         <div className="absolute inset-0 bg-pattern-grid opacity-15 pointer-events-none"></div>
         <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center mb-2 shadow-inner">
-          <Building2 className="w-6 h-6 text-[#9ABAD9]" />
+          <Building2 className="w-6 h-6 text-[#E8D2B5]" />
         </div>
         <p className="text-xs font-bold text-white tracking-wide max-w-[200px] line-clamp-2">
           {alt || placeholderText}
         </p>
-        <span className="text-[10px] text-[#9ABAD9] mt-1 bg-black/25 px-2.5 py-0.5 rounded-full border border-white/10">
+        <span className="text-[10px] text-[#E8D2B5] mt-1 bg-black/25 px-2.5 py-0.5 rounded-full border border-white/10">
           Uzbekistan State Campus
         </span>
       </div>
