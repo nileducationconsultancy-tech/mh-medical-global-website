@@ -33,7 +33,6 @@ import { FounderSection, StudentTestimonials } from "../components/home/FounderS
 import { AdmissionsRoadmapTimeline } from "../components/home/AdmissionsRoadmapTimeline";
 import { VerificationMethodologyModal } from "../components/common/VerificationMethodologyModal";
 import { StickyMobileBottomBar } from "../components/home/StickyMobileBottomBar";
-import { CookieConsentBanner } from "../components/common/CookieConsentBanner";
 import { faqsData, getAllFaqs } from "../data/faqsData";
 import { siteConfig } from "../config/site";
 import { i18nHomepage } from "../data/i18nHomepage";
@@ -325,9 +324,6 @@ export function HomePage({ onOpenLeadModal }) {
 
       {/* Sticky Mobile Bottom Bar (Call | WhatsApp | Check Eligibility) */}
       <StickyMobileBottomBar onOpenLeadModal={onOpenLeadModal} />
-
-      {/* Global Privacy & Cookie Consent Notice */}
-      <CookieConsentBanner />
     </div>
   );
 }
