@@ -200,19 +200,6 @@ export function Footer({ onOpenLeadModal }) {
           </div>
         </div>
 
-        {/* Regulatory Disclaimer Notice */}
-        <div className="mt-8 pt-6 pb-6 text-[11px] text-slate-400 leading-relaxed border-b border-[#0B2D64] space-y-2">
-          <p className="font-semibold text-slate-300">
-            Official E-E-A-T Compliance, Advisory Role & Legal Disclaimer:
-          </p>
-          <p>
-            MH GLOBAL EDUCATION CONSULTANT operates strictly as an academic advisory and student facilitation service. We do NOT guarantee university admissions, visa grants, foreign government licenses, or Indian licensing (NExT/FMGE) examination outcomes. Medical admission is strictly subject to the student fulfilling official university entrance criteria and qualifying NEET-UG under National Medical Commission guidelines. All tuition and hostel fees are payable directly to the respective medical university as per officially published decrees.
-          </p>
-          <p className="text-[10px] text-slate-500">
-            Registered Office: G-4, Maan House, School Block, Shakarpur, New Delhi, Delhi 110092, India • Advisory services subject to student documentation verification.
-          </p>
-        </div>
-
         {/* Bottom Bar */}
         <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <p>© {new Date().getFullYear()} {siteConfig.brandName}. All Rights Reserved.</p>
