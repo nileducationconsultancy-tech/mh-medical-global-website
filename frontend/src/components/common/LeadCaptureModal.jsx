@@ -19,7 +19,6 @@ import {
   ShieldCheck,
   Ban,
   Headphones,
-  Wrench,
   ChevronDown
 } from "lucide-react";
 import { saveLead } from "../../data/mockLeads";
@@ -186,33 +185,39 @@ export function LeadCaptureModal({ isOpen, onClose, initialTitle = "Book Free MB
     onClose();
   };
 
-  const displayTitle =
-    !initialTitle || initialTitle === "Book Free MBBS Abroad Counselling"
-      ? "Founder Advisory Direct Session"
-      : initialTitle;
+  // User-facing heading (sanitizes internal button tracking labels like "Navbar...", "Mobile...", etc.)
+  const getUserFacingTitle = () => {
+    if (!initialTitle) return "Founder Advisory Direct Session";
+    const lower = initialTitle.toLowerCase();
+    if (
+      lower.includes("navbar") ||
+      lower.includes("top bar") ||
+      lower.includes("mobile") ||
+      lower.includes("footer") ||
+      lower.includes("book free mbbs") ||
+      lower.includes("cta") ||
+      lower.includes("widget")
+    ) {
+      return "Founder Advisory Direct Session";
+    }
+    return initialTitle;
+  };
+
+  const displayTitle = getUserFacingTitle();
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/75 backdrop-blur-xs p-2 sm:p-4 overflow-y-auto font-sans">
       <div className="relative bg-white w-full max-w-4xl lg:max-w-5xl rounded-3xl sm:rounded-4xl shadow-2xl border border-slate-200/90 overflow-hidden animate-in fade-in zoom-in-95 duration-200 my-auto max-h-[96vh] flex flex-col">
         {/* ========================================================= */}
-        {/* 1. TOP HEADER: Dark Navy / Curved Swoop Bar */}
+        {/* 1. TOP HEADER: Dark Navy Bar */}
         {/* ========================================================= */}
         <div className="bg-linear-to-r from-[#060F1E] via-[#0A1A33] to-[#122442] text-white px-4 py-3 sm:px-6 sm:py-3.5 flex items-center justify-between relative border-b border-slate-800 shrink-0">
-          <div className="flex items-center gap-2.5 sm:gap-3.5 min-w-0 pr-3">
-            {/* Red Pill Badge */}
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-linear-to-r from-[#D90436] to-[#990024] text-white text-[10px] sm:text-xs font-black uppercase tracking-wider shadow-sm shrink-0">
-              <Wrench className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-white" />
-              <span>1-ON-1 EXPERT DESK</span>
-            </span>
-
-            {/* Title */}
-            <div className="relative min-w-0">
-              <h3 className="text-sm sm:text-base md:text-lg font-black text-white leading-tight tracking-tight truncate">
-                {displayTitle}
-              </h3>
-              {/* Subtle Red Curve Accent under title */}
-              <div className="h-0.5 w-16 sm:w-24 bg-linear-to-r from-[#D90436] to-transparent rounded-full mt-0.5 hidden sm:block"></div>
-            </div>
+          <div className="relative min-w-0 pr-3">
+            <h3 className="text-sm sm:text-base md:text-lg font-black text-white leading-tight tracking-tight truncate">
+              {displayTitle}
+            </h3>
+            {/* Subtle Red Curve Accent under title */}
+            <div className="h-0.5 w-16 sm:w-24 bg-linear-to-r from-[#D90436] to-transparent rounded-full mt-0.5"></div>
           </div>
 
           {/* Circular Dark Close Button with X */}

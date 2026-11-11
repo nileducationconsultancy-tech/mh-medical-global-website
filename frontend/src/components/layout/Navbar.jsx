@@ -529,7 +529,7 @@ export function Navbar({ onOpenLeadModal }) {
               }}
               className="w-full py-3 bg-[#D90436] hover:bg-[#B8032D] text-white font-black rounded-xl text-center shadow-md cursor-pointer transition-colors flex items-center justify-center gap-1.5"
             >
-              <span>Book Free 1-on-1 Counselling</span>
+              <span>Book Free Counselling</span>
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>
