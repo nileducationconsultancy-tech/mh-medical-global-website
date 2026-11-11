@@ -219,13 +219,13 @@ export function Navbar({ onOpenLeadModal }) {
               className={({ isActive }) =>
                 `whitespace-nowrap flex items-center gap-1.5 px-3 py-2 rounded-lg transition-all ${
                   isActive
-                    ? "bg-[#590907] text-white font-extrabold shadow-xs"
-                    : "text-[#590907] hover:bg-amber-50/80 font-bold border border-[#E8D2B5]/80 hover:border-[#590907]"
+                    ? "bg-[#0752B8] text-white font-extrabold shadow-xs"
+                    : "text-[#082B57] hover:text-[#0752B8] hover:bg-blue-50/80 font-bold border border-blue-200/90"
                 }`
               }
             >
               <span>IUTS Uzbekistan</span>
-              <span className="text-[10px] bg-[#590907] text-white px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">
+              <span className="text-[10px] bg-[#D90436] text-white px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">
                 Direct Tie-Up
               </span>
             </NavLink>
@@ -454,7 +454,7 @@ export function Navbar({ onOpenLeadModal }) {
             <Link
               to="/universities/international-university-of-turkic-states-uzbekistan"
               onClick={handleNavClick}
-              className="block px-3 py-2 bg-amber-50 hover:bg-amber-100 text-[#590907] font-extrabold border border-amber-200 rounded-lg"
+              className="block px-3 py-2 bg-blue-50/90 hover:bg-blue-100 text-[#0752B8] font-extrabold border border-blue-200 rounded-lg"
             >
               ⭐ IUTS Uzbekistan (Direct Tie-Up)
             </Link>

@@ -6,112 +6,118 @@ import {
   Printer,
   RotateCcw,
   Sparkles,
+  Download,
+  AlertCircle,
   ShieldCheck,
-  AlertCircle
+  ChevronRight
 } from "lucide-react";
 
-const STORAGE_KEY = "mh_medical_doc_checklist";
-
-const defaultDocuments = [
-  {
-    id: "doc-1",
-    title: "Original Passport",
-    category: "Identity & Travel",
-    required: true,
-    description: "Must have minimum 18 to 24 months validity with at least 3-4 blank visa pages."
-  },
-  {
-    id: "doc-2",
-    title: "10th Standard Marksheet & Passing Certificate",
-    category: "Academic",
-    required: true,
-    description: "Original document + MEA Apostille sticker required for university matriculation."
-  },
-  {
-    id: "doc-3",
-    title: "12th Standard Marksheet (10+2 with PCB)",
-    category: "Academic",
-    required: true,
-    description: "Proof of Physics, Chemistry, Biology aggregate (min 50% for Gen / 40% for Reserved) + MEA Apostille."
-  },
-  {
-    id: "doc-4",
-    title: "NEET-UG Scorecard",
-    category: "Regulatory / NMC",
-    required: true,
-    description: "Mandatory qualifying NEET score (valid for 3 years for foreign medical admissions)."
-  },
-  {
-    id: "doc-5",
-    title: "Passport-Size Photographs (20 Copies)",
-    category: "Identity & Travel",
-    required: true,
-    description: "35mm x 45mm, matte finish, 80% white background, clear face profile."
-  },
-  {
-    id: "doc-6",
-    title: "Birth Certificate (in English)",
-    category: "Identity & Travel",
-    required: true,
-    description: "English notarized copy if original is in a regional vernacular language."
-  },
-  {
-    id: "doc-7",
-    title: "General Medical Fitness Certificate",
-    category: "Medical",
-    required: true,
-    description: "Signed and stamped by an authorized registered medical practitioner (MBBS/MD)."
-  },
-  {
-    id: "doc-8",
-    title: "HIV / AIDS Test Report (Negative)",
-    category: "Medical",
-    required: true,
-    description: "Certified government laboratory report issued within 30 days of visa submission."
-  },
-  {
-    id: "doc-9",
-    title: "Police Clearance Certificate (PCC)",
-    category: "Immigration",
-    required: false,
-    description: "Issued by Regional Passport Office (RPO) / Passport Seva Kendra (if requested by embassy)."
-  },
-  {
-    id: "doc-10",
-    title: "Parent / Sponsor Bank Statement & Financial Guarantee",
-    category: "Financial",
-    required: true,
-    description: "Last 6 months bank statement showing financial stability for tuition payments."
-  }
-];
-
 export function DocumentChecklistTracker({ onOpenLeadModal }) {
-  const [checkedDocs, setCheckedDocs] = useState({});
+  const defaultDocuments = [
+    {
+      id: "doc-1",
+      category: "Academic Records",
+      title: "Class 10th Marksheet & Passing Certificate",
+      description: "Original required for age and date of birth verification. Minimum 2 attested copies.",
+      required: true
+    },
+    {
+      id: "doc-2",
+      category: "Academic Records",
+      title: "Class 12th Marksheet (PCB Subjects)",
+      description: "Must show minimum 50% aggregate in Physics, Chemistry, Biology (40% for SC/ST/OBC).",
+      required: true
+    },
+    {
+      id: "doc-3",
+      category: "Statutory Entrance",
+      title: "NEET-UG Scorecard (Valid 3 Years)",
+      description: "Must meet qualifying percentile cutoff under NMC Gazette FMGL regulations.",
+      required: true
+    },
+    {
+      id: "doc-4",
+      category: "Travel & Identity",
+      title: "Original Passport (Min. 18 Months Validity)",
+      description: "Must contain at least 2 blank visa pages. Clear front and back bio-data scans.",
+      required: true
+    },
+    {
+      id: "doc-5",
+      category: "Medical Clearance",
+      title: "Government Hospital Health & HIV Negative Certificate",
+      description: "Issued within 30 days of application. Certified blood report showing negative HIV and Hepatitis B/C.",
+      required: true
+    },
+    {
+      id: "doc-6",
+      category: "Consular Legalization",
+      title: "Ministry of External Affairs (MEA) Apostille Attestation",
+      description: "Original 12th marksheet must have an apostille sticker issued by the MEA, Government of India.",
+      required: true
+    },
+    {
+      id: "doc-7",
+      category: "Consular Legalization",
+      title: "Notarized Russian / Uzbek Legal Translation",
+      description: "English marksheet and birth certificate translated and notarized by a sworn official translator.",
+      required: true
+    },
+    {
+      id: "doc-8",
+      category: "Photographs",
+      title: "15 Passport-Size Photographs (35mm x 45mm)",
+      description: "Matte finish, white background, 80% face coverage, without spectacles or glare.",
+      required: true
+    },
+    {
+      id: "doc-9",
+      category: "Financial Documents",
+      title: "Parent / Sponsor Bank Statement & Sponsorship Affidavit",
+      description: "Last 6 months bank statement showing minimum ₹4-5 Lakhs closing balance for student maintenance.",
+      required: false
+    },
+    {
+      id: "doc-10",
+      category: "Travel & Identity",
+      title: "Police Clearance Certificate (PCC)",
+      description: "Issued by Regional Passport Office (RPO) within 3 months of departure.",
+      required: false
+    }
+  ];
 
-  useEffect(() => {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved) {
+  // Load state from localStorage
+  const [checkedDocs, setCheckedDocs] = useState(() => {
+    if (typeof window !== "undefined") {
       try {
-        setCheckedDocs(JSON.parse(saved));
-      } catch {
-        setCheckedDocs({});
+        const saved = localStorage.getItem("mh_doc_checklist");
+        return saved ? JSON.parse(saved) : {};
+      } catch (e) {
+        return {};
       }
     }
-  }, []);
+    return {};
+  });
 
   const handleToggle = (id) => {
     const updated = { ...checkedDocs, [id]: !checkedDocs[id] };
     setCheckedDocs(updated);
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+    try {
+      localStorage.setItem("mh_doc_checklist", JSON.stringify(updated));
+    } catch (e) {
+      // Ignore
+    }
   };
 
   const handleReset = () => {
-    setCheckedDocs({});
-    localStorage.removeItem(STORAGE_KEY);
+    if (window.confirm("Are you sure you want to reset your checklist progress?")) {
+      setCheckedDocs({});
+      localStorage.removeItem("mh_doc_checklist");
+    }
   };
 
-  const completedCount = Object.values(checkedDocs).filter(Boolean).length;
   const totalCount = defaultDocuments.length;
+  const completedCount = Object.values(checkedDocs).filter(Boolean).length;
   const progressPercent = Math.round((completedCount / totalCount) * 100);
 
   const handlePrint = () => {
@@ -119,18 +125,18 @@ export function DocumentChecklistTracker({ onOpenLeadModal }) {
   };
 
   return (
-    <div className="bg-white rounded-3xl shadow-xl border border-[#DEDCD4] p-6 sm:p-8 lg:p-10 font-sans print:shadow-none print:border-none">
+    <div className="bg-white rounded-3xl shadow-xl border border-slate-200 p-6 sm:p-8 lg:p-10 font-sans print:shadow-none print:border-none">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#DEDCD4]">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-200">
         <div>
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#ECEDE8] text-[#590907] text-xs font-bold uppercase tracking-wider mb-2 border border-[#DEDCD4]">
-            <FileCheck2 className="w-3.5 h-3.5 text-[#590907]" />
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-[#0752B8] text-xs font-bold uppercase tracking-wider mb-2 border border-blue-200">
+            <FileCheck2 className="w-3.5 h-3.5 text-[#0752B8]" />
             Interactive Document Tracker
           </div>
-          <h2 className="text-2xl sm:text-3xl font-serif font-black text-[#201C1A]">
+          <h2 className="text-2xl sm:text-3xl font-black text-[#082B57]">
             Uzbekistan MBBS Document Readiness Checklist
           </h2>
-          <p className="text-[#77776F] text-sm mt-1">
+          <p className="text-slate-600 text-sm mt-1">
             Track your required admission, Apostille, and A-2 student visa documents step-by-step.
           </p>
         </div>
@@ -139,14 +145,14 @@ export function DocumentChecklistTracker({ onOpenLeadModal }) {
         <div className="flex items-center gap-2 self-start sm:self-auto print:hidden">
           <button
             onClick={handlePrint}
-            className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#F7F5F0] hover:bg-[#ECEDE8] text-[#590907] border border-[#DEDCD4] text-xs font-bold transition-colors cursor-pointer"
+            className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-50 hover:bg-slate-100 text-[#0752B8] border border-slate-200 text-xs font-bold transition-colors cursor-pointer"
           >
             <Printer className="w-3.5 h-3.5" />
             <span>Print Checklist</span>
           </button>
           <button
             onClick={handleReset}
-            className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#F7F5F0] hover:bg-rose-50 hover:text-[#390605] text-[#77776F] border border-[#DEDCD4] text-xs font-bold transition-colors cursor-pointer"
+            className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-50 hover:bg-rose-50 hover:text-[#D90436] text-slate-500 border border-slate-200 text-xs font-bold transition-colors cursor-pointer"
             title="Reset checked items"
           >
             <RotateCcw className="w-3.5 h-3.5" />
@@ -156,23 +162,23 @@ export function DocumentChecklistTracker({ onOpenLeadModal }) {
       </div>
 
       {/* Progress Bar */}
-      <div className="py-6 border-b border-[#DEDCD4]">
-        <div className="flex items-center justify-between text-xs font-bold text-[#201C1A] mb-2">
+      <div className="py-6 border-b border-slate-200">
+        <div className="flex items-center justify-between text-xs font-bold text-slate-800 mb-2">
           <span>Your Document Readiness:</span>
-          <span className="text-[#590907] font-extrabold text-sm">
+          <span className="text-[#0752B8] font-extrabold text-sm">
             {completedCount} of {totalCount} Completed ({progressPercent}%)
           </span>
         </div>
-        <div className="w-full h-3 bg-[#ECEDE8] rounded-full overflow-hidden border border-[#DEDCD4]">
+        <div className="w-full h-3 bg-slate-100 rounded-full overflow-hidden border border-slate-200">
           <div
-            className="h-full bg-linear-to-r from-[#590907] to-[#590907] transition-all duration-300 rounded-full"
+            className="h-full bg-linear-to-r from-[#0752B8] to-[#082B57] transition-all duration-300 rounded-full"
             style={{ width: `${progressPercent}%` }}
           ></div>
         </div>
       </div>
 
       {/* Documents List */}
-      <div className="divide-y divide-[#DEDCD4] pt-4">
+      <div className="divide-y divide-slate-100 pt-4">
         {defaultDocuments.map((doc) => {
           const isChecked = !!checkedDocs[doc.id];
           return (
@@ -180,32 +186,32 @@ export function DocumentChecklistTracker({ onOpenLeadModal }) {
               key={doc.id}
               onClick={() => handleToggle(doc.id)}
               className={`py-4 px-3 sm:px-4 rounded-2xl transition-all cursor-pointer flex items-start gap-4 ${
-                isChecked ? "bg-[#ECEDE8]/60" : "hover:bg-[#F7F5F0]"
+                isChecked ? "bg-blue-50/50" : "hover:bg-slate-50"
               }`}
             >
               <div className="pt-0.5 shrink-0">
                 {isChecked ? (
-                  <CheckCircle2 className="w-5 h-5 text-[#590907]" />
+                  <CheckCircle2 className="w-5 h-5 text-emerald-600" />
                 ) : (
-                  <Circle className="w-5 h-5 text-slate-300 hover:text-[#590907]" />
+                  <Circle className="w-5 h-5 text-slate-300 hover:text-[#0752B8]" />
                 )}
               </div>
 
               <div className="flex-1 space-y-1">
                 <div className="flex flex-wrap items-center gap-2">
-                  <h4 className={`text-sm font-bold ${isChecked ? "line-through text-slate-400" : "text-[#201C1A]"}`}>
+                  <h4 className={`text-sm font-bold ${isChecked ? "line-through text-slate-400" : "text-slate-900"}`}>
                     {doc.title}
                   </h4>
-                  <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-[#ECEDE8] text-[#590907] border border-[#DEDCD4]">
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-50 text-[#0752B8] border border-blue-200">
                     {doc.category}
                   </span>
                   {doc.required && (
-                    <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-[#390605]/10 text-[#390605] border border-[#390605]/20">
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-rose-50 text-[#D90436] border border-rose-200">
                       Mandatory
                     </span>
                   )}
                 </div>
-                <p className="text-xs text-[#77776F] leading-relaxed">
+                <p className="text-xs text-slate-600 leading-relaxed">
                   {doc.description}
                 </p>
               </div>
@@ -215,17 +221,17 @@ export function DocumentChecklistTracker({ onOpenLeadModal }) {
       </div>
 
       {/* Assistance Footer Card */}
-      <div className="mt-8 p-5 rounded-2xl bg-[#F7F5F0] border border-[#DEDCD4] flex flex-col sm:flex-row items-center justify-between gap-4 print:hidden">
+      <div className="mt-8 p-5 rounded-2xl bg-blue-50/60 border border-blue-200 flex flex-col sm:flex-row items-center justify-between gap-4 print:hidden">
         <div className="flex items-center gap-3">
-          <ShieldCheck className="w-8 h-8 text-[#590907] shrink-0" />
+          <ShieldCheck className="w-8 h-8 text-[#0752B8] shrink-0" />
           <div className="text-xs">
-            <p className="font-bold text-[#590907]">Need Help with MEA Apostille & Notarization?</p>
-            <p className="text-[#77776F]">MH GLOBAL EDUCATION CONSULTANT handles complete government apostille, embassy translation, and visa teletex clearances.</p>
+            <p className="font-bold text-[#082B57]">Need Help with MEA Apostille & Notarization?</p>
+            <p className="text-slate-600">MH GLOBAL EDUCATION CONSULTANT handles complete government apostille, embassy translation, and visa teletex clearances.</p>
           </div>
         </div>
         <button
           onClick={() => onOpenLeadModal("Apostille & Document Support Request")}
-          className="px-4 py-2.5 bg-[#590907] hover:bg-[#590907] text-white text-xs font-bold rounded-xl transition-colors shrink-0 cursor-pointer border-b-2 border-[#390605]"
+          className="px-4 py-2.5 bg-[#D90436] hover:bg-[#B8032D] text-white text-xs font-bold rounded-xl transition-colors shrink-0 cursor-pointer shadow-xs active:scale-98"
         >
           Get Free Document Assistance
         </button>
