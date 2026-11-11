@@ -42,7 +42,7 @@ export function AboutUsPage({ onOpenLeadModal }) {
       "name": aboutUsContent.companyName,
       "legalName": aboutUsContent.legalName,
       "url": siteConfig.siteUrl,
-      "logo": `${siteConfig.siteUrl}/mh-medical-logo.webp`,
+      "logo": `${siteConfig.siteUrl}/mh-medical-logo.png`,
       "email": siteConfig.email || "mhglobalmedical@gmail.com",
       "telephone": siteConfig.phone || "+91 93106 48055",
       "description": aboutUsContent.whoWeAre.leadParagraph,

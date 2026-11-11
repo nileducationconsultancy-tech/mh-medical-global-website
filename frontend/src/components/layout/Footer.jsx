@@ -56,7 +56,7 @@ export function Footer({ onOpenLeadModal }) {
           <div className="space-y-4">
             <Link to="/" className="inline-block bg-white px-3 py-2 rounded-xl shadow-md group">
               <img
-                src="/mh-medical-logo.webp"
+                src="/mh-medical-logo.png"
                 alt="MH GLOBAL EDUCATION CONSULTANT"
                 className="h-12 w-auto object-contain transition-transform group-hover:scale-105"
               />

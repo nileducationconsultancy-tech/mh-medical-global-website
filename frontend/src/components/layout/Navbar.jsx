@@ -80,7 +80,7 @@ export function Navbar({ onOpenLeadModal }) {
   };
 
   const searchableLinks = [
-    { title: "International University of Turkic States (IUTS) - Direct Tie-Up", url: "/universities/international-university-of-turkic-states-uzbekistan", category: "Universities" },
+    { title: "International University of Turkic States (IUTS)", url: "/universities/international-university-of-turkic-states-uzbekistan", category: "Universities" },
     { title: "IUTS Uzbekistan MBBS Admission 2026-2027", url: "/universities/international-university-of-turkic-states-uzbekistan", category: "Admissions" },
     { title: "Tashkent Medical Academy (Rank #1 Government)", url: "/universities/uzbekistan/tashkent-medical-academy", category: "Universities" },
     { title: "Samarkand State Medical University", url: "/universities/uzbekistan/samarkand-state-medical-university", category: "Universities" },
@@ -178,7 +178,7 @@ export function Navbar({ onOpenLeadModal }) {
             className="flex items-center shrink-0 group focus:outline-hidden py-1"
           >
             <img
-              src="/mh-medical-logo.webp"
+              src="/mh-medical-logo.png"
               alt="MH GLOBAL EDUCATION CONSULTANT"
               className="h-14 sm:h-16 md:h-18 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
@@ -213,21 +213,16 @@ export function Navbar({ onOpenLeadModal }) {
               MBBS in Uzbekistan
             </NavLink>
 
-            {/* 3. IUTS Medical College (Single Targeted College - Direct Institutional Tie-Up) */}
+            {/* 3. IUTS Uzbekistan */}
             <NavLink
               to="/universities/international-university-of-turkic-states-uzbekistan"
               className={({ isActive }) =>
-                `whitespace-nowrap flex items-center gap-1.5 px-3 py-2 rounded-lg transition-all ${
-                  isActive
-                    ? "bg-[#0752B8] text-white font-extrabold shadow-xs"
-                    : "text-[#082B57] hover:text-[#0752B8] hover:bg-blue-50/80 font-bold border border-blue-200/90"
+                `whitespace-nowrap px-3 py-2 rounded-lg transition-colors hover:text-[#0752B8] hover:bg-slate-100/70 ${
+                  isActive ? "text-[#0752B8] font-extrabold bg-blue-50/70" : ""
                 }`
               }
             >
-              <span>IUTS Uzbekistan</span>
-              <span className="text-[10px] bg-[#D90436] text-white px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">
-                Direct Tie-Up
-              </span>
+              IUTS Uzbekistan
             </NavLink>
 
             {/* 4. Fees & Eligibility Dropdown */}
@@ -454,9 +449,9 @@ export function Navbar({ onOpenLeadModal }) {
             <Link
               to="/universities/international-university-of-turkic-states-uzbekistan"
               onClick={handleNavClick}
-              className="block px-3 py-2 bg-blue-50/90 hover:bg-blue-100 text-[#0752B8] font-extrabold border border-blue-200 rounded-lg"
+              className="block px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800"
             >
-              ⭐ IUTS Uzbekistan (Direct Tie-Up)
+              IUTS Uzbekistan
             </Link>
 
             <Link

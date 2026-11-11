@@ -62,7 +62,7 @@ export function HomePage({ onOpenLeadModal }) {
       "name": siteConfig.brandName,
       "legalName": siteConfig.legalName,
       "url": siteConfig.siteUrl,
-      "logo": `${siteConfig.siteUrl}/mh-medical-logo.webp`,
+      "logo": `${siteConfig.siteUrl}/mh-medical-logo.png`,
       "description": "Premier international medical education platform and verified admission advisory network for Indian students pursuing MBBS in Uzbekistan.",
       "telephone": siteConfig.phone,
       "email": siteConfig.email,

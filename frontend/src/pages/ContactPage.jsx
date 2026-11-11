@@ -184,7 +184,7 @@ export function ContactPage({ onOpenLeadModal }) {
       "name": "MH Global Medical",
       "legalName": siteConfig.legalName,
       "url": siteConfig.siteUrl,
-      "logo": `${siteConfig.siteUrl}/mh-medical-logo.webp`,
+      "logo": `${siteConfig.siteUrl}/mh-medical-logo.png`,
       "email": "mhglobalmedical@gmail.com",
       "telephone": "+91 93106 48055",
       "description":

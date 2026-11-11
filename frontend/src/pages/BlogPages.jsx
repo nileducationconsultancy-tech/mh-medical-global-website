@@ -164,7 +164,7 @@ export function BlogPostPage({ onOpenLeadModal }) {
       "name": "MH GLOBAL EDUCATION CONSULTANT",
       "logo": {
         "@type": "ImageObject",
-        "url": `${siteConfig.siteUrl}/mh-medical-logo.webp`
+        "url": `${siteConfig.siteUrl}/mh-medical-logo.png`
       }
     },
     "datePublished": post.publishDate,

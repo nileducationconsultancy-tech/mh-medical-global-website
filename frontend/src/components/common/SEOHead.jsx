@@ -8,7 +8,7 @@ export default function SEOHead({
   canonicalUrl = siteConfig.siteUrl,
   robots = "index, follow",
   schema = null,
-  ogImage = `${siteConfig.siteUrl}/mh-medical-logo.webp`,
+  ogImage = `${siteConfig.siteUrl}/mh-medical-logo.png`,
   ogType = "website"
 }) {
   const headContext = useContext(HeadContext);
