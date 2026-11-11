@@ -84,6 +84,12 @@ export function Footer({ onOpenLeadModal }) {
             </h4>
             <ul className="space-y-2 text-xs text-slate-300">
               <li>
+                <Link to="/universities/international-university-of-turkic-states-uzbekistan" className="text-amber-300 hover:text-white transition-colors font-bold flex items-center gap-1">
+                  <span>IUTS Uzbekistan (Direct Tie-Up)</span>
+                  <span className="text-[9px] bg-[#D90436] text-white px-1.5 py-0.2 rounded font-black">NEW</span>
+                </Link>
+              </li>
+              <li>
                 <Link to="/universities/uzbekistan/tashkent-medical-academy" className="hover:text-white transition-colors">
                   Tashkent Medical Academy
                 </Link>

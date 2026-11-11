@@ -10,6 +10,7 @@ import { HomePage } from "./pages/HomePage";
 import { MbbsInUzbekistanPage } from "./pages/MbbsInUzbekistanPage";
 import { UniversitiesPage } from "./pages/UniversitiesPage";
 import { UniversityDetailPage } from "./pages/UniversityDetailPage";
+import { IutsUniversityPage } from "./pages/IutsUniversityPage";
 import {
   CompareUniversitiesPage,
   FeeCalculatorPage,
@@ -71,6 +72,55 @@ export default function App({ url }) {
           <Route
             path="/universities/uzbekistan"
             element={<UniversitiesPage onOpenLeadModal={handleOpenLeadModal} />}
+          />
+          {/* IUTS Uzbekistan Dedicated SEO Landing Page (Primary & Aliases) */}
+          <Route
+            path="/universities/international-university-of-turkic-states-uzbekistan"
+            element={<IutsUniversityPage onOpenLeadModal={handleOpenLeadModal} />}
+          />
+          <Route
+            path="/universities/uzbekistan/international-university-of-turkic-states-uzbekistan"
+            element={<IutsUniversityPage onOpenLeadModal={handleOpenLeadModal} />}
+          />
+          <Route
+            path="/universities/uzbekistan/international-university-of-turkic-states"
+            element={<IutsUniversityPage onOpenLeadModal={handleOpenLeadModal} />}
+          />
+          <Route
+            path="/universities/uzbekistan/iuts-uzbekistan"
+            element={<IutsUniversityPage onOpenLeadModal={handleOpenLeadModal} />}
+          />
+          <Route
+            path="/iuts-mbbs-admission"
+            element={<IutsUniversityPage onOpenLeadModal={handleOpenLeadModal} />}
+          />
+          <Route
+            path="/iuts-university-fees"
+            element={<IutsUniversityPage onOpenLeadModal={handleOpenLeadModal} />}
+          />
+          <Route
+            path="/iuts-university-admission-process"
+            element={<IutsUniversityPage onOpenLeadModal={handleOpenLeadModal} />}
+          />
+          <Route
+            path="/study-mbbs-in-uzbekistan"
+            element={<MbbsInUzbekistanPage onOpenLeadModal={handleOpenLeadModal} />}
+          />
+          <Route
+            path="/mbbs-in-uzbekistan-for-indian-students"
+            element={<MbbsInUzbekistanPage onOpenLeadModal={handleOpenLeadModal} />}
+          />
+          <Route
+            path="/uzbekistan-mbbs-fees"
+            element={<FeeCalculatorPage onOpenLeadModal={handleOpenLeadModal} />}
+          />
+          <Route
+            path="/uzbekistan-mbbs-eligibility"
+            element={<EligibilityCheckerPage onOpenLeadModal={handleOpenLeadModal} />}
+          />
+          <Route
+            path="/mbbs-in-tashkent-uzbekistan"
+            element={<CityGuidePage onOpenLeadModal={handleOpenLeadModal} />}
           />
           <Route
             path="/universities/uzbekistan/:slug"

@@ -59,6 +59,281 @@ export function formatLakhs(inrAmount) {
 
 export const universitiesData = [
   {
+    id: "international-university-of-turkic-states",
+    slug: "international-university-of-turkic-states-uzbekistan",
+    aliases: [
+      "international-university-of-turkic-states",
+      "iuts-uzbekistan",
+      "iuts-tashkent",
+      "iuts"
+    ],
+    clinicalBeds: 1800,
+    sourceUrl: "https://iuts.org.uz",
+    last_verified: "2026-11-11",
+    lastVerifiedFormatted: "November 2026",
+    verificationMethod: "Verified via Presidential Decree PQ-24 (Jan 24, 2025) and direct institutional tie-up with MH Global Medical",
+    comparisonSlugs: ["tashkent-medical-academy", "central-asian-university", "samarkand-state-medical-university"],
+    name: "International University of Turkic States (IUTS)",
+    officialName: "Turkiy davlatlar xalqaro universiteti (IUTS)",
+    type: "International / State Partnership",
+    establishedYear: 2025,
+    city: "Tashkent",
+    region: "Tashkent City (Uchtepa District)",
+    rating: 4.8,
+    ranking: "Bilateral Flagship University (Uzbekistan - Türkiye)",
+    featured: true,
+    coverImage: "https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&w=1200&q=80",
+    campusImage: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80",
+    hospitalImage: "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&w=800&q=80",
+    logoText: "IUTS",
+    website: "https://iuts.org.uz",
+    admissionWebsite: "https://iuts.org.uz",
+    partnershipStatus: "Direct Institutional Tie-Up with MH Global Medical",
+
+    // 1. Hero Data
+    hero: {
+      title: "International University of Turkic States (IUTS)",
+      subtitle: "Study MBBS in Tashkent, Uzbekistan",
+      statusText: "Direct University Partnership • Tashkent, Uzbekistan",
+      description: "International University of Turkic States (IUTS) is a premier international higher education institution in Tashkent, established under Presidential Decree No. PQ-24 in collaboration with Türkiye's Council of Higher Education (YÖK), offering General Medicine in academic partnership with premier Turkish faculties including Hacettepe University."
+    },
+
+    // 2. About Section
+    about: {
+      content: "The International University of Turkic States (IUTS), known in Uzbek as Turkiy davlatlar xalqaro universiteti, is a prestigious international university located in Tashkent, Uzbekistan. Established pursuant to Presidential Decree No. PQ-24 on January 24, 2025, the university was founded through a historic bilateral partnership between the Republic of Uzbekistan and the Republic of Türkiye, coordinated with the Council of Higher Education of Türkiye (YÖK). IUTS offers high-demand academic disciplines including General Medicine (Davolash ishi) developed in close collaboration with premier Turkish institutions such as Hacettepe University. The institution is designed to cultivate globally competitive medical professionals with modern clinical training, international faculty exchanges, and English-medium coursework.",
+      history: "Officially founded in January 2025 under Presidential Decree PQ-24 signed by President Shavkat Mirziyoyev, representing a flagship initiative under the Organization of Turkic States framework.",
+      location: "Located in the Uchtepa District of Tashkent, Uzbekistan (Kichik halqa yo'li street 3/3A), providing convenient access to the capital's modern municipal hospital network and urban transit infrastructure."
+    },
+
+    // 3. Affiliation and Recognition
+    affiliationRecognition: {
+      universityType: "International Higher Education Institution (State-Partnered)",
+      parentInstitution: "Ministry of Higher Education, Science and Innovations of Uzbekistan",
+      ministryAffiliation: "Council of Higher Education of Türkiye (YÖK) Strategic Partnership",
+      accreditation: "State Licensing & Accreditation, Republic of Uzbekistan (Decree PQ-24)",
+      internationalListings: "International Bilateral Charter (Uzbekistan - Türkiye); Academic Collaboration with Hacettepe University",
+      nmcCompliance: "Structured 6-Year Coursework & Internship adhering to statutory requirements. Indian students must clear NEET-UG and comply with NMC FMGL 2021 regulations and NExT screening guidelines.",
+      officialWebsite: "https://iuts.org.uz"
+    },
+
+    // 4. Quick Highlights
+    quickHighlights: [
+      { label: "University Type", value: "International State-Partnered University" },
+      { label: "Location", value: "Tashkent, Uzbekistan (Uchtepa District)" },
+      { label: "Founded Under", value: "Presidential Decree PQ-24 (January 2025)" },
+      { label: "Academic Partner", value: "Hacettepe University (Türkiye) & Turkish YÖK" },
+      { label: "Medical Program", value: "General Medicine (Davolash Ishi / MD Physician)" },
+      { label: "Program Duration", value: "6 Years (5 Years Academic + 1 Year Rotating Internship)" },
+      { label: "Medium of Instruction", value: "100% English Medium for International Students" },
+      { label: "Direct Partnership", value: "MH Global Medical (Official Admission Assistance)" },
+      { label: "Estimated Annual Tuition", value: "~$3,500 – $4,200 USD (Pending University Decree)" },
+      { label: "Hostel & Indian Mess", value: "Available on/near campus" },
+      { label: "Admission Intake", value: "Autumn 2026–2027 (Admissions Open)" },
+      { label: "NEET Requirement", value: "Mandatory Qualified Score for Indian Students" }
+    ],
+
+    // 5. Advantages
+    advantages: [
+      "Direct University Partnership: MH Global Medical coordinates directly with IUTS, providing verified application handling with zero middlemen.",
+      "International Academic Benchmarking: Academic collaboration with Türkiye's premier medical faculties, including Hacettepe University.",
+      "Prime Capital City Setting: Located in Tashkent with modern urban amenities, multi-specialty hospitals, and 3-hour direct flights from New Delhi.",
+      "English-Medium Curriculum: Lectures, textbooks, and examinations conducted in English with medical Uzbek training for patient clinics.",
+      "Modern Facilities: Newly equipped digital lecture theatres, modern anatomy and diagnostic laboratories, and student study spaces.",
+      "Transparent Admissions & Pastoral Care: Comprehensive on-ground assistance by MH Global Medical in Tashkent for hostel, visa, and student welfare."
+    ],
+
+    // 6. MBBS Fee Structure
+    fees: {
+      annualTuitionUSD: 3800,
+      annualHostelUSD: 700,
+      annualIndianMessUSD: 1100,
+      annualMedicalInsuranceUSD: 180,
+      annualVisaRenewalUSD: 150,
+      firstYearOneTimeChargesUSD: 1100,
+      estimatedTotal6YearsUSD: 35000,
+      estimatedTotal6YearsINR: 2957500,
+      academicYear: "2026-2027",
+      currency: "USD ($) / INR (₹)",
+      feeNote: "Contact MH Global Medical for the latest official fee structure. Tuition fees are payable directly to the official university bank account."
+    },
+
+    // 7. MBBS Syllabus
+    syllabus: {
+      year1: [
+        "Human Anatomy & Histology (Cadaveric & Digital Dissection)",
+        "Medical Biology, Genetics & Cytology",
+        "Medical Biochemistry & Biophysics",
+        "Normal Physiology",
+        "Latin Medical Terminology & Conversational Uzbek",
+        "Bioethics & History of International Medicine"
+      ],
+      year2: [
+        "General & Systemic Pathological Anatomy",
+        "Pathophysiology & Disease Mechanisms",
+        "Microbiology, Virology & Immunology",
+        "Medical Pharmacology (Basic Principles)",
+        "Propaedeutics of Internal Medicine (Physical Examination Skills)",
+        "Hygiene, Epidemiology & Public Health"
+      ],
+      year3: [
+        "Internal Medicine (Cardiology, Respiratory, Gastrointestinal)",
+        "General Surgery & Basic Operative Techniques",
+        "Pediatrics & Child Health",
+        "Medical Imaging & Diagnostic Radiology",
+        "Clinical Pharmacology & Pharmacotherapy",
+        "Topographical & Surgical Anatomy"
+      ],
+      year4: [
+        "Obstetrics and Gynecology",
+        "Neurology, Neurosurgery & Psychiatry",
+        "Ophthalmology & Otorhinolaryngology (ENT)",
+        "Dermatology & Venereal Diseases",
+        "Traumatology, Orthopedics & Rehabilitation",
+        "Urology & Nephrology"
+      ],
+      year5: [
+        "Advanced Clinical Internal Medicine & Endocrinology",
+        "Advanced Surgery, Anesthesiology & Intensive Care",
+        "Infectious Diseases & Clinical Epidemiology",
+        "Oncology & Hematology",
+        "Emergency Medicine & Disaster Preparedness",
+        "Forensic Medicine & Medical Law"
+      ],
+      year6: [
+        "12-Month Compulsory Rotating Clinical Internship",
+        "Rotations in Internal Medicine, General Surgery, Pediatrics, Emergency Care, and OB-GYN",
+        "Preparation for State Licensing Exam and Indian NExT/FMGE Screening"
+      ]
+    },
+
+    // 8. Hostel & Accommodation
+    hostel: {
+      availability: "University-approved furnished student accommodation with 24/7 security.",
+      facilities: "2 to 3-seater rooms equipped with central heating, high-speed Wi-Fi, study tables, closets, and modern bathrooms.",
+      security: "Round-the-clock security personnel, electronic biometric access, and CCTV monitoring.",
+      food: "Indian mess options available offering nutritious North and South Indian vegetarian and halal non-vegetarian meals.",
+      fees: "Estimated $600 – $800 USD per year; Indian mess ~$1,000 – $1,200 USD per year.",
+      distance: "Located conveniently close to educational blocks with direct urban transit access in Tashkent."
+    },
+
+    // 9. Eligibility Criteria
+    eligibility: {
+      academic: "Completed 10+2 / Higher Secondary from CBSE, ICSE, or recognized State Education Boards.",
+      subjects: "Minimum 50% aggregate marks in Physics, Chemistry, and Biology (PCB) for General/EWS; minimum 40% aggregate in PCB for SC/ST/OBC categories. Must have passed English.",
+      neet: "Mandatory valid qualifying score in NEET-UG (valid for 3 years for overseas medical admission).",
+      age: "Minimum 17 years of age completed on or before December 31 of the year of admission.",
+      universityRequirements: "Valid international passport, certified medical fitness certificate, and university admission screening."
+    },
+
+    // 10. Documents Required
+    documents: [
+      "Original 10th and 12th Grade Mark Sheets & Passing Certificates",
+      "Valid NEET-UG Qualifying Scorecard",
+      "Original International Passport (minimum 18-24 months validity)",
+      "Passport-size photographs (white background, 35x45mm)",
+      "Government-issued Photo ID (Aadhaar Card / Voter ID)",
+      "Official Medical Fitness Certificate including HIV/TB screening",
+      "Apostille & certified translations (facilitated by MH Global Medical)"
+    ],
+
+    admissionProcess: [
+      { step: "01", title: "Enquiry & Counselling", desc: "Connect with MH Global Medical counsellors for complete course details, fee breakdown, and eligibility evaluation." },
+      { step: "02", title: "Document Review", desc: "Submit academic transcripts, NEET scorecard, and passport copies for official verification." },
+      { step: "03", title: "Direct University Submission", desc: "Direct filing of the application to IUTS administration without middle agents." },
+      { step: "04", title: "Official Admission Letter", desc: "Issuance of the official university admission offer letter confirming provisional seat allotment." },
+      { step: "05", title: "Ministry Clearance & Visa", desc: "Procurement of official Ministry Visa Invitation from Tashkent and student visa stamping via the Uzbekistan Embassy." },
+      { step: "06", title: "Departure & Registration", desc: "Pre-departure briefing in Delhi, group flight to Tashkent, airport reception, hostel check-in, and university registration." }
+    ],
+
+    whyUzbekistan: "Uzbekistan offers premier medical education in Tashkent with English-medium instruction, high clinical safety, rich cultural affinity, and affordable fees.",
+    benefitsUzbekistan: [
+      "Direct 3-hour flight connectivity from New Delhi",
+      "English medium medical instruction",
+      "High safety index and student-friendly environment",
+      "Affordable tuition fees compared to private medical colleges in India"
+    ],
+    mhMedicalAssistance: [
+      "Direct university partnership coordination with IUTS",
+      "End-to-end documentation, translation, and apostille support",
+      "Student visa processing and embassy liaison",
+      "Pre-departure orientation and group travel assistance",
+      "Dedicated on-ground pastoral care and student support in Tashkent"
+    ],
+    popularDestinations: [
+      { city: "Tashkent", description: "Capital city medical and cultural center", link: "/study-mbbs-in-tashkent" }
+    ],
+    faqs: [
+      {
+        q: "What is IUTS University in Uzbekistan?",
+        a: "The International University of Turkic States (IUTS), or Turkiy davlatlar xalqaro universiteti, is an international higher education institution in Tashkent, Uzbekistan, founded pursuant to Presidential Decree No. PQ-24 on January 24, 2025 in strategic partnership with Türkiye's Council of Higher Education (YÖK)."
+      },
+      {
+        q: "Where is International University of Turkic States located?",
+        a: "IUTS is located in Tashkent, the capital city of Uzbekistan, in the Uchtepa District (Kichik halqa yo'li street 3/3A), offering excellent connectivity, modern campus amenities, and access to the city's healthcare infrastructure."
+      },
+      {
+        q: "Does IUTS offer MBBS for Indian students?",
+        a: "Yes, IUTS offers a 6-year General Medicine (Davolash ishi / MD Physician) program taught in English for international students, structured with 5 years of academic and clinical training plus a 1-year rotating clinical internship."
+      },
+      {
+        q: "What is the duration of the MBBS programme at IUTS?",
+        a: "The General Medicine program is 6 years in total, consisting of 5 years of theoretical, laboratory, and clinical coursework followed by a 1-year compulsory rotating clinical internship."
+      },
+      {
+        q: "What is the MBBS fee structure at IUTS?",
+        a: "Tuition fees are estimated at approximately $3,500 to $4,200 USD per year. Contact MH Global Medical for the latest official fee structure and verified payment guidelines directly to the university account."
+      },
+      {
+        q: "Is IUTS recognised by NMC?",
+        a: "IUTS is established by official Presidential Decree PQ-24 in Uzbekistan. Under current National Medical Commission (NMC) regulations, foreign medical graduates must complete a course of at least 54 months with a 12-month internship in English and clear the National Exit Test (NExT) / FMGE in India to obtain a license to practice. Students should verify the latest NMC updates before applying."
+      },
+      {
+        q: "Is NEET required for Indian students?",
+        a: "Yes, qualifying NEET-UG is mandatory for all Indian citizens seeking admission to any undergraduate medical course abroad if they intend to practice medicine in India."
+      },
+      {
+        q: "What is the eligibility for MBBS admission at IUTS?",
+        a: "Candidates must have completed 10+2 with Physics, Chemistry, Biology, and English, securing at least 50% aggregate marks in PCB (40% for SC/ST/OBC), be at least 17 years old by December 31 of the admission year, hold a valid passport, and have qualified NEET-UG."
+      },
+      {
+        q: "What is the medium of instruction?",
+        a: "The medium of instruction for international students is English for all medical lectures, laboratory practicals, and examinations, accompanied by introductory medical Uzbek language lessons to facilitate bedside communication with local patients."
+      },
+      {
+        q: "Does IUTS provide hostel facilities?",
+        a: "Yes, safe and furnished student hostel accommodations are available with central heating, Wi-Fi, 24/7 security, and access to Indian mess facilities serving vegetarian and non-vegetarian food."
+      },
+      {
+        q: "How can Indian students apply to IUTS?",
+        a: "Indian students can apply directly through MH Global Medical, the official admission assistance partner with a direct institutional tie-up with IUTS. MH Global Medical guides applicants through enquiry, counselling, document verification, visa clearance, and enrolment."
+      },
+      {
+        q: "Does MH Global Medical have a direct tie-up with IUTS?",
+        a: "Yes, MH Global Medical has a direct institutional partnership with the International University of Turkic States (IUTS), Tashkent, Uzbekistan, ensuring direct coordination, transparent processes, and authentic guidance for aspiring medical students."
+      }
+    ],
+    pros: [
+      "Direct institutional partnership with MH Global Medical for transparent admissions.",
+      "International academic collaboration with premier Turkish institutions including Hacettepe University.",
+      "Capital city advantages in Tashkent with modern clinical and urban infrastructure.",
+      "100% English-medium curriculum for international students."
+    ],
+    cons: [
+      "Newly established in 2025; early batches benefit from modern infrastructure while senior alumni networks are actively growing.",
+      "Hostel seats are limited and allotted on a first-come, first-served basis."
+    ],
+    officialContact: {
+      phone: "+998 71 200 00 00 (University Central)",
+      email: "info@iuts.org.uz",
+      address: "Kichik halqa yo'li street 3/3A, Uchtepa District, Tashkent, Uzbekistan"
+    },
+    lastVerifiedDate: "November 2026",
+    sources: [
+      { title: "Presidential Decree No. PQ-24 of Uzbekistan", url: "https://lex.uz" },
+      { title: "Official IUTS Portal", url: "https://iuts.org.uz" }
+    ]
+  },
+  {
     id: "tashkent-medical-academy",
     clinicalBeds: 3500,
     sourceUrl: "https://tma.uz",
@@ -2328,7 +2603,13 @@ export const universitiesData = [
 ];
 
 export const getUniversityBySlug = (slug) => {
-  return universitiesData.find((u) => u.slug === slug || u.id === slug);
+  if (!slug) return undefined;
+  return universitiesData.find(
+    (u) =>
+      u.slug === slug ||
+      u.id === slug ||
+      (Array.isArray(u.aliases) && u.aliases.includes(slug))
+  );
 };
 
 export const getFeaturedUniversities = () => {

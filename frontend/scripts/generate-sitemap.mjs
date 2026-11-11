@@ -24,6 +24,7 @@ async function run() {
     // Core Pillars & Hubs
     { path: '/', priority: '1.0', changefreq: 'daily' },
     { path: '/mbbs-in-uzbekistan', priority: '0.95', changefreq: 'weekly' },
+    { path: '/universities/international-university-of-turkic-states-uzbekistan', priority: '0.95', changefreq: 'weekly' },
     { path: '/universities/uzbekistan', priority: '0.90', changefreq: 'weekly' },
     { path: '/compare-universities', priority: '0.80', changefreq: 'weekly' },
     { path: '/mbbs-fee-calculator', priority: '0.85', changefreq: 'monthly' },

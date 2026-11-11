@@ -31,6 +31,7 @@ async function prerender() {
   const routes = [
     '/',
     '/mbbs-in-uzbekistan',
+    '/universities/international-university-of-turkic-states-uzbekistan',
     '/universities/uzbekistan',
     ...universitiesData.map(u => `/universities/uzbekistan/${u.slug}`),
     '/compare-universities',

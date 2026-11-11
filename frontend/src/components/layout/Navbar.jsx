@@ -81,6 +81,8 @@ export function Navbar({ onOpenLeadModal }) {
   };
 
   const searchableLinks = [
+    { title: "International University of Turkic States (IUTS) - Direct Tie-Up", url: "/universities/international-university-of-turkic-states-uzbekistan", category: "Universities" },
+    { title: "IUTS Uzbekistan MBBS Admission 2026-2027", url: "/universities/international-university-of-turkic-states-uzbekistan", category: "Admissions" },
     { title: "Tashkent Medical Academy (Rank #1 Government)", url: "/universities/uzbekistan/tashkent-medical-academy", category: "Universities" },
     { title: "Samarkand State Medical University", url: "/universities/uzbekistan/samarkand-state-medical-university", category: "Universities" },
     { title: "Bukhara State Medical Institute", url: "/universities/uzbekistan/bukhara-state-medical-institute", category: "Universities" },
@@ -241,6 +243,15 @@ export function Navbar({ onOpenLeadModal }) {
                     className="block p-2 rounded-lg hover:bg-blue-50 text-[#0752B8] font-bold"
                   >
                     All Uzbekistan Universities Directory →
+                  </Link>
+
+                  <Link
+                    to="/universities/international-university-of-turkic-states-uzbekistan"
+                    onClick={() => setDropdownOpen(null)}
+                    className="flex items-center justify-between p-2 rounded-lg bg-amber-50/80 hover:bg-amber-100/80 text-[#590907] font-extrabold border border-amber-200/80"
+                  >
+                    <span>IUTS Uzbekistan (Direct Tie-Up)</span>
+                    <span className="text-[10px] bg-[#590907] text-white px-1.5 py-0.5 rounded font-bold">Direct Partner</span>
                   </Link>
 
                   <Link
@@ -572,6 +583,13 @@ export function Navbar({ onOpenLeadModal }) {
               className="block px-3 py-2 rounded-lg hover:bg-slate-50 text-[#0752B8]"
             >
               All Universities Directory
+            </Link>
+            <Link
+              to="/universities/international-university-of-turkic-states-uzbekistan"
+              onClick={handleNavClick}
+              className="block px-3 py-2 rounded-lg bg-amber-50 hover:bg-amber-100 text-[#590907] font-extrabold border border-amber-200"
+            >
+              ⭐ IUTS Uzbekistan (Direct Tie-Up)
             </Link>
             <Link
               to="/compare-universities"
