@@ -4,7 +4,6 @@ import {
   Building2,
   MapPin,
   CheckCircle2,
-  ExternalLink,
   Users,
   BookOpen,
   ArrowRight,
@@ -452,22 +451,6 @@ export function IutsUniversityPage({ onOpenLeadModal }) {
               <p>
                 IUTS delivers dual-competency medical programs that integrate modern European credit transfer principles, digital simulation laboratories, and extensive bedside patient interaction in Tashkent's municipal hospital network. With an explicit mandate to cultivate globally capable clinicians, the curriculum for international cohorts is administered <strong>entirely in the English language</strong> by experienced international and bilingual clinical professors.
               </p>
-
-              <div className="p-4 rounded-xl bg-blue-50/60 border border-blue-200 flex items-center justify-between gap-4 mt-2">
-                <div>
-                  <p className="text-xs font-bold text-[#082B57] uppercase tracking-wider">Official University Portal</p>
-                  <p className="text-xs text-slate-600">Visit the official university administrative website for decrees and circulars.</p>
-                </div>
-                <a
-                  href="https://iuts.org.uz"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#0752B8] hover:bg-[#082B57] text-white text-xs font-bold rounded-lg transition-colors shrink-0 shadow-xs"
-                >
-                  <span>iuts.org.uz</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </a>
-              </div>
             </div>
 
             {/* Right 5 Columns - Structured Identity Card */}
